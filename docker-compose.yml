@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: xico
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U xico -d xico"]
       interval: 5s
@@ -32,7 +34,18 @@ services:
       - uploads:/app/uploads
     expose:
       - "3000"
+    # `internal` to reach the DB; `proxy` so Nginx Proxy Manager can
+    # forward to xicoai-app:3000 (survives container recreation).
+    networks:
+      - internal
+      - proxy
 
 volumes:
   pgdata:
   uploads:
+
+networks:
+  internal:
+  proxy:
+    external: true
+    name: nginx-proxy-manage_default
