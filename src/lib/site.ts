@@ -12,8 +12,14 @@ export const site = {
 
 export const navItems = [
   { key: "home", href: "/" },
-  { key: "work", href: "/#work" },
+  { key: "work", href: "/work" },
   { key: "services", href: "/services" },
   { key: "blog", href: "/blog" },
   { key: "about", href: "/about" },
 ] as const;
+
+/** Live product sites, keyed by work item. */
+export const productUrls: Record<string, string> = {
+  machi: "https://machicity.com",
+  shangence: "https://shangence.com",
+};

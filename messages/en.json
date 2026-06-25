@@ -71,26 +71,37 @@
     "title": "Products in the making",
     "subtitle": "We are builders and founders — pouring our craft into products we believe in.",
     "viewLabel": "Learn more",
+    "visit": "Visit site",
+    "highlightsLabel": "Highlights",
     "items": [
       {
         "key": "machi",
         "name": "Machi",
         "kind": "City-living platform · starting in Tokyo",
-        "desc": "Find the echoes of life in every city. A global city-living platform uniting housing, classifieds, jobs, local services and community.",
+        "tagline": "Find the echoes of life in every city",
+        "desc": "A global city-living platform uniting housing, classifieds, jobs, local services and community.",
+        "about": "Machi brings together housing, classifieds, jobs, local services, city guides and community — organized by country, city and language — so anyone can quickly know what to do in an unfamiliar city. Starting in Tokyo, live in Los Angeles and Toronto, and expanding to Korea, Australia, the UK, France, Germany and beyond.",
+        "highlights": ["City guides & life admin", "Housing · classifieds · jobs", "Community & language exchange", "Safety & merchant verification"],
         "status": "In the making"
       },
       {
         "key": "shangence",
         "name": "Shangence",
         "kind": "Startup risk-assessment platform",
-        "desc": "Measure before you start. A risk-assessment and capital stop-loss platform helping China's micro-entrepreneurs decide with data.",
+        "tagline": "Measure before you start",
+        "desc": "A risk-assessment and capital stop-loss platform helping micro-entrepreneurs decide with data.",
+        "about": "Shangence helps everyday founders run a professional assessment before committing their first capital — across cash safety, market demand, personal capability, customer acquisition and external constraints — producing a verification budget, stop-loss line and a 30-day action plan. It doesn't promise success; it helps you see the risk early. Operated separately in China and Japan.",
+        "highlights": ["Five-dimension risk score", "Cash safety line & stop-loss", "30-day validation plan", "Exportable PDF report"],
         "status": "Building"
       },
       {
         "key": "next",
         "name": "More on the way",
         "kind": "Study abroad · Cross-border",
+        "tagline": "Bringing our craft to wider markets",
         "desc": "New business lines are incubating, bringing XICO's capability to broader markets.",
+        "about": "New business lines like study-abroad and cross-border commerce are incubating — bringing XICO's AI, product and design capability to broader markets.",
+        "highlights": [],
         "status": "Coming soon"
       }
     ]

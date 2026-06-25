@@ -129,7 +129,7 @@ export function Hero() {
             variants={item}
             className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
           >
-            <Link href="/#work" className={buttonClass("primary")}>
+            <Link href="/work" className={buttonClass("primary")}>
               {t("ctaPrimary")}
               <ArrowIcon />
             </Link>

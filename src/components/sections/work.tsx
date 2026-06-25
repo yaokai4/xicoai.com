@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { productUrls } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Item = {
@@ -94,8 +95,13 @@ export function Work() {
                       {item.desc}
                     </p>
 
-                    {!isNext && (
-                      <div className="mt-8 flex items-center gap-2 text-sm text-muted transition-colors group-hover:text-foreground">
+                    {!isNext && productUrls[item.key] && (
+                      <a
+                        href={productUrls[item.key]}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group/link relative z-[3] mt-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-brand"
+                      >
                         {t("viewLabel")}
                         <svg
                           width="16"
@@ -103,7 +109,7 @@ export function Work() {
                           viewBox="0 0 24 24"
                           fill="none"
                           aria-hidden
-                          className="transition-transform duration-300 group-hover:translate-x-1"
+                          className="transition-transform duration-300 group-hover/link:translate-x-1"
                         >
                           <path
                             d="M5 12h14M13 6l6 6-6 6"
@@ -113,7 +119,7 @@ export function Work() {
                             strokeLinejoin="round"
                           />
                         </svg>
-                      </div>
+                      </a>
                     )}
                   </div>
                 </SpotlightCard>

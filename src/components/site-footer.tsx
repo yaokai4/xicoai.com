@@ -1,7 +1,7 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Logo, wordmarkFor } from "@/components/brand/logo";
-import { site } from "@/lib/site";
+import { site, productUrls } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
 export async function SiteFooter() {
@@ -11,7 +11,7 @@ export async function SiteFooter() {
 
   const companyLinks = [
     { label: t("links.about"), href: "/about" },
-    { label: t("links.work"), href: "/#work" },
+    { label: t("links.work"), href: "/work" },
     { label: t("links.services"), href: "/services" },
     { label: t("links.careers"), href: "/careers" },
     { label: t("links.join"), href: "/join" },
@@ -38,8 +38,22 @@ export async function SiteFooter() {
           </FooterGroup>
 
           <FooterGroup title={t("groups.products")}>
-            <FooterLink href="/#work">{t("links.machi")}</FooterLink>
-            <FooterLink href="/#work">{t("links.shangence")}</FooterLink>
+            <a
+              href={productUrls.machi}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-muted transition-colors hover:text-foreground"
+            >
+              {t("links.machi")}
+            </a>
+            <a
+              href={productUrls.shangence}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-muted transition-colors hover:text-foreground"
+            >
+              {t("links.shangence")}
+            </a>
             <span className="text-sm text-faint">{t("comingSoon")}</span>
           </FooterGroup>
 
