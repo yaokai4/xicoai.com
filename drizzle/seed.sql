@@ -43,3 +43,41 @@ VALUES (
   now()
 )
 ON CONFLICT (slug) DO NOTHING;
+
+-- More starter roles (idempotent).
+INSERT INTO jobs (slug, title, team, location, employment_type, remote, summary, description, requirements, status, sort_order)
+VALUES
+(
+  'ai-engineer',
+  '{"zh":"AI 工程师","ja":"AIエンジニア","en":"AI Engineer"}',
+  'Engineering',
+  '{"zh":"东京 / 长沙 / 远程","ja":"東京 / 長沙 / リモート","en":"Tokyo / Changsha / Remote"}',
+  'full_time', true,
+  '{"zh":"把大模型、智能体与 RAG 落到 Machi、Shangence 等真实产品里。","ja":"LLM・エージェント・RAG を Machi や Shangence の実プロダクトへ。","en":"Bring LLMs, agents and RAG into real products like Machi and Shangence."}',
+  '{"zh":"你将负责 AI 能力的设计与落地：从大模型应用、智能体编排、检索增强到评测与上线。\n\n我们重视真实效果——把前沿能力变成用户真正能用、稳定可靠的功能。","ja":"AI 機能の設計と実装を担当します。LLM アプリ、エージェント、RAG、評価から本番運用まで。\n\n実効性を重視し、最先端を実ユーザーが使える安定した機能に変えます。","en":"You will design and ship AI capabilities — from LLM apps and agent orchestration to retrieval, evals and production.\n\nWe value real impact: turning frontier capability into reliable features users actually use."}',
+  '{"zh":["熟悉 LLM 应用 / Agent / RAG 开发","扎实的 Python 或 TypeScript 工程能力","关注效果、评测与可靠性","中文流利，英文或日文加分"],"ja":["LLMアプリ / エージェント / RAG の開発経験","Python または TypeScript の確かな実装力","効果・評価・信頼性へのこだわり","中国語必須、英語または日本語は歓迎"],"en":["Experience with LLM apps / agents / RAG","Strong Python or TypeScript engineering","Care for impact, evals and reliability","Fluent Chinese; English or Japanese a plus"]}',
+  'open', 0
+),
+(
+  'growth-overseas',
+  '{"zh":"增长与海外运营","ja":"グロース・海外運営","en":"Growth & Overseas Ops"}',
+  'Growth',
+  '{"zh":"东京 / 远程","ja":"東京 / リモート","en":"Tokyo / Remote"}',
+  'full_time', true,
+  '{"zh":"负责 Machi 在日本及海外市场的增长与本地化运营。","ja":"Machi の日本・海外市場でのグロースとローカライズ運営を担当。","en":"Drive growth and localized operations for Machi in Japan and overseas."}',
+  '{"zh":"你将主导 Machi 在日本起步、并向海外城市扩张的增长与运营：渠道、内容、社区、本地化与合作。\n\n这是一个能把产品真正带到用户面前、跨文化做事的角色。","ja":"Machi の日本での立ち上げと海外都市への拡大を、グロースと運営の両面でリードします。チャネル・コンテンツ・コミュニティ・ローカライズ・提携まで。\n\nプロダクトを実ユーザーに届け、文化を越えて動く役割です。","en":"You will lead Machi''s growth and operations — launching in Japan and expanding to overseas cities: channels, content, community, localization and partnerships.\n\nA role that brings the product to real users, working across cultures."}',
+  '{"zh":["有增长 / 运营 / 社区相关经验","日语或英语可工作沟通","熟悉跨境 / 本地化场景","能独立推进、结果导向"],"ja":["グロース / 運営 / コミュニティの経験","日本語または英語でのビジネス会話","越境 / ローカライズの理解","自走できる、結果志向"],"en":["Growth / ops / community experience","Working Japanese or English","Comfort with cross-border / localization","Self-driven and results-oriented"]}',
+  'open', 4
+),
+(
+  'product-design-intern',
+  '{"zh":"产品 / 设计实习生","ja":"プロダクト・デザイン インターン","en":"Product & Design Intern"}',
+  'Design',
+  '{"zh":"长沙 / 远程","ja":"長沙 / リモート","en":"Changsha / Remote"}',
+  'intern', true,
+  '{"zh":"和我们一起做真实的产品，从设计到上线。","ja":"私たちと一緒に、デザインからローンチまで本物のプロダクトを。","en":"Build real products with us — from design to launch."}',
+  '{"zh":"你会参与真实产品的设计与打磨，和工程师紧密协作，把想法变成用户能用的体验。\n\n我们给实习生真正的项目，而不是打杂。","ja":"実プロダクトのデザインと磨き込みに関わり、エンジニアと密に協働して、アイデアを使える体験に変えます。\n\nインターンにも雑用ではなく本物のプロジェクトを任せます。","en":"You will work on real product design and polish, collaborating closely with engineers to turn ideas into usable experiences.\n\nWe give interns real projects, not busywork."}',
+  '{"zh":["对产品与设计有热情和品味","会用 Figma，了解基本前端更佳","学习能力强、主动","中文流利，英文或日文加分"],"ja":["プロダクトとデザインへの情熱とセンス","Figma が使える、フロント基礎があれば尚可","学習意欲が高く主体的","中国語必須、英語または日本語は歓迎"],"en":["Passion and taste for product and design","Figma skills; basic front-end a plus","Fast learner, proactive","Fluent Chinese; English or Japanese a plus"]}',
+  'open', 5
+)
+ON CONFLICT (slug) DO NOTHING;

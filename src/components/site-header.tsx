@@ -1,13 +1,29 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { navItems } from "@/lib/site";
+import { navItems, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
+
+const overlayVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { duration: 0.18, when: "beforeChildren", staggerChildren: 0.05, delayChildren: 0.03 },
+  },
+  exit: { opacity: 0, transition: { duration: 0.14 } },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
+  exit: { opacity: 0, y: 6, transition: { duration: 0.1 } },
+};
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -75,7 +91,7 @@ export function SiteHeader() {
             </Link>
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-border-strong md:hidden"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
               aria-expanded={menuOpen}
@@ -86,57 +102,70 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* Mobile menu — sibling of header so it reliably stacks above <main> */}
-      <div
-        className={cn(
-          "fixed inset-x-0 bottom-0 top-16 z-40 bg-bg transition-all duration-300 md:hidden",
-          menuOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none -translate-y-1 opacity-0",
-        )}
-      >
-        <nav className="flex h-full flex-col gap-1 overflow-y-auto px-6 py-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between border-b border-border py-4 font-display text-2xl text-foreground transition-colors hover:text-brand"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            variants={overlayVariants}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col bg-bg md:hidden"
+          >
+            <nav className="flex flex-1 flex-col overflow-y-auto px-6 pt-4">
+              {navItems.map((item) => (
+                <motion.div key={item.key} variants={itemVariants}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-border py-[18px] font-display text-[1.65rem] font-medium tracking-tight text-foreground"
+                  >
+                    <span className="transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
+                      {t(item.key)}
+                    </span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-faint transition-colors group-hover:bg-white/5 group-hover:text-brand">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                        <path
+                          d="M9 6l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+
+            <motion.div
+              variants={itemVariants}
+              className="border-t border-border px-6 py-6"
             >
-              {t(item.key)}
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden
-                className="text-faint"
+              <Link
+                href="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="flex w-full items-center justify-center rounded-2xl bg-foreground py-4 text-base font-medium text-bg"
               >
-                <path
-                  d="M9 6l6 6-6 6"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          ))}
-          <div className="mt-8 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <LocaleSwitcher />
-              <ThemeToggle />
-            </div>
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-bg"
-            >
-              {t("cta")}
-            </Link>
-          </div>
-        </nav>
-      </div>
+                {t("cta")}
+              </Link>
+              <div className="mt-5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <LocaleSwitcher />
+                  <ThemeToggle />
+                </div>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  {site.email}
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -53,11 +53,18 @@ export function Logo({
   withWordmark?: boolean;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <Mark size={26} />
+    <span className={cn("inline-flex items-center gap-2", className)}>
+      <Mark size={24} />
       {withWordmark && (
-        <span className="font-display text-[1.2rem] font-semibold tracking-[-0.02em] text-foreground">
-          XICO
+        <span
+          className="text-[1.05rem] font-semibold uppercase text-foreground"
+          style={{
+            fontFamily: "var(--font-inter), system-ui, sans-serif",
+            letterSpacing: "0.16em",
+            paddingRight: "0.16em",
+          }}
+        >
+          Xico
         </span>
       )}
     </span>
