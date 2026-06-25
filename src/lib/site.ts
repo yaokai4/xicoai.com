@@ -7,7 +7,7 @@ export const site = {
   },
   domain: "xicoai.com",
   url: "https://xicoai.com",
-  email: "hello@xicoai.com",
+  email: "hi@xicoai.com",
 } as const;
 
 export const navItems = [
