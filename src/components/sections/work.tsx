@@ -17,17 +17,17 @@ const STYLES: Record<
 > = {
   machi: {
     span: "lg:col-span-7",
-    glow: "rgba(124,140,255,0.22)",
+    glow: "color-mix(in oklab, var(--brand) 22%, transparent)",
     monogram: "M",
   },
   shangence: {
     span: "lg:col-span-5",
-    glow: "rgba(176,124,255,0.20)",
+    glow: "color-mix(in oklab, var(--violet) 22%, transparent)",
     monogram: "S",
   },
   next: {
     span: "lg:col-span-12",
-    glow: "rgba(94,231,208,0.16)",
+    glow: "color-mix(in oklab, var(--accent) 18%, transparent)",
     monogram: "→",
   },
 };
@@ -68,7 +68,7 @@ export function Work() {
                   {/* watermark monogram */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute -bottom-6 right-2 select-none font-display text-[10rem] font-bold leading-none text-white/[0.03]"
+                    className="pointer-events-none absolute -bottom-6 right-2 select-none font-display text-[10rem] font-bold leading-none text-foreground/[0.04]"
                   >
                     {s.monogram}
                   </span>

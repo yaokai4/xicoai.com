@@ -8,6 +8,7 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Ambient } from "@/components/ambient";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -97,12 +98,14 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
-        <NextIntlClientProvider messages={messages}>
-          <Ambient />
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Ambient />
+            <SiteHeader />
+            <main>{children}</main>
+            <SiteFooter />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ export function CTA() {
               className="pointer-events-none absolute left-1/2 top-0 h-72 w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 blur-[100px]"
               style={{
                 background:
-                  "radial-gradient(closest-side, rgba(124,140,255,0.4), transparent 70%)",
+                  "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 40%, transparent), transparent 70%)",
               }}
             />
             <div className="relative mx-auto flex max-w-2xl flex-col items-center">

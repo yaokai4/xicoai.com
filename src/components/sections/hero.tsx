@@ -33,7 +33,7 @@ export function Hero() {
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-40 [animation:spin_36s_linear_infinite] max-md:h-[560px] max-md:w-[560px]"
         style={{
           background:
-            "conic-gradient(from 0deg, transparent 0deg, rgba(124,140,255,0.5) 90deg, transparent 160deg, rgba(94,231,208,0.35) 250deg, transparent 320deg)",
+            "conic-gradient(from 0deg, transparent 0deg, color-mix(in oklab, var(--brand) 55%, transparent) 90deg, transparent 160deg, color-mix(in oklab, var(--accent) 45%, transparent) 250deg, transparent 320deg)",
           maskImage:
             "radial-gradient(closest-side, transparent 58%, #000 60%, #000 66%, transparent 70%)",
           WebkitMaskImage:

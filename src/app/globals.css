@@ -2,31 +2,113 @@
 
 /* ============================================================
    XICO — Design System
-   Dark, precise, luminous. Inspired by the craft of
-   Linear / Anthropic / Vercel, tuned for a CJK + Latin world.
+   Light by default, with a refined dark ("night") theme.
+   Tokens are theme-reactive CSS variables consumed via
+   `@theme inline`, so utilities like `bg-bg` / `text-foreground`
+   follow the active theme automatically.
    ============================================================ */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- LIGHT (default) ---- */
+:root {
+  color-scheme: light;
+
+  --bg: #f6f7f9;
+  --bg-soft: #eef0f4;
+  --surface: #ffffff;
+  --surface-2: #f4f6f9;
+  --border: rgba(15, 18, 30, 0.09);
+  --border-strong: rgba(15, 18, 30, 0.16);
+
+  --foreground: #0c0e14;
+  --muted: #545b69;
+  --faint: #8a909c;
+
+  --brand: #5b63e6;
+  --brand-soft: #4f57df;
+  --violet: #8b5cf6;
+  --accent: #0e9f8e;
+
+  /* gradient text stops (saturated enough to read on white) */
+  --grad-1: #5b63e6;
+  --grad-2: #8b5cf6;
+  --grad-3: #0e9f8e;
+
+  --grid-line: rgba(15, 18, 30, 0.05);
+  --glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.66)
+  );
+  --glass-shadow: 0 1px 2px rgba(16, 18, 28, 0.04),
+    0 16px 40px -20px rgba(16, 18, 28, 0.18);
+  --card-shadow: 0 1px 2px rgba(16, 18, 28, 0.04),
+    0 18px 50px -28px rgba(16, 18, 28, 0.16);
+  --sb: rgba(15, 18, 30, 0.18);
+
+  /* ambient aurora tint/strength */
+  --aurora-1: rgba(91, 99, 230, 0.18);
+  --aurora-2: rgba(139, 92, 246, 0.14);
+  --aurora-3: rgba(14, 159, 142, 0.12);
+}
+
+/* ---- DARK ("night") ---- */
+.dark {
+  color-scheme: dark;
+
+  --bg: #06070a;
+  --bg-soft: #0a0c12;
+  --surface: #0e1118;
+  --surface-2: #14171f;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --foreground: #eceef3;
+  --muted: #9aa1ad;
+  --faint: #646b78;
+
+  --brand: #7c8cff;
+  --brand-soft: #aab2ff;
+  --violet: #b07cff;
+  --accent: #5ee7d0;
+
+  --grad-1: #aab2ff;
+  --grad-2: #b07cff;
+  --grad-3: #5ee7d0;
+
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.018)
+  );
+  --glass-shadow: none;
+  --card-shadow: none;
+  --sb: rgba(255, 255, 255, 0.16);
+
+  --aurora-1: rgba(124, 140, 255, 0.45);
+  --aurora-2: rgba(176, 124, 255, 0.32);
+  --aurora-3: rgba(94, 231, 208, 0.2);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-violet: var(--violet);
+  --color-accent: var(--accent);
+}
+
 @theme {
-  /* Surfaces ------------------------------------------------ */
-  --color-bg: #06070a;
-  --color-bg-soft: #0a0c12;
-  --color-surface: #0e1118;
-  --color-surface-2: #14171f;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.14);
-
-  /* Text ---------------------------------------------------- */
-  --color-foreground: #eceef3;
-  --color-muted: #9aa1ad;
-  --color-faint: #646b78;
-
-  /* Brand --------------------------------------------------- */
-  --color-brand: #7c8cff; /* indigo */
-  --color-brand-soft: #aab2ff;
-  --color-violet: #b07cff;
-  --color-accent: #5ee7d0; /* cyan-mint */
-
-  /* Type ---------------------------------------------------- */
   --font-sans: var(--font-inter), "PingFang SC", "Hiragino Kaku Gothic ProN",
     "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui,
     sans-serif;
@@ -34,27 +116,15 @@
     "Hiragino Kaku Gothic ProN", "Hiragino Sans GB", "Microsoft YaHei",
     system-ui, sans-serif;
 
-  /* Radius -------------------------------------------------- */
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
 
-  /* Easing -------------------------------------------------- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Motion keyframes --------------------------------------- */
   --animate-aurora: aurora 22s ease-in-out infinite;
   --animate-float: float 7s ease-in-out infinite;
   --animate-shimmer: shimmer 2.4s linear infinite;
   --animate-marquee: marquee 38s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 @keyframes aurora {
@@ -68,7 +138,6 @@
     opacity: 0.85;
   }
 }
-
 @keyframes float {
   0%,
   100% {
@@ -78,90 +147,88 @@
     transform: translateY(-10px);
   }
 }
-
 @keyframes shimmer {
   to {
     background-position: 200% center;
   }
 }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-/* Base ----------------------------------------------------- */
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-
   body {
-    background-color: var(--color-bg);
-    color: var(--color-foreground);
+    background-color: var(--bg);
+    color: var(--foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";
     overflow-x: hidden;
   }
-
   ::selection {
-    background: color-mix(in oklab, var(--color-brand) 35%, transparent);
-    color: #fff;
+    background: color-mix(in oklab, var(--brand) 30%, transparent);
+    color: var(--foreground);
   }
-
   *,
   ::before,
   ::after {
-    border-color: var(--color-border);
+    border-color: var(--border);
   }
-
-  /* Thin, dark scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+    scrollbar-color: var(--sb) transparent;
   }
 }
 
-/* Utilities ------------------------------------------------ */
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
 
-  /* Gradient brand text */
   .text-gradient {
     background-image: linear-gradient(
       110deg,
-      var(--color-brand-soft) 0%,
-      var(--color-violet) 45%,
-      var(--color-accent) 100%
+      var(--grad-1) 0%,
+      var(--grad-2) 48%,
+      var(--grad-3) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Subtle top-lit panel */
   .glass {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.018)
-    );
-    border: 1px solid var(--color-border);
+    background: var(--glass-bg);
+    border: 1px solid var(--border);
     backdrop-filter: blur(12px);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .card-elevated {
+    box-shadow: var(--card-shadow);
   }
 
   .hairline {
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
   }
 
-  /* Faint engineering grid */
   .bg-grid {
     background-image: linear-gradient(
         to right,
-        rgba(255, 255, 255, 0.04) 1px,
+        var(--grid-line) 1px,
         transparent 1px
       ),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 56px 56px;
     -webkit-mask-image: radial-gradient(
       ellipse 70% 60% at 50% 0%,
@@ -175,7 +242,6 @@
     );
   }
 
-  /* Animated gradient hairline border */
   .border-gradient {
     position: relative;
   }
@@ -187,8 +253,8 @@
     padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(124, 140, 255, 0.6),
-      rgba(176, 124, 255, 0.15) 40%,
+      color-mix(in oklab, var(--brand) 55%, transparent),
+      color-mix(in oklab, var(--violet) 22%, transparent) 40%,
       transparent 60%
     );
     -webkit-mask: linear-gradient(#000 0 0) content-box,
@@ -198,21 +264,11 @@
     pointer-events: none;
   }
 
-  .glow {
-    box-shadow: 0 0 0 1px rgba(124, 140, 255, 0.2),
-      0 20px 70px -20px rgba(124, 140, 255, 0.45);
-  }
-
   .text-balance {
     text-wrap: balance;
   }
   .text-pretty {
     text-wrap: pretty;
-  }
-
-  /* Section reveal helper used by client wrappers */
-  .reveal-mask {
-    -webkit-mask-image: linear-gradient(#000, #000);
   }
 }
 

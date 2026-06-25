@@ -30,9 +30,9 @@ export function Logo({
           width="30"
           height="30"
           rx="9"
-          fill="#0e1118"
+          fill="var(--surface)"
           stroke="url(#xico-mark)"
-          strokeOpacity="0.5"
+          strokeOpacity="0.55"
           strokeWidth="1"
         />
         <path

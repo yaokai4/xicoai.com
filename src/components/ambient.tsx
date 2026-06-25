@@ -11,12 +11,12 @@ export function Ambient() {
       {/* engineering grid, masked to fade near the top */}
       <div className="absolute inset-x-0 top-0 h-[140vh] bg-grid opacity-70" />
 
-      {/* aurora blobs */}
+      {/* aurora blobs (theme-reactive tint) */}
       <div
         className="absolute left-1/2 top-[-18%] h-[70vh] w-[85vw] max-w-[1100px] -translate-x-1/2 rounded-full blur-[130px] animate-aurora"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(124,140,255,0.45), rgba(124,140,255,0) 70%)",
+            "radial-gradient(closest-side, var(--aurora-1), transparent 70%)",
         }}
       />
       <div
@@ -24,7 +24,7 @@ export function Ambient() {
         style={{
           animationDelay: "-7s",
           background:
-            "radial-gradient(closest-side, rgba(176,124,255,0.32), rgba(176,124,255,0) 70%)",
+            "radial-gradient(closest-side, var(--aurora-2), transparent 70%)",
         }}
       />
       <div
@@ -32,7 +32,7 @@ export function Ambient() {
         style={{
           animationDelay: "-13s",
           background:
-            "radial-gradient(closest-side, rgba(94,231,208,0.20), rgba(94,231,208,0) 70%)",
+            "radial-gradient(closest-side, var(--aurora-3), transparent 70%)",
         }}
       />
 

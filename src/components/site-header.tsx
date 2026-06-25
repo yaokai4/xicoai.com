@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { navItems } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -59,7 +60,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle />
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>
@@ -102,7 +104,10 @@ export function SiteHeader() {
             </Link>
           ))}
           <div className="mt-6 flex items-center justify-between">
-            <LocaleSwitcher />
+            <div className="flex items-center gap-2">
+              <LocaleSwitcher />
+              <ThemeToggle />
+            </div>
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}

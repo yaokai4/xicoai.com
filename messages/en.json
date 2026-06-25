@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "XICO — AI-native product studio",
+    "title": "XICO — an AI & design product company",
     "titleTemplate": "%s — XICO",
-    "description": "Changsha Xico Technology (XICO) is a technology team blending AI, product and design. We build our own products and craft 0-to-1 digital experiences for partners.",
+    "description": "XICO is a technology company blending AI, product and design, founded in Tokyo and Changsha. We build our own products, and help partners turn ideas into products that actually ship and run.",
     "company": "Changsha Xico Technology Co., Ltd."
   },
   "nav": {
@@ -17,10 +17,10 @@
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "Changsha Xico Technology · AI-native product studio",
+    "eyebrow": "XICO · Founded in Tokyo & Changsha",
     "titleLine1": "We build AI-native products",
     "titleLine2": "with the craft of design.",
-    "subtitle": "XICO is a technology team blending artificial intelligence, product and design. We build our own products and craft 0-to-1 digital experiences for partners.",
+    "subtitle": "XICO is a technology company blending artificial intelligence, product and design. We build our own products, and help partners turn ideas into products that actually ship and run.",
     "ctaPrimary": "See our work",
     "ctaSecondary": "Start a project",
     "scroll": "Scroll"
@@ -124,7 +124,7 @@
     "emailLabel": "Or email us directly"
   },
   "footer": {
-    "tagline": "An AI-native product studio. Made in Changsha, China — built for the world.",
+    "tagline": "A technology company building products with AI and design. Founded in Tokyo and Changsha — built for the world.",
     "groups": {
       "company": "Company",
       "products": "Products",
@@ -140,7 +140,7 @@
       "machi": "Machi",
       "shangence": "Shangence",
       "email": "Email",
-      "location": "Changsha · China"
+      "location": "Tokyo · Changsha"
     },
     "rights": "All rights reserved.",
     "icp": "湘ICP备XXXXXXXX号",
@@ -149,7 +149,7 @@
   "about": {
     "eyebrow": "About XICO",
     "title": "We use technology and taste to build things that last.",
-    "subtitle": "Changsha Xico Technology is a technology team rooted in Changsha, China, with AI and design at its core.",
+    "subtitle": "XICO is a technology company founded in Tokyo and Changsha, with AI and design at its core.",
     "story": [
       "XICO believes the best products are born at the intersection of engineering and design. We are developers and founders alike — pouring our craft into products we truly believe in.",
       "With AI as the foundation and design as the language, we build digital products from mobile apps to business platforms. And we keep extending that capability into new fields like cross-border commerce and study abroad.",
@@ -227,7 +227,7 @@
       "title": "Other ways",
       "emailLabel": "Email",
       "locationLabel": "Location",
-      "location": "Changsha · China"
+      "location": "Tokyo · Changsha"
     }
   },
   "careers": {
