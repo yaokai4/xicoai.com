@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { wordmarkFor } from "@/components/brand/logo";
 import { PageHero } from "@/components/page-hero";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
-import { CTA } from "@/components/sections/cta";
+import { ButtonLink, ArrowIcon } from "@/components/ui/button";
+import { site } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -29,6 +31,9 @@ export default async function AboutPage({
 
 function AboutContent() {
   const t = useTranslations("about");
+  const tc = useTranslations("contact");
+  const tcta = useTranslations("cta");
+  const locale = useLocale();
   const story = t.raw("story") as string[];
   const values = t.raw("values.items") as { title: string; desc: string }[];
   const founderBio = t.raw("founder.bio") as string[];
@@ -55,7 +60,7 @@ function AboutContent() {
                   }}
                 />
                 <p className="font-display text-xl font-semibold text-foreground">
-                  XICO
+                  {wordmarkFor(locale)}
                 </p>
                 <p className="mt-2 text-sm text-muted">
                   {t("subtitle")}
@@ -132,7 +137,61 @@ function AboutContent() {
         </Container>
       </section>
 
-      <CTA />
+      <section className="pb-24 sm:pb-32">
+        <Container>
+          <Reveal>
+            <div className="spotlight-card card-elevated border-gradient relative overflow-hidden rounded-[2rem] border border-border bg-surface/60 px-8 py-14 sm:px-14 sm:py-16">
+              <SpotlightTracker />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-70 blur-[90px]"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 32%, transparent), transparent 70%)",
+                }}
+              />
+              <div className="relative z-[2] grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center">
+                <div>
+                  <Eyebrow>{tc("eyebrow")}</Eyebrow>
+                  <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl">
+                    {tc("title")}
+                  </h2>
+                  <p className="mt-4 max-w-md leading-relaxed text-muted">
+                    {tc("subtitle")}
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-x-12 gap-y-4">
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-faint">
+                        {tc("direct.emailLabel")}
+                      </div>
+                      <a
+                        href={`mailto:${site.email}`}
+                        className="mt-1 block text-foreground transition-colors hover:text-accent"
+                      >
+                        {site.email}
+                      </a>
+                    </div>
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-faint">
+                        {tc("direct.locationLabel")}
+                      </div>
+                      <div className="mt-1 text-foreground">
+                        {tc("direct.location")}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:justify-self-end">
+                  <ButtonLink href="/contact" variant="primary">
+                    {tcta("button")}
+                    <ArrowIcon />
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 }

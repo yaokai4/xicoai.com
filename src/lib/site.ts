@@ -11,10 +11,9 @@ export const site = {
 } as const;
 
 export const navItems = [
+  { key: "home", href: "/" },
   { key: "work", href: "/#work" },
   { key: "services", href: "/services" },
-  { key: "about", href: "/about" },
   { key: "blog", href: "/blog" },
-  { key: "careers", href: "/careers" },
-  { key: "contact", href: "/contact" },
+  { key: "about", href: "/about" },
 ] as const;
