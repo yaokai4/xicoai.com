@@ -4,7 +4,7 @@ import { useState, useActionState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { submitContact, type SubmitState } from "@/app/actions/submit";
 import { TextField, TextArea, Honeypot } from "@/components/ui/form";
-import { buttonClass, ArrowIcon } from "@/components/ui/button";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { FormSuccess } from "@/components/form-success";
 
 const TOPIC_KEYS = ["collaboration", "consulting", "careers", "other"] as const;
@@ -58,14 +58,7 @@ export function ContactForm() {
       {state.error && <p className="text-sm text-red-400">{t("note")}</p>}
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={pending}
-          className={buttonClass("primary")}
-        >
-          {pending ? "…" : t("submit")}
-          {!pending && <ArrowIcon />}
-        </button>
+        <SubmitButton pending={pending}>{t("submit")}</SubmitButton>
         <p className="text-xs text-faint">{t("note")}</p>
       </div>
     </form>

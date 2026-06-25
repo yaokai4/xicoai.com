@@ -44,6 +44,31 @@ VALUES (
 )
 ON CONFLICT (slug) DO NOTHING;
 
+-- More blog posts (idempotent).
+INSERT INTO posts (slug, title, excerpt, body, tag, cover_color, status, published_at)
+VALUES
+(
+  'aesthetics-as-advantage',
+  '{"zh":"审美，是一种被低估的竞争力","ja":"美意識は、過小評価された競争力","en":"Aesthetics is an underrated competitive advantage"}',
+  '{"zh":"为什么我们把设计放在与工程同样重要的位置。","ja":"なぜ私たちはデザインをエンジニアリングと同じ重みで扱うのか。","en":"Why we treat design as equal in weight to engineering."}',
+  '{"zh":"在很多团队里，设计是最后一道工序——功能先做完，再「美化」一下。我们不这么看。\n\n对用户来说，第一眼的质感，就是对产品是否可信的判断。一个排版混乱、间距随意的界面，会让人怀疑背后的工程是否同样草率。审美不是装饰，而是信任的前置条件。\n\n在希可，设计和工程从第一天就坐在一起。我们在意一个按钮按下去的回弹、一段文字换行的位置、暗色模式下一道阴影的深浅——正是这些看不见的细节，决定了产品「高级」还是「廉价」。\n\n把审美做成肌肉记忆，小团队也能做出让人愿意反复打开的产品。","ja":"多くのチームでは、デザインは最後の工程です——機能を作り終えてから「見た目を整える」。私たちはそう考えません。\n\nユーザーにとって、最初のひと目の質感こそが、プロダクトを信頼できるかの判断材料です。レイアウトが乱れ、余白が雑な画面は、その裏のエンジニアリングも同じく雑ではと疑わせます。美意識は装飾ではなく、信頼の前提条件です。\n\nXICO では、デザインとエンジニアリングは初日から同じ机に座ります。ボタンを押したときの跳ね返り、文章の改行位置、ダークモードでの影の濃さ——こうした見えない細部こそが「高級」か「安っぽい」かを決めます。\n\n美意識を筋肉の記憶にすれば、小さなチームでも、何度も開きたくなるプロダクトをつくれます。","en":"On many teams, design is the last step — build the features, then make it pretty. We don’t see it that way.\n\nFor a user, the quality of that first glance is how they judge whether a product can be trusted. A cluttered layout with careless spacing makes people suspect the engineering behind it is just as careless. Aesthetics aren’t decoration; they’re a precondition for trust.\n\nAt XICO, design and engineering sit at the same table from day one. We care about the spring of a button when it’s pressed, where a line of text wraps, how deep a shadow is in dark mode — these invisible details are exactly what make a product feel premium rather than cheap.\n\nTurn aesthetics into muscle memory, and even a small team can build products people want to open again and again."}',
+  'Design',
+  '#8b5cf6',
+  'published',
+  now()
+),
+(
+  'ai-as-leverage',
+  '{"zh":"用 AI 创造杠杆：小团队如何做出大产品","ja":"AIでレバレッジを：小さなチームが大きなプロダクトをつくる方法","en":"AI as leverage: how a small team builds big products"}',
+  '{"zh":"AI 不是用来取代人，而是放大每个人能做的事。","ja":"AIは人を置き換えるためでなく、一人ひとりができることを増幅するために。","en":"AI is not about replacing people — it is about amplifying what each person can do."}',
+  '{"zh":"过去，做一个跨城市、多语言的产品，需要一支很大的团队。今天不一定了。\n\n我们把 AI 当作杠杆：一个人，借助大模型、智能体与自动化，可以完成过去需要一个小组才能完成的事。写文案、做翻译、整理数据、生成初稿、跑评测——这些曾经吃掉大量时间的环节被压缩，把人的精力释放到真正需要判断力的地方。\n\n但杠杆放大的前提，是方向正确。AI 会让对的决定更快兑现，也会让错的决定更快放大。所以我们仍然把「想清楚再做」放在最前面：先定义问题，再让 AI 加速。\n\n这就是我们做 Machi 与 Shangence 的方式——用很小的团队，认真地服务很多人。","ja":"かつて、複数都市・多言語のプロダクトをつくるには、大きなチームが必要でした。今は必ずしもそうではありません。\n\n私たちは AI をレバレッジとして使います。一人が、LLM・エージェント・自動化の力を借りて、かつてはチームが必要だった仕事をこなせます。コピー、翻訳、データ整理、下書き生成、評価——時間を奪っていた工程を圧縮し、人の力を本当に判断が要る場所へ解き放ちます。\n\nただし、レバレッジは方向が正しいことが前提です。AI は正しい判断を速く実現し、誤った判断も速く拡大します。だから私たちは「よく考えてから動く」を最優先にします。まず問題を定義し、それから AI で加速する。\n\nこれが、Machi と Shangence をつくる私たちのやり方です——とても小さなチームで、とても多くの人に、真摯に。","en":"Building a multi-city, multilingual product used to require a large team. Today, not necessarily.\n\nWe treat AI as leverage: one person, with the help of large models, agents and automation, can do what once took a whole group. Copywriting, translation, organizing data, drafting, running evals — the steps that used to eat enormous amounts of time get compressed, freeing human energy for the places that actually need judgment.\n\nBut leverage only helps if the direction is right. AI makes good decisions arrive faster, and bad ones scale faster too. So we still put thinking it through first ahead of everything: define the problem, then let AI accelerate.\n\nThis is how we build Machi and Shangence — a very small team, seriously serving a great many people."}',
+  'AI',
+  '#0e9f8e',
+  'published',
+  now()
+)
+ON CONFLICT (slug) DO NOTHING;
+
 -- More starter roles (idempotent).
 INSERT INTO jobs (slug, title, team, location, employment_type, remote, summary, description, requirements, status, sort_order)
 VALUES

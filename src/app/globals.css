@@ -84,8 +84,9 @@
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.018)
   );
-  --glass-shadow: none;
-  --card-shadow: none;
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.4), 0 22px 50px -30px rgba(0, 0, 0, 0.8);
   --sb: rgba(255, 255, 255, 0.16);
 
   --aurora-1: rgba(124, 140, 255, 0.45);

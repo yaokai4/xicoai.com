@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { submitApplication, type SubmitState } from "@/app/actions/submit";
 import { TextField, TextArea, FileField, Honeypot } from "@/components/ui/form";
-import { buttonClass, ArrowIcon } from "@/components/ui/button";
+import { SubmitButton } from "@/components/ui/submit-button";
 import { FormSuccess } from "@/components/form-success";
 
 export function ApplyForm({ jobSlug }: { jobSlug?: string }) {
@@ -39,14 +39,13 @@ export function ApplyForm({ jobSlug }: { jobSlug?: string }) {
 
       {state.error && <p className="text-sm text-red-400">{t("error")}</p>}
 
-      <button
-        type="submit"
-        disabled={pending}
-        className={buttonClass("primary", "w-full sm:w-auto")}
+      <SubmitButton
+        pending={pending}
+        pendingLabel={t("sending")}
+        className="w-full sm:w-auto"
       >
-        {pending ? t("sending") : t("submit")}
-        {!pending && <ArrowIcon />}
-      </button>
+        {t("submit")}
+      </SubmitButton>
     </form>
   );
 }

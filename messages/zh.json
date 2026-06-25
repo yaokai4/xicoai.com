@@ -1,4 +1,9 @@
 {
+  "notFound": {
+    "title": "页面走丢了",
+    "desc": "你要找的页面不存在，或已被移动。",
+    "home": "返回主页"
+  },
   "meta": {
     "title": "希可科技 — 用 AI 与设计打造产品的科技公司",
     "titleTemplate": "%s — 希可科技",
