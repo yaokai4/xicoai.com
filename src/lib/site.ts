@@ -14,6 +14,7 @@ export const navItems = [
   { key: "work", href: "/#work" },
   { key: "services", href: "/services" },
   { key: "about", href: "/about" },
+  { key: "blog", href: "/blog" },
   { key: "careers", href: "/careers" },
   { key: "contact", href: "/contact" },
 ] as const;

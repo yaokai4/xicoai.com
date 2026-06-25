@@ -9,6 +9,7 @@
     "work": "Work",
     "services": "Capabilities",
     "about": "About",
+    "blog": "Insights",
     "careers": "Careers",
     "contact": "Contact",
     "cta": "Start a project",
@@ -306,5 +307,14 @@
         "field3": "How you'd like to work together"
       }
     }
+  },
+  "blog": {
+    "eyebrow": "Insights",
+    "title": "Ideas, process, and the thinking behind our products.",
+    "subtitle": "Notes from XICO on product, design, AI and building a company.",
+    "empty": "Articles are on the way — stay tuned.",
+    "readMore": "Read more",
+    "backToList": "← Back to all posts",
+    "publishedOn": "Published"
   }
 }

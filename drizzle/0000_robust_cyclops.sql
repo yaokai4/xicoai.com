@@ -3,6 +3,7 @@ CREATE TYPE "public"."employment_type" AS ENUM('full_time', 'part_time', 'intern
 CREATE TYPE "public"."job_status" AS ENUM('draft', 'open', 'closed');--> statement-breakpoint
 CREATE TYPE "public"."join_status" AS ENUM('new', 'reviewing', 'contacted', 'archived');--> statement-breakpoint
 CREATE TYPE "public"."join_type" AS ENUM('investor', 'partner', 'collaborator');--> statement-breakpoint
+CREATE TYPE "public"."post_status" AS ENUM('draft', 'published');--> statement-breakpoint
 CREATE TABLE "applications" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"job_id" integer,
@@ -60,6 +61,21 @@ CREATE TABLE "join_submissions" (
 	"locale" varchar(8),
 	"status" "join_status" DEFAULT 'new' NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "posts" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"slug" varchar(160) NOT NULL,
+	"title" jsonb NOT NULL,
+	"excerpt" jsonb,
+	"body" jsonb,
+	"tag" varchar(48),
+	"cover_color" varchar(24),
+	"status" "post_status" DEFAULT 'draft' NOT NULL,
+	"published_at" timestamp with time zone,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "posts_slug_unique" UNIQUE("slug")
 );
 --> statement-breakpoint
 ALTER TABLE "applications" ADD CONSTRAINT "applications_job_id_jobs_id_fk" FOREIGN KEY ("job_id") REFERENCES "public"."jobs"("id") ON DELETE set null ON UPDATE no action;

@@ -43,6 +43,26 @@ export const joinStatus = pgEnum("join_status", [
   "archived",
 ]);
 
+export const postStatus = pgEnum("post_status", ["draft", "published"]);
+
+export const posts = pgTable("posts", {
+  id: serial("id").primaryKey(),
+  slug: varchar("slug", { length: 160 }).notNull().unique(),
+  title: jsonb("title").$type<L10n>().notNull(),
+  excerpt: jsonb("excerpt").$type<L10n>(),
+  body: jsonb("body").$type<L10n>(),
+  tag: varchar("tag", { length: 48 }),
+  coverColor: varchar("cover_color", { length: 24 }),
+  status: postStatus("status").notNull().default("draft"),
+  publishedAt: timestamp("published_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
 export const jobs = pgTable("jobs", {
   id: serial("id").primaryKey(),
   slug: varchar("slug", { length: 128 }).notNull().unique(),
@@ -114,6 +134,7 @@ export const contactMessages = pgTable("contact_messages", {
 });
 
 export type Job = typeof jobs.$inferSelect;
+export type Post = typeof posts.$inferSelect;
 export type Application = typeof applications.$inferSelect;
 export type JoinSubmission = typeof joinSubmissions.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;

@@ -7,6 +7,7 @@ import { Logo } from "@/components/brand/logo";
 
 const NAV = [
   { href: "/admin", label: "概览" },
+  { href: "/admin/posts", label: "文章" },
   { href: "/admin/jobs", label: "职位" },
   { href: "/admin/applications", label: "投递" },
   { href: "/admin/join", label: "Join 提交" },
