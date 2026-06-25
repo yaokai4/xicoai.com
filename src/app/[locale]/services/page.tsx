@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { PageHero } from "@/components/page-hero";
+import { Container } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
+import { CTA } from "@/components/sections/cta";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "nav" });
+  return { title: t("services") };
+}
+
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <ServicesContent />;
+}
+
+type Service = { title: string; desc: string; points: string[] };
+
+function ServicesContent() {
+  const t = useTranslations("services");
+  const sections = t.raw("sections") as Service[];
+
+  return (
+    <>
+      <PageHero
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+      />
+
+      <section className="pb-24 sm:pb-32">
+        <Container>
+          <div className="flex flex-col gap-4">
+            {sections.map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.06}>
+                <article className="group grid gap-8 rounded-3xl border border-border bg-surface/40 p-8 transition-colors duration-500 hover:border-border-strong sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
+                  <div>
+                    <span className="font-display text-sm font-semibold text-brand">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                      {s.title}
+                    </h2>
+                    <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+                      {s.desc}
+                    </p>
+                  </div>
+                  <ul className="grid gap-3 sm:grid-cols-2 lg:border-l lg:border-border lg:pl-10">
+                    {s.points.map((p) => (
+                      <li
+                        key={p}
+                        className="flex items-start gap-3 text-sm text-muted/90"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CTA />
+    </>
+  );
+}

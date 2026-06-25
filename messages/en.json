@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "title": "XICO — AI-native product studio",
+    "titleTemplate": "%s — XICO",
+    "description": "Changsha Xico Technology (XICO) is a technology team blending AI, product and design. We build our own products and craft 0-to-1 digital experiences for partners.",
+    "company": "Changsha Xico Technology Co., Ltd."
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Capabilities",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "cta": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Changsha Xico Technology · AI-native product studio",
+    "titleLine1": "We build AI-native products",
+    "titleLine2": "with the craft of design.",
+    "subtitle": "XICO is a technology team blending artificial intelligence, product and design. We build our own products and craft 0-to-1 digital experiences for partners.",
+    "ctaPrimary": "See our work",
+    "ctaSecondary": "Start a project",
+    "scroll": "Scroll"
+  },
+  "marquee": {
+    "items": [
+      "Artificial Intelligence",
+      "Product Design",
+      "Software Engineering",
+      "Brand Experience",
+      "Cross-border Growth",
+      "Agents",
+      "User Experience",
+      "Cloud Native"
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "Full-stack product capability",
+    "subtitle": "From an idea to a live product, XICO can deliver every step in-house.",
+    "items": [
+      {
+        "title": "AI Engineering",
+        "desc": "LLM apps, agents, RAG and recommendation — bringing frontier capability into real, reliable products.",
+        "tags": ["LLM apps", "Agents", "RAG", "Recsys"]
+      },
+      {
+        "title": "Product Design",
+        "desc": "From brand to interface, we define every detail of the experience in a design-led way.",
+        "tags": ["Brand", "UI/UX", "Design systems", "Motion"]
+      },
+      {
+        "title": "Software Engineering",
+        "desc": "From web and mobile to cloud-native infrastructure — robust, maintainable delivery.",
+        "tags": ["Web", "Apps", "Full-stack", "Cloud"]
+      },
+      {
+        "title": "Growth & Global",
+        "desc": "For cross-border commerce and study-abroad, connecting China with world markets.",
+        "tags": ["Cross-border", "Study abroad", "Multi-market", "Growth"]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "Our work",
+    "title": "Products in the making",
+    "subtitle": "We are builders and founders — pouring our craft into products we believe in.",
+    "viewLabel": "Learn more",
+    "items": [
+      {
+        "key": "machi",
+        "name": "Machi",
+        "kind": "City-living platform · starting in Tokyo",
+        "desc": "Find the echoes of life in every city. A global city-living platform uniting housing, classifieds, jobs, local services and community.",
+        "status": "In the making"
+      },
+      {
+        "key": "shangence",
+        "name": "Shangence",
+        "kind": "Startup risk-assessment platform",
+        "desc": "Measure before you start. A risk-assessment and capital stop-loss platform helping China's micro-entrepreneurs decide with data.",
+        "status": "Building"
+      },
+      {
+        "key": "next",
+        "name": "More on the way",
+        "kind": "Study abroad · Cross-border",
+        "desc": "New business lines are incubating, bringing XICO's capability to broader markets.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "How we work",
+    "subtitle": "Four principles that run through every XICO product.",
+    "principles": [
+      {
+        "title": "AI-native",
+        "desc": "We treat AI as the foundation of the product, not a feature bolted on afterwards."
+      },
+      {
+        "title": "Design-led",
+        "desc": "We make aesthetics and experience the real competitive edge."
+      },
+      {
+        "title": "Built to last",
+        "desc": "Systems that are maintainable, scalable and stand the test of time."
+      },
+      {
+        "title": "Globally minded",
+        "desc": "Designed for multiple languages and markets from day one."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Start a project",
+    "title": "Have an idea? Let's build it together.",
+    "subtitle": "Whether it's a product collaboration, technical consulting, or joining XICO — we'd love to hear from you.",
+    "button": "Get in touch",
+    "emailLabel": "Or email us directly"
+  },
+  "footer": {
+    "tagline": "An AI-native product studio. Made in Changsha, China — built for the world.",
+    "groups": {
+      "company": "Company",
+      "products": "Products",
+      "connect": "Connect"
+    },
+    "links": {
+      "about": "About",
+      "work": "Work",
+      "services": "Capabilities",
+      "contact": "Contact",
+      "careers": "Careers",
+      "join": "Investors / Partners",
+      "machi": "Machi",
+      "shangence": "Shangence",
+      "email": "Email",
+      "location": "Changsha · China"
+    },
+    "rights": "All rights reserved.",
+    "icp": "湘ICP备XXXXXXXX号",
+    "comingSoon": "Coming soon"
+  },
+  "about": {
+    "eyebrow": "About XICO",
+    "title": "We use technology and taste to build things that last.",
+    "subtitle": "Changsha Xico Technology is a technology team rooted in Changsha, China, with AI and design at its core.",
+    "story": [
+      "XICO believes the best products are born at the intersection of engineering and design. We are developers and founders alike — pouring our craft into products we truly believe in.",
+      "With AI as the foundation and design as the language, we build digital products from mobile apps to business platforms. And we keep extending that capability into new fields like cross-border commerce and study abroad.",
+      "Our goal is simple: to make good products that endure — and travel beyond borders."
+    ],
+    "values": {
+      "title": "What we believe",
+      "items": [
+        { "title": "Taste is leverage", "desc": "Detail defines quality; quality defines trust." },
+        { "title": "AI as leverage", "desc": "So a small team can build outsized impact." },
+        { "title": "Long-term", "desc": "We work for decisions that still hold years later." },
+        { "title": "Global by nature", "desc": "From China, built for the world." }
+      ]
+    },
+    "founder": {
+      "eyebrow": "Founder",
+      "name": "Yao Kai · 姚凱",
+      "role": "Founder & CEO",
+      "quote": "The best products are born at the intersection of engineering and design.",
+      "bio": [
+        "I believe real product strength comes from building with real-world operations as the premise — seeing a thing through end to end, from finding the problem, defining requirements and designing the experience, to launch, payments, support and back office.",
+        "I bring a full-stack mindset that connects front-end, mobile, back-end, databases and cloud infrastructure into one coherent product — and I care about payments, admin dashboards, legal compliance and security: the details that make a service actually run.",
+        "I work across Chinese, Japanese and English, communicating and collaborating across cultures. XICO is where that belief becomes product."
+      ]
+    }
+  },
+  "services": {
+    "eyebrow": "Capabilities",
+    "title": "From idea to launch — end to end.",
+    "subtitle": "XICO offers full product capability, and can flexibly step in wherever you need.",
+    "sections": [
+      {
+        "title": "AI Engineering",
+        "desc": "Turning large models and agents into stable, controllable, shippable products.",
+        "points": ["LLM apps & agents", "RAG & knowledge bases", "Recommendation & personalization", "AI infra & evals"]
+      },
+      {
+        "title": "Product Design",
+        "desc": "Defining brand and experience in a design-led way that earns trust at first sight.",
+        "points": ["Brand & identity", "UI / UX design", "Design systems", "Prototyping & motion"]
+      },
+      {
+        "title": "Software Engineering",
+        "desc": "Building complete, maintainable systems from front-end to cloud-native infrastructure.",
+        "points": ["Web & mobile", "Full-stack & APIs", "Cloud-native & DevOps", "Performance & reliability"]
+      },
+      {
+        "title": "Growth & Global",
+        "desc": "Taking products cross-border and multi-market — connecting China with the world.",
+        "points": ["Cross-border commerce", "Study abroad & education", "i18n & localization", "Growth & operations"]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk.",
+    "subtitle": "For collaboration, technical consulting or joining us — fill in the form below, or email us directly.",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "company": "Company / team (optional)",
+      "topic": "What's it about",
+      "topics": {
+        "collaboration": "Product / business collaboration",
+        "consulting": "Technical consulting",
+        "careers": "Joining XICO",
+        "other": "Something else"
+      },
+      "message": "Your message",
+      "submit": "Send",
+      "success": "Received — thank you! We'll get back to you soon.",
+      "note": "We usually reply within 1–2 business days."
+    },
+    "direct": {
+      "title": "Other ways",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "location": "Changsha · China"
+    }
+  },
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Build the future of cities and commerce with us.",
+    "subtitle": "XICO is a small, high-craft team. We build real, operating products with AI and design — and we're looking for people who want to build for the long run.",
+    "openRoles": "Open roles",
+    "noRoles": "No public roles right now — but we always welcome great people. Just write to us.",
+    "remote": "Remote",
+    "onsite": "On-site",
+    "joinCta": "Investor / partner / collaborator?",
+    "joinCtaLink": "Go to Join →",
+    "types": {
+      "full_time": "Full-time",
+      "part_time": "Part-time",
+      "intern": "Internship",
+      "partner": "Partner",
+      "contract": "Contract"
+    },
+    "apply": "Apply for this role",
+    "applyTitle": "Apply online",
+    "backToList": "← Back to all roles",
+    "responsibilities": "What you'll do",
+    "requirements": "What we look for",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "links": "Portfolio / GitHub / site (optional)",
+      "resume": "Upload résumé",
+      "resumeHint": "PDF or Word, ≤ 10MB",
+      "note": "Anything you'd like to tell us",
+      "submit": "Submit application",
+      "sending": "Submitting…",
+      "success": "Application received! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again, or email us directly."
+    }
+  },
+  "join": {
+    "eyebrow": "Investors · Partners · Collaboration",
+    "title": "If you believe in what we're building.",
+    "subtitle": "XICO is building long-term products like Machi and Shangence, and expanding into study-abroad and cross-border. Whether you're an investor, a hands-on project partner, or a collaborator — we'd love to meet you.",
+    "tabs": {
+      "investor": "Investor",
+      "partner": "Project partner",
+      "collaborator": "Collaborator"
+    },
+    "intro": {
+      "investor": "Learn our direction, progress and fundraising plan — and grow it with us.",
+      "partner": "Join a business line hands-on, from 0 to 1, as a partner.",
+      "collaborator": "Collaborate on technology, design, channels or resources."
+    },
+    "fields": {
+      "name": "Your name",
+      "email": "Email",
+      "org": "Organization / company (optional)",
+      "links": "Relevant links (optional)",
+      "intro": "Your message",
+      "submit": "Submit",
+      "sending": "Submitting…",
+      "success": "Received — thank you! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again.",
+      "investor": {
+        "field1": "Firm / fund type",
+        "field2": "Ticket size range",
+        "field3": "Focus areas"
+      },
+      "partner": {
+        "field1": "Time you can commit",
+        "field2": "Strengths / skills",
+        "field3": "Resources you bring"
+      },
+      "collaborator": {
+        "field1": "Type of collaboration",
+        "field2": "Your role / company",
+        "field3": "How you'd like to work together"
+      }
+    }
+  }
+}

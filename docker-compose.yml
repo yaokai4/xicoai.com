@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: xicoai-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: xico
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: xico
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U xico -d xico"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  app:
+    build: .
+    image: xicoai-web
+    container_name: xicoai-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://xico:${POSTGRES_PASSWORD}@db:5432/xico
+      NODE_ENV: production
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - uploads:/app/uploads
+    expose:
+      - "3000"
+
+volumes:
+  pgdata:
+  uploads:
