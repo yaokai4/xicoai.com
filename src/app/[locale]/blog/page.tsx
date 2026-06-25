@@ -70,7 +70,7 @@ function PostCard({ post, locale }: { post: Post; locale: string }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40 transition-all duration-500 hover:border-border-strong hover:bg-surface"
+      className="group card-elevated flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface"
     >
       <div
         className="h-32 w-full"

@@ -41,16 +41,17 @@
     rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.66)
   );
-  --glass-shadow: 0 1px 2px rgba(16, 18, 28, 0.04),
-    0 16px 40px -20px rgba(16, 18, 28, 0.18);
-  --card-shadow: 0 1px 2px rgba(16, 18, 28, 0.04),
-    0 18px 50px -28px rgba(16, 18, 28, 0.16);
+  --glass-shadow: 0 1px 2px rgba(16, 18, 28, 0.05),
+    0 14px 36px -18px rgba(40, 32, 90, 0.16);
+  --card-shadow: 0 1px 2px rgba(16, 18, 28, 0.05),
+    0 10px 24px -14px rgba(24, 22, 50, 0.1),
+    0 30px 60px -36px rgba(72, 52, 170, 0.16);
   --sb: rgba(15, 18, 30, 0.18);
 
   /* ambient aurora tint/strength */
-  --aurora-1: rgba(91, 99, 230, 0.18);
-  --aurora-2: rgba(139, 92, 246, 0.14);
-  --aurora-3: rgba(14, 159, 142, 0.12);
+  --aurora-1: rgba(91, 99, 230, 0.24);
+  --aurora-2: rgba(139, 92, 246, 0.19);
+  --aurora-3: rgba(20, 170, 150, 0.16);
 }
 
 /* ---- DARK ("night") ---- */

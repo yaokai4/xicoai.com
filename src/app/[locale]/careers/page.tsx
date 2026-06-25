@@ -99,7 +99,7 @@ function JobRow({
   return (
     <Link
       href={`/careers/${job.slug}`}
-      className="group flex flex-col gap-4 rounded-2xl border border-border bg-surface/40 p-6 transition-all duration-300 hover:border-border-strong hover:bg-surface sm:flex-row sm:items-center sm:justify-between sm:p-7"
+      className="group card-elevated flex flex-col gap-4 rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface sm:flex-row sm:items-center sm:justify-between sm:p-7"
     >
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2 text-xs text-faint">

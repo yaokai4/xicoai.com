@@ -53,7 +53,7 @@ export function Work() {
               <Reveal key={item.key} delay={i * 0.1} className={s.span}>
                 <article
                   className={cn(
-                    "group relative h-full overflow-hidden rounded-3xl border bg-surface/40 p-8 transition-all duration-500 sm:p-10",
+                    "group card-elevated relative h-full overflow-hidden rounded-3xl border bg-surface/60 p-8 transition-all duration-500 sm:p-10",
                     isNext
                       ? "border-dashed border-border hover:border-border-strong"
                       : "border-border hover:border-border-strong hover:bg-surface",
