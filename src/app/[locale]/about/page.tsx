@@ -86,9 +86,11 @@ function AboutContent() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((v, i) => (
                 <Reveal key={v.title} delay={i * 0.07}>
-                  <div className="spotlight-card card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong">
+                  <div className="group spotlight-card card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong">
                     <SpotlightTracker />
-                    <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-brand to-violet" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-brand/10 text-brand transition-colors duration-300 group-hover:border-brand/30 group-hover:bg-brand/15">
+                      <ValueIcon index={i} />
+                    </div>
                     <h3 className="mt-5 font-display font-semibold text-foreground">
                       {v.title}
                     </h3>
@@ -193,5 +195,29 @@ function AboutContent() {
         </Container>
       </section>
     </>
+  );
+}
+
+function ValueIcon({ index }: { index: number }) {
+  const paths = [
+    // 审美即竞争力 — sparkle
+    "M12 3c.6 4.8 2.6 6.8 7 7-4.4.2-6.4 2.2-7 7-.6-4.8-2.6-6.8-7-7 4.4-.2 6.4-2.2 7-7z",
+    // 用 AI 创造杠杆 — bolt
+    "M13 2.5 5 13.5h5l-1 8 8-11.5h-5l1-7.5z",
+    // 长期主义 — clock
+    "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2",
+    // 全球化基因 — globe
+    "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3.5 9.5h17M3.5 14.5h17M12 3c2.4 2.5 3.6 5.6 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.6-3.6-9s1.2-6.5 3.6-9z",
+  ];
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d={paths[index % paths.length]}
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
