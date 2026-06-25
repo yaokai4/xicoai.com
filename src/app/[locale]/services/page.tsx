@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
 
 export async function generateMetadata({
@@ -45,8 +46,9 @@ function ServicesContent() {
           <div className="flex flex-col gap-4">
             {sections.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06}>
-                <article className="group grid gap-8 rounded-3xl border border-border bg-surface/40 p-8 transition-colors duration-500 hover:border-border-strong sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
-                  <div>
+                <article className="spotlight-card group card-elevated grid gap-8 overflow-hidden rounded-3xl border border-border bg-surface/60 p-8 transition-all duration-500 hover:border-border-strong sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
+                  <SpotlightTracker />
+                  <div className="relative z-[2]">
                     <span className="font-display text-sm font-semibold text-brand">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -57,7 +59,7 @@ function ServicesContent() {
                       {s.desc}
                     </p>
                   </div>
-                  <ul className="grid gap-3 sm:grid-cols-2 lg:border-l lg:border-border lg:pl-10">
+                  <ul className="relative z-[2] grid gap-3 sm:grid-cols-2 lg:border-l lg:border-border lg:pl-10">
                     {s.points.map((p) => (
                       <li
                         key={p}

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/page-hero";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
 
 export async function generateMetadata({
@@ -80,7 +81,8 @@ function AboutContent() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((v, i) => (
                 <Reveal key={v.title} delay={i * 0.07}>
-                  <div className="h-full rounded-2xl border border-border bg-surface/40 p-6">
+                  <div className="spotlight-card card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong">
+                    <SpotlightTracker />
                     <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-brand to-violet" />
                     <h3 className="mt-5 font-display font-semibold text-foreground">
                       {v.title}

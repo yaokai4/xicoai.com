@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
 import { getOpenJobs } from "@/lib/jobs";
 import { pickL10n } from "@/lib/content";
@@ -99,8 +100,9 @@ function JobRow({
   return (
     <Link
       href={`/careers/${job.slug}`}
-      className="group card-elevated flex flex-col gap-4 rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface sm:flex-row sm:items-center sm:justify-between sm:p-7"
+      className="spotlight-card group card-elevated flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface sm:flex-row sm:items-center sm:justify-between sm:p-7"
     >
+      <SpotlightTracker />
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2 text-xs text-faint">
           {job.team && <span>{job.team}</span>}

@@ -15,6 +15,18 @@ export function Container({
   );
 }
 
+/** An elegant centered gradient hairline to mark section transitions. */
+export function Divider({ className }: { className?: string }) {
+  return (
+    <div className={cn("mx-auto max-w-7xl px-6 lg:px-8", className)}>
+      <div
+        aria-hidden
+        className="h-px w-full bg-gradient-to-r from-transparent via-border-strong to-transparent"
+      />
+    </div>
+  );
+}
+
 export function Eyebrow({
   children,
   className,

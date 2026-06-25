@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { getPublishedPosts } from "@/lib/posts";
 import { pickL10n } from "@/lib/content";
 import type { Post } from "@/db/schema";
@@ -70,8 +71,9 @@ function PostCard({ post, locale }: { post: Post; locale: string }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group card-elevated flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface"
+      className="spotlight-card group card-elevated flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface"
     >
+      <SpotlightTracker />
       <div
         className="h-32 w-full"
         style={{

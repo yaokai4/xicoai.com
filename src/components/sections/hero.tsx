@@ -1,20 +1,59 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  type Variants,
+} from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { buttonClass, ArrowIcon } from "@/components/ui/button";
 
+const RING_BG =
+  "conic-gradient(from 0deg, transparent 0deg, color-mix(in oklab, var(--brand) 55%, transparent) 90deg, transparent 160deg, color-mix(in oklab, var(--accent) 45%, transparent) 250deg, transparent 320deg)";
+const RING_MASK =
+  "radial-gradient(closest-side, transparent 58%, #000 60%, #000 66%, transparent 70%)";
+
 export function Hero() {
   const t = useTranslations("hero");
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const scrollDrift = useTransform(scrollYProgress, [0, 1], [0, -110]);
+
+  const mvx = useMotionValue(0);
+  const mvy = useMotionValue(0);
+  const cx = useSpring(mvx, { stiffness: 50, damping: 18 });
+  const cy = useSpring(mvy, { stiffness: 50, damping: 18 });
+
+  const ringY = useTransform([scrollDrift, cy], ([s, c]: number[]) => s + c);
+  const sparkX = useTransform(cx, (v) => -v * 0.55);
+  const sparkY = useTransform(
+    [scrollDrift, cy],
+    ([s, c]: number[]) => s * 0.45 - c * 0.55,
+  );
+
+  function onMove(e: React.MouseEvent<HTMLElement>) {
+    if (reduce) return;
+    const r = sectionRef.current?.getBoundingClientRect();
+    if (!r) return;
+    mvx.set(((e.clientX - r.left) / r.width - 0.5) * 38);
+    mvy.set(((e.clientY - r.top) / r.height - 0.5) * 38);
+  }
 
   const container: Variants = {
     hidden: {},
-    show: {
-      transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-    },
+    show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
   };
   const item: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 26 },
@@ -26,29 +65,39 @@ export function Hero() {
   };
 
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-28 pb-20">
-      {/* slow conic ring behind the headline */}
-      <div
+    <section
+      ref={sectionRef}
+      onMouseMove={onMove}
+      className="relative flex min-h-[92vh] items-center overflow-hidden pt-28 pb-20"
+    >
+      {/* conic ring — scroll + cursor parallax */}
+      <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-40 [animation:spin_36s_linear_infinite] max-md:h-[560px] max-md:w-[560px]"
-        style={{
-          background:
-            "conic-gradient(from 0deg, transparent 0deg, color-mix(in oklab, var(--brand) 55%, transparent) 90deg, transparent 160deg, color-mix(in oklab, var(--accent) 45%, transparent) 250deg, transparent 320deg)",
-          maskImage:
-            "radial-gradient(closest-side, transparent 58%, #000 60%, #000 66%, transparent 70%)",
-          WebkitMaskImage:
-            "radial-gradient(closest-side, transparent 58%, #000 60%, #000 66%, transparent 70%)",
-        }}
-      />
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{ x: cx, y: ringY }}
+      >
+        <div
+          className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-40 [animation:spin_36s_linear_infinite] max-md:h-[560px] max-md:w-[560px]"
+          style={{
+            background: RING_BG,
+            maskImage: RING_MASK,
+            WebkitMaskImage: RING_MASK,
+          }}
+        />
+      </motion.div>
 
-      {/* floating spark constellation — echoes the brand mark */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-[1]">
+      {/* floating spark constellation — opposite parallax for depth */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-[1]"
+        style={{ x: sparkX, y: sparkY }}
+      >
         <FloatSpark className="left-[10%] top-[26%] text-brand/45" size={22} delay="0s" />
         <FloatSpark className="right-[13%] top-[38%] text-accent/45" size={14} delay="-2.4s" />
         <FloatSpark className="left-[20%] bottom-[24%] text-violet/40" size={16} delay="-4.2s" />
         <FloatSpark className="right-[22%] bottom-[30%] text-brand/35" size={12} delay="-1.2s" />
         <FloatSpark className="left-[44%] top-[14%] text-accent/30" size={10} delay="-3.1s" />
-      </div>
+      </motion.div>
 
       <Container>
         <motion.div
@@ -91,7 +140,6 @@ export function Hero() {
         </motion.div>
       </Container>
 
-      {/* scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
