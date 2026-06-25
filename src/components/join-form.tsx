@@ -8,14 +8,14 @@ import { buttonClass, ArrowIcon } from "@/components/ui/button";
 import { FormSuccess } from "@/components/form-success";
 import { cn } from "@/lib/utils";
 
-const TYPES = ["investor", "partner", "collaborator"] as const;
+const TYPES = ["partner", "collaborator"] as const;
 type JoinType = (typeof TYPES)[number];
 
 export function JoinForm() {
   const t = useTranslations("join");
   const tf = useTranslations("join.fields");
   const locale = useLocale();
-  const [type, setType] = useState<JoinType>("investor");
+  const [type, setType] = useState<JoinType>("partner");
   const [state, action, pending] = useActionState<SubmitState, FormData>(
     submitJoin,
     { ok: false },

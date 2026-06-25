@@ -273,13 +273,11 @@
     "title": "If you believe in what we're building.",
     "subtitle": "XICO is building long-term products like Machi and Shangence, and expanding into study-abroad and cross-border. Whether you're an investor, a hands-on project partner, or a collaborator — we'd love to meet you.",
     "tabs": {
-      "investor": "Investor",
-      "partner": "Project partner",
+      "partner": "Investor / Partner",
       "collaborator": "Collaborator"
     },
     "intro": {
-      "investor": "Learn our direction, progress and fundraising plan — and grow it with us.",
-      "partner": "Join a business line hands-on, from 0 to 1, as a partner.",
+      "partner": "Investors and hands-on project partners — learn our direction, progress and plans, and grow it with us.",
       "collaborator": "Collaborate on technology, design, channels or resources."
     },
     "fields": {
@@ -298,9 +296,9 @@
         "field3": "Focus areas"
       },
       "partner": {
-        "field1": "Time you can commit",
-        "field2": "Strengths / skills",
-        "field3": "Resources you bring"
+        "field1": "Who you are / firm (investor or partner)",
+        "field2": "What you bring (capital or time)",
+        "field3": "Focus areas / resources"
       },
       "collaborator": {
         "field1": "Type of collaboration",
