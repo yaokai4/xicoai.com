@@ -173,11 +173,15 @@
     color: var(--foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   ::selection {
     background: color-mix(in oklab, var(--brand) 30%, transparent);
     color: var(--foreground);
+  }
+  :focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--brand) 62%, transparent);
+    outline-offset: 3px;
   }
   *,
   ::before,

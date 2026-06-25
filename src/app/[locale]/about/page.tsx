@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations, useLocale } from "next-intl";
-import { wordmarkFor } from "@/components/brand/logo";
+import { Mark, wordmarkFor } from "@/components/brand/logo";
 import { PageHero } from "@/components/page-hero";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -53,12 +53,18 @@ function AboutContent() {
               <div className="rounded-3xl border border-border bg-surface/40 p-8">
                 <div
                   aria-hidden
-                  className="mb-6 h-40 rounded-2xl"
+                  className="relative mb-6 grid h-40 place-items-center overflow-hidden rounded-2xl border border-border/60"
                   style={{
                     background:
-                      "radial-gradient(120% 120% at 0% 0%, rgba(124,140,255,0.35), transparent 55%), radial-gradient(120% 120% at 100% 100%, rgba(94,231,208,0.28), transparent 55%)",
+                      "radial-gradient(120% 120% at 0% 0%, rgba(124,140,255,0.32), transparent 55%), radial-gradient(120% 120% at 100% 100%, rgba(94,231,208,0.24), transparent 55%)",
                   }}
-                />
+                >
+                  <div className="absolute inset-0 bg-grid opacity-50" />
+                  <Mark
+                    size={54}
+                    className="relative [filter:drop-shadow(0_6px_20px_rgba(124,140,255,0.4))]"
+                  />
+                </div>
                 <p className="font-display text-xl font-semibold text-foreground">
                   {wordmarkFor(locale)}
                 </p>
@@ -116,8 +122,10 @@ function AboutContent() {
               <div className="mt-7 flex items-center gap-3">
                 <span
                   aria-hidden
-                  className="h-11 w-11 rounded-full bg-gradient-to-br from-brand via-violet to-accent"
-                />
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border bg-surface ring-1 ring-brand/15"
+                >
+                  <Mark size={22} />
+                </span>
                 <div>
                   <div className="font-medium text-foreground">
                     {t("founder.name")}

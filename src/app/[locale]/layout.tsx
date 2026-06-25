@@ -10,6 +10,7 @@ import {
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Ambient } from "@/components/ambient";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
@@ -100,6 +101,7 @@ export default async function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <Ambient />
+            <ScrollProgress />
             <SiteHeader />
             <main>{children}</main>
             <SiteFooter />

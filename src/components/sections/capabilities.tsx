@@ -64,7 +64,7 @@ function CapIcon({ index }: { index: number }) {
   return (
     <span
       className={cn(
-        "flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-white/[0.02] text-brand transition-colors duration-500 group-hover:text-accent",
+        "flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-brand/[0.07] text-brand transition-colors duration-500 group-hover:border-brand/30 group-hover:text-accent",
       )}
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
