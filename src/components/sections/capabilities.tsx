@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
 
 type Item = { title: string; desc: string; tags: string[] };
@@ -21,8 +22,8 @@ export function Capabilities() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <article className="group card-elevated relative h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <SpotlightCard className="group card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface">
+                <div className="absolute inset-x-0 top-0 z-[2] h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <CapIcon index={i} />
                 <h3 className="mt-6 font-display text-lg font-semibold text-foreground">
                   {item.title}
@@ -40,7 +41,7 @@ export function Capabilities() {
                     </span>
                   ))}
                 </div>
-              </article>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>

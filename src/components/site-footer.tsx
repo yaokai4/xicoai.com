@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Logo } from "@/components/brand/logo";
+import { Logo, wordmarkFor } from "@/components/brand/logo";
 import { site } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
@@ -23,7 +23,7 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
-            <Logo />
+            <Logo wordmark={wordmarkFor(locale)} />
             <p className="mt-5 text-sm leading-relaxed text-muted">
               {t("tagline")}
             </p>

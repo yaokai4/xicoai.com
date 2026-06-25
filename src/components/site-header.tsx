@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Logo } from "@/components/brand/logo";
+import { Logo, wordmarkFor } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { navItems, site } from "@/lib/site";
@@ -27,6 +27,7 @@ const itemVariants: Variants = {
 
 export function SiteHeader() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -63,7 +64,7 @@ export function SiteHeader() {
             aria-label="XICO"
             onClick={() => setMenuOpen(false)}
           >
-            <Logo />
+            <Logo wordmark={wordmarkFor(locale)} />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
 
 type Item = {
@@ -51,9 +52,9 @@ export function Work() {
             const isNext = item.key === "next";
             return (
               <Reveal key={item.key} delay={i * 0.1} className={s.span}>
-                <article
+                <SpotlightCard
                   className={cn(
-                    "group card-elevated relative h-full overflow-hidden rounded-3xl border bg-surface/60 p-8 transition-all duration-500 sm:p-10",
+                    "group card-elevated h-full overflow-hidden rounded-3xl border bg-surface/60 p-8 transition-all duration-500 sm:p-10",
                     isNext
                       ? "border-dashed border-border hover:border-border-strong"
                       : "border-border hover:border-border-strong hover:bg-surface",
@@ -73,7 +74,7 @@ export function Work() {
                     {s.monogram}
                   </span>
 
-                  <div className="relative flex h-full flex-col">
+                  <div className="relative z-[2] flex h-full flex-col">
                     <div className="flex items-center justify-between gap-4">
                       <span className="text-xs font-medium uppercase tracking-wider text-faint">
                         {item.kind}
@@ -115,7 +116,7 @@ export function Work() {
                       </div>
                     )}
                   </div>
-                </article>
+                </SpotlightCard>
               </Reveal>
             );
           })}

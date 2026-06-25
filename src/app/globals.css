@@ -219,6 +219,30 @@
     box-shadow: var(--card-shadow);
   }
 
+  /* cursor-following spotlight on cards (driven by --mx/--my) */
+  .spotlight-card {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+      230px circle at var(--mx, -200px) var(--my, -200px),
+      color-mix(in oklab, var(--brand) 12%, transparent),
+      transparent 68%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  .spotlight-card:hover::before {
+    opacity: 1;
+  }
+
   .hairline {
     border: 1px solid var(--border);
   }
