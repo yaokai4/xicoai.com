@@ -113,61 +113,93 @@ export function SiteHeader() {
             exit="exit"
             className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col bg-bg md:hidden"
           >
-            <nav className="flex flex-1 flex-col overflow-y-auto px-6 pt-4">
-              {navItems.map((item) => (
-                <motion.div key={item.key} variants={itemVariants}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="group flex items-center justify-between border-b border-border py-[18px] font-display text-[1.65rem] font-medium tracking-tight text-foreground"
-                  >
-                    <span className="transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1">
-                      {t(item.key)}
-                    </span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-faint transition-colors group-hover:bg-white/5 group-hover:text-brand">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pt-4">
+              <nav className="flex flex-col gap-1">
+                {navItems.map((item) => (
+                  <motion.div key={item.key} variants={itemVariants}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="group flex items-center gap-3.5 rounded-2xl px-3 py-3 transition-colors hover:bg-surface active:bg-surface"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border bg-surface/60 text-muted transition-colors group-hover:border-border-strong group-hover:text-brand">
+                        <MenuIcon name={item.key} />
+                      </span>
+                      <span className="text-[1.05rem] font-medium tracking-tight text-foreground">
+                        {t(item.key)}
+                      </span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden
+                        className="ml-auto text-faint transition-transform duration-300 group-hover:translate-x-0.5"
+                      >
                         <path
                           d="M9 6l6 6-6 6"
                           stroke="currentColor"
-                          strokeWidth="1.6"
+                          strokeWidth="1.7"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </span>
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              <motion.div variants={itemVariants}>
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-5 flex w-full items-center justify-center rounded-2xl bg-foreground py-3.5 text-[0.95rem] font-medium text-bg transition-transform active:scale-[0.99]"
+                >
+                  {t("cta")}
+                </Link>
+              </motion.div>
+            </div>
 
             <motion.div
               variants={itemVariants}
-              className="border-t border-border px-6 py-6"
+              className="flex items-center justify-between border-t border-border px-5 py-4"
             >
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-2xl bg-foreground py-4 text-base font-medium text-bg"
-              >
-                {t("cta")}
-              </Link>
-              <div className="mt-5 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <LocaleSwitcher />
-                  <ThemeToggle />
-                </div>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="text-sm text-muted transition-colors hover:text-foreground"
-                >
-                  {site.email}
-                </a>
+              <div className="flex items-center gap-2">
+                <LocaleSwitcher />
+                <ThemeToggle />
               </div>
+              <a
+                href={`mailto:${site.email}`}
+                className="text-sm text-muted transition-colors hover:text-foreground"
+              >
+                {site.email}
+              </a>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+function MenuIcon({ name }: { name: string }) {
+  const paths: Record<string, string> = {
+    home: "M3 11l9-7 9 7M5 9.5V20h14V9.5",
+    work: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+    services: "M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5",
+    blog: "M5 4h14v16H5zM9 8.5h6M9 12h6M9 15.5h4",
+    about: "M12 21a9 9 0 100-18 9 9 0 000 18zM12 11.5v4.5M12 8h.01",
+  };
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d={paths[name] ?? paths.home}
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
