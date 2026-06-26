@@ -48,7 +48,7 @@
   "capabilities": {
     "eyebrow": "Capabilities",
     "title": "What we build",
-    "subtitle": "We don't treat AI as a gimmick, or development as a hand-off. We care whether a product solves real problems, whether the experience is worth using, and whether the system can run for the long term.",
+    "subtitle": "AI shouldn't be a gimmick, and building shouldn't end at hand-off. What we care about is simpler — does it solve a real problem, is it worth opening again, and can it keep running well over time?",
     "items": [
       {
         "title": "AI Products",
@@ -172,7 +172,7 @@
   "cta": {
     "eyebrow": "Start a project",
     "title": "Have something worth building?",
-    "subtitle": "Whether you're validating a new direction, rebuilding an existing product, or planning a next-generation platform, XICO AI would love to help turn it into something real.",
+    "subtitle": "Maybe it's just a rough idea, maybe it's a product you want to remake. Wherever you are, we'll listen first — and then help you build it.",
     "button": "Start a conversation",
     "emailLabel": "Or email us directly"
   },
@@ -423,11 +423,11 @@
     "publishedOn": "Published"
   },
   "manifesto": {
-    "eyebrow": "We build for the long term",
-    "title": "Built to last, not just to launch.",
+    "eyebrow": "On the long term",
+    "title": "Good products are the ones time keeps.",
     "body": [
-      "A product that matters isn't the one that looks best on launch day — it's the one people still choose a year later.",
-      "XICO AI cares about more than features, code or screens: whether a product can be understood, trusted and used over time."
+      "The shine of launch day always fades. What counts comes much later — is it still remembered, still needed, still genuinely used?",
+      "So we don't chase the new, and we don't pile on features. We'd rather go slow, and make one thing well enough that you'd hate to delete it."
     ]
   },
   "legal": {
