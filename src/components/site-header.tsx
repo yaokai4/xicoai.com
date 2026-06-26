@@ -74,7 +74,13 @@ export function SiteHeader() {
             aria-label="XICO AI"
             onClick={() => handleNavClick("/")}
           >
-            <Logo wordmark={wordmarkFor(locale)} />
+            <Logo
+              wordmark={
+                locale === "en"
+                  ? wordmarkFor(locale)
+                  : `${wordmarkFor(locale)}科技`
+              }
+            />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
