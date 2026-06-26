@@ -1,6 +1,6 @@
-# XICO — xicoai.com
+# XICO AI — xicoai.com
 
-The official website of **长沙希可科技有限公司 (Changsha Xico Technology Co., Ltd.)** — an
+The official website of **长沙智希可科技有限公司 (Changsha Xico Technology Co., Ltd.)** — an
 AI‑native product studio. A trilingual (中 / 日 / 英), dark‑tech marketing site plus a
 careers system, an investor/partner `/join` flow, and a lightweight admin console.
 
