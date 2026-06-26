@@ -25,9 +25,9 @@
   },
   "hero": {
     "eyebrow": "XICO AI · Connecting China, Japan & global markets",
-    "titleLine1": "Products that actually run —",
-    "titleLine2": "built with AI, engineering & design.",
-    "subtitle": "XICO AI is a product and technology company for global markets. We turn ideas into real products that ship, run and keep growing.",
+    "titleLine1": "Made with AI, engineering and design.",
+    "titleLine2": "Made to last.",
+    "subtitle": "XICO AI is a product and technology company for global markets. From a first idea to a product people actually use, we handle everything in between.",
     "ctaPrimary": "Explore our work",
     "ctaSecondary": "Start a conversation",
     "scroll": "Scroll",
@@ -48,11 +48,11 @@
   "capabilities": {
     "eyebrow": "Capabilities",
     "title": "What we build",
-    "subtitle": "AI shouldn't be a gimmick, and building shouldn't end at hand-off. What we care about is simpler — does it solve a real problem, is it worth opening again, and can it keep running well over time?",
+    "subtitle": "We care more about whether a product is good to use and holds up over time than about how much new tech went into it.",
     "items": [
       {
         "title": "AI Products",
-        "desc": "Turning LLMs, agents and retrieval into reliable features people actually use.",
+        "desc": "Turning large models and agents into stable, useful features — not demos.",
         "tags": [
           "LLM apps",
           "Agents",
@@ -62,7 +62,7 @@
       },
       {
         "title": "Digital Platforms",
-        "desc": "From information architecture to admin and payments — complete systems built to run.",
+        "desc": "From checkout to back office, a whole system that actually runs.",
         "tags": [
           "Platforms",
           "Admin",
@@ -72,7 +72,7 @@
       },
       {
         "title": "Mobile & Web Experiences",
-        "desc": "Design-led interfaces that feel precise, fluid and worth opening again.",
+        "desc": "Good-looking is the baseline; what matters more is that it feels right to use.",
         "tags": [
           "iOS",
           "Android",
@@ -82,7 +82,7 @@
       },
       {
         "title": "Systems That Scale",
-        "desc": "Engineered, maintainable foundations that grow steadily with the product.",
+        "desc": "Foundations that can be maintained and extended, and won't fall over as you grow.",
         "tags": [
           "Architecture",
           "Cloud-native",
@@ -95,7 +95,7 @@
   "work": {
     "eyebrow": "Products",
     "title": "Built for real life",
-    "subtitle": "We're builders and founders alike — pouring our energy into products we truly believe in.",
+    "subtitle": "We don't just take on projects — we build our own. Machi and Shangence are two we're raising with care.",
     "viewLabel": "Learn more",
     "visit": "Visit site",
     "highlightsLabel": "Highlights",
@@ -172,7 +172,7 @@
   "cta": {
     "eyebrow": "Start a project",
     "title": "Have something worth building?",
-    "subtitle": "Maybe it's just a rough idea, maybe it's a product you want to remake. Wherever you are, we'll listen first — and then help you build it.",
+    "subtitle": "Whether it's still just a sentence or a product that's half-built, let's talk. The parts we can build, we'll build with you.",
     "button": "Start a conversation",
     "emailLabel": "Or email us directly"
   },
@@ -207,24 +207,24 @@
     "title": "Technology should feel human.",
     "subtitle": "XICO AI｜智希可 is a product and technology company connecting China, Japan and global markets.",
     "story": [
-      "We believe good technology shouldn't feel complex — it should make life, work and the connections between people feel more natural.",
-      "With AI as the foundation and design as the language, we build products from mobile apps to business platforms, and extend that capability into new areas like cross-border commerce and study abroad.",
-      "The goal is simple: build good products that last, and that travel beyond one market."
+      "The more powerful technology gets, the colder it can feel. We want the opposite: let it step back, so people get a little closer to life.",
+      "We build AI, software and products, but what we really care about is how they land in someone's hands — easy to use, and thoughtful.",
+      "We're not a big company, and we don't make big claims. We'd rather do a few things well — things that last, and travel beyond one market."
     ],
     "values": {
       "title": "Our principles",
       "items": [
         {
           "title": "Build what matters",
-          "desc": "Put energy only into products worth existing."
+          "desc": "Not building for its own sake — only what someone actually needs."
         },
         {
           "title": "Make complexity feel simple",
-          "desc": "Turn complex systems into experiences people use naturally."
+          "desc": "However complex the system, it should feel simple in the user's hands."
         },
         {
           "title": "Think globally, build carefully",
-          "desc": "A global outlook, with care for every detail."
+          "desc": "Made for the world, with care for every detail."
         }
       ]
     },
@@ -423,11 +423,10 @@
     "publishedOn": "Published"
   },
   "manifesto": {
-    "eyebrow": "On the long term",
-    "title": "Good products are the ones time keeps.",
+    "eyebrow": "On time",
+    "title": "What matters is whether it's still here in three years.",
     "body": [
-      "The shine of launch day always fades. What counts comes much later — is it still remembered, still needed, still genuinely used?",
-      "So we don't chase the new, and we don't pile on features. We'd rather go slow, and make one thing well enough that you'd hate to delete it."
+      "Launch is just the start. We'd rather go slow and make something solid — good enough that, long after, people still want to open it."
     ]
   },
   "legal": {
