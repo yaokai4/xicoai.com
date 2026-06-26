@@ -127,7 +127,23 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+            className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium text-faint sm:text-[13px]"
+          >
+            {t("stack")
+              .split(" · ")
+              .map((s, i) => (
+                <span key={s} className="flex items-center gap-3">
+                  {i > 0 && (
+                    <span className="h-1 w-1 rounded-full bg-brand/40" />
+                  )}
+                  {s}
+                </span>
+              ))}
+          </motion.div>
+
+          <motion.div
+            variants={item}
+            className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
           >
             <Link href="/work" className={buttonClass("primary")}>
               {t("ctaPrimary")}

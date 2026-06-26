@@ -37,6 +37,7 @@ function AboutContent() {
   const story = t.raw("story") as string[];
   const values = t.raw("values.items") as { title: string; desc: string }[];
   const founderBio = t.raw("founder.bio") as string[];
+  const company = t.raw("company") as Record<string, string>;
 
   return (
     <>
@@ -89,7 +90,7 @@ function AboutContent() {
                 {t("values.title")}
               </h2>
             </Reveal>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {values.map((v, i) => (
                 <Reveal key={v.title} delay={i * 0.07}>
                   <div className="group spotlight-card card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong">
@@ -107,6 +108,33 @@ function AboutContent() {
                 </Reveal>
               ))}
             </div>
+          </div>
+
+          <div className="mt-16">
+            <Reveal>
+              <div className="rounded-3xl border border-border bg-surface/40 p-8 sm:p-10">
+                <div className="text-xs font-medium uppercase tracking-wider text-faint">
+                  {company.eyebrow}
+                </div>
+                <dl className="mt-6 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+                  {[
+                    [company.companyLabel, company.company],
+                    [company.brandLabel, company.brand],
+                    [company.focusLabel, company.focus],
+                    [company.marketsLabel, company.markets],
+                  ].map(([label, value]) => (
+                    <div key={label}>
+                      <dt className="text-xs uppercase tracking-wider text-faint">
+                        {label}
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                        {value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>

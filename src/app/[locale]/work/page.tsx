@@ -16,6 +16,7 @@ type Item = {
   about: string;
   highlights: string[];
   status: string;
+  platforms?: string;
 };
 
 export async function generateMetadata({
@@ -84,6 +85,16 @@ export default async function WorkPage({
                         <p className="mt-5 max-w-xl leading-relaxed text-muted/90 text-pretty">
                           {item.about}
                         </p>
+                        {item.platforms && (
+                          <div className="mt-5 flex items-center gap-2.5 text-sm">
+                            <span className="text-xs font-medium uppercase tracking-wider text-faint">
+                              {t("platformsLabel")}
+                            </span>
+                            <span className="text-foreground/80">
+                              {item.platforms}
+                            </span>
+                          </div>
+                        )}
                         {url && (
                           <a
                             href={url}

@@ -198,6 +198,18 @@ export async function submitContact(
   if (!parsed.success) return { ok: false, error: "invalid" };
   const data = parsed.data;
 
+  // Fold the structured fields (timeline, budget) into the stored message
+  // so the admin sees them without a schema change.
+  const timeline = String(formData.get("timeline") ?? "").trim();
+  const budget = String(formData.get("budget") ?? "").trim();
+  const meta = [
+    timeline ? `时间 / Timeline: ${timeline}` : "",
+    budget ? `预算 / Budget: ${budget}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  const fullMessage = meta ? `${meta}\n\n${data.message}` : data.message;
+
   try {
     const db = getDb();
     await db.insert(contactMessages).values({
@@ -205,7 +217,7 @@ export async function submitContact(
       email: data.email,
       company: data.company,
       topic: data.topic,
-      message: data.message,
+      message: fullMessage,
       locale: data.locale,
     });
     await notifyTeam({
@@ -214,9 +226,9 @@ export async function submitContact(
         `姓名 / Name: ${data.name}`,
         `邮箱 / Email: ${data.email}`,
         data.company ? `公司 / Company: ${data.company}` : "",
-        data.topic ? `主题 / Topic: ${data.topic}` : "",
+        data.topic ? `类型 / Type: ${data.topic}` : "",
         "",
-        data.message,
+        fullMessage,
       ],
       replyTo: data.email,
     });

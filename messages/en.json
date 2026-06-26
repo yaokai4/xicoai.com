@@ -5,10 +5,10 @@
     "home": "Back home"
   },
   "meta": {
-    "title": "XICO — an AI & design product company",
-    "titleTemplate": "%s — XICO",
-    "description": "XICO is a technology company blending AI, product and design, founded in Tokyo and Changsha. We build our own products, and help partners turn ideas into products that actually ship and run.",
-    "company": "Changsha Xico Technology Co., Ltd."
+    "title": "XICO AI｜智希可 — AI Products, Software & Digital Platforms",
+    "titleTemplate": "%s — XICO AI",
+    "description": "XICO AI is a product and technology company building AI products, mobile apps, web platforms and scalable digital systems.",
+    "company": "Changsha Zhixike Technology Co., Ltd."
   },
   "nav": {
     "home": "Home",
@@ -24,13 +24,14 @@
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "XICO · Founded in Tokyo & Changsha",
-    "titleLine1": "We build AI-native products",
-    "titleLine2": "with the craft of design.",
-    "subtitle": "XICO is a technology company blending artificial intelligence, product and design. We build our own products, and help partners turn ideas into products that actually ship and run.",
-    "ctaPrimary": "See our work",
-    "ctaSecondary": "Start a project",
-    "scroll": "Scroll"
+    "eyebrow": "XICO AI · Connecting China, Japan & global markets",
+    "titleLine1": "Products that actually run —",
+    "titleLine2": "built with AI, engineering & design.",
+    "subtitle": "XICO AI is a product and technology company for global markets. We turn ideas into real products that ship, run and keep growing.",
+    "ctaPrimary": "Explore our work",
+    "ctaSecondary": "Start a conversation",
+    "scroll": "Scroll",
+    "stack": "AI Products · Mobile Apps · Web Platforms · Digital Systems"
   },
   "marquee": {
     "items": [
@@ -46,35 +47,55 @@
   },
   "capabilities": {
     "eyebrow": "Capabilities",
-    "title": "Full-stack product capability",
-    "subtitle": "From an idea to a live product, XICO can deliver every step in-house.",
+    "title": "What we build",
+    "subtitle": "We don't treat AI as a gimmick, or development as a hand-off. We care whether a product solves real problems, whether the experience is worth using, and whether the system can run for the long term.",
     "items": [
       {
-        "title": "AI Engineering",
-        "desc": "LLM apps, agents, RAG and recommendation — bringing frontier capability into real, reliable products.",
-        "tags": ["LLM apps", "Agents", "RAG", "Recsys"]
+        "title": "AI Products",
+        "desc": "Turning LLMs, agents and retrieval into reliable features people actually use.",
+        "tags": [
+          "LLM apps",
+          "Agents",
+          "RAG",
+          "Recommendation"
+        ]
       },
       {
-        "title": "Product Design",
-        "desc": "From brand to interface, we define every detail of the experience in a design-led way.",
-        "tags": ["Brand", "UI/UX", "Design systems", "Motion"]
+        "title": "Digital Platforms",
+        "desc": "From information architecture to admin and payments — complete systems built to run.",
+        "tags": [
+          "Platforms",
+          "Admin",
+          "Payments",
+          "Data"
+        ]
       },
       {
-        "title": "Software Engineering",
-        "desc": "From web and mobile to cloud-native infrastructure — robust, maintainable delivery.",
-        "tags": ["Web", "Apps", "Full-stack", "Cloud"]
+        "title": "Mobile & Web Experiences",
+        "desc": "Design-led interfaces that feel precise, fluid and worth opening again.",
+        "tags": [
+          "iOS",
+          "Android",
+          "Web",
+          "Design systems"
+        ]
       },
       {
-        "title": "Growth & Global",
-        "desc": "For cross-border commerce and study-abroad, connecting China with world markets.",
-        "tags": ["Cross-border", "Study abroad", "Multi-market", "Growth"]
+        "title": "Systems That Scale",
+        "desc": "Engineered, maintainable foundations that grow steadily with the product.",
+        "tags": [
+          "Architecture",
+          "Cloud-native",
+          "Performance",
+          "Reliability"
+        ]
       }
     ]
   },
   "work": {
-    "eyebrow": "Our work",
-    "title": "Products in the making",
-    "subtitle": "We are builders and founders — pouring our craft into products we believe in.",
+    "eyebrow": "Products",
+    "title": "Built for real life",
+    "subtitle": "We're builders and founders alike — pouring our energy into products we truly believe in.",
     "viewLabel": "Learn more",
     "visit": "Visit site",
     "highlightsLabel": "Highlights",
@@ -82,12 +103,18 @@
       {
         "key": "machi",
         "name": "Machi",
-        "kind": "City-living platform · starting in Tokyo",
+        "kind": "City-living platform",
         "tagline": "Find the echoes of life in every city",
-        "desc": "A global city-living platform uniting housing, classifieds, jobs, local services and community.",
-        "about": "Machi brings together housing, classifieds, jobs, local services, city guides and community — organized by country, city and language — so anyone can quickly know what to do in an unfamiliar city. Starting in Tokyo, live in Los Angeles and Toronto, and expanding to Korea, Australia, the UK, France, Germany and beyond.",
-        "highlights": ["City guides & life admin", "Housing · classifieds · jobs", "Community & language exchange", "Safety & merchant verification"],
-        "status": "In the making"
+        "desc": "A digital life platform for people living abroad, students, new immigrants and city explorers.",
+        "about": "Machi is a digital life platform for people living abroad, students, new immigrants and city explorers. Around city info, community, housing, jobs, classifieds, local services and real experiences, it helps people settle into a new city faster.",
+        "highlights": [
+          "Community",
+          "City life",
+          "Local services",
+          "Global users"
+        ],
+        "status": "Evolving",
+        "platforms": "Web · iOS · Android"
       },
       {
         "key": "shangence",
@@ -96,8 +123,14 @@
         "tagline": "Measure before you start",
         "desc": "A risk-assessment and capital stop-loss platform helping micro-entrepreneurs decide with data.",
         "about": "Shangence helps everyday founders run a professional assessment before committing their first capital — across cash safety, market demand, personal capability, customer acquisition and external constraints — producing a verification budget, stop-loss line and a 30-day action plan. It doesn't promise success; it helps you see the risk early. Operated separately in China and Japan.",
-        "highlights": ["Five-dimension risk score", "Cash safety line & stop-loss", "30-day validation plan", "Exportable PDF report"],
-        "status": "Building"
+        "highlights": [
+          "Five-dimension risk score",
+          "Cash safety line & stop-loss",
+          "30-day validation plan",
+          "Exportable PDF report"
+        ],
+        "status": "Building",
+        "platforms": "Web"
       },
       {
         "key": "next",
@@ -107,9 +140,11 @@
         "desc": "New business lines are incubating, bringing XICO's capability to broader markets.",
         "about": "New business lines like study-abroad and cross-border commerce are incubating — bringing XICO's AI, product and design capability to broader markets.",
         "highlights": [],
-        "status": "Coming soon"
+        "status": "Coming soon",
+        "platforms": ""
       }
-    ]
+    ],
+    "platformsLabel": "Platforms"
   },
   "approach": {
     "eyebrow": "Our approach",
@@ -136,17 +171,18 @@
   },
   "cta": {
     "eyebrow": "Start a project",
-    "title": "Have an idea? Let's build it together.",
-    "subtitle": "Whether it's a product collaboration, technical consulting, or joining XICO — we'd love to hear from you.",
-    "button": "Get in touch",
+    "title": "Have something worth building?",
+    "subtitle": "Whether you're validating a new direction, rebuilding an existing product, or planning a next-generation platform, XICO AI would love to help turn it into something real.",
+    "button": "Start a conversation",
     "emailLabel": "Or email us directly"
   },
   "footer": {
-    "tagline": "A technology company building products with AI and design. Founded in Tokyo and Changsha — built for the world.",
+    "tagline": "Building products that actually run — with AI, engineering and design. Connecting China, Japan and global markets.",
     "groups": {
       "company": "Company",
       "products": "Products",
-      "connect": "Connect"
+      "connect": "Connect",
+      "legal": "Legal"
     },
     "links": {
       "about": "About",
@@ -158,7 +194,9 @@
       "machi": "Machi",
       "shangence": "Shangence",
       "email": "Email",
-      "location": "Tokyo · Changsha"
+      "location": "Changsha, China",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
     },
     "rights": "All rights reserved.",
     "icp": "湘ICP备XXXXXXXX号",
@@ -166,20 +204,28 @@
   },
   "about": {
     "eyebrow": "About XICO",
-    "title": "We use technology and taste to build things that last.",
-    "subtitle": "XICO is a technology company founded in Tokyo and Changsha, with AI and design at its core.",
+    "title": "Technology should feel human.",
+    "subtitle": "XICO AI｜智希可 is a product and technology company connecting China, Japan and global markets.",
     "story": [
-      "XICO believes the best products are born at the intersection of engineering and design. We are developers and founders alike — pouring our craft into products we truly believe in.",
-      "With AI as the foundation and design as the language, we build digital products from mobile apps to business platforms. And we keep extending that capability into new fields like cross-border commerce and study abroad.",
-      "Our goal is simple: to make good products that endure — and travel beyond borders."
+      "We believe good technology shouldn't feel complex — it should make life, work and the connections between people feel more natural.",
+      "With AI as the foundation and design as the language, we build products from mobile apps to business platforms, and extend that capability into new areas like cross-border commerce and study abroad.",
+      "The goal is simple: build good products that last, and that travel beyond one market."
     ],
     "values": {
-      "title": "What we believe",
+      "title": "Our principles",
       "items": [
-        { "title": "Taste is leverage", "desc": "Detail defines quality; quality defines trust." },
-        { "title": "AI as leverage", "desc": "So a small team can build outsized impact." },
-        { "title": "Long-term", "desc": "We work for decisions that still hold years later." },
-        { "title": "Global by nature", "desc": "From China, built for the world." }
+        {
+          "title": "Build what matters",
+          "desc": "Put energy only into products worth existing."
+        },
+        {
+          "title": "Make complexity feel simple",
+          "desc": "Turn complex systems into experiences people use naturally."
+        },
+        {
+          "title": "Think globally, build carefully",
+          "desc": "A global outlook, with care for every detail."
+        }
       ]
     },
     "founder": {
@@ -192,6 +238,17 @@
         "I bring a full-stack mindset that connects front-end, mobile, back-end, databases and cloud infrastructure into one coherent product — and I care about payments, admin dashboards, legal compliance and security: the details that make a service actually run.",
         "I work across Chinese, Japanese and English, communicating and collaborating across cultures. XICO is where that belief becomes product."
       ]
+    },
+    "company": {
+      "eyebrow": "Company",
+      "companyLabel": "Company",
+      "company": "Changsha Zhixike Technology Co., Ltd.",
+      "brandLabel": "Brand",
+      "brand": "XICO AI｜智希可",
+      "focusLabel": "Focus",
+      "focus": "AI Products · Software · Digital Platforms",
+      "marketsLabel": "Markets",
+      "markets": "China · Japan · Global"
     }
   },
   "services": {
@@ -202,29 +259,49 @@
       {
         "title": "AI Engineering",
         "desc": "Turning large models and agents into stable, controllable, shippable products.",
-        "points": ["LLM apps & agents", "RAG & knowledge bases", "Recommendation & personalization", "AI infra & evals"]
+        "points": [
+          "LLM apps & agents",
+          "RAG & knowledge bases",
+          "Recommendation & personalization",
+          "AI infra & evals"
+        ]
       },
       {
         "title": "Product Design",
         "desc": "Defining brand and experience in a design-led way that earns trust at first sight.",
-        "points": ["Brand & identity", "UI / UX design", "Design systems", "Prototyping & motion"]
+        "points": [
+          "Brand & identity",
+          "UI / UX design",
+          "Design systems",
+          "Prototyping & motion"
+        ]
       },
       {
         "title": "Software Engineering",
         "desc": "Building complete, maintainable systems from front-end to cloud-native infrastructure.",
-        "points": ["Web & mobile", "Full-stack & APIs", "Cloud-native & DevOps", "Performance & reliability"]
+        "points": [
+          "Web & mobile",
+          "Full-stack & APIs",
+          "Cloud-native & DevOps",
+          "Performance & reliability"
+        ]
       },
       {
         "title": "Growth & Global",
         "desc": "Taking products cross-border and multi-market — connecting China with the world.",
-        "points": ["Cross-border commerce", "Study abroad & education", "i18n & localization", "Growth & operations"]
+        "points": [
+          "Cross-border commerce",
+          "Study abroad & education",
+          "i18n & localization",
+          "Growth & operations"
+        ]
       }
     ]
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's talk.",
-    "subtitle": "For collaboration, technical consulting or joining us — fill in the form below, or email us directly.",
+    "title": "Let's build something real.",
+    "subtitle": "Have a collaboration, a technical question, or something to build together? Use the form below, or email us directly.",
     "form": {
       "name": "Your name",
       "email": "Email",
@@ -239,13 +316,26 @@
       "message": "Your message",
       "submit": "Send",
       "success": "Received — thank you! We'll get back to you soon.",
-      "note": "We usually reply within 1–2 business days."
+      "note": "We usually reply within 1–2 business days.",
+      "build": "What are you looking to build?",
+      "projectType": "Project type",
+      "projectTypes": {
+        "ai": "AI product",
+        "mobile": "Mobile app",
+        "web": "Web platform",
+        "internal": "Internal system",
+        "redesign": "Product redesign",
+        "other": "Other"
+      },
+      "timeline": "Timeline",
+      "budget": "Budget range",
+      "note2": "For partnerships, product collaborations and strategic conversations, reach us at hi@xicoai.com."
     },
     "direct": {
       "title": "Other ways",
       "emailLabel": "Email",
       "locationLabel": "Location",
-      "location": "Tokyo · Changsha"
+      "location": "Changsha, China"
     }
   },
   "careers": {
@@ -331,5 +421,76 @@
     "readMore": "Read more",
     "backToList": "← Back to all posts",
     "publishedOn": "Published"
+  },
+  "manifesto": {
+    "eyebrow": "We build for the long term",
+    "title": "Built to last, not just to launch.",
+    "body": [
+      "A product that matters isn't the one that looks best on launch day — it's the one people still choose a year later.",
+      "XICO AI cares about more than features, code or screens: whether a product can be understood, trusted and used over time."
+    ]
+  },
+  "legal": {
+    "updated": "Last updated: June 2026",
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "Changsha Zhixike Technology Co., Ltd. (“XICO AI”, “we”) respects and protects your privacy. This policy explains what information we collect on xicoai.com, how we use it, and the rights you have.",
+      "sections": [
+        {
+          "h": "Information we collect",
+          "p": "When you contact us through a form, a partnership enquiry or a job application, we collect the information you choose to provide — such as your name, email, company, message, and the résumé file you upload when applying. We also collect basic technical logs (time of visit, pages, device type) to keep the site secure and stable."
+        },
+        {
+          "h": "How we use it",
+          "p": "We use this information only to respond to your enquiries, process collaboration or job applications, and operate and improve the site. We do not sell your personal information or use it for unrelated purposes."
+        },
+        {
+          "h": "Storage & security",
+          "p": "Information is stored on servers under our control and protected with reasonable technical and organizational measures. We keep it only as long as needed for the purposes above."
+        },
+        {
+          "h": "Cookies & local storage",
+          "p": "We use only essential local storage to remember your theme (light/dark) and language preference. We do not use it for cross-site tracking."
+        },
+        {
+          "h": "Your rights",
+          "p": "You can contact us at hi@xicoai.com at any time to access, correct or delete your personal information."
+        },
+        {
+          "h": "Updates",
+          "p": "We may update this policy from time to time. Material changes will be posted on this page. Questions? Email hi@xicoai.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "intro": "Welcome to xicoai.com. By accessing or using this site you agree to the following terms. This site is operated by Changsha Zhixike Technology Co., Ltd. (“XICO AI”).",
+      "sections": [
+        {
+          "h": "Use of the site",
+          "p": "This site presents XICO AI's products, capabilities and company information, and provides ways to get in touch."
+        },
+        {
+          "h": "Intellectual property",
+          "p": "Unless otherwise stated, the text, design, marks and content of this site belong to XICO AI and may not be copied or used commercially without permission. Third-party brand marks belong to their respective owners."
+        },
+        {
+          "h": "Disclaimer",
+          "p": "Content on this site is provided “as is”. We aim to keep it accurate but make no warranty as to its completeness or timeliness."
+        },
+        {
+          "h": "Limitation of liability",
+          "p": "To the extent permitted by law, XICO AI is not liable for any indirect or incidental loss arising from use of this site."
+        },
+        {
+          "h": "Governing law",
+          "p": "These terms are governed by the laws of the People's Republic of China."
+        },
+        {
+          "h": "Contact",
+          "p": "For any questions about these terms, contact hi@xicoai.com."
+        }
+      ]
+    }
   }
 }

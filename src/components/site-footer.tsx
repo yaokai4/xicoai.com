@@ -30,7 +30,13 @@ export async function SiteFooter() {
             <p className="mt-5 text-sm leading-relaxed text-muted">
               {t("tagline")}
             </p>
-            <SocialLinks links={socialLinks} className="mt-7" />
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-4 inline-block text-sm text-muted transition-colors hover:text-foreground"
+            >
+              {site.email}
+            </a>
+            <SocialLinks links={socialLinks} className="mt-6" />
           </div>
 
           <FooterGroup title={t("groups.products")}>
@@ -62,11 +68,14 @@ export async function SiteFooter() {
           </FooterGroup>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-8 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {site.fullName[locale]}. {t("rights")}
-          </p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <div className="mt-14 flex flex-col gap-4 border-t border-border pt-8 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-1">
+            <p>© {year} XICO AI. {t("rights")}</p>
+            <p className="text-faint/70">{site.fullName[locale]}</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+            <FooterLink href="/privacy">{t("links.privacy")}</FooterLink>
+            <FooterLink href="/terms">{t("links.terms")}</FooterLink>
             <a
               href="https://beian.miit.gov.cn/"
               target="_blank"
