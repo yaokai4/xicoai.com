@@ -1,0 +1,14 @@
+# Automatic HTTPS via Let's Encrypt. DNS for both names must point at
+# this host, and inbound 80/443 must be open in the firewall/SG.
+{
+	email hi@xicoai.com
+}
+
+xicoai.com {
+	encode zstd gzip
+	reverse_proxy app:3000
+}
+
+www.xicoai.com {
+	redir https://xicoai.com{uri} permanent
+}

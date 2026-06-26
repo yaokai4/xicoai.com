@@ -1,0 +1,73 @@
+# Self-contained production stack for a single host (e.g. AWS EC2).
+# db + app + Caddy (automatic HTTPS via Let's Encrypt). No external
+# network required — unlike docker-compose.yml which attaches to an
+# existing Nginx Proxy Manager.
+#
+#   first time:   ADMIN_PASSWORD='...' bash deploy/setup.sh
+#   update:       bash deploy/update.sh
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: xicoai-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: xico
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: xico
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U xico -d xico"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  app:
+    build: .
+    image: xicoai-web
+    container_name: xicoai-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://xico:${POSTGRES_PASSWORD}@db:5432/xico
+      NODE_ENV: production
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - uploads:/app/uploads
+    expose:
+      - "3000"
+    networks:
+      - internal
+      - web
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: xicoai-caddy
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+volumes:
+  pgdata:
+  uploads:
+  caddy_data:
+  caddy_config:
+
+networks:
+  internal:
+  web:
