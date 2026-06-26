@@ -9,8 +9,11 @@ type Item = {
   key: string;
   name: string;
   kind: string;
+  tagline: string;
   desc: string;
+  highlights: string[];
   status: string;
+  platforms: string;
 };
 
 const STYLES: Record<
@@ -91,35 +94,71 @@ export function Work() {
                     >
                       {item.name}
                     </h3>
+                    {item.tagline && (
+                      <p className="mt-2 font-display text-base text-brand/90 sm:text-lg">
+                        {item.tagline}
+                      </p>
+                    )}
                     <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
                       {item.desc}
                     </p>
 
-                    {!isNext && productUrls[item.key] && (
-                      <a
-                        href={productUrls[item.key]}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group/link relative z-[3] mt-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-brand"
-                      >
-                        {t("viewLabel")}
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          aria-hidden
-                          className="transition-transform duration-300 group-hover/link:translate-x-1"
-                        >
-                          <path
-                            d="M5 12h14M13 6l6 6-6 6"
-                            stroke="currentColor"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </a>
+                    {item.highlights.length > 0 && (
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {item.highlights.map((h) => (
+                          <span
+                            key={h}
+                            className="rounded-full border border-border px-2.5 py-1 text-[11px] text-faint"
+                          >
+                            {h}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="flex-1" />
+
+                    {!isNext && (item.platforms || productUrls[item.key]) && (
+                      <div className="mt-8 flex items-end justify-between gap-4 border-t border-border/60 pt-5">
+                        {item.platforms ? (
+                          <div>
+                            <div className="text-[10px] uppercase tracking-wider text-faint">
+                              {t("platformsLabel")}
+                            </div>
+                            <div className="mt-1 text-xs text-muted">
+                              {item.platforms}
+                            </div>
+                          </div>
+                        ) : (
+                          <span />
+                        )}
+                        {productUrls[item.key] && (
+                          <a
+                            href={productUrls[item.key]}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group/link relative z-[3] inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-brand"
+                          >
+                            {t("viewLabel")}
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              aria-hidden
+                              className="transition-transform duration-300 group-hover/link:translate-x-1"
+                            >
+                              <path
+                                d="M5 12h14M13 6l6 6-6 6"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
                     )}
                   </div>
                 </SpotlightCard>
