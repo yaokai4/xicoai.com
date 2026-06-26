@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Logo, wordmarkFor } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -28,8 +28,18 @@ const itemVariants: Variants = {
 export function SiteHeader() {
   const t = useTranslations("nav");
   const locale = useLocale();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Clicking a link to the page you're already on is a no-op in Next.js,
+  // so the logo / 主页 wouldn't scroll back up. Handle that here.
+  function handleNavClick(href: string) {
+    setMenuOpen(false);
+    if (href === pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
 
   useEffect(() => {
     function onScroll() {
@@ -61,8 +71,8 @@ export function SiteHeader() {
           <Link
             href="/"
             className="transition-opacity hover:opacity-80"
-            aria-label="XICO"
-            onClick={() => setMenuOpen(false)}
+            aria-label="XICO AI"
+            onClick={() => handleNavClick("/")}
           >
             <Logo wordmark={wordmarkFor(locale)} />
           </Link>
@@ -72,6 +82,7 @@ export function SiteHeader() {
               <Link
                 key={item.key}
                 href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="rounded-full px-4 py-2 text-sm text-muted transition-colors hover:text-foreground"
               >
                 {t(item.key)}
@@ -119,7 +130,7 @@ export function SiteHeader() {
                   <motion.div key={item.key} variants={itemVariants}>
                     <Link
                       href={item.href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => handleNavClick(item.href)}
                       className="group flex items-center gap-3.5 rounded-2xl px-3 py-3 transition-colors hover:bg-surface active:bg-surface"
                     >
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border bg-surface/60 text-muted transition-colors group-hover:border-border-strong group-hover:text-brand">
