@@ -29,6 +29,13 @@ fi
 # seed.sql is idempotent (ON CONFLICT DO NOTHING)
 $COMPOSE exec -T db psql -U xico -d xico < drizzle/seed.sql
 
+# The Caddyfile is a bind-mounted file; git-pull replaces its inode, so a
+# running caddy won't see edits until recreated. Recreate only if it changed.
+if [ "$($COMPOSE exec -T caddy cat /etc/caddy/Caddyfile </dev/null 2>/dev/null || true)" != "$(cat deploy/Caddyfile)" ]; then
+  echo "▸ Caddyfile changed — recreating caddy…"
+  $COMPOSE up -d --force-recreate caddy
+fi
+
 echo "▸ Cleaning up old images…"
 $DC image prune -f >/dev/null 2>&1 || true
 
