@@ -22,7 +22,7 @@ done
 
 echo "▸ Applying schema (if missing) and seed data…"
 has_posts=$($COMPOSE exec -T db psql -U xico -d xico -tAc \
-  "SELECT to_regclass('public.posts')" 2>/dev/null | tr -d '[:space:]' || true)
+  "SELECT to_regclass('public.posts')" </dev/null 2>/dev/null | tr -d '[:space:]' || true)
 if [ -z "$has_posts" ]; then
   $COMPOSE exec -T db psql -v ON_ERROR_STOP=1 -U xico -d xico < drizzle/0000_robust_cyclops.sql
 fi
