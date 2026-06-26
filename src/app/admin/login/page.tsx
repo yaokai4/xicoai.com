@@ -14,7 +14,7 @@ export default function AdminLoginPage() {
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="mb-8 flex items-center justify-between">
-          <Logo wordmark="希可" />
+          <Logo wordmark="智希可" />
           <span className="text-xs uppercase tracking-wider text-faint">
             Admin
           </span>

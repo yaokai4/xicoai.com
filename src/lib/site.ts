@@ -1,8 +1,8 @@
 export const site = {
   name: "XICO",
   fullName: {
-    zh: "长沙希可科技有限公司",
-    ja: "長沙希可科技有限公司",
+    zh: "长沙智希可科技有限公司",
+    ja: "長沙智希可科技有限公司",
     en: "Changsha Xico Technology Co., Ltd.",
   },
   domain: "xicoai.com",

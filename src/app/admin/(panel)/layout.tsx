@@ -29,7 +29,7 @@ export default async function PanelLayout({
       <aside className="lg:w-52 lg:shrink-0">
         <div className="lg:sticky lg:top-12">
           <Link href="/admin" className="inline-block">
-            <Logo wordmark="希可" />
+            <Logo wordmark="智希可" />
           </Link>
           <nav className="mt-8 flex flex-wrap gap-1 lg:flex-col">
             {NAV.map((item) => (

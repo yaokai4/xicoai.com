@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 
-/** Wordmark text per locale: 希可 for CJK, XICO for English. */
+/** Wordmark text per locale: 智希可 for CJK, XICO for English. */
 export function wordmarkFor(locale: string) {
-  return locale === "en" ? "XICO" : "希可";
+  return locale === "en" ? "XICO" : "智希可";
 }
 
 /** XICO brand mark — an AI "spark / constellation" in the brand gradient. */
