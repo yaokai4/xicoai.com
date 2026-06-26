@@ -12,6 +12,7 @@ const NAV = [
   { href: "/admin/applications", label: "投递" },
   { href: "/admin/join", label: "Join 提交" },
   { href: "/admin/messages", label: "联系表单" },
+  { href: "/admin/settings", label: "社交链接" },
 ];
 
 export default async function PanelLayout({

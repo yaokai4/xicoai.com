@@ -38,6 +38,10 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// Rendered per request so the footer reflects social links set in /admin
+// (getSettings is itself cached, so this stays cheap).
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {

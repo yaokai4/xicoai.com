@@ -26,6 +26,10 @@ has_posts=$($COMPOSE exec -T db psql -U xico -d xico -tAc \
 if [ -z "$has_posts" ]; then
   $COMPOSE exec -T db psql -v ON_ERROR_STOP=1 -U xico -d xico < drizzle/0000_robust_cyclops.sql
 fi
+# incremental migrations (0001+) are written idempotently (IF NOT EXISTS)
+for mig in $(ls drizzle/*.sql 2>/dev/null | grep -vE '0000_|seed' | sort); do
+  $COMPOSE exec -T db psql -U xico -d xico < "$mig" >/dev/null 2>&1 && echo "  applied $(basename "$mig")"
+done
 # seed.sql is idempotent (ON CONFLICT DO NOTHING)
 $COMPOSE exec -T db psql -U xico -d xico < drizzle/seed.sql
 

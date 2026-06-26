@@ -10,6 +10,7 @@ import {
   posts,
   applications,
   joinSubmissions,
+  settings,
   type L10n,
   type L10nList,
 } from "@/db/schema";
@@ -19,6 +20,7 @@ import {
   checkCredentials,
   verifySession,
 } from "@/lib/auth";
+import { SOCIAL_KEYS } from "@/lib/social";
 
 export type ActionState = { error?: string };
 
@@ -52,6 +54,31 @@ export async function loginAction(
 export async function logoutAction() {
   (await cookies()).delete(SESSION_COOKIE);
   redirect("/admin/login");
+}
+
+export async function saveSettings(
+  _prev: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  await requireAdmin();
+  const db = getDb();
+  try {
+    for (const key of SOCIAL_KEYS) {
+      const value = String(formData.get(key) ?? "").trim() || null;
+      await db
+        .insert(settings)
+        .values({ key: `social_${key}`, value, updatedAt: new Date() })
+        .onConflictDoUpdate({
+          target: settings.key,
+          set: { value, updatedAt: new Date() },
+        });
+    }
+  } catch (e) {
+    console.error(e);
+    return { error: "保存失败" };
+  }
+  revalidatePath("/admin/settings");
+  return {};
 }
 
 function l10n(formData: FormData, base: string): L10n {

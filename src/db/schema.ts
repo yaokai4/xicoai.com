@@ -133,6 +133,16 @@ export const contactMessages = pgTable("contact_messages", {
     .defaultNow(),
 });
 
+/** Simple key-value store for site-wide settings (e.g. social links). */
+export const settings = pgTable("settings", {
+  key: varchar("key", { length: 64 }).primaryKey(),
+  value: text("value"),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export type Setting = typeof settings.$inferSelect;
 export type Job = typeof jobs.$inferSelect;
 export type Post = typeof posts.$inferSelect;
 export type Application = typeof applications.$inferSelect;

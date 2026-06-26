@@ -1,12 +1,15 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Logo, wordmarkFor } from "@/components/brand/logo";
+import { SocialLinks } from "@/components/social-links";
+import { getSocialLinks } from "@/lib/settings";
 import { site, productUrls } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
   const locale = (await getLocale()) as Locale;
+  const socialLinks = await getSocialLinks();
   const year = new Date().getFullYear();
 
   const companyLinks = [
@@ -21,21 +24,14 @@ export async function SiteFooter() {
   return (
     <footer className="relative border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo wordmark={wordmarkFor(locale)} />
             <p className="mt-5 text-sm leading-relaxed text-muted">
               {t("tagline")}
             </p>
+            <SocialLinks links={socialLinks} className="mt-7" />
           </div>
-
-          <FooterGroup title={t("groups.company")}>
-            {companyLinks.map((l) => (
-              <FooterLink key={l.href} href={l.href}>
-                {l.label}
-              </FooterLink>
-            ))}
-          </FooterGroup>
 
           <FooterGroup title={t("groups.products")}>
             <a
@@ -57,14 +53,12 @@ export async function SiteFooter() {
             <span className="text-sm text-faint">{t("comingSoon")}</span>
           </FooterGroup>
 
-          <FooterGroup title={t("groups.connect")}>
-            <a
-              href={`mailto:${site.email}`}
-              className="text-sm text-muted transition-colors hover:text-foreground"
-            >
-              {site.email}
-            </a>
-            <span className="text-sm text-muted">{t("links.location")}</span>
+          <FooterGroup title={t("groups.company")}>
+            {companyLinks.map((l) => (
+              <FooterLink key={l.href} href={l.href}>
+                {l.label}
+              </FooterLink>
+            ))}
           </FooterGroup>
         </div>
 

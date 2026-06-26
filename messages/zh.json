@@ -15,7 +15,7 @@
     "work": "产品",
     "services": "能力",
     "about": "关于",
-    "blog": "洞察",
+    "blog": "新闻",
     "careers": "加入我们",
     "contact": "联系",
     "cta": "开始合作",
@@ -324,10 +324,10 @@
     }
   },
   "blog": {
-    "eyebrow": "洞察",
-    "title": "想法、过程，与产品背后的思考。",
-    "subtitle": "希可关于产品、设计、AI 与创业的记录。",
-    "empty": "文章正在路上，敬请期待。",
+    "eyebrow": "新闻",
+    "title": "最新动态与公告",
+    "subtitle": "希可的产品进展、公司新闻与公告。",
+    "empty": "暂无内容，敬请期待。",
     "readMore": "阅读全文",
     "backToList": "← 返回全部文章",
     "publishedOn": "发布于"

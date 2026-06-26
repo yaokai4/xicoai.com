@@ -15,7 +15,7 @@
     "work": "Work",
     "services": "Capabilities",
     "about": "About",
-    "blog": "Insights",
+    "blog": "News",
     "careers": "Careers",
     "contact": "Contact",
     "cta": "Start a project",
@@ -324,10 +324,10 @@
     }
   },
   "blog": {
-    "eyebrow": "Insights",
-    "title": "Ideas, process, and the thinking behind our products.",
-    "subtitle": "Notes from XICO on product, design, AI and building a company.",
-    "empty": "Articles are on the way — stay tuned.",
+    "eyebrow": "News",
+    "title": "Latest news & announcements",
+    "subtitle": "Product updates, company news and announcements from XICO.",
+    "empty": "Nothing here yet — stay tuned.",
     "readMore": "Read more",
     "backToList": "← Back to all posts",
     "publishedOn": "Published"
