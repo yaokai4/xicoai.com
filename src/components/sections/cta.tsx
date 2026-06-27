@@ -29,14 +29,14 @@ export function CTA() {
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 {t("subtitle")}
               </p>
-              <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
-                <Link href="/contact" className={buttonClass("primary")}>
+              <div className="mt-9 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
+                <Link href="/contact" className={buttonClass("primary", "w-full sm:w-auto")}>
                   {t("button")}
                   <ArrowIcon />
                 </Link>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-sm text-muted transition-colors hover:text-foreground"
+                  className="interactive-link break-all text-center text-sm text-muted transition-colors hover:text-foreground sm:break-normal"
                 >
                   {t("emailLabel")} · {site.email}
                 </a>
