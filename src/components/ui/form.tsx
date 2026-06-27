@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-white/[0.02] px-4 py-3 text-foreground outline-none transition-colors placeholder:text-faint focus:border-brand/60";
+  "w-full rounded-xl border border-border bg-white/[0.02] px-4 py-3 text-foreground outline-none transition-colors placeholder:text-faint hover:border-border-strong focus:border-brand/60";
 
 export function TextField({
   name,
