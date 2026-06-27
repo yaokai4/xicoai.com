@@ -22,7 +22,7 @@ export function Capabilities() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <SpotlightCard className="group card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface">
+              <SpotlightCard className="group interactive-surface card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 sm:p-7">
                 <div className="absolute inset-x-0 top-0 z-[2] h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <CapIcon index={i} />
                 <h3 className="mt-6 font-display text-lg font-semibold text-foreground">
