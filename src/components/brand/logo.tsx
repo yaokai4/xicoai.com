@@ -5,7 +5,12 @@ export function wordmarkFor(locale: string) {
   return locale === "en" ? "XICO AI" : "智希可";
 }
 
-/** XICO brand mark — an AI "spark / constellation" in the brand gradient. */
+/**
+ * XICO brand mark — an AI "spark / constellation" in the brand gradient.
+ * The stops follow the theme tokens (--grad-1/2/3), so the mark is deep and
+ * saturated on the light header and bright on the dark one — instead of always
+ * using the dark-theme pastels and looking washed out in light mode.
+ */
 export function Mark({
   size = 28,
   className,
@@ -31,9 +36,9 @@ export function Mark({
           y2="30"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#6E8BFF" />
-          <stop offset="0.52" stopColor="#A77BFF" />
-          <stop offset="1" stopColor="#4FD8C0" />
+          <stop style={{ stopColor: "var(--grad-1)" }} />
+          <stop offset="0.52" style={{ stopColor: "var(--grad-2)" }} />
+          <stop offset="1" style={{ stopColor: "var(--grad-3)" }} />
         </linearGradient>
       </defs>
       <path
