@@ -58,7 +58,7 @@ export function Work() {
               <Reveal key={item.key} delay={i * 0.1} className={s.span}>
                 <SpotlightCard
                   className={cn(
-                    "group card-elevated h-full overflow-hidden rounded-3xl border bg-surface/60 p-8 transition-all duration-500 sm:p-10",
+                    "group interactive-surface card-elevated h-full overflow-hidden rounded-[1.5rem] border bg-surface/60 p-6 sm:rounded-3xl sm:p-10",
                     isNext
                       ? "border-dashed border-border hover:border-border-strong"
                       : "border-border hover:border-border-strong hover:bg-surface",
@@ -79,7 +79,7 @@ export function Work() {
                   </span>
 
                   <div className="relative z-[2] flex h-full flex-col">
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                       <span className="text-xs font-medium uppercase tracking-wider text-faint">
                         {item.kind}
                       </span>
