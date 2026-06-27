@@ -46,7 +46,7 @@ function ServicesContent() {
           <div className="flex flex-col gap-4">
             {sections.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06}>
-                <article className="spotlight-card group card-elevated grid gap-8 overflow-hidden rounded-3xl border border-border bg-surface/60 p-8 transition-all duration-500 hover:border-border-strong sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
+                <article className="spotlight-card group interactive-surface card-elevated grid gap-8 overflow-hidden rounded-[1.5rem] border border-border bg-surface/60 p-6 sm:rounded-3xl sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
                   <SpotlightTracker />
                   <div className="relative z-[2]">
                     <span className="font-display text-sm font-semibold text-brand">
