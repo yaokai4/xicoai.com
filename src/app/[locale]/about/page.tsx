@@ -145,7 +145,7 @@ function AboutContent() {
             <Reveal className="lg:sticky lg:top-28 lg:h-fit">
               <Eyebrow>{t("founder.eyebrow")}</Eyebrow>
               <blockquote className="mt-6 font-display text-2xl font-semibold leading-snug tracking-tight text-balance sm:text-3xl">
-                “{t("founder.quote")}" 
+                “{t("founder.quote")}”
               </blockquote>
               <div className="mt-7 flex items-center gap-3">
                 <span
