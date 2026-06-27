@@ -1,23 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   const isDark = resolvedTheme === "dark";
 
   return (
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? "切换到明亮模式" : "切换到夜间模式"}
+      aria-label="切换明暗模式"
       className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-border-strong hover:text-foreground"
+      suppressHydrationWarning
     >
-      {mounted && isDark ? <SunIcon /> : <MoonIcon />}
+      <span className="dark:hidden">
+        <MoonIcon />
+      </span>
+      <span className="hidden dark:block">
+        <SunIcon />
+      </span>
     </button>
   );
 }
