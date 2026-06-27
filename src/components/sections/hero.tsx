@@ -68,7 +68,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       onMouseMove={onMove}
-      className="relative flex min-h-[92vh] items-center overflow-hidden pt-28 pb-20"
+      className="relative flex min-h-[88svh] items-center overflow-hidden pt-24 pb-16 sm:min-h-[92vh] sm:pt-28 sm:pb-20"
     >
       {/* conic ring — scroll + cursor parallax */}
       <motion.div
@@ -112,7 +112,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-7 font-display text-4xl font-semibold leading-[1.06] tracking-tight text-balance sm:text-6xl md:text-7xl"
+            className="mt-6 font-display text-[2.55rem] font-semibold leading-[1.05] tracking-tight text-balance max-[380px]:text-[2.25rem] sm:mt-7 sm:text-6xl md:text-7xl"
           >
             <span className="block text-foreground">{t("titleLine1")}</span>
             <span className="block text-gradient">{t("titleLine2")}</span>
@@ -120,14 +120,14 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-7 max-w-2xl text-base leading-relaxed text-muted text-pretty sm:text-lg"
+            className="mt-6 max-w-2xl text-base leading-relaxed text-muted text-pretty sm:mt-7 sm:text-lg"
           >
             {t("subtitle")}
           </motion.p>
 
           <motion.div
             variants={item}
-            className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium text-faint sm:text-[13px]"
+            className="mt-6 flex max-w-[22rem] flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 text-xs font-medium text-faint sm:mt-7 sm:max-w-none sm:gap-x-3 sm:text-[13px]"
           >
             {t("stack")
               .split(" · ")
@@ -143,13 +143,13 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
+            className="mt-8 flex w-full flex-col items-center gap-3 sm:mt-9 sm:w-auto sm:flex-row"
           >
-            <Link href="/work" className={buttonClass("primary")}>
+            <Link href="/work" className={buttonClass("primary", "w-full sm:w-auto")}>
               {t("ctaPrimary")}
               <ArrowIcon />
             </Link>
-            <Link href="/contact" className={buttonClass("secondary")}>
+            <Link href="/contact" className={buttonClass("secondary", "w-full sm:w-auto")}>
               {t("ctaSecondary")}
             </Link>
           </motion.div>
