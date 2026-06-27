@@ -1,101 +1,101 @@
 {
   "notFound": {
-    "title": "There's no road past here",
-    "desc": "The page you're after isn't here — it may have moved, or never existed at all.",
+    "title": "Nothing here yet",
+    "desc": "The page may have moved, or the address may be wrong.",
     "home": "Back home"
   },
   "meta": {
-    "title": "XICO AI｜智希可 — AI Products, Software & Digital Platforms",
+    "title": "Changsha Zhixike Technology Co., Ltd. | Software Products, AI Applications & Digital Platforms",
     "titleTemplate": "%s — XICO AI",
-    "description": "XICO AI builds AI products, software and digital platforms, connecting China, Japan and the world. We turn ideas into things people open every day — and keep.",
+    "description": "Changsha Zhixike Technology Co., Ltd. (XICO AI) builds software products, AI applications, web and mobile products, and digital platforms that are clear, reliable, and built to keep improving.",
     "company": "Changsha Zhixike Technology Co., Ltd."
   },
   "nav": {
     "home": "Home",
-    "work": "Work",
-    "services": "Capabilities",
-    "about": "About",
-    "blog": "News",
+    "work": "Products",
+    "services": "Services",
+    "about": "Company",
+    "blog": "Updates",
     "careers": "Careers",
     "contact": "Contact",
-    "cta": "Start a project",
+    "cta": "Start a conversation",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "XICO AI · Connecting China, Japan & the world",
-    "titleLine1": "Turn an idea",
-    "titleLine2": "into something time can't take.",
-    "subtitle": "XICO is a product company. Technology dates; things that work don't — we build the kind you still want to open long after, from a single sentence to something living quietly in someone's day.",
-    "ctaPrimary": "See what we've made",
-    "ctaSecondary": "Tell us your idea",
-    "scroll": "Scroll",
-    "stack": "AI Products · Mobile Apps · Web Platforms · Digital Systems"
+    "eyebrow": "Changsha Zhixike Technology Co., Ltd.",
+    "titleLine1": "We turn technology",
+    "titleLine2": "into quiet, reliable products.",
+    "subtitle": "XICO is a software technology company. We build our own long-term products, and we help companies and founders move from requirement shaping and interface design to development and launch. Good technology does not need to be loud. It needs to be precise, durable, and worth using again.",
+    "ctaPrimary": "View products and work",
+    "ctaSecondary": "Book a conversation",
+    "scroll": "Continue",
+    "stack": "Software Development · AI Applications · Web Platforms · Mobile Apps · Digital Systems"
   },
   "marquee": {
     "items": [
-      "Artificial Intelligence",
+      "Software Products",
+      "AI Applications",
+      "Full-stack Engineering",
       "Product Design",
-      "Software Engineering",
-      "Brand Experience",
-      "Cross-border Growth",
-      "Agents",
-      "User Experience",
-      "Cloud Native"
+      "Mobile Apps",
+      "Business Systems",
+      "Multilingual Services",
+      "Long-term Operations"
     ]
   },
   "capabilities": {
-    "eyebrow": "Capabilities",
-    "title": "What we build",
-    "subtitle": "More than how much new tech went in, we care about one thing: whether it's good to use, and whether it lasts.",
+    "eyebrow": "Core Capabilities",
+    "title": "From idea to launch, we make the middle real",
+    "subtitle": "We do not hand clients a pile of technology. We clarify the problem, then build systems that run, hold up, and keep room for the next version.",
     "items": [
       {
-        "title": "AI Products",
-        "desc": "Make large models and agents actually work — steadily, not stranded in a pretty demo.",
+        "title": "AI Application Delivery",
+        "desc": "We place model capability inside real workflows: knowledge bases, support, content operations, retrieval, evaluation, and permission control.",
         "tags": [
-          "LLM apps",
-          "Agents",
+          "Knowledge bases",
+          "AI assistants",
           "RAG",
-          "Recommendation"
+          "Model evaluation"
         ]
       },
       {
-        "title": "Digital Platforms",
-        "desc": "From checkout to back office, front of house to behind it — one system that truly runs.",
-        "tags": [
-          "Platforms",
-          "Admin",
-          "Payments",
-          "Data"
-        ]
-      },
-      {
-        "title": "Mobile & Web Experiences",
-        "desc": "Good-looking is the floor. The hard part is feel — the kind that brings people back.",
+        "title": "Web and Mobile Products",
+        "desc": "From customer-facing product to admin operations, we shape the core journey, visual system, and engineering structure together.",
         "tags": [
           "iOS",
           "Android",
-          "Web",
+          "Next.js",
           "Design systems"
         ]
       },
       {
-        "title": "Systems That Scale",
-        "desc": "Foundations you can lean on: easy to fix, room to grow, and they don't fall over as you do.",
+        "title": "Business Systems and Platforms",
+        "desc": "Orders, memberships, content, payments, data, and operation consoles designed around the way the business actually works.",
+        "tags": [
+          "SaaS",
+          "Admin consoles",
+          "Payments",
+          "Dashboards"
+        ]
+      },
+      {
+        "title": "Long-term Technical Foundations",
+        "desc": "Clear architecture, maintainable code, deployment, monitoring, security boundaries, and performance work that reduce costly rework.",
         "tags": [
           "Architecture",
-          "Cloud-native",
-          "Performance",
-          "Reliability"
+          "DevOps",
+          "Security",
+          "Performance"
         ]
       }
     ]
   },
   "work": {
-    "eyebrow": "Products",
-    "title": "Built for real life",
-    "subtitle": "We don't just take on projects — we build our own. Machi and Shangence are two we're raising by hand.",
+    "eyebrow": "Products and Work",
+    "title": "Our own products set the bar for our delivery",
+    "subtitle": "Machi, Shangence, and our upcoming study-abroad and cross-border lines are long-term projects under Changsha Zhixike Technology Co., Ltd.",
     "viewLabel": "Learn more",
     "visit": "Visit site",
     "highlightsLabel": "Highlights",
@@ -104,80 +104,80 @@
         "key": "machi",
         "name": "Machi",
         "kind": "City-living platform",
-        "tagline": "Find the echoes of life in every city",
-        "desc": "For people making a life away from home — students, new arrivals, and anyone still learning a city.",
-        "about": "Machi is a digital life platform for people living abroad — students, new immigrants, city wanderers. City info, community, housing, jobs, classifieds, local services, and the real experience of those who came before — all here, to help you turn a strange city, little by little, into your own.",
+        "tagline": "A city map for people living abroad",
+        "desc": "A local life platform for students, new arrivals, and people learning a city.",
+        "about": "Machi is built for people living abroad: students, new immigrants, and anyone still learning how a city works. City information, community, housing, jobs, second-hand listings, local services, and lived experience are brought into one place, so an unfamiliar city becomes easier to understand and easier to reach.",
         "highlights": [
-          "Community",
-          "City life",
-          "Local services",
-          "Global users"
+          "City information and community",
+          "Housing / jobs / second-hand",
+          "Local service entry points",
+          "Multilingual regional expansion"
         ],
-        "status": "Always growing",
+        "status": "In active development",
         "platforms": "Web · iOS · Android"
       },
       {
         "key": "shangence",
         "name": "Shangence",
-        "kind": "Startup risk-assessment platform",
-        "tagline": "Measure before you start",
-        "desc": "A risk read for people starting small — before the first dollar, see with data whether to step in.",
-        "about": "Before you commit your first capital, Shangence does the math with you: cash safety, market demand, your own capability, customer acquisition, outside constraints — five angles, end to end. Out comes a validation budget, a stop-loss line, and a 30-day plan. It won't promise you'll win; it just shows you the risk early. Run separately in China and Japan.",
+        "kind": "Startup decision tool",
+        "tagline": "Before opening a shop, understand the risk",
+        "desc": "A risk-assessment and action-planning tool for small founders.",
+        "about": "Shangence helps ordinary founders think before they spend. It reviews industry conditions, capital safety, personal capability, acquisition, and external constraints, then returns a risk score, validation budget, stop-loss line, and 30-day action plan. It does not promise success. It helps the decision become clearer.",
         "highlights": [
           "Five-dimension risk score",
           "Cash safety line & stop-loss",
           "30-day validation plan",
           "Exportable PDF report"
         ],
-        "status": "In the works",
+        "status": "Private beta build",
         "platforms": "Web"
       },
       {
         "key": "next",
-        "name": "More on the way",
+        "name": "Businesses in incubation",
         "kind": "Study abroad · Cross-border",
-        "tagline": "Taking the craft somewhere further",
-        "desc": "New lines are incubating, carrying XICO's craft to further markets.",
-        "about": "New lines — study-abroad, cross-border commerce — are taking root, carrying the craft we've built in AI, product and design somewhere further and wider.",
+        "tagline": "Extending product capability into specific industries",
+        "desc": "We are developing product lines for study abroad, cross-border commerce, and local services across China, Japan, and overseas markets.",
+        "about": "Study abroad, cross-border commerce, and local services are the next fields XICO will continue to explore. We want to bring software, design, and operations into specific industries, and build products people actually use, return to, and recommend.",
         "highlights": [],
-        "status": "Coming soon",
+        "status": "Planning",
         "platforms": ""
       }
     ],
     "platformsLabel": "Platforms"
   },
   "approach": {
-    "eyebrow": "Our approach",
-    "title": "How we work",
-    "subtitle": "Four principles, running through everything we make.",
+    "eyebrow": "How We Work",
+    "title": "Good software is not made by piling things on",
+    "subtitle": "We put taste, engineering, and business judgment at the same table.",
     "principles": [
       {
-        "title": "AI-native",
-        "desc": "AI is the foundation, not a button bolted on after."
+        "title": "Clarify the problem first",
+        "desc": "Requirements are not a list. They are a set of tradeoffs across users, cost, timing, and scope."
       },
       {
-        "title": "Design-led",
-        "desc": "Taste and feel are the edge, all on their own."
+        "title": "Bring order to the interface",
+        "desc": "Design is not decoration. Hierarchy, feedback, and brand tone all affect trust."
       },
       {
-        "title": "Built to last",
-        "desc": "Systems you can fix, grow, and trust to outlast the moment."
+        "title": "Write code for tomorrow",
+        "desc": "Clear structure and boundaries make a project easier to maintain, hand over, and grow."
       },
       {
-        "title": "Globally minded",
-        "desc": "From day one, made with several languages and markets in mind."
+        "title": "Think beyond one market",
+        "desc": "Chinese, Japanese, English, and cross-market realities belong in the plan from day one."
       }
     ]
   },
   "cta": {
-    "eyebrow": "Start a project",
-    "title": "Got something you've been wanting to build?",
-    "subtitle": "Even if it's still one sentence, or half a product — let's talk. Whatever can be built, we'll build with you.",
-    "button": "Let's talk",
+    "eyebrow": "Start a conversation",
+    "title": "If there is a product to build, start by making the problem clear.",
+    "subtitle": "Bring us an idea, an old system, or a business preparing to launch. We will help decide what to build, what to build first, and what can wait.",
+    "button": "Book a conversation",
     "emailLabel": "Or email us directly"
   },
   "footer": {
-    "tagline": "Things that actually run — made with AI, engineering and design. Connecting China, Japan and the world.",
+    "tagline": "Software products, AI applications, and digital platforms. We make complex work clear, and useful systems last.",
     "groups": {
       "company": "Company",
       "products": "Products",
@@ -186,8 +186,8 @@
     },
     "links": {
       "about": "About",
-      "work": "Work",
-      "services": "Capabilities",
+      "work": "Products and Work",
+      "services": "Services",
       "contact": "Contact",
       "careers": "Careers",
       "join": "Investors / Partners",
@@ -204,27 +204,27 @@
   },
   "about": {
     "eyebrow": "About XICO",
-    "title": "Technology should move toward people, not away.",
-    "subtitle": "XICO AI｜智希可 is a product and technology company connecting China, Japan and global markets.",
+    "title": "Product, engineering, and taste in the same room.",
+    "subtitle": "Changsha Zhixike Technology Co., Ltd. operates product development and software services under XICO AI｜智希可.",
     "story": [
-      "The stronger technology gets, the colder it can feel. We want the opposite — to let it step back, so people come a little closer to their own lives.",
-      "We build AI, software and products. But what we really hold close is where it lands: whose hands, and whether it's easy and kind to use.",
-      "We're not a big company, and we don't make big claims. We'd rather do a few things well — things that last, and travel beyond one market."
+      "We started in Changsha and work toward China, Japan, and wider overseas markets. We build our own products, and we build software systems that clients can actually use.",
+      "We care about technology, but we do not worship it. A product becomes real through clear workflows, a trustworthy experience, stable engineering, and the ability to keep operating.",
+      "So the way we work is straightforward: ask the right questions, keep the interface clean, and build the system properly. Less showmanship, more long-term use."
     ],
     "values": {
-      "title": "Our principles",
+      "title": "What we believe",
       "items": [
         {
-          "title": "Build what matters",
-          "desc": "Not building for its own sake — only what someone truly needs."
+          "title": "A product needs a clear reason",
+          "desc": "Not every idea should be built. We judge value before we add complexity."
         },
         {
-          "title": "Make complexity feel simple",
-          "desc": "However complex underneath, it should feel simple in your hands."
+          "title": "Experience is a form of trust",
+          "desc": "Good-looking is not enough. Clear, restrained, and easy to use is what makes people feel safe."
         },
         {
-          "title": "Think globally, sweat the details",
-          "desc": "Made for the world, every corner cleaned up."
+          "title": "Engineering must survive the next step",
+          "desc": "After launch come maintenance, expansion, fixes, and growth. The code has to leave room for tomorrow."
         }
       ]
     },
@@ -232,11 +232,11 @@
       "eyebrow": "Founder",
       "name": "Yao Kai · 姚凱",
       "role": "Founder & CEO",
-      "quote": "The best products grow along the seam where engineering meets design.",
+      "quote": "A product is not a screenshot of inspiration. It is a system people can use again and again.",
       "bio": [
-        "I believe real product strength comes from carrying one thing all the way through — from finding the problem, defining it and designing the experience, to launch, payments, support and back office. Not stopping at an idea.",
-        "I work full-stack, tying front-end, mobile, back-end, databases and cloud into one coherent product — and I sweat the unglamorous parts that make a service actually run: payments, admin, legal, security.",
-        "I move between Chinese, Japanese and English, working across cultures. XICO is where that belief becomes product."
+        "I started XICO to bring technology, design, and business judgment together. Many projects fail not because there is too little code, but because the first problem was never made clear.",
+        "I tend to look at products from a full-stack point of view: front end, mobile, back end, database, payments, admin, deployment, and operations all have to connect. If one part breaks, the user simply feels that the product is unreliable.",
+        "Changsha Zhixike Technology Co., Ltd. will keep building its own products, while opening its software development and product capability to collaborators. I hope it becomes a quiet company with real weight."
       ]
     },
     "company": {
@@ -246,29 +246,29 @@
       "brandLabel": "Brand",
       "brand": "XICO AI｜智希可",
       "focusLabel": "Focus",
-      "focus": "AI Products · Software · Digital Platforms",
+      "focus": "Software Products · AI Applications · Digital Platforms · Mobile and Web Development",
       "marketsLabel": "Markets",
-      "markets": "China · Japan · Global"
+      "markets": "China · Japan · Overseas Markets"
     }
   },
   "services": {
-    "eyebrow": "Capabilities",
-    "title": "From an idea to a real launch.",
-    "subtitle": "The full range of product capability is here — or we can lend a hand on just the stretch you need.",
+    "eyebrow": "Services",
+    "title": "Reliable software. Systems built for the long run.",
+    "subtitle": "For new products from zero to one, existing-system rebuilds, AI feature integration, and teams that need a long-term technical partner.",
     "sections": [
       {
-        "title": "AI Engineering",
-        "desc": "Turn large models and agents into something steady, controllable, and ready to ship.",
+        "title": "Product and Requirement Shaping",
+        "desc": "We clarify goals, users, workflows, and boundaries before the first line of code.",
         "points": [
-          "LLM apps & agents",
-          "RAG & knowledge bases",
-          "Recommendation & personalization",
-          "AI infra & evals"
+          "Product positioning and scope",
+          "User journeys and information architecture",
+          "MVP planning and release cadence",
+          "Prototypes, flows, and requirement docs"
         ]
       },
       {
-        "title": "Product Design",
-        "desc": "Define brand and experience through design, so people trust it at first glance.",
+        "title": "Interface and Experience Design",
+        "desc": "We make systems feel restrained, clear, and straightforward to use.",
         "points": [
           "Brand & identity",
           "UI / UX design",
@@ -277,54 +277,54 @@
         ]
       },
       {
-        "title": "Software Engineering",
-        "desc": "From front-end to cloud, build the whole system clean, maintainable, and able to hold.",
+        "title": "Software Development and Integration",
+        "desc": "From front end, mobile, back end, and databases to third-party services, we build products that can launch.",
         "points": [
-          "Web & mobile",
-          "Full-stack & APIs",
-          "Cloud-native & DevOps",
-          "Performance & reliability"
+          "Web / H5 / admin consoles",
+          "iOS / Android applications",
+          "APIs, databases, and permissions",
+          "Payments, email, files, and third-party integrations"
         ]
       },
       {
-        "title": "Growth & Global",
-        "desc": "Take products across borders and markets — wiring China to the world.",
+        "title": "AI Applications and Data Capability",
+        "desc": "We put model capability into real business workflows, not just demos.",
         "points": [
-          "Cross-border commerce",
-          "Study abroad & education",
-          "i18n & localization",
-          "Growth & operations"
+          "Knowledge bases and AI Q&A",
+          "Content generation and review workflows",
+          "RAG, retrieval, and evaluation",
+          "Dashboards and operational analysis"
         ]
       }
     ]
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Take the thing worth doing, and make it real.",
-    "subtitle": "Want to collaborate, ask something technical, or build something together? Use the form below, or just email us.",
+    "title": "Tell us about the project.",
+    "subtitle": "You do not need a polished brief. Tell us what is happening now, who it is for, and when it needs to go live. We will help work out the next step.",
     "form": {
       "name": "Your name",
       "email": "Email",
       "company": "Company / team (optional)",
-      "topic": "What's it about",
+      "topic": "What would you like to discuss?",
       "topics": {
-        "collaboration": "Product / business collaboration",
-        "consulting": "Technical consulting",
+        "collaboration": "Software product development",
+        "consulting": "AI application delivery",
         "careers": "Joining XICO",
         "other": "Something else"
       },
-      "message": "Your message",
-      "submit": "Send",
-      "success": "Received — thank you! We'll get back to you soon.",
+      "message": "Project background / current problem",
+      "submit": "Send to XICO",
+      "success": "Received. We will read it carefully and reply soon.",
       "note": "We usually reply within 1–2 business days.",
-      "build": "What are you looking to build?",
+      "build": "What kind of project is it?",
       "projectType": "Project type",
       "projectTypes": {
-        "ai": "AI product",
+        "ai": "AI application",
         "mobile": "Mobile app",
-        "web": "Web platform",
-        "internal": "Internal system",
-        "redesign": "Product redesign",
+        "web": "Web / website",
+        "internal": "Internal business system",
+        "redesign": "Legacy system rebuild",
         "other": "Other"
       },
       "timeline": "Timeline",
@@ -340,10 +340,10 @@
   },
   "careers": {
     "eyebrow": "Careers",
-    "title": "Help shape the next form of cities and commerce.",
-    "subtitle": "XICO is a small, careful team. We build real, running products with AI and design — and we're looking for people who want to run the long race with us.",
+    "title": "Build with people who care about the work.",
+    "subtitle": "XICO is still early. We welcome people who can own a piece of work, have good taste, and are willing to keep refining a product.",
     "openRoles": "Open roles",
-    "noRoles": "No open roles right now — but we always want to meet good people. Just write to us.",
+    "noRoles": "There are no public openings right now, but good collaborations are always worth starting early. Write to us.",
     "remote": "Remote",
     "onsite": "On-site",
     "joinCta": "Investor / partner / collaborator?",
@@ -376,15 +376,15 @@
   },
   "join": {
     "eyebrow": "Investors · Partners · Collaboration",
-    "title": "If you believe in what we're building.",
-    "subtitle": "XICO is raising long-term products like Machi and Shangence, and reaching next into study-abroad and cross-border. Whether you're an investor, a sleeves-rolled-up partner, or a collaborator — we'd like to meet you.",
+    "title": "Looking for people who can stay with the work.",
+    "subtitle": "XICO is building Machi and Shangence, and will continue into study abroad, cross-border commerce, and local services. If you are an investor, partner, or can bring industry resources and channels, we would like to have a serious conversation.",
     "tabs": {
       "partner": "Investor / Partner",
       "collaborator": "Collaborator"
     },
     "intro": {
-      "partner": "Investors and hands-on project partners — learn our direction, progress and plans, and grow it with us.",
-      "collaborator": "Join forces on technology, design, channels or resources."
+      "partner": "For investors and hands-on project partners: understand our direction, progress, and plans, then help grow them with us.",
+      "collaborator": "Work together through technology, design, channels, supply chain, or industry resources."
     },
     "fields": {
       "name": "Your name",
@@ -414,74 +414,74 @@
     }
   },
   "blog": {
-    "eyebrow": "News",
-    "title": "Latest news & announcements",
-    "subtitle": "Where XICO's product journey and company news get written down.",
-    "empty": "Still a blank page here — give it a little time.",
+    "eyebrow": "Updates",
+    "title": "Product progress and company notes",
+    "subtitle": "Public notes on product, engineering, company building, and markets.",
+    "empty": "There is no public update here yet.",
     "readMore": "Read more",
     "backToList": "← Back to all posts",
     "publishedOn": "Published"
   },
   "process": {
-    "eyebrow": "How we work together",
-    "title": "From one sentence to launch day",
-    "subtitle": "No flowcharts to dazzle you. Honestly, it's just these few steps — and someone owns each one.",
+    "eyebrow": "Delivery Process",
+    "title": "From first conversation to stable launch",
+    "subtitle": "The process is not complicated, but each step has to be clean.",
     "steps": [
       {
-        "title": "Hear you out first",
-        "desc": "What you're solving, who it's for, how urgent. Knowing what to build is often harder than how."
+        "title": "Diagnosis and tradeoffs",
+        "desc": "We clarify goals, users, budget, timing, and the core functions that must ship."
       },
       {
-        "title": "Think it through, then draw it",
-        "desc": "Turn a fuzzy notion into something you can see and tap. Get the direction right before the first line of code."
+        "title": "Prototype and plan",
+        "desc": "We map workflows, screens, and the technical route so risks appear early."
       },
       {
-        "title": "Build it, line by line",
-        "desc": "Design, front-end, back-end, data, cloud — everything that should connect, connects. Nothing dropped in between."
+        "title": "Build and integrate",
+        "desc": "Front end, back end, database, permissions, payments, and deployment move forward by version, with clear acceptance points."
       },
       {
-        "title": "Launch is the beginning",
-        "desc": "Payments, admin, support, monitoring… get it truly running, then stay with it."
+        "title": "Launch and iterate",
+        "desc": "After launch, we read data and feedback, fix what needs fixing, and leave the product in a sustainable operating state."
       }
     ]
   },
   "faq": {
     "eyebrow": "You might be wondering",
-    "title": "A few questions we often get",
+    "title": "A few things to clarify before working together",
     "subtitle": "If yours isn't here, just write and ask.",
     "items": [
       {
-        "q": "Do you take client work, or build your own products?",
-        "a": "Both. We raise Machi and Shangence ourselves — and the same people, the same craft, help others build theirs."
+        "q": "Are you more of a software development company or a product studio?",
+        "a": "Both. XICO builds long-term products of its own, and also opens its product, design, development, and launch capability to external collaborations."
       },
       {
-        "q": "Can I come to you with just a rough idea?",
-        "a": "That's exactly the right time. Most things start as a single sentence. Making the idea clear, and deciding whether it's worth building, is the first step worth taking together."
+        "q": "Can we talk if the idea is still rough?",
+        "a": "Yes. Many projects start incomplete. We will first help judge whether the need is real, how small the first version should be, and which features can wait."
       },
       {
-        "q": "How long does a project take?",
-        "a": "Depends how big it is. A usable first version is usually weeks to a few months. We'd rather start small and solid, then let it grow."
+        "q": "What kinds of projects do you usually take on?",
+        "a": "Software products, AI applications, web and mobile products, admin systems, digital platforms, company websites, and brand experience."
       },
       {
-        "q": "What happens after launch?",
-        "a": "We don't walk away. Payments, admin, monitoring, someone there when something breaks — that's where a product actually stays alive. We prefer to stay with it a while."
+        "q": "How long does a project usually take?",
+        "a": "It depends on scope. A usable first version usually takes weeks to a few months. We prefer to make the first version clear and solid, then iterate."
       },
       {
-        "q": "Can you work in Chinese, Japanese and English?",
-        "a": "Yes. We already work across all three. Several languages and markets are considered from day one, not translated in afterwards."
+        "q": "Do you support the product after launch?",
+        "a": "Yes. Deployment, monitoring, fixes, feature iteration, content, and data maintenance can continue as the project needs."
       },
       {
         "q": "How do we start?",
-        "a": "Send an email, or fill in the contact form, and tell us what you want to build. We usually reply within a day or two."
+        "a": "Send an email or fill out the contact form. Tell us what you want to build, where the project stands, and the expected timing. We usually reply within 1-2 business days."
       }
     ]
   },
   "manifesto": {
-    "eyebrow": "On time",
-    "title": "What matters is whether it's still here in three years.",
+    "eyebrow": "Our Preference",
+    "title": "Less noise. More weight.",
     "body": [
-      "Launch is just the start. We'd rather go slow and make one thing solid — solid enough that, long after, someone still wants to open it.",
-      "Plenty of things make noise; few of them stay. We're trying to make the kind that stays."
+      "We like products that do not rush to prove themselves: clear when opened, smooth when used, responsible when something goes wrong, and still able to grow years later.",
+      "A website can be beautiful and the code can be new, but what remains is whether the system helped someone get the work done."
     ]
   },
   "legal": {
