@@ -20,7 +20,7 @@ export function Process() {
         <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
-              <li className="group relative h-full rounded-2xl border border-border bg-surface/50 p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface">
+              <li className="group interactive-surface relative h-full rounded-2xl border border-border bg-surface/50 p-6 sm:p-7">
                 <div className="flex items-baseline gap-3">
                   <span className="font-display text-4xl font-semibold leading-none text-foreground/15 transition-colors duration-500 group-hover:text-brand/40">
                     {String(i + 1).padStart(2, "0")}
