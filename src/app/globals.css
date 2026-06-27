@@ -184,6 +184,33 @@
     outline: 2px solid color-mix(in oklab, var(--brand) 62%, transparent);
     outline-offset: 3px;
   }
+  @media (hover: hover) and (pointer: fine) {
+    a[href],
+    button:not(:disabled),
+    [role="button"],
+    summary,
+    input,
+    textarea,
+    select {
+      transition-property: color, background-color, border-color, box-shadow,
+        opacity, filter, transform;
+      transition-duration: 220ms;
+      transition-timing-function: var(--ease-out-expo);
+    }
+
+    a[href]:hover,
+    button:not(:disabled):hover,
+    [role="button"]:hover {
+      filter: saturate(1.04);
+    }
+
+    input:hover,
+    textarea:hover,
+    select:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 8%, transparent);
+    }
+  }
   *,
   ::before,
   ::after {
@@ -222,6 +249,30 @@
 
   .card-elevated {
     box-shadow: var(--card-shadow);
+  }
+
+  .interactive-surface {
+    transform: translateZ(0);
+    transition-property: border-color, background-color, box-shadow, transform,
+      filter;
+    transition-duration: 320ms;
+    transition-timing-function: var(--ease-out-expo);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .interactive-surface:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-strong);
+      background-color: color-mix(in oklab, var(--surface) 86%, transparent);
+      box-shadow: var(--card-shadow);
+    }
+
+    .interactive-link:hover {
+      color: var(--foreground);
+      text-decoration-color: color-mix(in oklab, var(--brand) 62%, transparent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+    }
   }
 
   /* cursor-following spotlight on cards (driven by --mx/--my) */
