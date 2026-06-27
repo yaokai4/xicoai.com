@@ -48,7 +48,7 @@ export function ContactForm() {
               key={key}
               onClick={() => setPtype(key)}
               className={
-                "rounded-full border px-4 py-2 text-sm transition-colors " +
+                "rounded-full border px-4 py-2 text-sm transition-all " +
                 (ptype === key
                   ? "border-brand/50 bg-brand/10 text-foreground"
                   : "border-border text-muted hover:border-border-strong hover:text-foreground")
