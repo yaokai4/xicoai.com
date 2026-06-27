@@ -51,7 +51,7 @@ function AboutContent() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
             <Reveal className="lg:sticky lg:top-28 lg:h-fit">
-              <div className="rounded-3xl border border-border bg-surface/40 p-8">
+              <div className="interactive-surface rounded-3xl border border-border bg-surface/40 p-6 sm:p-8">
                 <div
                   aria-hidden
                   className="relative mb-6 grid h-40 place-items-center overflow-hidden rounded-2xl border border-border/60"
@@ -93,7 +93,7 @@ function AboutContent() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {values.map((v, i) => (
                 <Reveal key={v.title} delay={i * 0.07}>
-                  <div className="group spotlight-card card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-border-strong">
+                  <div className="group spotlight-card interactive-surface card-elevated h-full overflow-hidden rounded-2xl border border-border bg-surface/60 p-6">
                     <SpotlightTracker />
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-brand/10 text-brand transition-colors duration-300 group-hover:border-brand/30 group-hover:bg-brand/15">
                       <ValueIcon index={i} />
@@ -112,7 +112,7 @@ function AboutContent() {
 
           <div className="mt-16">
             <Reveal>
-              <div className="rounded-3xl border border-border bg-surface/40 p-8 sm:p-10">
+              <div className="interactive-surface rounded-3xl border border-border bg-surface/40 p-8 sm:p-10">
                 <div className="text-xs font-medium uppercase tracking-wider text-faint">
                   {company.eyebrow}
                 </div>
@@ -145,7 +145,7 @@ function AboutContent() {
             <Reveal className="lg:sticky lg:top-28 lg:h-fit">
               <Eyebrow>{t("founder.eyebrow")}</Eyebrow>
               <blockquote className="mt-6 font-display text-2xl font-semibold leading-snug tracking-tight text-balance sm:text-3xl">
-                “{t("founder.quote")}”
+                “{t("founder.quote")}" 
               </blockquote>
               <div className="mt-7 flex items-center gap-3">
                 <span
@@ -178,7 +178,7 @@ function AboutContent() {
       <section className="pb-24 sm:pb-32">
         <Container>
           <Reveal>
-            <div className="spotlight-card card-elevated border-gradient relative overflow-hidden rounded-[2rem] border border-border bg-surface/60 px-8 py-14 sm:px-14 sm:py-16">
+            <div className="spotlight-card interactive-surface card-elevated border-gradient relative overflow-hidden rounded-[2rem] border border-border bg-surface/60 px-6 py-12 sm:px-14 sm:py-16">
               <SpotlightTracker />
               <div
                 aria-hidden
@@ -219,8 +219,8 @@ function AboutContent() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:justify-self-end">
-                  <ButtonLink href="/contact" variant="primary">
+                <div className="w-full lg:w-auto lg:justify-self-end">
+                  <ButtonLink href="/contact" variant="primary" className="w-full sm:w-auto">
                     {tcta("button")}
                     <ArrowIcon />
                   </ButtonLink>
