@@ -14,8 +14,8 @@ const nextConfig: NextConfig = {
     serverActions: {
       // résumé uploads can be up to 10MB
       bodySizeLimit: "12mb",
-      // forms run behind the Nginx Proxy Manager reverse proxy
-      allowedOrigins: ["xicoai.com", "www.xicoai.com"],
+      // forms run behind the Caddy reverse proxy (main site + product subdomain)
+      allowedOrigins: ["xicoai.com", "www.xicoai.com", "mac.xicoai.com"],
     },
   },
 };

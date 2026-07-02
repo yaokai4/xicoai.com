@@ -10,6 +10,7 @@ import {
   posts,
   applications,
   joinSubmissions,
+  waitlistSignups,
   settings,
   type L10n,
   type L10nList,
@@ -175,6 +176,20 @@ export async function setJoinStatus(formData: FormData) {
   ) as typeof joinSubmissions.$inferInsert.status;
   if (id) await getDb().update(joinSubmissions).set({ status }).where(eq(joinSubmissions.id, id));
   revalidatePath("/admin/join");
+}
+
+export async function setWaitlistStatus(formData: FormData) {
+  await requireAdmin();
+  const id = Number(formData.get("id"));
+  const status = String(
+    formData.get("status"),
+  ) as typeof waitlistSignups.$inferInsert.status;
+  if (id)
+    await getDb()
+      .update(waitlistSignups)
+      .set({ status })
+      .where(eq(waitlistSignups.id, id));
+  revalidatePath("/admin/waitlist");
 }
 
 export async function savePost(

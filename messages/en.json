@@ -21,7 +21,8 @@
     "cta": "Start a conversation",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "mac": "Xico Clean"
   },
   "hero": {
     "eyebrow": "Changsha Zhixike Technology Co., Ltd.",
@@ -101,6 +102,22 @@
     "highlightsLabel": "Highlights",
     "items": [
       {
+        "key": "xicoclean",
+        "name": "Xico Clean",
+        "kind": "macOS cleaner & optimizer · Flagship desktop app",
+        "tagline": "Make your Mac fast and clean again",
+        "about": "Xico Clean is Changsha Zhixike's flagship desktop app — a premium macOS cleaner and optimizer built to rival CleanMyMac X. Native Swift 6 + SwiftUI, deeply integrated with the system: one-tap Smart Scan, dedicated developer-junk cleanup, Space Lens visualization, duplicate and similar-photo detection, thorough uninstalls, privacy and maintenance. Every deletion is previewable and undoable, and everything runs locally — making cleanup both safe and beautiful.",
+        "desc": "A native Swift-built Mac cleaner: Smart Scan, developer junk, space visualization, duplicate files and privacy cleanup — all local, previewable and undoable.",
+        "highlights": [
+          "One-tap Smart Scan",
+          "Developer-junk cleanup",
+          "Space Lens visualization",
+          "Safe · undoable · fully local"
+        ],
+        "status": "Coming soon",
+        "platforms": "macOS 13+ · Apple silicon / Intel"
+      },
+      {
         "key": "machi",
         "name": "Machi",
         "kind": "City-living platform",
@@ -144,7 +161,8 @@
         "platforms": ""
       }
     ],
-    "platformsLabel": "Platforms"
+    "platformsLabel": "Platforms",
+    "learnMore": "Learn more"
   },
   "approach": {
     "eyebrow": "How We Work",
@@ -196,7 +214,8 @@
       "email": "Email",
       "location": "Changsha, China",
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Service",
+      "xicoclean": "Xico Clean"
     },
     "rights": "All rights reserved.",
     "icp": "湘ICP备XXXXXXXX号",
@@ -543,6 +562,522 @@
         {
           "h": "Contact",
           "p": "For any questions about these terms, contact hi@xicoai.com."
+        }
+      ]
+    }
+  },
+  "mac": {
+    "meta": {
+      "title": "Xico Clean — a native cleaner and optimizer for Mac",
+      "description": "Xico Clean is a native macOS cleaner and optimizer: one-tap Smart Scan, dedicated developer-junk cleanup, Space Lens visualization, duplicate and similar-photo detection, thorough uninstalls, and privacy cleanup. Fully local, previewable, and undoable. Built for Apple silicon. Coming soon."
+    },
+    "nav": {
+      "features": "Features",
+      "safety": "Safety",
+      "privacy": "Privacy",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "waitlist": "Join the waitlist",
+      "company": "XICO AI",
+      "home": "Home",
+      "security": "Security",
+      "support": "Support"
+    },
+    "badge": "Coming soon",
+    "hero": {
+      "eyebrow": "Native macOS app · Built for Apple silicon",
+      "titleLine1": "Make your Mac",
+      "titleLine2": "fast and clean again",
+      "subtitle": "Xico Clean finds system junk, developer caches, large files, and duplicates in a single tap, then safely frees up disk space. Built in native Swift and fully local — preview before you delete, undo after.",
+      "ctaPrimary": "Join the waitlist",
+      "ctaSecondary": "See what it does",
+      "trust": [
+        "100% local",
+        "Previewable · undoable",
+        "Native Apple silicon"
+      ]
+    },
+    "window": {
+      "appName": "Xico Clean",
+      "scanTitle": "Smart Scan",
+      "reclaimLabel": "reclaimable",
+      "reclaimAmount": "11.4 GB",
+      "scanButton": "Clean up",
+      "sidebar": [
+        "Smart Scan",
+        "System Junk",
+        "Developer Junk",
+        "Space Lens",
+        "Duplicates",
+        "Uninstaller",
+        "Privacy",
+        "Optimize"
+      ],
+      "breakdown": [
+        {
+          "label": "System Junk",
+          "value": "6.8 GB"
+        },
+        {
+          "label": "Developer caches",
+          "value": "3.1 GB"
+        },
+        {
+          "label": "Duplicates",
+          "value": "820 MB"
+        },
+        {
+          "label": "Trash",
+          "value": "640 MB"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "0.9s",
+          "label": "full Smart Scan"
+        },
+        {
+          "value": "11GB+",
+          "label": "reclaimed in testing"
+        },
+        {
+          "value": "100%",
+          "label": "local, never uploaded"
+        },
+        {
+          "value": "One-time",
+          "label": "pay once, no subscription"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Everything it does",
+      "title": "One app to look after your entire Mac",
+      "subtitle": "From system junk to developer caches, from space visualization to privacy cleanup — Xico Clean brings everything Mac maintenance needs into one polished native app.",
+      "items": [
+        {
+          "name": "Smart Scan",
+          "desc": "Scan for system junk, privacy, and performance issues in one tap, with a clear overview and a safe one-click cleanup."
+        },
+        {
+          "name": "System Junk",
+          "desc": "User and system caches, logs, language files, old update packages, and app caches — cleared with precision."
+        },
+        {
+          "name": "Developer Junk",
+          "desc": "Xcode DerivedData, simulators, node_modules, Homebrew / npm / pip caches and dangling Docker images."
+        },
+        {
+          "name": "Space Lens",
+          "desc": "Turn your whole SSD into an interactive treemap, drill down folder by folder, and see exactly where space went."
+        },
+        {
+          "name": "Large & Old Files",
+          "desc": "Filter by size and last-accessed date to quickly surface the big files worth clearing."
+        },
+        {
+          "name": "Duplicates",
+          "desc": "Content-level deduplication that recognizes APFS clones to avoid false positives, and smartly keeps one copy."
+        },
+        {
+          "name": "Similar Photos",
+          "desc": "On-device Vision clustering finds duplicate and near-identical photos, keeping the best shot."
+        },
+        {
+          "name": "Uninstaller",
+          "desc": "Remove apps completely — along with their caches, preferences, containers, login items, and receipts."
+        },
+        {
+          "name": "Privacy Cleanup",
+          "desc": "Clear history, cookies, and caches across Safari, Chrome, Firefox, Edge, and Arc."
+        },
+        {
+          "name": "Optimize & Maintain",
+          "desc": "Manage login items, free up memory, run maintenance scripts, rebuild the index, and flush DNS."
+        },
+        {
+          "name": "Menu Bar Monitor",
+          "desc": "Lives in the menu bar with live CPU, memory, and network stats, plus quick cleanup always at hand."
+        },
+        {
+          "name": "Malware Removal",
+          "desc": "Scan for known macOS adware and malicious components using a signed definitions library, and remove them on detection."
+        }
+      ]
+    },
+    "deepdive": {
+      "eyebrow": "Signature capabilities",
+      "title": "Turning tedious cleanup into something that feels good",
+      "subtitle": "A few capabilities you'll remember at a glance — the ones we poured the most care into polishing.",
+      "items": [
+        {
+          "tag": "Smart Scan",
+          "title": "One tap, and your whole Mac feels new",
+          "desc": "System junk, privacy traces, and performance issues, cleared in a single pass. After the signature scan animation, you get a clear overview card — how much you can reclaim and what we found. Only 100% safe items are checked by default, and you can review every one.",
+          "points": [
+            "Combined scan: system junk, privacy, and performance",
+            "Only 100% safe items checked by default",
+            "A reclaimable-space overview when it's done"
+          ]
+        },
+        {
+          "tag": "Space Lens",
+          "title": "See your disk — and where the space went, at a glance",
+          "desc": "Turn your entire SSD into an interactive treemap, so it's obvious what's taking up room. Drill down to a specific folder, then reveal it in Finder or move it to the Trash right there.",
+          "points": [
+            "Whole-disk treemap visualization",
+            "Drill down to specific folders",
+            "Reveal in Finder or move to Trash"
+          ]
+        },
+        {
+          "tag": "Developer Junk",
+          "title": "Reclaim tens of gigabytes — made for developers",
+          "desc": "Xcode's DerivedData, DeviceSupport, Archives, and old simulators, plus node_modules, Homebrew / npm / pip caches, and dangling Docker images — the developer junk that quietly eats tens of gigabytes, all found in one pass.",
+          "points": [
+            "Xcode DerivedData / DeviceSupport / Archives",
+            "node_modules / Homebrew / npm / pip caches",
+            "Dangling Docker images and old simulators"
+          ]
+        },
+        {
+          "tag": "Duplicates & Similar",
+          "title": "Duplicate files and near-identical photos — keep only the best",
+          "desc": "Content-level hashing finds duplicates precisely and recognizes APFS clones to avoid false positives, while similar-photo detection uses on-device Vision clustering to help you keep the best shot from a burst. Always local, never uploaded.",
+          "points": [
+            "Content-level hashing, APFS-clone aware",
+            "On-device Vision photo clustering",
+            "Fully local, never uploaded"
+          ]
+        }
+      ]
+    },
+    "safety": {
+      "eyebrow": "Safety first",
+      "title": "The biggest fear in cleaning is deleting the wrong thing — so we build peace of mind into every step",
+      "subtitle": "The biggest trust risk in any cleaner is accidental deletion. So from preview to undo, from whitelist to protection list, every deletion in Xico Clean leaves a way back.",
+      "items": [
+        {
+          "title": "Always preview, then delete",
+          "desc": "Every item expands to show its path and size — nothing moves until you confirm."
+        },
+        {
+          "title": "Undoable",
+          "desc": "Items go to the Trash or a recoverable area first, so you can undo your last cleanup anytime."
+        },
+        {
+          "title": "Whitelist & ignore list",
+          "desc": "Permanently protect certain paths, and Xico Clean will never touch them again."
+        },
+        {
+          "title": "Built-in protection list",
+          "desc": "Critical system files, SIP-protected paths, the keychain, and data from running apps are strictly off-limits."
+        },
+        {
+          "title": "Safe items only, by default",
+          "desc": "Risky items — like language files or active app caches — are unchecked by default and clearly flagged."
+        },
+        {
+          "title": "Transparent by design",
+          "desc": "Every category explains what it is and what happens if you delete it — never a black box."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Privacy",
+      "title": "Your files stay on your Mac — always",
+      "subtitle": "Cleaning is deeply personal. All scanning and analysis in Xico Clean happen locally — we neither want to, nor are able to, see your files.",
+      "points": [
+        "All scanning and analysis run locally",
+        "No file contents are ever uploaded",
+        "Telemetry is anonymous and can be turned off in one tap",
+        "Similar-photo detection is pure on-device Vision"
+      ]
+    },
+    "performance": {
+      "eyebrow": "Native performance",
+      "title": "Built in native Swift — so fast you'll barely notice it",
+      "subtitle": "We flatly refuse to use Electron. Xico Clean is thoroughly native and built for Apple silicon — fast to scan, light on resources, smooth in motion.",
+      "items": [
+        {
+          "value": "Swift 6 + SwiftUI",
+          "label": "100% native, no Electron"
+        },
+        {
+          "value": "Apple silicon",
+          "label": "native, Intel-compatible"
+        },
+        {
+          "value": "60 / 120fps",
+          "label": "smooth even with huge numbers of files"
+        },
+        {
+          "value": "≈ 0 idle load",
+          "label": "never nags or slows down your Mac"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Pay once. No subscription traps",
+      "subtitle": "Instead of renewing every year, pay once. Xico Clean is a one-time purchase with free updates for the long haul — and a 14-day full-feature trial to help you decide.",
+      "priceLabel": "Price to be announced",
+      "priceNote": "The final price is set at launch. Waitlist members get an early-bird discount.",
+      "features": [
+        "14-day full-feature free trial",
+        "Buy once, free updates for the long haul",
+        "Use it on all your own Macs"
+      ],
+      "cta": "Join the waitlist for the early-bird price"
+    },
+    "waitlist": {
+      "eyebrow": "Early access",
+      "title": "Xico Clean is coming soon",
+      "subtitle": "Leave your email and we'll tell you the moment it launches — plus an early-bird price just for the waitlist.",
+      "fields": {
+        "email": "Your email",
+        "name": "What should we call you? (optional)",
+        "placeholder": "you@example.com",
+        "submit": "Join the waitlist",
+        "sending": "Submitting…",
+        "success": "You're on the waitlist! We'll be in touch the moment we launch.",
+        "error": "Something went wrong — please try again."
+      },
+      "privacyNote": "We'll only use it to tell you about the launch. No spam, ever."
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "You might be wondering",
+      "items": [
+        {
+          "q": "Which Macs are supported?",
+          "a": "macOS 13 Ventura and later, as a universal binary for both Apple silicon and Intel — one installer for all."
+        },
+        {
+          "q": "Is it safe? Could it delete the wrong thing?",
+          "a": "Every deletion is previewable and undoable, a built-in protection list guards critical system files, and only 100% safe items are checked by default."
+        },
+        {
+          "q": "Will it upload my files?",
+          "a": "No. All scanning and analysis happen locally, no file contents are ever uploaded, and telemetry can be turned off in one tap."
+        },
+        {
+          "q": "Is it a subscription?",
+          "a": "No. Xico Clean is a one-time purchase with free updates for the long haul, plus a 14-day full-feature trial."
+        },
+        {
+          "q": "Will it be on the App Store?",
+          "a": "It's distributed through Apple-notarized Developer ID, so its features aren't limited by the sandbox — and it's just as safe to install."
+        },
+        {
+          "q": "Can I download it now?",
+          "a": "Coming soon. Join the waitlist and we'll tell you the moment it launches, with an early-bird price for members."
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Xico Clean — a native cleaner and optimizer for Mac. Native, safe, and fully local.",
+      "productGroup": "Product",
+      "companyGroup": "Company",
+      "by": "Made by XICO AI",
+      "links": {
+        "features": "Features",
+        "safety": "Safety",
+        "privacy": "Privacy",
+        "pricing": "Pricing",
+        "faq": "FAQ",
+        "waitlist": "Join the waitlist",
+        "company": "XICO AI",
+        "privacyPolicy": "Privacy Policy",
+        "terms": "Terms of Service"
+      }
+    },
+    "pages": {
+      "featuresTitle": "Everything you need to look after your whole Mac",
+      "featuresSubtitle": "From one-tap Smart Scan to developer junk, space visualization, and real-time monitoring — this is everything Xico Clean can do.",
+      "supportTitle": "Need a hand?",
+      "supportSubtitle": "FAQs, system requirements and how to reach us — all in one place.",
+      "moreFeatures": "See all features",
+      "moreSecurity": "Explore safety & privacy",
+      "morePricing": "See pricing"
+    },
+    "monitor": {
+      "eyebrow": "Real-time control",
+      "title": "Keep an eye on your Mac, right from the menu bar",
+      "desc": "A live monitor that lives in your menu bar: CPU, memory, GPU, disk, network, and temperature at a glance — plus quick memory release and quick cleanup on tap. Native sampling, with barely any overhead.",
+      "points": [
+        "Live CPU / memory / GPU / network curves",
+        "Battery health, temperature, and fan speed",
+        "Free up memory in a single click"
+      ],
+      "caption": "System Monitor · real UI",
+      "menuCaption": "Menu-bar panels"
+    },
+    "compare": {
+      "eyebrow": "Why buy once",
+      "title": "Pay once vs. subscription",
+      "oursLabel": "Xico Clean",
+      "theirsLabel": "Subscription tools",
+      "rows": [
+        {
+          "label": "Payment",
+          "ours": "One-time purchase",
+          "theirs": "Yearly renewal"
+        },
+        {
+          "label": "Updates",
+          "ours": "Free for the long haul",
+          "theirs": "Locked when you stop paying"
+        },
+        {
+          "label": "Multiple Macs",
+          "ours": "Use it on your own Macs",
+          "theirs": "Often charged per device"
+        },
+        {
+          "label": "Your data",
+          "ours": "Fully local, never uploaded",
+          "theirs": "Varies by product"
+        }
+      ]
+    },
+    "support": {
+      "requirementsTitle": "System requirements",
+      "requirements": [
+        "macOS 13 Ventura or later",
+        "Universal binary for Apple silicon & Intel",
+        "About 60 MB of disk space",
+        "Full Disk Access needed for full functionality"
+      ],
+      "contactTitle": "Still have questions?",
+      "contactDesc": "We're happy to help. Email us and we'll usually reply within one business day.",
+      "contactCta": "Email us"
+    },
+    "shots": {
+      "dashboard": "Smart Scan · real UI",
+      "monitor": "System Monitor · real UI"
+    },
+    "hardware": {
+      "eyebrow": "Hardware & health",
+      "title": "Battery, temperature, and drive health — all in view",
+      "desc": "Read battery health and cycle count; CPU, GPU, and SSD temperatures and fan speed; your SSD's SMART status and free space; plus memory and display info — as thorough as the pro tools, only better-looking.",
+      "points": [
+        "Battery health, cycle count, and charge status",
+        "CPU / GPU / SSD temperatures and fan speed",
+        "SSD SMART health, capacity, and display info"
+      ],
+      "caption": "Hardware · real UI (light theme)"
+    },
+    "catalog": {
+      "eyebrow": "Complete features",
+      "title": "One app for every corner of Mac maintenance",
+      "subtitle": "From cleanup to app management, from files and space to performance and security — Xico Clean brings everything your Mac needs into one native app.",
+      "groups": [
+        {
+          "name": "Cleanup",
+          "items": [
+            {
+              "name": "Smart Scan",
+              "desc": "Scan for system junk, privacy, and performance issues in one pass, with a clear overview and a safe one-click cleanup."
+            },
+            {
+              "name": "System Junk",
+              "desc": "User and system caches, logs, language files, broken login items and preferences, old updates, and app caches."
+            },
+            {
+              "name": "Mail Attachments",
+              "desc": "Clear locally cached mail attachments and downloads — instant inbox slimming."
+            },
+            {
+              "name": "Photo Junk",
+              "desc": "Clear your photo library's caches and unoptimized copies, leaving your originals untouched."
+            },
+            {
+              "name": "iOS Backups",
+              "desc": "Remove old iOS backups, firmware and device-support files you no longer need."
+            },
+            {
+              "name": "Trash",
+              "desc": "Empty the Trash across every volume in one go."
+            },
+            {
+              "name": "Developer Junk",
+              "desc": "Xcode DerivedData, simulators, node_modules, Homebrew / npm / pip caches and dangling Docker images."
+            }
+          ]
+        },
+        {
+          "name": "Applications",
+          "items": [
+            {
+              "name": "Uninstaller",
+              "desc": "Remove apps completely — along with their caches, preferences, containers, login items, and receipts."
+            },
+            {
+              "name": "Leftovers",
+              "desc": "Find orphaned files left behind by apps you've already deleted."
+            },
+            {
+              "name": "Updater",
+              "desc": "Spot available updates for your installed apps, all in one place."
+            },
+            {
+              "name": "Reset",
+              "desc": "Return an app to its just-installed state: wipe its data, keep the app."
+            }
+          ]
+        },
+        {
+          "name": "Files & space",
+          "items": [
+            {
+              "name": "Space Lens",
+              "desc": "A whole-disk treemap you can drill into, so you can pinpoint exactly what's taking up room."
+            },
+            {
+              "name": "Large & Old Files",
+              "desc": "Filter by size and last-accessed date to surface the big items worth clearing."
+            },
+            {
+              "name": "Duplicate Finder",
+              "desc": "Content-level deduplication that recognizes APFS clones to avoid false positives, and smartly keeps one copy."
+            },
+            {
+              "name": "Similar Photos",
+              "desc": "On-device Vision clustering keeps the best shot from your bursts and near-identical photos."
+            },
+            {
+              "name": "Downloads & Clutter",
+              "desc": "Tidy up your Downloads folder, desktop clutter, and old installers (.dmg / .pkg)."
+            }
+          ]
+        },
+        {
+          "name": "Performance & security",
+          "items": [
+            {
+              "name": "Optimization",
+              "desc": "Manage login items and launch agents, spot heavy background processes, and free up memory."
+            },
+            {
+              "name": "Maintenance",
+              "desc": "Run system maintenance scripts, rebuild the Spotlight index, flush DNS and repair disk permissions."
+            },
+            {
+              "name": "Privacy",
+              "desc": "Clear history, cookies, caches, and recent items across Safari, Chrome, Firefox, Edge, and Arc."
+            },
+            {
+              "name": "Malware Removal",
+              "desc": "Scan for known macOS adware and malicious components using a signed definitions library, and remove them on detection."
+            },
+            {
+              "name": "Menu Bar Monitor",
+              "desc": "Lives in the menu bar with live CPU, memory, disk, network, and battery stats, plus quick memory release and cleanup."
+            }
+          ]
         }
       ]
     }

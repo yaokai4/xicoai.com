@@ -17,3 +17,15 @@ xicoai.com {
 www.xicoai.com {
 	redir https://xicoai.com{uri} permanent
 }
+
+# Xico Clean product site. Needs a DNS A record: mac.xicoai.com → this host.
+# The app's proxy.ts rewrites this host's "/" to the /mac product route.
+mac.xicoai.com {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+	reverse_proxy app:3000
+}

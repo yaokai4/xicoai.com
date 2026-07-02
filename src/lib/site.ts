@@ -14,6 +14,7 @@ export const site = {
 export const navItems = [
   { key: "home", href: "/" },
   { key: "work", href: "/work" },
+  { key: "mac", href: "/mac" },
   { key: "services", href: "/services" },
   { key: "blog", href: "/blog" },
   { key: "about", href: "/about" },
@@ -23,4 +24,9 @@ export const navItems = [
 export const productUrls: Record<string, string> = {
   machi: "https://machicity.com",
   shangence: "https://shangence.com",
+};
+
+/** Products whose site lives inside this app, keyed by work item → route. */
+export const productRoutes: Record<string, string> = {
+  xicoclean: "/mac",
 };

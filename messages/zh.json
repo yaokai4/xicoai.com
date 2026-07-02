@@ -21,7 +21,8 @@
     "cta": "开始沟通",
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单",
-    "language": "语言"
+    "language": "语言",
+    "mac": "希可清理"
   },
   "hero": {
     "eyebrow": "长沙智希可科技有限公司",
@@ -101,6 +102,22 @@
     "highlightsLabel": "亮点",
     "items": [
       {
+        "key": "xicoclean",
+        "name": "Xico Clean",
+        "kind": "macOS 清理与优化 · 旗舰桌面产品",
+        "tagline": "让你的 Mac 重新变快、变干净",
+        "about": "Xico Clean 是长沙智希可科技的旗舰桌面产品，一款对标 CleanMyMac X 的高端 macOS 清理与优化工具。原生 Swift 6 + SwiftUI，深度系统集成：一键智能扫描、开发者垃圾专清、空间透镜可视化、重复文件与相似图片、彻底卸载、隐私与维护。所有删除都可预览、可撤销，全程本地不上传——把「清理」做得既安心又好看。",
+        "desc": "原生 Swift 打造的 Mac 清理工具：智能扫描、开发者垃圾、空间可视化、重复文件、隐私清理，全程本地、可预览可撤销。",
+        "highlights": [
+          "智能扫描一键清理",
+          "开发者垃圾专清",
+          "空间透镜可视化",
+          "安全 · 可撤销 · 全本地"
+        ],
+        "status": "即将上线",
+        "platforms": "macOS 13+ · Apple 芯片 / Intel"
+      },
+      {
         "key": "machi",
         "name": "Machi",
         "kind": "城市生活平台",
@@ -144,7 +161,8 @@
         "platforms": ""
       }
     ],
-    "platformsLabel": "平台"
+    "platformsLabel": "平台",
+    "learnMore": "了解更多"
   },
   "approach": {
     "eyebrow": "工作方式",
@@ -196,7 +214,8 @@
       "email": "邮件",
       "location": "长沙 · 中国",
       "privacy": "隐私政策",
-      "terms": "用户协议"
+      "terms": "用户协议",
+      "xicoclean": "Xico Clean"
     },
     "rights": "保留所有权利。",
     "icp": "湘ICP备XXXXXXXX号",
@@ -543,6 +562,522 @@
         {
           "h": "联系我们",
           "p": "如对本协议有任何疑问，请联系 hi@xicoai.com。"
+        }
+      ]
+    }
+  },
+  "mac": {
+    "meta": {
+      "title": "Xico Clean — 为 Mac 而生的清理与优化工具",
+      "description": "Xico Clean 是一款原生 macOS 清理与优化工具：一键智能扫描、开发者垃圾专清、空间透镜可视化、重复文件与相似图片、彻底卸载与隐私清理。全程本地、可预览、可撤销。为 Apple 芯片打造，即将上线。"
+    },
+    "nav": {
+      "features": "功能",
+      "safety": "安全",
+      "privacy": "隐私",
+      "pricing": "定价",
+      "faq": "常见问题",
+      "waitlist": "加入等候名单",
+      "company": "XICO AI 官网",
+      "home": "主页",
+      "security": "安全",
+      "support": "支持"
+    },
+    "badge": "即将上线",
+    "hero": {
+      "eyebrow": "原生 macOS App · 为 Apple 芯片打造",
+      "titleLine1": "让你的 Mac",
+      "titleLine2": "重新变快、变干净",
+      "subtitle": "Xico Clean 一键找出系统垃圾、开发者缓存、大文件与重复文件，安全释放磁盘空间。原生 Swift 打造，全程本地，删除前可预览、删除后可撤销。",
+      "ctaPrimary": "加入等候名单",
+      "ctaSecondary": "看看能做什么",
+      "trust": [
+        "100% 本地运行",
+        "可预览 · 可撤销",
+        "Apple 芯片原生"
+      ]
+    },
+    "window": {
+      "appName": "Xico Clean",
+      "scanTitle": "智能扫描",
+      "reclaimLabel": "可释放空间",
+      "reclaimAmount": "11.4 GB",
+      "scanButton": "开始清理",
+      "sidebar": [
+        "智能扫描",
+        "系统垃圾",
+        "开发者垃圾",
+        "空间透镜",
+        "重复文件",
+        "卸载器",
+        "隐私",
+        "优化"
+      ],
+      "breakdown": [
+        {
+          "label": "系统垃圾",
+          "value": "6.8 GB"
+        },
+        {
+          "label": "开发者缓存",
+          "value": "3.1 GB"
+        },
+        {
+          "label": "重复文件",
+          "value": "820 MB"
+        },
+        {
+          "label": "废纸篓",
+          "value": "640 MB"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "0.9s",
+          "label": "智能扫描全盘"
+        },
+        {
+          "value": "11GB+",
+          "label": "实测可释放空间"
+        },
+        {
+          "value": "100%",
+          "label": "本地处理，不上传"
+        },
+        {
+          "value": "买断制",
+          "label": "一次付费，没有订阅"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "功能全景",
+      "title": "一个 App，照顾好整台 Mac",
+      "subtitle": "从系统垃圾到开发者缓存，从空间可视化到隐私清理，Xico Clean 把 Mac 维护需要的一切都装进了一个精致的原生应用里。",
+      "items": [
+        {
+          "name": "智能扫描",
+          "desc": "一键综合扫描系统垃圾、隐私与性能问题，给出总览与安全的一键清理。"
+        },
+        {
+          "name": "系统垃圾",
+          "desc": "用户与系统缓存、日志、语言包、旧更新包、各类 App 缓存，精准可清。"
+        },
+        {
+          "name": "开发者垃圾",
+          "desc": "Xcode DerivedData、模拟器、node_modules、Homebrew / npm / pip 缓存、Docker 悬空镜像。"
+        },
+        {
+          "name": "空间透镜",
+          "desc": "把整块 SSD 的占用画成可交互 treemap，逐层钻取，一眼看懂空间去哪了。"
+        },
+        {
+          "name": "大文件与旧文件",
+          "desc": "按大小与最后访问时间筛选，快速找出可以清理的大块头。"
+        },
+        {
+          "name": "重复文件",
+          "desc": "内容级查重，识别 APFS 克隆避免误判，智能只保留一份。"
+        },
+        {
+          "name": "相似图片",
+          "desc": "本地 Vision 感知指纹聚类，找出重复与近似照片，保留最好的一张。"
+        },
+        {
+          "name": "卸载器",
+          "desc": "彻底卸载应用，连同缓存、偏好、容器、登录项、收据一并清除。"
+        },
+        {
+          "name": "隐私清理",
+          "desc": "清理 Safari / Chrome / Firefox / Edge / Arc 的历史、Cookie 与缓存。"
+        },
+        {
+          "name": "优化与维护",
+          "desc": "管理登录项、释放内存、运行维护脚本、重建索引、刷新 DNS。"
+        },
+        {
+          "name": "菜单栏监控",
+          "desc": "常驻菜单栏，实时显示 CPU / 内存 / 网络，随手快速清理。"
+        },
+        {
+          "name": "威胁防护",
+          "desc": "基于签名特征库扫描已知 macOS 广告软件与恶意组件，命中即清。"
+        }
+      ]
+    },
+    "deepdive": {
+      "eyebrow": "招牌能力",
+      "title": "把枯燥的清理，做成有质感的体验",
+      "subtitle": "几项让人一眼记住的能力，也是我们花最多心思打磨的地方。",
+      "items": [
+        {
+          "tag": "智能扫描",
+          "title": "一次点击，整台 Mac 焕然一新",
+          "desc": "系统垃圾、隐私痕迹与性能问题一次扫清。招牌扫描动效之后，是一张清晰的总览卡片——可释放多少、发现哪些问题，一目了然。默认只勾选 100% 安全的项目，你也可以逐项审阅。",
+          "points": [
+            "系统垃圾 + 隐私 + 性能聚合扫描",
+            "默认只勾选 100% 安全项",
+            "完成后给出可释放空间总览"
+          ]
+        },
+        {
+          "tag": "空间透镜",
+          "title": "看得见的磁盘，空间去哪一目了然",
+          "desc": "把整块 SSD 画成一张交互式 treemap，谁在占空间一眼就懂。逐层钻取到具体文件夹，右键即可在 Finder 中显示，或直接移入废纸篓。",
+          "points": [
+            "整盘 treemap 可视化",
+            "逐层钻取到具体文件夹",
+            "在 Finder 显示或移入废纸篓"
+          ]
+        },
+        {
+          "tag": "开发者垃圾",
+          "title": "专为开发者，省下几十 GB",
+          "desc": "Xcode 的 DerivedData、DeviceSupport、Archives、旧模拟器，加上 node_modules、Homebrew / npm / pip 缓存、Docker 悬空镜像——这些悄悄吃掉几十 GB 的开发者垃圾，Xico Clean 一次帮你找齐。",
+          "points": [
+            "Xcode DerivedData / DeviceSupport / Archives",
+            "node_modules / Homebrew / npm / pip 缓存",
+            "Docker 悬空镜像与旧模拟器"
+          ]
+        },
+        {
+          "tag": "重复与相似",
+          "title": "重复文件与近似照片，智能只留最好的",
+          "desc": "内容级哈希精准查重，识别 APFS 克隆避免误判；相似图片用本地 Vision 感知聚类，帮你在一堆连拍与近似照里留下最好的一张。全程本地，绝不上传。",
+          "points": [
+            "内容级哈希，识别 APFS 克隆",
+            "本地 Vision 图片感知聚类",
+            "全程本地，绝不上传"
+          ]
+        }
+      ]
+    },
+    "safety": {
+      "eyebrow": "安全第一",
+      "title": "清理最怕误删。我们把「安心」做进每一步",
+      "subtitle": "清理工具最大的信任风险就是误删。所以从预览到撤销，从白名单到保护清单，Xico Clean 的每一个删除动作都留有后路。",
+      "items": [
+        {
+          "title": "永远先预览，再删除",
+          "desc": "每一项待删都可展开查看路径与大小，你确认了才动手。"
+        },
+        {
+          "title": "可撤销",
+          "desc": "优先移入废纸篓或可恢复区，随时「撤销上次清理」。"
+        },
+        {
+          "title": "白名单与忽略清单",
+          "desc": "你可以永久保护某些路径，Xico Clean 再也不碰它们。"
+        },
+        {
+          "title": "内置保护清单",
+          "desc": "系统关键文件、SIP 保护、钥匙串、运行中应用数据，一律不可触碰。"
+        },
+        {
+          "title": "默认只勾安全项",
+          "desc": "有风险的项目（如语言包、活动 App 缓存）默认不勾，并明确标注。"
+        },
+        {
+          "title": "透明告知",
+          "desc": "每一类垃圾都写清「这是什么 / 删了会怎样」，绝不黑箱。"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "隐私",
+      "title": "你的文件，永远只留在你的 Mac 上",
+      "subtitle": "清理是一件很私密的事。Xico Clean 的全部扫描与分析都在本地完成，我们既不想、也没有能力看到你的文件。",
+      "points": [
+        "全部扫描与分析在本地完成",
+        "绝不上传任何文件内容",
+        "遥测匿名且可一键关闭",
+        "相似图片识别也是纯本地 Vision"
+      ]
+    },
+    "performance": {
+      "eyebrow": "原生性能",
+      "title": "原生 Swift 打造，快得几乎没有存在感",
+      "subtitle": "我们坚决不用 Electron。Xico Clean 是彻底的原生应用，为 Apple 芯片而生，扫得快、占用低、动效顺。",
+      "items": [
+        {
+          "value": "Swift 6 + SwiftUI",
+          "label": "100% 原生，拒绝 Electron"
+        },
+        {
+          "value": "Apple 芯片",
+          "label": "原生适配，兼容 Intel"
+        },
+        {
+          "value": "60 / 120fps",
+          "label": "海量文件下依旧顺滑"
+        },
+        {
+          "value": "≈ 0 空闲占用",
+          "label": "不打扰、不拖慢你的 Mac"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "定价",
+      "title": "买断制，一次付费，没有订阅陷阱",
+      "subtitle": "与其每年续费，不如一次买断。Xico Clean 采用买断制，长期免费更新——先用 14 天全功能试用，再决定也不迟。",
+      "priceLabel": "价格即将公布",
+      "priceNote": "上线时公布正式价格，等候名单用户享早鸟优惠。",
+      "features": [
+        "14 天全功能免费试用",
+        "一次买断，长期免费更新",
+        "可用于你自己的多台 Mac"
+      ],
+      "cta": "加入等候名单，锁定早鸟价"
+    },
+    "waitlist": {
+      "eyebrow": "抢先体验",
+      "title": "Xico Clean 即将上线",
+      "subtitle": "留下邮箱，上线第一时间通知你，并解锁等候名单专属早鸟价。",
+      "fields": {
+        "email": "你的邮箱",
+        "name": "怎么称呼你（选填）",
+        "placeholder": "you@example.com",
+        "submit": "加入等候名单",
+        "sending": "提交中…",
+        "success": "已加入等候名单！上线时我们第一时间通知你。",
+        "error": "提交失败，请稍后重试。"
+      },
+      "privacyNote": "我们只会用它通知你上线，绝不发垃圾邮件。"
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "你可能想知道",
+      "items": [
+        {
+          "q": "支持哪些 Mac？",
+          "a": "macOS 13 Ventura 及以上，Apple 芯片与 Intel 通用二进制，一份安装包通吃。"
+        },
+        {
+          "q": "清理安全吗？会不会误删？",
+          "a": "所有删除都可预览、可撤销，内置保护清单守住系统关键文件，默认只勾选 100% 安全的项目。"
+        },
+        {
+          "q": "会上传我的文件吗？",
+          "a": "不会。所有扫描与分析都在本地完成，绝不上传任何文件内容，遥测也可一键关闭。"
+        },
+        {
+          "q": "是订阅制吗？",
+          "a": "不是。Xico Clean 采用买断制，一次付费、长期免费更新，还有 14 天全功能试用。"
+        },
+        {
+          "q": "会上架 App Store 吗？",
+          "a": "通过 Apple 公证的 Developer ID 方式分发，功能不受沙盒限制，安装同样安全放心。"
+        },
+        {
+          "q": "现在能下载吗？",
+          "a": "即将上线。加入等候名单，上线第一时间通知你，并享等候名单专属早鸟价。"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Xico Clean — 为 Mac 而生的清理与优化工具。原生、安全、全本地。",
+      "productGroup": "产品",
+      "companyGroup": "公司",
+      "by": "由 XICO AI 出品",
+      "links": {
+        "features": "功能",
+        "safety": "安全",
+        "privacy": "隐私",
+        "pricing": "定价",
+        "faq": "常见问题",
+        "waitlist": "加入等候名单",
+        "company": "XICO AI 官网",
+        "privacyPolicy": "隐私政策",
+        "terms": "服务条款"
+      }
+    },
+    "pages": {
+      "featuresTitle": "照顾好整台 Mac 的每一个角落",
+      "featuresSubtitle": "从一键智能扫描到开发者垃圾、空间可视化与实时监控——这是 Xico Clean 的全部能力。",
+      "supportTitle": "需要帮助？",
+      "supportSubtitle": "常见问题、系统要求与联系方式，都在这里。",
+      "moreFeatures": "查看全部功能",
+      "moreSecurity": "了解安全与隐私",
+      "morePricing": "查看定价"
+    },
+    "monitor": {
+      "eyebrow": "实时掌控",
+      "title": "菜单栏里，随时盯着你的 Mac",
+      "desc": "常驻菜单栏的实时监控：CPU、内存、GPU、磁盘、网络与温度一目了然，随手就能释放内存、一键清理。原生采样，几乎不占资源。",
+      "points": [
+        "CPU / 内存 / GPU / 网络 实时曲线",
+        "电池健康、温度与风扇转速",
+        "点一下即可快速释放内存"
+      ],
+      "caption": "系统监视 · 真实界面",
+      "menuCaption": "菜单栏面板"
+    },
+    "compare": {
+      "eyebrow": "为什么选买断",
+      "title": "买断制 vs 订阅制",
+      "oursLabel": "Xico Clean",
+      "theirsLabel": "订阅制工具",
+      "rows": [
+        {
+          "label": "付费方式",
+          "ours": "一次买断",
+          "theirs": "每年续费"
+        },
+        {
+          "label": "后续更新",
+          "ours": "长期免费",
+          "theirs": "停付即失效"
+        },
+        {
+          "label": "多台 Mac",
+          "ours": "自己的 Mac 都能用",
+          "theirs": "常按设备收费"
+        },
+        {
+          "label": "数据处理",
+          "ours": "全本地，不上传",
+          "theirs": "因产品而异"
+        }
+      ]
+    },
+    "support": {
+      "requirementsTitle": "系统要求",
+      "requirements": [
+        "macOS 13 Ventura 或更高",
+        "Apple 芯片与 Intel 通用二进制",
+        "约 60 MB 磁盘空间",
+        "完整功能需授予「完全磁盘访问权限」"
+      ],
+      "contactTitle": "还有其他问题？",
+      "contactDesc": "我们很乐意帮忙。给我们发邮件，通常一个工作日内回复。",
+      "contactCta": "发邮件给我们"
+    },
+    "shots": {
+      "dashboard": "智能扫描 · 真实界面",
+      "monitor": "系统监视 · 真实界面"
+    },
+    "hardware": {
+      "eyebrow": "硬件与健康",
+      "title": "电池、温度、硬盘健康，尽在掌握",
+      "desc": "实时读取电池健康与循环次数、处理器 / GPU / SSD 温度与风扇转速、SSD 的 SMART 状态与可用空间、内存与显示器信息——像专业工具一样详尽，却更好看。",
+      "points": [
+        "电池健康、循环次数与充电状态",
+        "处理器 / GPU / SSD 温度与风扇转速",
+        "SSD SMART 健康、容量与显示器信息"
+      ],
+      "caption": "硬件 · 真实界面（浅色主题）"
+    },
+    "catalog": {
+      "eyebrow": "完整功能",
+      "title": "一款 App，覆盖 Mac 维护的方方面面",
+      "subtitle": "从清理到应用管理，从文件与空间到性能与安全——Xico Clean 把 Mac 需要的一切维护，都做进了一个原生应用。",
+      "groups": [
+        {
+          "name": "清理",
+          "items": [
+            {
+              "name": "智能扫描",
+              "desc": "一键综合扫描系统垃圾、隐私与性能问题，给出总览与安全的一键清理。"
+            },
+            {
+              "name": "系统垃圾",
+              "desc": "用户与系统缓存、日志、语言包、损坏的登录项与偏好、旧更新包、各类 App 缓存。"
+            },
+            {
+              "name": "邮件附件",
+              "desc": "清理本地缓存的邮件附件与下载，邮箱瘦身立竿见影。"
+            },
+            {
+              "name": "照片垃圾",
+              "desc": "清理照片图库的缓存与未优化副本，不动你的原图。"
+            },
+            {
+              "name": "iOS 备份",
+              "desc": "清理旧的 iOS 备份、固件与不再使用的设备支持文件。"
+            },
+            {
+              "name": "废纸篓",
+              "desc": "一次清空所有卷宗的废纸篓，彻底腾空。"
+            },
+            {
+              "name": "开发者垃圾",
+              "desc": "Xcode DerivedData、模拟器、node_modules、Homebrew / npm / pip 缓存、Docker 悬空镜像。"
+            }
+          ]
+        },
+        {
+          "name": "应用",
+          "items": [
+            {
+              "name": "卸载器",
+              "desc": "彻底卸载应用，连同缓存、偏好、容器、登录项与收据一并清除。"
+            },
+            {
+              "name": "残留清理",
+              "desc": "扫描已删除应用遗留的孤儿文件，收拾干净。"
+            },
+            {
+              "name": "更新器",
+              "desc": "检测已安装应用的可用更新，一处集中查看。"
+            },
+            {
+              "name": "重置",
+              "desc": "把某个应用恢复到「刚安装」状态：清空数据，保留 App。"
+            }
+          ]
+        },
+        {
+          "name": "文件与空间",
+          "items": [
+            {
+              "name": "空间透镜",
+              "desc": "全盘 treemap 可视化，交互式逐层钻取，直接定位空间大户。"
+            },
+            {
+              "name": "大文件与旧文件",
+              "desc": "按大小与最后访问时间筛选，快速找出可清理的大块头。"
+            },
+            {
+              "name": "重复文件",
+              "desc": "内容级查重，识别 APFS 克隆避免误判，智能只保留一份。"
+            },
+            {
+              "name": "相似图片",
+              "desc": "本地 Vision 感知聚类，从连拍与近似照片中留下最好的一张。"
+            },
+            {
+              "name": "下载与杂物",
+              "desc": "整理下载文件夹、桌面杂物与旧安装包（.dmg / .pkg）。"
+            }
+          ]
+        },
+        {
+          "name": "性能与安全",
+          "items": [
+            {
+              "name": "优化",
+              "desc": "管理登录项与启动代理、识别高资源后台进程、一键释放内存。"
+            },
+            {
+              "name": "维护",
+              "desc": "运行系统维护脚本、重建 Spotlight 索引、刷新 DNS、修复磁盘权限。"
+            },
+            {
+              "name": "隐私",
+              "desc": "清理 Safari / Chrome / Firefox / Edge / Arc 的历史、Cookie、缓存与最近项目。"
+            },
+            {
+              "name": "威胁防护",
+              "desc": "基于签名特征库扫描已知 macOS 广告软件与恶意组件，命中即清。"
+            },
+            {
+              "name": "菜单栏监控",
+              "desc": "常驻菜单栏，实时显示 CPU / 内存 / 磁盘 / 网络 / 电池，快捷释放内存与清理。"
+            }
+          ]
         }
       ]
     }

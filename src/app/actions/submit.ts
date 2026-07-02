@@ -10,8 +10,14 @@ import {
   applications,
   joinSubmissions,
   contactMessages,
+  waitlistSignups,
 } from "@/db/schema";
-import { applySchema, joinSchema, contactSchema } from "@/lib/validation";
+import {
+  applySchema,
+  joinSchema,
+  contactSchema,
+  waitlistSchema,
+} from "@/lib/validation";
 import { sendMail, notifyAddress } from "@/lib/mail";
 import { pickL10n } from "@/lib/content";
 
@@ -235,6 +241,54 @@ export async function submitContact(
     return { ok: true };
   } catch (e) {
     console.error("submitContact failed", e);
+    return { ok: false, error: "server" };
+  }
+}
+
+export async function submitWaitlist(
+  _prev: SubmitState,
+  formData: FormData,
+): Promise<SubmitState> {
+  if (isBot(formData)) return { ok: true };
+  const parsed = waitlistSchema.safeParse({
+    email: formData.get("email"),
+    name: formData.get("name"),
+    source: formData.get("source"),
+    locale: formData.get("locale"),
+  });
+  if (!parsed.success) return { ok: false, error: "invalid" };
+  const data = parsed.data;
+
+  try {
+    const db = getDb();
+    // Idempotent: a repeat signup with the same email is a no-op success.
+    const inserted = await db
+      .insert(waitlistSignups)
+      .values({
+        email: data.email.toLowerCase(),
+        name: data.name,
+        source: data.source ?? "xico-clean",
+        locale: data.locale,
+      })
+      .onConflictDoNothing({ target: waitlistSignups.email })
+      .returning({ id: waitlistSignups.id });
+
+    // Only notify on a genuinely new signup, not on duplicate submissions.
+    if (inserted.length > 0) {
+      await notifyTeam({
+        subject: `Xico Clean 等候名单：${data.email}`,
+        lines: [
+          `邮箱 / Email: ${data.email}`,
+          data.name ? `称呼 / Name: ${data.name}` : "",
+          data.source ? `来源 / Source: ${data.source}` : "",
+          data.locale ? `语言 / Locale: ${data.locale}` : "",
+        ],
+        replyTo: data.email,
+      });
+    }
+    return { ok: true };
+  } catch (e) {
+    console.error("submitWaitlist failed", e);
     return { ok: false, error: "server" };
   }
 }

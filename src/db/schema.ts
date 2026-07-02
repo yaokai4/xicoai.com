@@ -43,6 +43,13 @@ export const joinStatus = pgEnum("join_status", [
   "archived",
 ]);
 
+export const waitlistStatus = pgEnum("waitlist_status", [
+  "new",
+  "invited",
+  "converted",
+  "archived",
+]);
+
 export const postStatus = pgEnum("post_status", ["draft", "published"]);
 
 export const posts = pgTable("posts", {
@@ -133,6 +140,20 @@ export const contactMessages = pgTable("contact_messages", {
     .defaultNow(),
 });
 
+/** Early-access signups for the Xico Clean macOS app (and future products). */
+export const waitlistSignups = pgTable("waitlist_signups", {
+  id: serial("id").primaryKey(),
+  email: varchar("email", { length: 256 }).notNull().unique(),
+  name: varchar("name", { length: 128 }),
+  product: varchar("product", { length: 48 }).notNull().default("xico-clean"),
+  source: varchar("source", { length: 64 }),
+  locale: varchar("locale", { length: 8 }),
+  status: waitlistStatus("status").notNull().default("new"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
 /** Simple key-value store for site-wide settings (e.g. social links). */
 export const settings = pgTable("settings", {
   key: varchar("key", { length: 64 }).primaryKey(),
@@ -148,3 +169,4 @@ export type Post = typeof posts.$inferSelect;
 export type Application = typeof applications.$inferSelect;
 export type JoinSubmission = typeof joinSubmissions.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;
+export type WaitlistSignup = typeof waitlistSignups.$inferSelect;

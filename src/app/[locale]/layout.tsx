@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -13,6 +14,8 @@ import { Ambient } from "@/components/ambient";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { FooterSwitch } from "@/components/footer-switch";
+import { MacFooter } from "@/components/mac/mac-footer";
 import { site } from "@/lib/site";
 import "../globals.css";
 
@@ -95,6 +98,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  // The Xico Clean product site is also served on the mac.* subdomain, where
+  // its chrome is the product header/footer rather than the company one.
+  const host = (await headers()).get("host") ?? "";
+  const isMacSite = host.split(":")[0].toLowerCase().startsWith("mac.");
+
   return (
     <html
       lang={HTML_LANG[locale] ?? locale}
@@ -106,9 +114,13 @@ export default async function LocaleLayout({
           <NextIntlClientProvider messages={messages}>
             <Ambient />
             <ScrollProgress />
-            <SiteHeader />
+            <SiteHeader isMacSite={isMacSite} />
             <main>{children}</main>
-            <SiteFooter />
+            <FooterSwitch
+              isMacSite={isMacSite}
+              company={<SiteFooter />}
+              product={<MacFooter />}
+            />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

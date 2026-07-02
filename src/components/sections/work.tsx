@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { productUrls } from "@/lib/site";
+import { productUrls, productRoutes } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Item = {
@@ -20,6 +21,11 @@ const STYLES: Record<
   string,
   { span: string; glow: string; monogram: string }
 > = {
+  xicoclean: {
+    span: "lg:col-span-12",
+    glow: "color-mix(in oklab, var(--accent) 22%, transparent)",
+    monogram: "X",
+  },
   machi: {
     span: "lg:col-span-7",
     glow: "color-mix(in oklab, var(--brand) 22%, transparent)",
@@ -54,6 +60,9 @@ export function Work() {
           {items.map((item, i) => {
             const s = STYLES[item.key] ?? STYLES.machi;
             const isNext = item.key === "next";
+            const isFeatured = item.key === "xicoclean";
+            const route = productRoutes[item.key];
+            const url = productUrls[item.key];
             return (
               <Reveal key={item.key} delay={i * 0.1} className={s.span}>
                 <SpotlightCard
@@ -62,6 +71,7 @@ export function Work() {
                     isNext
                       ? "border-dashed border-border hover:border-border-strong"
                       : "border-border hover:border-border-strong hover:bg-surface",
+                    isFeatured && "border-gradient bg-surface/80",
                   )}
                 >
                   {/* corner glow */}
@@ -118,7 +128,7 @@ export function Work() {
 
                     <div className="flex-1" />
 
-                    {!isNext && (item.platforms || productUrls[item.key]) && (
+                    {!isNext && (item.platforms || url || route) && (
                       <div className="mt-8 flex items-end justify-between gap-4 border-t border-border/60 pt-5">
                         {item.platforms ? (
                           <div>
@@ -132,31 +142,26 @@ export function Work() {
                         ) : (
                           <span />
                         )}
-                        {productUrls[item.key] && (
-                          <a
-                            href={productUrls[item.key]}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="group/link relative z-[3] inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-brand"
+                        {route ? (
+                          <Link
+                            href={route}
+                            className="group/link relative z-[3] inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-brand-soft"
                           >
-                            {t("viewLabel")}
-                            <svg
-                              width="16"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              aria-hidden
-                              className="transition-transform duration-300 group-hover/link:translate-x-1"
+                            {t("learnMore")}
+                            <LinkArrow />
+                          </Link>
+                        ) : (
+                          url && (
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group/link relative z-[3] inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-brand"
                             >
-                              <path
-                                d="M5 12h14M13 6l6 6-6 6"
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </a>
+                              {t("viewLabel")}
+                              <LinkArrow />
+                            </a>
+                          )
                         )}
                       </div>
                     )}
@@ -168,6 +173,27 @@ export function Work() {
         </div>
       </Container>
     </section>
+  );
+}
+
+function LinkArrow() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+      className="transition-transform duration-300 group-hover/link:translate-x-1"
+    >
+      <path
+        d="M5 12h14M13 6l6 6-6 6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 

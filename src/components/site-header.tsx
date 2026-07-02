@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Logo, wordmarkFor } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { MacHeader } from "@/components/mac/mac-header";
 import { navItems, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,14 @@ const itemVariants: Variants = {
   exit: { opacity: 0, y: 6, transition: { duration: 0.1 } },
 };
 
-export function SiteHeader() {
+export function SiteHeader({ isMacSite = false }: { isMacSite?: boolean }) {
+  const pathname = usePathname();
+  const isProduct =
+    isMacSite || pathname === "/mac" || pathname.startsWith("/mac/");
+  return isProduct ? <MacHeader /> : <CompanyHeader />;
+}
+
+function CompanyHeader() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
@@ -203,6 +211,7 @@ function MenuIcon({ name }: { name: string }) {
   const paths: Record<string, string> = {
     home: "M3 11l9-7 9 7M5 9.5V20h14V9.5",
     work: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+    mac: "M12 3c.6 4.8 2.6 6.8 7 7-4.4.2-6.4 2.2-7 7-.6-4.8-2.6-6.8-7-7 4.4-.2 6.4-2.2 7-7z",
     services: "M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5",
     blog: "M5 4h14v16H5zM9 8.5h6M9 12h6M9 15.5h4",
     about: "M12 21a9 9 0 100-18 9 9 0 000 18zM12 11.5v4.5M12 8h.01",

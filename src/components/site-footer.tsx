@@ -40,6 +40,7 @@ export async function SiteFooter() {
           </div>
 
           <FooterGroup title={t("groups.products")}>
+            <FooterLink href="/mac">{t("links.xicoclean")}</FooterLink>
             <a
               href={productUrls.machi}
               target="_blank"

@@ -11,6 +11,7 @@ const NAV = [
   { href: "/admin/jobs", label: "职位" },
   { href: "/admin/applications", label: "投递" },
   { href: "/admin/join", label: "Join 提交" },
+  { href: "/admin/waitlist", label: "等候名单" },
   { href: "/admin/messages", label: "联系表单" },
   { href: "/admin/settings", label: "社交链接" },
 ];

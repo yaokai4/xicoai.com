@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
-import { productUrls } from "@/lib/site";
+import { productUrls, productRoutes } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Item = {
@@ -52,6 +53,7 @@ export default async function WorkPage({
           <div className="flex flex-col gap-5">
             {items.map((item, i) => {
               const url = productUrls[item.key];
+              const route = productRoutes[item.key];
               const domain = url?.replace(/^https?:\/\//, "");
               const muted = item.key === "next";
               return (
@@ -95,15 +97,12 @@ export default async function WorkPage({
                             </span>
                           </div>
                         )}
-                        {url && (
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noreferrer"
+                        {route ? (
+                          <Link
+                            href={route}
                             className="group/link mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-border-strong hover:text-brand"
                           >
-                            {t("visit")}
-                            <span className="text-muted">· {domain}</span>
+                            {t("learnMore")}
                             <svg
                               width="15"
                               height="15"
@@ -113,14 +112,42 @@ export default async function WorkPage({
                               className="transition-transform duration-300 group-hover/link:translate-x-0.5"
                             >
                               <path
-                                d="M7 17L17 7M9 7h8v8"
+                                d="M5 12h14M13 6l6 6-6 6"
                                 stroke="currentColor"
                                 strokeWidth="1.7"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />
                             </svg>
-                          </a>
+                          </Link>
+                        ) : (
+                          url && (
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group/link mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-border-strong hover:text-brand"
+                            >
+                              {t("visit")}
+                              <span className="text-muted">· {domain}</span>
+                              <svg
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden
+                                className="transition-transform duration-300 group-hover/link:translate-x-0.5"
+                              >
+                                <path
+                                  d="M7 17L17 7M9 7h8v8"
+                                  stroke="currentColor"
+                                  strokeWidth="1.7"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </a>
+                          )
                         )}
                       </div>
 

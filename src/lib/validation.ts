@@ -44,6 +44,14 @@ export const contactSchema = z.object({
   locale: optionalStr(8),
 });
 
+export const waitlistSchema = z.object({
+  email: z.string().trim().max(256).regex(emailRe, "invalid email"),
+  name: optionalStr(128),
+  source: optionalStr(64),
+  locale: optionalStr(8),
+});
+
 export type ApplyInput = z.infer<typeof applySchema>;
 export type JoinInput = z.infer<typeof joinSchema>;
 export type ContactInput = z.infer<typeof contactSchema>;
+export type WaitlistInput = z.infer<typeof waitlistSchema>;
