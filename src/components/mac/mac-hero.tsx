@@ -78,26 +78,26 @@ export function MacHero() {
             className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
           >
             <a
-              href="#waitlist"
+              href="/api/download/xico-clean"
               className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-7 py-4 text-[15px] font-medium text-bg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_color-mix(in_oklab,var(--brand)_60%,transparent)] active:translate-y-0 sm:w-auto"
             >
-              {t("ctaPrimary")}
               <svg
                 width="17"
                 height="17"
                 viewBox="0 0 24 24"
                 fill="none"
                 aria-hidden
-                className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                className="transition-transform duration-300 group-hover/btn:translate-y-0.5"
               >
                 <path
-                  d="M5 12h14M13 6l6 6-6 6"
+                  d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
+              {t("ctaDownload")}
             </a>
             <a
               href="#features"
@@ -122,9 +122,16 @@ export function MacHero() {
             </a>
           </motion.div>
 
+          <motion.p
+            variants={item}
+            className="mt-3.5 text-[13px] text-faint"
+          >
+            {t("downloadNote")}
+          </motion.p>
+
           <motion.ul
             variants={item}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5"
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5"
           >
             {trust.map((line) => (
               <li

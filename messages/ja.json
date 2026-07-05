@@ -596,7 +596,9 @@
         "100% ローカル",
         "プレビュー · 取り消し可能",
         "Apple シリコン ネイティブ"
-      ]
+      ],
+      "ctaDownload": "Mac 版をダウンロード",
+      "downloadNote": "macOS 13+ ・ 14日間無料 ・ 登録不要"
     },
     "window": {
       "appName": "Xico Clean",

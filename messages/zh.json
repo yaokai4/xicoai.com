@@ -596,7 +596,9 @@
         "100% 本地运行",
         "可预览 · 可撤销",
         "Apple 芯片原生"
-      ]
+      ],
+      "ctaDownload": "下载 Mac 版",
+      "downloadNote": "macOS 13+ · 免费试用 14 天 · 无需注册"
     },
     "window": {
       "appName": "Xico Clean",

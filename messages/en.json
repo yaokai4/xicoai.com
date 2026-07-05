@@ -596,7 +596,9 @@
         "100% local",
         "Previewable · undoable",
         "Native Apple silicon"
-      ]
+      ],
+      "ctaDownload": "Download for Mac",
+      "downloadNote": "macOS 13+ · 14-day free trial · no signup"
     },
     "window": {
       "appName": "Xico Clean",
