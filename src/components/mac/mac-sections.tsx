@@ -339,12 +339,12 @@ export function MacPricing({ topPad = false }: { topPad?: boolean } = {}) {
                 </li>
               ))}
             </ul>
-            <a
-              href="#waitlist"
+            <Link
+              href="/mac/buy"
               className="mt-9 inline-flex w-full items-center justify-center rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
             >
               {t("cta")}
-            </a>
+            </Link>
           </div>
         </Reveal>
       </Wrap>

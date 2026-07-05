@@ -581,7 +581,8 @@
       "company": "XICO AI",
       "home": "Home",
       "security": "Security",
-      "support": "Support"
+      "support": "Support",
+      "buy": "Buy"
     },
     "badge": "Coming soon",
     "hero": {
@@ -830,7 +831,7 @@
         "Buy once, free updates for the long haul",
         "Use it on all your own Macs"
       ],
-      "cta": "Join the waitlist for the early-bird price"
+      "cta": "See plans & buy"
     },
     "waitlist": {
       "eyebrow": "Early access",
@@ -1080,6 +1081,58 @@
           ]
         }
       ]
+    },
+    "buy": {
+      "eyebrow": "Buy",
+      "title": "Own Xico Clean, forever",
+      "subtitle": "Pay once, get free updates, no subscription. Pick the plan that fits and activate in minutes.",
+      "recommended": "Popular",
+      "perpetual": "One-time",
+      "save": "Save {percent}%",
+      "plans": {
+        "personal": {
+          "name": "Personal",
+          "devices": "1 Mac"
+        },
+        "family": {
+          "name": "Family",
+          "devices": "Up to 5 Macs"
+        }
+      },
+      "features": [
+        "All cleanup & optimization features",
+        "Local processing, privacy-first",
+        "Free updates",
+        "30-day money-back guarantee"
+      ],
+      "cta": "Buy now",
+      "ctaLoading": "Redirecting…",
+      "comingSoon": "Purchasing opens soon — stay tuned.",
+      "comingSoonCta": "Join the waitlist",
+      "canceledNote": "Payment canceled. You can buy again anytime.",
+      "errorNote": "Couldn't create the order. Please try again.",
+      "activateNote": "Already bought? Open Settings → Upgrade to Pro in Xico Clean and paste your key to unlock everything.",
+      "trust": [
+        "Secure checkout by Stripe",
+        "30-day money-back guarantee",
+        "Local processing, privacy-first"
+      ]
+    },
+    "buySuccess": {
+      "waitingTitle": "Confirming your payment…",
+      "waitingNote": "Your activation key will appear here right after payment. One moment.",
+      "paidTitle": "Payment successful!",
+      "paidNote": "Here's your activation key — keep it somewhere safe.",
+      "keyLabel": "Activation key",
+      "copy": "Copy key",
+      "copied": "Copied",
+      "openApp": "Open Xico Clean to activate",
+      "manualNote": "Or paste the key in Settings → Upgrade to Pro inside the app.",
+      "emailNote": "We've also emailed the key to you.",
+      "timeoutTitle": "Confirming payment",
+      "timeoutNote": "Your payment may still be processing. The key will be emailed to you; if it doesn't arrive, contact us with your order number.",
+      "orderLabel": "Order",
+      "backHome": "Back to home"
     }
   }
 }

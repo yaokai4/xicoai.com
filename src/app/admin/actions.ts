@@ -22,6 +22,8 @@ import {
   verifySession,
 } from "@/lib/auth";
 import { SOCIAL_KEYS } from "@/lib/social";
+import { serializePricing, type MacPricing } from "@/lib/pricing";
+import { PRICING_SETTINGS_KEY } from "@/lib/pricing.server";
 
 export type ActionState = { error?: string };
 
@@ -79,6 +81,57 @@ export async function saveSettings(
     return { error: "保存失败" };
   }
   revalidatePath("/admin/settings");
+  return {};
+}
+
+export async function saveMacPricing(
+  _prev: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  await requireAdmin();
+
+  const num = (k: string) => {
+    const n = Number(String(formData.get(k) ?? "").trim());
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+  };
+  const optNum = (k: string) => {
+    const v = String(formData.get(k) ?? "").trim();
+    if (!v) return null;
+    const n = Number(v);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+
+  const pricing: MacPricing = {
+    currency:
+      String(formData.get("currency") ?? "CNY")
+        .trim()
+        .toUpperCase() || "CNY",
+    active: formData.get("active") === "on",
+    personal: {
+      amount: num("personal_amount"),
+      compareAt: optNum("personal_compareAt"),
+    },
+    family: {
+      amount: num("family_amount"),
+      compareAt: optNum("family_compareAt"),
+    },
+  };
+
+  const value = serializePricing(pricing);
+  const db = getDb();
+  try {
+    await db
+      .insert(settings)
+      .values({ key: PRICING_SETTINGS_KEY, value, updatedAt: new Date() })
+      .onConflictDoUpdate({
+        target: settings.key,
+        set: { value, updatedAt: new Date() },
+      });
+  } catch (e) {
+    console.error(e);
+    return { error: "保存失败" };
+  }
+  revalidatePath("/admin/pricing");
   return {};
 }
 

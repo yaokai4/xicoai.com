@@ -13,6 +13,7 @@ const NAV = [
   { href: "/admin/join", label: "Join 提交" },
   { href: "/admin/waitlist", label: "等候名单" },
   { href: "/admin/messages", label: "联系表单" },
+  { href: "/admin/pricing", label: "定价" },
   { href: "/admin/settings", label: "社交链接" },
 ];
 

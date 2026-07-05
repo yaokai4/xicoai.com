@@ -100,12 +100,12 @@ export function MacHeader() {
             <div className="hidden md:block">
               <LocaleSwitcher />
             </div>
-            <a
-              href="#waitlist"
+            <Link
+              href="/mac/buy"
               className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-bg transition-transform hover:scale-[1.03] sm:inline-flex"
             >
-              {t("waitlist")}
-            </a>
+              {t("buy")}
+            </Link>
             <button
               type="button"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-border-strong md:hidden"
@@ -149,14 +149,15 @@ export function MacHeader() {
                   </motion.div>
                 ))}
               </nav>
-              <motion.a
-                variants={itemVariants}
-                href="#waitlist"
-                onClick={() => setMenuOpen(false)}
-                className="mt-5 flex w-full items-center justify-center rounded-2xl bg-foreground py-3.5 text-[0.95rem] font-medium text-bg transition-transform active:scale-[0.99]"
-              >
-                {t("waitlist")}
-              </motion.a>
+              <motion.div variants={itemVariants}>
+                <Link
+                  href="/mac/buy"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-5 flex w-full items-center justify-center rounded-2xl bg-foreground py-3.5 text-[0.95rem] font-medium text-bg transition-transform active:scale-[0.99]"
+                >
+                  {t("buy")}
+                </Link>
+              </motion.div>
             </div>
 
             <motion.div

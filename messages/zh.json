@@ -581,7 +581,8 @@
       "company": "XICO AI 官网",
       "home": "主页",
       "security": "安全",
-      "support": "支持"
+      "support": "支持",
+      "buy": "购买"
     },
     "badge": "即将上线",
     "hero": {
@@ -830,7 +831,7 @@
         "一次买断，长期免费更新",
         "可用于你自己的多台 Mac"
       ],
-      "cta": "加入等候名单，锁定早鸟价"
+      "cta": "查看价格并购买"
     },
     "waitlist": {
       "eyebrow": "抢先体验",
@@ -1080,6 +1081,58 @@
           ]
         }
       ]
+    },
+    "buy": {
+      "eyebrow": "购买",
+      "title": "买断 Xico Clean，永久使用",
+      "subtitle": "一次付费，长期免费更新，没有订阅。选择适合你的版本，几分钟内即可激活。",
+      "recommended": "推荐",
+      "perpetual": "永久买断",
+      "save": "省 {percent}%",
+      "plans": {
+        "personal": {
+          "name": "个人版",
+          "devices": "1 台 Mac"
+        },
+        "family": {
+          "name": "家庭版",
+          "devices": "最多 5 台 Mac"
+        }
+      },
+      "features": [
+        "全部清理与优化功能",
+        "本地处理，隐私优先",
+        "长期免费更新",
+        "30 天无理由退款"
+      ],
+      "cta": "立即购买",
+      "ctaLoading": "正在跳转…",
+      "comingSoon": "购买通道即将开放，敬请期待。",
+      "comingSoonCta": "加入等候名单",
+      "canceledNote": "支付已取消，你可以随时重新购买。",
+      "errorNote": "创建订单失败，请稍后再试。",
+      "activateNote": "已购买？在 Xico Clean 里打开「设置 → 升级 Pro」，粘贴激活码即可解锁全部功能。",
+      "trust": [
+        "Stripe 安全结账",
+        "30 天无理由退款",
+        "本地处理，隐私优先"
+      ]
+    },
+    "buySuccess": {
+      "waitingTitle": "正在确认支付…",
+      "waitingNote": "支付成功后，激活码会立即显示在这里，请稍候。",
+      "paidTitle": "支付成功！",
+      "paidNote": "下面是你的激活码，请妥善保存。",
+      "keyLabel": "激活码",
+      "copy": "复制激活码",
+      "copied": "已复制",
+      "openApp": "打开 Xico Clean 激活",
+      "manualNote": "或在 App 内「设置 → 升级 Pro」粘贴激活码激活。",
+      "emailNote": "我们也把激活码发送到了你的邮箱。",
+      "timeoutTitle": "支付确认中",
+      "timeoutNote": "支付可能仍在处理。激活码会发送到你的邮箱；如未收到，请凭订单号联系我们。",
+      "orderLabel": "订单号",
+      "backHome": "返回首页"
     }
   }
 }
