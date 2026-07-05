@@ -569,7 +569,7 @@
   "mac": {
     "meta": {
       "title": "Xico Clean — a native cleaner and optimizer for Mac",
-      "description": "Xico Clean is a native macOS cleaner and optimizer: one-tap Smart Scan, dedicated developer-junk cleanup, Space Lens visualization, duplicate and similar-photo detection, thorough uninstalls, and privacy cleanup. Fully local, previewable, and undoable. Built for Apple silicon. Coming soon."
+      "description": "Xico Clean is a native macOS cleanup & optimization tool: one-tap smart scan, developer-junk cleanup, Space Lens visualization, duplicate files and similar photos, complete uninstall, and privacy cleaning. All local, previewable, undoable. Built for Apple silicon — available now, free to try."
     },
     "nav": {
       "features": "Features",
@@ -584,7 +584,7 @@
       "support": "Support",
       "buy": "Buy"
     },
-    "badge": "Coming soon",
+    "badge": "v0.2 · Available now",
     "hero": {
       "eyebrow": "Native macOS app · Built for Apple silicon",
       "titleLine1": "Make your Mac",
@@ -826,8 +826,8 @@
       "eyebrow": "Pricing",
       "title": "Pay once. No subscription traps",
       "subtitle": "Instead of renewing every year, pay once. Xico Clean is a one-time purchase with free updates for the long haul — and a 14-day full-feature trial to help you decide.",
-      "priceLabel": "Price to be announced",
-      "priceNote": "The final price is set at launch. Waitlist members get an early-bird discount.",
+      "priceLabel": "Personal / Family · one-time",
+      "priceNote": "See current pricing and offers on the purchase page. Try free for 14 days first.",
       "features": [
         "14-day full-feature free trial",
         "Buy once, free updates for the long haul",
@@ -836,19 +836,19 @@
       "cta": "See plans & buy"
     },
     "waitlist": {
-      "eyebrow": "Early access",
-      "title": "Xico Clean is coming soon",
-      "subtitle": "Leave your email and we'll tell you the moment it launches — plus an early-bird price just for the waitlist.",
+      "eyebrow": "Stay in the loop",
+      "title": "Get Xico Clean updates",
+      "subtitle": "Leave your email and we'll tell you about new versions and important updates.",
       "fields": {
         "email": "Your email",
-        "name": "What should we call you? (optional)",
+        "name": "Your name (optional)",
         "placeholder": "you@example.com",
-        "submit": "Join the waitlist",
+        "submit": "Subscribe",
         "sending": "Submitting…",
-        "success": "You're on the waitlist! We'll be in touch the moment we launch.",
-        "error": "Something went wrong — please try again."
+        "success": "Subscribed! We'll tell you as soon as there's a new version.",
+        "error": "Something went wrong. Please try again."
       },
-      "privacyNote": "We'll only use it to tell you about the launch. No spam, ever."
+      "privacyNote": "Used only for product-update notices. No spam, ever."
     },
     "faq": {
       "eyebrow": "FAQ",
@@ -1135,6 +1135,20 @@
       "timeoutNote": "Your payment may still be processing. The key will be emailed to you; if it doesn't arrive, contact us with your order number.",
       "orderLabel": "Order",
       "backHome": "Back to home"
+    },
+    "download": {
+      "eyebrow": "Download",
+      "title": "Give your Mac a fresh start",
+      "subtitle": "Free download, 14-day full trial. Native Apple silicon, Apple-notarized, ready the moment you open it.",
+      "cta": "Download for Mac",
+      "buy": "See purchase plans",
+      "reqs": [
+        "macOS 13 or later",
+        "Apple silicon & Intel",
+        "Apple-notarized",
+        "No signup"
+      ],
+      "trust": "Notarized — Gatekeeper approves it directly. Just drag it into Applications after downloading."
     }
   }
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { MacPricing, MacCompare, MacWaitlist } from "@/components/mac/mac-sections";
+import { MacPricing, MacCompare, MacDownload } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
   params,
@@ -46,7 +46,7 @@ export default async function MacPricingPage({
     <>
       <MacPricing topPad />
       <MacCompare />
-      <MacWaitlist />
+      <MacDownload />
     </>
   );
 }

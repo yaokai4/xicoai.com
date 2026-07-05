@@ -569,7 +569,7 @@
   "mac": {
     "meta": {
       "title": "Xico Clean — 为 Mac 而生的清理与优化工具",
-      "description": "Xico Clean 是一款原生 macOS 清理与优化工具：一键智能扫描、开发者垃圾专清、空间透镜可视化、重复文件与相似图片、彻底卸载与隐私清理。全程本地、可预览、可撤销。为 Apple 芯片打造，即将上线。"
+      "description": "Xico Clean 是一款原生 macOS 清理与优化工具：一键智能扫描、开发者垃圾专清、空间透镜可视化、重复文件与相似图片、彻底卸载与隐私清理。全程本地、可预览、可撤销。为 Apple 芯片打造，现已上线，免费下载试用。"
     },
     "nav": {
       "features": "功能",
@@ -584,7 +584,7 @@
       "support": "支持",
       "buy": "购买"
     },
-    "badge": "即将上线",
+    "badge": "v0.2 · 现已上线",
     "hero": {
       "eyebrow": "原生 macOS App · 为 Apple 芯片打造",
       "titleLine1": "让你的 Mac",
@@ -826,8 +826,8 @@
       "eyebrow": "定价",
       "title": "买断制，一次付费，没有订阅陷阱",
       "subtitle": "与其每年续费，不如一次买断。Xico Clean 采用买断制，长期免费更新——先用 14 天全功能试用，再决定也不迟。",
-      "priceLabel": "价格即将公布",
-      "priceNote": "上线时公布正式价格，等候名单用户享早鸟优惠。",
+      "priceLabel": "个人版 / 家庭版 · 一次买断",
+      "priceNote": "在购买页查看当前价格与优惠；先免费试用 14 天再决定。",
       "features": [
         "14 天全功能免费试用",
         "一次买断，长期免费更新",
@@ -836,19 +836,19 @@
       "cta": "查看价格并购买"
     },
     "waitlist": {
-      "eyebrow": "抢先体验",
-      "title": "Xico Clean 即将上线",
-      "subtitle": "留下邮箱，上线第一时间通知你，并解锁等候名单专属早鸟价。",
+      "eyebrow": "保持关注",
+      "title": "订阅 Xico Clean 更新",
+      "subtitle": "留个邮箱，有新版本或重要更新时第一时间通知你。",
       "fields": {
         "email": "你的邮箱",
         "name": "怎么称呼你（选填）",
         "placeholder": "you@example.com",
-        "submit": "加入等候名单",
+        "submit": "订阅",
         "sending": "提交中…",
-        "success": "已加入等候名单！上线时我们第一时间通知你。",
+        "success": "订阅成功！有新版本会第一时间通知你。",
         "error": "提交失败，请稍后重试。"
       },
-      "privacyNote": "我们只会用它通知你上线，绝不发垃圾邮件。"
+      "privacyNote": "只用于产品更新通知，绝不发垃圾邮件。"
     },
     "faq": {
       "eyebrow": "常见问题",
@@ -1135,6 +1135,20 @@
       "timeoutNote": "支付可能仍在处理。激活码会发送到你的邮箱；如未收到，请凭订单号联系我们。",
       "orderLabel": "订单号",
       "backHome": "返回首页"
+    },
+    "download": {
+      "eyebrow": "下载",
+      "title": "现在，让你的 Mac 焕然一新",
+      "subtitle": "免费下载，14 天全功能试用。原生 Apple 芯片，已通过 Apple 公证，打开即用。",
+      "cta": "下载 Mac 版",
+      "buy": "查看购买方案",
+      "reqs": [
+        "macOS 13 及以上",
+        "Apple 芯片与 Intel 通用",
+        "已 Apple 公证",
+        "无需注册"
+      ],
+      "trust": "已公证 · Gatekeeper 直接放行，下载后拖入「应用程序」即可。"
     }
   }
 }

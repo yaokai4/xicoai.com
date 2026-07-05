@@ -8,7 +8,8 @@ import {
   MacFeatures,
   MacPrivacyTeaser,
   MacPricingTeaser,
-  MacWaitlist,
+  MacFaq,
+  MacDownload,
 } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -53,11 +54,17 @@ export default async function MacHome({
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "macOS 13.0 or later",
     description: t("description"),
-    softwareVersion: "1.0",
+    softwareVersion: "0.2.0",
+    downloadUrl: `${site.url}/api/download/xico-clean`,
     author: { "@type": "Organization", name: "XICO AI", url: site.url },
     publisher: { "@type": "Organization", name: "XICO AI", url: site.url },
     url: `${site.url}/mac`,
-    offers: { "@type": "Offer", availability: "https://schema.org/PreOrder" },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
   };
 
   return (
@@ -72,7 +79,8 @@ export default async function MacHome({
       <MacFeatures moreHref="/mac/features" />
       <MacPrivacyTeaser />
       <MacPricingTeaser />
-      <MacWaitlist />
+      <MacFaq />
+      <MacDownload />
     </>
   );
 }

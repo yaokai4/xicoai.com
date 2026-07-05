@@ -767,6 +767,70 @@ export function MacPricingTeaser() {
 
 /* ================= waitlist finale ================= */
 
+/* ================= download (launched CTA) ================= */
+
+export function MacDownload() {
+  const t = useTranslations("mac.download");
+  const reqs = t.raw("reqs") as string[];
+  return (
+    <Band id="download" tone="surface" className="py-28 sm:py-36">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/4 h-[50vh] w-[70vw] max-w-[760px] -translate-x-1/2 rounded-full opacity-60 blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 26%, transparent), transparent 70%)",
+        }}
+      />
+      <Wrap className="relative">
+        <div className="mx-auto max-w-2xl text-center">
+          <Reveal>
+            <Kicker>{t("eyebrow")}</Kicker>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <BigTitle className="mt-4">{t("title")}</BigTitle>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Lede className="mx-auto mt-5 max-w-xl">{t("subtitle")}</Lede>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <a
+                href="/api/download/xico-clean"
+                className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-[15px] font-medium text-bg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_color-mix(in_oklab,var(--brand)_60%,transparent)] active:translate-y-0 sm:w-auto"
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden className="transition-transform duration-300 group-hover/btn:translate-y-0.5">
+                  <path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {t("cta")}
+              </a>
+              <Link
+                href="/mac/buy"
+                className="inline-flex w-full items-center justify-center rounded-full px-7 py-4 text-[15px] font-medium text-brand transition-colors hover:text-brand-soft sm:w-auto"
+              >
+                {t("buy")}
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              {reqs.map((r) => (
+                <li key={r} className="flex items-center gap-1.5 text-[13px] text-muted">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <p className="mx-auto mt-6 max-w-lg text-xs text-faint text-pretty">{t("trust")}</p>
+          </Reveal>
+        </div>
+      </Wrap>
+    </Band>
+  );
+}
+
 export function MacWaitlist() {
   const t = useTranslations("mac.waitlist");
   return (

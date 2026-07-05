@@ -145,7 +145,7 @@ export function MacBuy({
                     </button>
                   ) : (
                     <Link
-                      href="/mac#waitlist"
+                      href="/mac#download"
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
                     >
                       {t("comingSoonCta")}
