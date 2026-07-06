@@ -6,6 +6,9 @@ import { MacHero } from "@/components/mac/mac-hero";
 import {
   MacStats,
   MacFeatures,
+  MacLens,
+  MacSpeed,
+  MacAllInOne,
   MacPrivacyTeaser,
   MacPricingTeaser,
   MacFaq,
@@ -71,12 +74,14 @@ export default async function MacHome({
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <MacHero />
       <MacStats />
       <MacFeatures moreHref="/mac/features" />
+      <MacLens />
+      <MacSpeed />
+      <MacAllInOne />
       <MacPrivacyTeaser />
       <MacPricingTeaser />
       <MacFaq />

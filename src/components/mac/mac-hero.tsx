@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { CheckGlyph } from "@/components/mac/icons";
@@ -26,7 +27,7 @@ export function MacHero() {
 
   return (
     <Band className="pt-28 pb-20 sm:pt-36 sm:pb-28">
-      {/* top light wash */}
+      {/* top light wash + 缓慢漂移的极光光斑（GPU 友好，respect reduced-motion） */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-[70vh]"
@@ -35,6 +36,31 @@ export function MacHero() {
             "radial-gradient(120% 90% at 50% -10%, color-mix(in oklab, var(--brand) 20%, transparent), transparent 60%)",
         }}
       />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[80vh] overflow-hidden">
+        <div
+          className="aurora-blob motion-reduce:animate-none absolute -left-[10%] top-[-10%] h-[55vh] w-[55vw] rounded-full opacity-60"
+          style={{
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 26%, transparent), transparent 70%)",
+            animationDuration: "22s",
+          }}
+        />
+        <div
+          className="aurora-blob motion-reduce:animate-none absolute right-[-8%] top-[5%] h-[48vh] w-[46vw] rounded-full opacity-50"
+          style={{
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%)",
+            animationDuration: "28s",
+            animationDelay: "-9s",
+          }}
+        />
+        <div
+          className="aurora-blob motion-reduce:animate-none absolute left-[25%] top-[28%] h-[40vh] w-[40vw] rounded-full opacity-40"
+          style={{
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand-soft) 24%, transparent), transparent 70%)",
+            animationDuration: "34s",
+            animationDelay: "-17s",
+          }}
+        />
+      </div>
 
       <Wrap>
         <motion.div

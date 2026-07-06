@@ -1149,6 +1149,62 @@
         "No signup"
       ],
       "trust": "Notarized — Gatekeeper approves it directly. Just drag it into Applications after downloading."
+    },
+    "lens": {
+      "eyebrow": "Space Lens",
+      "title": "Your whole disk, at a glance",
+      "desc": "Disk usage drawn as a drill-down sunburst: hue is the top-level folder, angle is size. Click a ring to dive in, click the center to go back — with family highlighting and read-only analysis that go a step beyond DaisyDisk.",
+      "points": [
+        "Drill down level by level · center click to go back",
+        "Family highlighting shows where space flows",
+        "Read-only · never touches your files"
+      ],
+      "caption": "Space Lens · sunburst chart"
+    },
+    "speed": {
+      "eyebrow": "Disk Speed Test",
+      "title": "A real 10 GB read/write benchmark",
+      "desc": "Twin gauges swing in real time. Writes up to 10 GB of fully random data, bypassing system and firmware caches — measuring sustained real performance, not cache mirages. Every run is archived automatically.",
+      "points": [
+        "F_NOCACHE reads the medium directly",
+        "Random data defeats firmware compression",
+        "History archived automatically"
+      ],
+      "caption": "Disk Speed Test · sequential benchmark"
+    },
+    "allinone": {
+      "eyebrow": "One app, four replaced",
+      "title": "Four pro tools' capabilities. One purchase.",
+      "desc": "Deep cleaning, live monitoring, hardware health, disk tools — capabilities that used to take four separately-paid apps, all covered by one Xico Clean.",
+      "appsLabel": "Buying these separately",
+      "colOurs": "Xico Clean",
+      "rows": [
+        {
+          "label": "Deep cleaning · full uninstalls",
+          "ref": "CleanMyMac"
+        },
+        {
+          "label": "Menu-bar live monitoring",
+          "ref": "iStat Menus"
+        },
+        {
+          "label": "Hardware health · sensors",
+          "ref": "Sensei"
+        },
+        {
+          "label": "Disk space visualization",
+          "ref": "DaisyDisk"
+        },
+        {
+          "label": "10 GB disk speed test",
+          "ref": "Sensei"
+        },
+        {
+          "label": "Threat protection · signature checks",
+          "ref": "CleanMyMac"
+        }
+      ],
+      "footNote": "Each sold separately, some by subscription; Xico Clean covers it all with one purchase."
     }
   }
 }

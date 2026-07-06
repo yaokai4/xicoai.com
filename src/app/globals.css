@@ -363,3 +363,17 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ─── 极光光斑漂移（mac 产品页 hero）────────────────────────────── */
+@keyframes aurora-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33%      { transform: translate3d(5%, -4%, 0) scale(1.1); }
+  66%      { transform: translate3d(-4%, 3%, 0) scale(0.94); }
+}
+.aurora-blob {
+  animation-name: aurora-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  filter: blur(70px);
+  will-change: transform;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
 import { Fragment } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -362,7 +363,7 @@ export function MacFaq() {
       <Wrap>
         <BandHeading kicker={t("eyebrow")} title={t("title")} />
         <div className="mx-auto mt-12 max-w-3xl">
-          {items.map((f, i) => (
+          {items.map((f) => (
             <Reveal key={f.q}>
               <details className="group border-t border-border py-5 last:border-b">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-medium text-foreground [&::-webkit-details-marker]:hidden">
@@ -861,6 +862,152 @@ export function MacWaitlist() {
             </div>
           </Reveal>
         </div>
+      </Wrap>
+    </Band>
+  );
+}
+
+/* ─── 空间透镜（左文右图分栏,打破居中节奏） ─────────────────────────── */
+
+export function MacLens() {
+  const t = useTranslations("mac.lens");
+  const points = t.raw("points") as string[];
+  return (
+    <Band className="py-24 sm:py-32">
+      <Wrap>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <Reveal>
+              <Kicker>{t("eyebrow")}</Kicker>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <BigTitle className="mt-4">{t("title")}</BigTitle>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <Lede className="mt-5">{t("desc")}</Lede>
+            </Reveal>
+            <div className="mt-8 space-y-3.5">
+              {points.map((p) => (
+                <Reveal key={p}>
+                  <div className="flex items-start gap-2.5 text-sm text-muted">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent">
+                      <CheckGlyph className="h-3 w-3" />
+                    </span>
+                    {p}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+          <Reveal delay={0.1}>
+            <MacWindow
+              src="/mac/shots/spacelens.jpg"
+              alt="Xico Clean — 空间透镜放射环形图"
+              width={1100}
+              height={1145}
+              caption={t("caption")}
+            />
+          </Reveal>
+        </div>
+      </Wrap>
+    </Band>
+  );
+}
+
+/* ─── 磁盘测速（左图右文,与空间透镜交替） ─────────────────────────── */
+
+export function MacSpeed() {
+  const t = useTranslations("mac.speed");
+  const points = t.raw("points") as string[];
+  return (
+    <Band tone="surface" className="py-24 sm:py-32">
+      <Wrap>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal delay={0.1} className="order-2 lg:order-1">
+            <MacWindow
+              src="/mac/shots/diskbench.jpg"
+              alt="Xico Clean — 磁盘测速双仪表"
+              width={1400}
+              height={933}
+              caption={t("caption")}
+            />
+          </Reveal>
+          <div className="order-1 lg:order-2">
+            <Reveal>
+              <Kicker>{t("eyebrow")}</Kicker>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <BigTitle className="mt-4">{t("title")}</BigTitle>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <Lede className="mt-5">{t("desc")}</Lede>
+            </Reveal>
+            <div className="mt-8 space-y-3.5">
+              {points.map((p) => (
+                <Reveal key={p}>
+                  <div className="flex items-start gap-2.5 text-sm text-muted">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent">
+                      <CheckGlyph className="h-3 w-3" />
+                    </span>
+                    {p}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Wrap>
+    </Band>
+  );
+}
+
+/* ─── 一款替代四款（能力矩阵,核心卖点区块） ─────────────────────────── */
+
+export function MacAllInOne() {
+  const t = useTranslations("mac.allinone");
+  const rows = t.raw("rows") as { label: string; ref: string }[];
+  return (
+    <Band className="py-24 sm:py-32">
+      <Wrap>
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal>
+            <Kicker>{t("eyebrow")}</Kicker>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <BigTitle className="mt-4">{t("title")}</BigTitle>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Lede className="mx-auto mt-5 max-w-2xl">{t("desc")}</Lede>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.1} className="mx-auto mt-14 max-w-3xl">
+          <div className="overflow-hidden rounded-3xl border border-border bg-surface/60 shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--brand)_35%,transparent)]">
+            {/* 表头 */}
+            <div className="grid grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border px-6 py-4 text-xs font-medium uppercase tracking-wide text-faint sm:px-8">
+              <span />
+              <span className="w-28 text-center sm:w-36">{t("appsLabel")}</span>
+              <span className="w-24 rounded-full bg-brand/10 px-3 py-1.5 text-center font-semibold normal-case tracking-normal text-brand sm:w-28">
+                {t("colOurs")}
+              </span>
+            </div>
+            {rows.map((row) => (
+              <div
+                key={row.label}
+                className="grid grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border/60 px-6 py-4 last:border-b-0 sm:px-8"
+              >
+                <span className="text-sm font-medium text-foreground">{row.label}</span>
+                <span className="w-28 text-center text-[13px] text-faint sm:w-36">{row.ref}</span>
+                <span className="flex w-24 items-center justify-center sm:w-28">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <CheckGlyph className="h-3.5 w-3.5" />
+                  </span>
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-xs text-faint">{t("footNote")}</p>
+        </Reveal>
       </Wrap>
     </Band>
   );
