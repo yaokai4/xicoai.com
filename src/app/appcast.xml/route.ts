@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.2.0";
-const PUBDATE = "Sun, 06 Jul 2026 00:00:00 +0000";
+const VERSION = "0.2.1";
+const PUBDATE = "Mon, 07 Jul 2026 00:00:00 +0000";
 const NOTES =
-  "首个公开版本：智能扫描、系统与开发者垃圾清理、空间透镜、重复文件与相似图片、彻底卸载、隐私清理、实时监控。";
+  "0.2.1：在线激活界面与提示语全面支持 11 种语言；修复简体/繁体中文与巴西葡语手动切换失效的问题；扫描页新增安全承诺与上次清理信息；多处界面细节打磨。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
