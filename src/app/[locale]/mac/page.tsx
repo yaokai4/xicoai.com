@@ -54,7 +54,7 @@ export default async function MacHome({
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "macOS 13.0 or later",
     description: t("description"),
-    softwareVersion: "0.2.2",
+    softwareVersion: "0.2.3",
     downloadUrl: `${site.url}/api/download/xico-clean`,
     author: { "@type": "Organization", name: "XICO AI", url: site.url },
     publisher: { "@type": "Organization", name: "XICO AI", url: site.url },
