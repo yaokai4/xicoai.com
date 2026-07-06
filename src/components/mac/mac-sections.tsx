@@ -467,10 +467,11 @@ export function MacMonitor() {
           />
         </Reveal>
 
-        <Reveal delay={0.12} className="mx-auto mt-8 max-w-md">
+        <Reveal delay={0.12} className="mx-auto mt-8 max-w-2xl">
           <div className="flex items-start justify-center gap-4">
             <MenuShot src="/mac/shots/menu-cpu.jpg" />
-            <MenuShot src="/mac/shots/menu-memory.jpg" />
+            <MenuShot src="/mac/shots/menu-temp.jpg" />
+            <MenuShot src="/mac/shots/menu-disk.jpg" />
           </div>
           <p className="mt-3 text-center text-xs text-faint">{t("menuCaption")}</p>
         </Reveal>
@@ -494,7 +495,7 @@ export function MacMonitor() {
 
 function MenuShot({ src }: { src: string }) {
   return (
-    <div className="w-1/2 max-w-[190px] overflow-hidden rounded-2xl border border-white/10 bg-[#0d0f15] shadow-[0_20px_50px_-24px_rgba(10,8,40,0.6)]">
+    <div className="w-1/3 max-w-[190px] overflow-hidden rounded-2xl border border-white/10 bg-[#0d0f15] shadow-[0_20px_50px_-24px_rgba(10,8,40,0.6)]">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}

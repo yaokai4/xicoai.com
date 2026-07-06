@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.2.1";
-const PUBDATE = "Mon, 07 Jul 2026 00:00:00 +0000";
+const VERSION = "0.2.2";
+const PUBDATE = "Tue, 07 Jul 2026 12:00:00 +0000";
 const NOTES =
-  "0.2.1：在线激活界面与提示语全面支持 11 种语言；修复简体/繁体中文与巴西葡语手动切换失效的问题；扫描页新增安全承诺与上次清理信息；多处界面细节打磨。";
+  "0.2.2：全新磁盘测速基准（双仪表 + 历史记录）；菜单栏新增温度、磁盘、GPU 专属详情面板（全部传感器 / 风扇 / 每卷用量 / 读写速率）；空间透镜全面重做（中心返回、同族高亮、面包屑）；GPU 读数平滑；硬件档案新增实时频率与开机信息。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
