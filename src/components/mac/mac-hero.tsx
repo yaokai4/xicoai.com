@@ -38,24 +38,24 @@ export function MacHero() {
       />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[80vh] overflow-hidden">
         <div
-          className="aurora-blob motion-reduce:animate-none absolute -left-[10%] top-[-10%] h-[55vh] w-[55vw] rounded-full opacity-60"
+          className="aurora-blob motion-reduce:animate-none absolute -left-[10%] top-[-10%] h-[55vh] w-[55vw] rounded-full opacity-80"
           style={{
-            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 26%, transparent), transparent 70%)",
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 34%, transparent), transparent 70%)",
             animationDuration: "22s",
           }}
         />
         <div
-          className="aurora-blob motion-reduce:animate-none absolute right-[-8%] top-[5%] h-[48vh] w-[46vw] rounded-full opacity-50"
+          className="aurora-blob motion-reduce:animate-none absolute right-[-8%] top-[5%] h-[48vh] w-[46vw] rounded-full opacity-65"
           style={{
-            background: "radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%)",
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--accent) 30%, transparent), transparent 70%)",
             animationDuration: "28s",
             animationDelay: "-9s",
           }}
         />
         <div
-          className="aurora-blob motion-reduce:animate-none absolute left-[25%] top-[28%] h-[40vh] w-[40vw] rounded-full opacity-40"
+          className="aurora-blob motion-reduce:animate-none absolute left-[25%] top-[28%] h-[40vh] w-[40vw] rounded-full opacity-55"
           style={{
-            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand-soft) 24%, transparent), transparent 70%)",
+            background: "radial-gradient(closest-side, color-mix(in oklab, var(--brand-soft) 32%, transparent), transparent 70%)",
             animationDuration: "34s",
             animationDelay: "-17s",
           }}

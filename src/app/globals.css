@@ -374,6 +374,6 @@
   animation-name: aurora-drift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  filter: blur(70px);
+  filter: blur(56px);
   will-change: transform;
 }

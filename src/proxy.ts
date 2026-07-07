@@ -1,5 +1,5 @@
 import createMiddleware from "next-intl/middleware";
-import type { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
@@ -27,10 +27,29 @@ export default function proxy(request: NextRequest) {
 
   if (host.startsWith("mac.")) {
     const target = macProductPath(request.nextUrl.pathname);
-    // Mutate in place so the method/body/headers survive (server-action POSTs
-    // on the subdomain land on the product route intact).
     if (target !== request.nextUrl.pathname) {
-      request.nextUrl.pathname = target;
+      // 重建请求而非原地改 nextUrl：next-intl 对「带语言前缀」的路径（/ja、/en/…）
+      // 直接读原始 request.url 生成改写目标——只改 nextUrl 会丢失，/ja 就被当成
+      // 公司站首页渲染（用户报告的「日语跳到公司官网」）。
+      // new NextRequest(url, request) 连同 method/headers/body 一起继承，
+      // 子域上的 server-action POST 依旧完好。
+      const url = request.nextUrl.clone();
+      url.pathname = target;
+      const res = intlMiddleware(new NextRequest(url, request));
+      // next-intl 对带语言前缀的路径（/ja、/en/…）返回「放行」（无 x-middleware-rewrite），
+      // Next 会继续按原始路径路由——/ja 就落到公司站首页。此时必须由我们自己发 rewrite；
+      // intl 已产生 redirect（3xx）或自带 rewrite 时原样透传。
+      if (res.headers.get("x-middleware-rewrite") || res.status >= 300) {
+        return res;
+      }
+      const rewrite = NextResponse.rewrite(url, {
+        request: { headers: new Headers(request.headers) },
+      });
+      // 保留 intl 设置的 cookie / 请求头改写等；x-middleware-next 与 rewrite 互斥，剔除。
+      res.headers.forEach((v, k) => {
+        if (k !== "x-middleware-next" && k !== "x-middleware-rewrite") rewrite.headers.set(k, v);
+      });
+      return rewrite;
     }
   }
 
