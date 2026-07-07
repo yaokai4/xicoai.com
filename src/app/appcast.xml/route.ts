@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.2.3";
-const PUBDATE = "Tue, 07 Jul 2026 22:00:00 +0000";
+const VERSION = "0.2.4";
+const PUBDATE = "Wed, 08 Jul 2026 00:00:00 +0000";
 const NOTES =
-  "0.2.3：磁盘测速成为独立功能（10 GB 高精度顺序读写，测持续真实性能）；威胁防护升级四层检测（特征库 / 代码签名校验 / 系统伪装识别 / 危险路径驻留）；菜单栏迷你图与可视化加宽挤满边框、间距更紧凑；扫描动画修复并更精致；隐私清理并入智能扫描。";
+  "0.2.4：智能扫描新增全盘深度走查——逐文件检测残留安装包与中断下载，实时显示已走查文件数；修复更新后菜单栏出现重复监控项的问题（单实例守卫）；菜单栏迷你图边框更清晰、内容完全填充；磁盘测速动画全面精修。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
