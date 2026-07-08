@@ -10,14 +10,30 @@
  * safe to call from proxy.ts — Next 16 proxy runs on the Node runtime.
  */
 
-import ip3country from "ip3country";
+import { createRequire } from "node:module";
 
-let ipReady = false;
-function ensureIpDb() {
-  if (!ipReady) {
-    ip3country.init();
-    ipReady = true;
+/**
+ * Load ip3country at RUNTIME from node_modules instead of letting the bundler
+ * inline it: turbopack's CJS interop can silently load the embedded IP table
+ * as an empty module in some chunks (lookups all return undefined, no error).
+ * `serverExternalPackages` + `outputFileTracingIncludes` in next.config.ts
+ * guarantee the package exists next to the standalone server.
+ */
+type Ip3Country = { init(): void; lookupStr(ip: string): string | undefined };
+let ipdb: Ip3Country | null = null;
+function ensureIpDb(): Ip3Country | null {
+  if (!ipdb) {
+    try {
+      const req = createRequire(`${process.cwd()}/package.json`);
+      const mod = req("ip3country") as Ip3Country;
+      mod.init();
+      ipdb = mod;
+    } catch (e) {
+      console.error("ip3country unavailable — IP geo disabled:", e);
+      return null;
+    }
   }
+  return ipdb;
 }
 
 /** First public-looking address from x-forwarded-for / x-real-ip. */
@@ -33,10 +49,11 @@ export function clientIp(headers: Headers): string | null {
 export function countryFromIp(ip: string | null | undefined): string | null {
   if (!ip) return null;
   try {
-    ensureIpDb();
+    const db = ensureIpDb();
+    if (!db) return null;
     // Strip an IPv4-mapped IPv6 prefix (::ffff:1.2.3.4 — common behind Caddy).
     const v4 = ip.startsWith("::ffff:") ? ip.slice(7) : ip;
-    return ip3country.lookupStr(v4) ?? null;
+    return db.lookupStr(v4) ?? null;
   } catch {
     return null;
   }
