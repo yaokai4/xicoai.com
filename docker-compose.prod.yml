@@ -80,7 +80,9 @@ services:
     container_name: xicoai-stalwart
     restart: unless-stopped
     environment:
-      FALLBACK_ADMIN_SECRET: ${STALWART_ADMIN_SECRET:-}
+      # Pins the bootstrap/recovery admin so /admin/mail/users can always
+      # reach the management API with STALWART_ADMIN_SECRET.
+      STALWART_RECOVERY_ADMIN: admin:${STALWART_ADMIN_SECRET:-}
     ports:
       - "25:25"     # MX inbound
       - "465:465"   # SMTP submission (implicit TLS)
