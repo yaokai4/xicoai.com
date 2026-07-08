@@ -61,11 +61,16 @@ export function isZeroDecimal(currency: string): boolean {
   return ZERO_DECIMAL.has((currency || "").toUpperCase());
 }
 
+/** Stripe's three-decimal currencies (1000 minor units per major; the last
+ * minor-unit digit must be 0). */
+const THREE_DECIMAL = new Set(["BHD", "JOD", "KWD", "OMR", "TND"]);
+
 /** Major-unit amount → Stripe's integer minor units. */
 export function toMinorUnits(amount: number, currency: string): number {
-  return isZeroDecimal(currency)
-    ? Math.round(amount)
-    : Math.round(amount * 100);
+  const c = (currency || "").toUpperCase();
+  if (ZERO_DECIMAL.has(c)) return Math.round(amount);
+  if (THREE_DECIMAL.has(c)) return Math.round((amount * 1000) / 10) * 10;
+  return Math.round(amount * 100);
 }
 
 export function discountPercent(p: PlanPricing): number | null {

@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.2.6";
-const PUBDATE = "Wed, 08 Jul 2026 08:00:00 +0000";
+const VERSION = "0.2.7";
+const PUBDATE = "Thu, 09 Jul 2026 04:00:00 +0000";
 const NOTES =
-  "0.2.6：菜单栏新增「圆环」样式——CPU / 内存 / GPU / 磁盘 现可在 图标、数值、迷你图、饼盘、圆环 五种显示方式间自由切换；圆环底轨加深，任何占比都清晰完整。";
+  "0.2.7：正式接入在线授权体系——支持官网购买后输入激活码即时解锁 Pro；许可证增加定期在线校验（退款/失效的激活码将自动停用，正常用户离线使用不受任何影响）。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(

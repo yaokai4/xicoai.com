@@ -68,11 +68,15 @@ export default async function MacBuyPage({
   for (const currency of currencies) {
     plansByCurrency[currency] = PLAN_IDS.map((id) => {
       const tier = planPricing(pricing, currency, id);
+      // A compareAt at or below the real price is a data mistake — never
+      // render a "discount" that would make the price look raised.
+      const genuineCompareAt =
+        tier.compareAt && tier.compareAt > tier.amount ? tier.compareAt : null;
       return {
         id,
         amountLabel: formatMoney(tier.amount, currency, locale),
-        compareLabel: tier.compareAt
-          ? formatMoney(tier.compareAt, currency, locale)
+        compareLabel: genuineCompareAt
+          ? formatMoney(genuineCompareAt, currency, locale)
           : null,
         discount: discountPercent(tier),
       };

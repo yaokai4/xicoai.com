@@ -37,20 +37,38 @@ export async function POST(req: Request) {
   const db = getDb();
 
   try {
-    if (event.type === "checkout.session.completed") {
+    if (
+      event.type === "checkout.session.completed" ||
+      event.type === "checkout.session.async_payment_succeeded"
+    ) {
       const session = event.data.object as Stripe.Checkout.Session;
       // Only our product — this is what lets the account also serve Shangence.
       if (session.metadata?.brand !== BRAND) {
         return NextResponse.json({ received: true, ignored: true });
       }
       const orderNo = session.metadata?.orderNo || session.client_reference_id;
-      if (orderNo) {
+      // Delayed-notification methods complete the session BEFORE the money
+      // moves (payment_status "unpaid") — only issue a key once actually paid;
+      // the async_payment_succeeded event re-enters here when funds arrive.
+      const paid =
+        session.payment_status === "paid" ||
+        session.payment_status === "no_payment_required";
+      if (orderNo && paid) {
         await fulfil(session, orderNo);
         // Best-effort audit/dedupe ledger (fulfilment is already idempotent).
         await db
           .insert(macPaymentEvents)
           .values({ eventId: event.id, eventType: event.type, orderNo })
           .onConflictDoNothing();
+      }
+    } else if (event.type === "checkout.session.async_payment_failed") {
+      const session = event.data.object as Stripe.Checkout.Session;
+      const orderNo = session.metadata?.orderNo || session.client_reference_id;
+      if (session.metadata?.brand === BRAND && orderNo) {
+        await db
+          .update(macOrders)
+          .set({ status: "failed" })
+          .where(eq(macOrders.orderNo, orderNo));
       }
     } else if (event.type === "checkout.session.expired") {
       const session = event.data.object as Stripe.Checkout.Session;
