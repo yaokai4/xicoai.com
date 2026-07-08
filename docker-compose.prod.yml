@@ -79,9 +79,11 @@ services:
     image: stalwartlabs/stalwart:latest
     container_name: xicoai-stalwart
     restart: unless-stopped
-    # v0.16 expects JSON (a flat dotted-key map, same model as its internal
-    # settings store); we ship it declaratively instead of the web wizard.
-    command: ["--config", "/etc/stalwart/config.json"]
+    # No config file → the image boots into bootstrap mode (HTTP :8080), and
+    # the whole server (store + internal directory + authentication + first
+    # admin account + TLS/DKIM) is provisioned in one x:Bootstrap/set call by
+    # deploy/stalwart-bootstrap.mjs. A minimal store descriptor alone leaves
+    # the auth subsystem unconfigured, so accounts can't log in.
     environment:
       # Management-API credential (config.toml references this env var); the
       # recovery admin uses the same secret as a belt-and-braces fallback.
@@ -94,7 +96,6 @@ services:
       - "993:993"   # IMAP (implicit TLS)
     volumes:
       - stalwart:/opt/stalwart
-      - ./deploy/stalwart.json:/etc/stalwart/config.json:ro
     networks:
       - internal
       - web
