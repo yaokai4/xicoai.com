@@ -7,6 +7,13 @@ const nextConfig: NextConfig = {
   output: "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
+  // ip3country reads its binary IP table from its package dir at runtime —
+  // keep it un-bundled AND force its files into the standalone trace, or
+  // IP-country detection silently dies in production.
+  serverExternalPackages: ["ip3country"],
+  outputFileTracingIncludes: {
+    "**": ["./node_modules/ip3country/**"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
