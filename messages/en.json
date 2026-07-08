@@ -959,8 +959,15 @@
       "contactCta": "Email us"
     },
     "shots": {
-      "dashboard": "Smart Scan · real UI",
-      "monitor": "System Monitor · real UI"
+      "dashboard": "Smart scan",
+      "monitor": "Real-time monitor",
+      "spacelens": "Space Lens · sunburst map",
+      "diskbench": "Disk speed · benchmark",
+      "systemjunk": "System junk · one tap",
+      "uninstaller": "Uninstall · no leftovers",
+      "hardware": "Hardware health · battery & temps",
+      "duplicates": "Duplicate finder · by content",
+      "optimization": "Optimize · one-tap speedup"
     },
     "hardware": {
       "eyebrow": "Hardware & health",
@@ -1205,6 +1212,11 @@
         }
       ],
       "footNote": "Each sold separately, some by subscription; Xico Clean covers it all with one purchase."
+    },
+    "showcase": {
+      "eyebrow": "A closer look",
+      "title": "A full toolkit, one tap each",
+      "lede": "Junk cleanup, complete uninstall, duplicate finder, optimization — each one refined, all in one app."
     }
   }
 }

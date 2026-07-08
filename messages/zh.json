@@ -959,8 +959,15 @@
       "contactCta": "发邮件给我们"
     },
     "shots": {
-      "dashboard": "智能扫描 · 真实界面",
-      "monitor": "系统监视 · 真实界面"
+      "dashboard": "智能扫描 · 一目了然",
+      "monitor": "实时监视 · 每秒刷新",
+      "spacelens": "空间透镜 · 放射环形图",
+      "diskbench": "磁盘测速 · 读写基准",
+      "systemjunk": "系统垃圾 · 一键清理",
+      "uninstaller": "彻底卸载 · 不留残余",
+      "hardware": "硬件健康 · 电池与温度",
+      "duplicates": "重复文件 · 按内容比对",
+      "optimization": "优化维护 · 一键提速"
     },
     "hardware": {
       "eyebrow": "硬件与健康",
@@ -1205,6 +1212,11 @@
         }
       ],
       "footNote": "各家单独付费、部分按年订阅；Xico Clean 一次买断全部能力。"
+    },
+    "showcase": {
+      "eyebrow": "产品一览",
+      "title": "还有一整套一键利器",
+      "lede": "垃圾清理、彻底卸载、重复文件、优化维护……每一项都做到精致好用，一个 App 全部搞定。"
     }
   }
 }

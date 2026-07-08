@@ -769,6 +769,40 @@ export function MacPricingTeaser() {
 
 /* ================= waitlist finale ================= */
 
+/* ================= screenshot showcase ================= */
+
+const SHOWCASE: { src: string; w: number; h: number; key: string }[] = [
+  { src: "/mac/shots/systemjunk.jpg", w: 1400, h: 933, key: "systemjunk" },
+  { src: "/mac/shots/uninstaller.jpg", w: 1400, h: 933, key: "uninstaller" },
+  { src: "/mac/shots/duplicates.jpg", w: 1400, h: 933, key: "duplicates" },
+  { src: "/mac/shots/optimization.jpg", w: 1400, h: 933, key: "optimization" },
+];
+
+export function MacShowcase() {
+  const t = useTranslations("mac.showcase");
+  const ts = useTranslations("mac.shots");
+  return (
+    <Band tone="surface" className="py-24 sm:py-32">
+      <Wrap>
+        <BandHeading kicker={t("eyebrow")} title={t("title")} lede={t("lede")} />
+        <div className="mt-14 grid gap-6 sm:gap-8 md:grid-cols-2">
+          {SHOWCASE.map((s, i) => (
+            <Reveal key={s.key} delay={(i % 2) * 0.08}>
+              <MacWindow
+                src={s.src}
+                alt={ts(s.key)}
+                width={s.w}
+                height={s.h}
+                caption={ts(s.key)}
+              />
+            </Reveal>
+          ))}
+        </div>
+      </Wrap>
+    </Band>
+  );
+}
+
 /* ================= download (launched CTA) ================= */
 
 export function MacDownload() {

@@ -9,6 +9,7 @@ import {
   MacLens,
   MacSpeed,
   MacAllInOne,
+  MacShowcase,
   MacPrivacyTeaser,
   MacPricingTeaser,
   MacFaq,
@@ -82,6 +83,7 @@ export default async function MacHome({
       <MacLens />
       <MacSpeed />
       <MacAllInOne />
+      <MacShowcase />
       <MacPrivacyTeaser />
       <MacPricingTeaser />
       <MacFaq />
