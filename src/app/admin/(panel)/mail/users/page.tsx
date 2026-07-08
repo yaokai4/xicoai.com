@@ -12,15 +12,13 @@ export default async function MailUsersAdminPage() {
   if (configured) {
     try {
       const list = await listMailUsers();
-      users = list
-        .map((p) => ({
-          name: p.name,
-          displayName: p.description ?? null,
-          emails: p.emails ?? [p.name],
-          quota: p.quota ?? 0,
-          usedQuota: p.usedQuota ?? 0,
-        }))
-        .sort((a, b) => a.name.localeCompare(b.name));
+      users = list.map((u) => ({
+        id: u.id,
+        email: u.email,
+        displayName: u.displayName,
+        aliases: u.aliases,
+        usedQuota: u.usedDiskQuota,
+      }));
     } catch (e) {
       console.error("listMailUsers failed", e);
       backendError = "邮件后端暂时不可达（Stalwart 容器未运行或密钥未配置）。";
@@ -41,13 +39,11 @@ export default async function MailUsersAdminPage() {
         <div className="mt-4 rounded-xl border border-border bg-surface/50 p-4 text-xs leading-relaxed text-muted">
           <p className="font-medium text-foreground">客户端配置参数（发给员工）：</p>
           <p className="mt-1">
-            收件（IMAP）：<code>mail.{domain}</code> · 端口 <code>993</code> · SSL/TLS
+            收件 IMAP：<code>mail.{domain}</code> · 端口 <code>993</code> · SSL/TLS
             <span className="mx-2 text-faint">|</span>
-            发件（SMTP）：<code>mail.{domain}</code> · 端口 <code>465</code>（SSL）或 <code>587</code>（STARTTLS）
+            发件 SMTP：<code>mail.{domain}</code> · 端口 <code>465</code>（SSL）或 <code>587</code>（STARTTLS）
           </p>
-          <p className="mt-1">
-            用户名 = 完整邮箱地址，密码 = 下方创建时生成的密码。
-          </p>
+          <p className="mt-1">用户名 = 完整邮箱地址，密码 = 创建时生成的密码。</p>
         </div>
       </div>
 

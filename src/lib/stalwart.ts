@@ -1,17 +1,28 @@
 import "server-only";
 
 /**
- * Thin client for the Stalwart mail server's management API — this is how
+ * Client for the Stalwart mail server's registry JMAP API — this is how
  * /admin/mail/users creates real IMAP/SMTP mailboxes (xxx@xicoai.com usable
  * from QQ Mail / Gmail / Apple Mail / Outlook). The API lives on the internal
- * docker network only; auth is the fallback-admin account.
+ * docker network only; auth is the fallback-admin (STALWART_ADMIN_SECRET).
  *
- * Principal model (v0.11+): { type: "individual", name: "kevin@xicoai.com",
- * secrets: [...], emails: ["kevin@xicoai.com", ...aliases], quota, description }.
- * A catch-all is an alias literally named "@domain".
+ * All shapes below were verified against the live server (v0.16.12):
+ *  - registry objects are addressed as `x:Account`, `x:Domain`, … and called
+ *    via JMAP methods `x:Account/get|set|query`;
+ *  - multi-variant objects use a `@type` discriminator ("User", "Password");
+ *  - object-list fields (credentials, aliases) are INDEXED MAPS: {"0": {...}};
+ *  - a user's `name` is the LOCAL PART only; `emailAddress` is server-computed
+ *    from name + the account's domain.
  */
 
 const BASE = process.env.STALWART_API_URL || "http://stalwart:8080";
+// The fallback-admin's fixed JMAP account id (its registry namespace).
+const PRIMARY = "d333333";
+const USING = [
+  "urn:ietf:params:jmap:core",
+  "urn:stalwart:jmap",
+  "urn:ietf:params:jmap:principals",
+];
 
 function authHeader(): string {
   const secret = process.env.STALWART_ADMIN_SECRET;
@@ -19,40 +30,41 @@ function authHeader(): string {
   return `Basic ${Buffer.from(`admin:${secret}`).toString("base64")}`;
 }
 
-async function api<T>(
-  path: string,
-  init?: RequestInit & { json?: unknown },
-): Promise<T> {
-  const { json, ...rest } = init ?? {};
-  const res = await fetch(`${BASE}${path}`, {
-    ...rest,
-    headers: {
-      authorization: authHeader(),
-      ...(json !== undefined ? { "content-type": "application/json" } : {}),
-      ...(rest.headers ?? {}),
-    },
-    body: json !== undefined ? JSON.stringify(json) : rest.body,
+type MethodResponse = [string, Record<string, unknown>, string];
+
+async function jmap(
+  method: string,
+  args: Record<string, unknown>,
+): Promise<Record<string, unknown>> {
+  const res = await fetch(`${BASE}/jmap/`, {
+    method: "POST",
+    headers: { authorization: authHeader(), "content-type": "application/json" },
+    body: JSON.stringify({ using: USING, methodCalls: [[method, args, "0"]] }),
     cache: "no-store",
   });
   const text = await res.text();
-  if (!res.ok) {
-    throw new Error(`stalwart ${path} → ${res.status}: ${text.slice(0, 300)}`);
+  let parsed: { methodResponses?: MethodResponse[] };
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new Error(`stalwart ${method} → ${res.status}: ${text.slice(0, 200)}`);
   }
-  const parsed = text ? JSON.parse(text) : {};
-  // Management API wraps results as { data: ... }
-  return (parsed && typeof parsed === "object" && "data" in parsed
-    ? (parsed as { data: T }).data
-    : (parsed as T));
+  const resp = parsed.methodResponses?.[0];
+  if (!resp || resp[0] === "error") {
+    throw new Error(`stalwart ${method} → ${JSON.stringify(resp?.[1] ?? {})}`);
+  }
+  return resp[1];
 }
 
-export type MailPrincipal = {
-  id?: number;
-  type: string;
-  name: string;
-  emails?: string[];
-  quota?: number;
-  description?: string;
-  usedQuota?: number;
+export type MailUser = {
+  /** Registry id, e.g. "c". */
+  id: string;
+  /** Full address, e.g. "hi@xicoai.com". */
+  email: string;
+  displayName: string | null;
+  /** Extra receiving addresses (full form) and "@domain" for catch-all. */
+  aliases: string[];
+  usedDiskQuota: number;
 };
 
 export function mailDomain(): string {
@@ -63,87 +75,130 @@ export function stalwartConfigured(): boolean {
   return Boolean(process.env.STALWART_ADMIN_SECRET);
 }
 
-/** All individual accounts (mailboxes). */
-export async function listMailUsers(): Promise<MailPrincipal[]> {
-  const result = await api<{ items?: MailPrincipal[] }>(
-    `/api/principal?types=individual&fields=name,emails,quota,description,usedQuota&limit=500`,
-  );
-  return result.items ?? [];
+let domainIdCache: string | null = null;
+async function primaryDomainId(): Promise<string> {
+  if (domainIdCache) return domainIdCache;
+  const domain = mailDomain();
+  const q = await jmap("x:Domain/query", { accountId: PRIMARY });
+  const ids = (q.ids as string[]) ?? [];
+  if (ids.length) {
+    const g = await jmap("x:Domain/get", {
+      accountId: PRIMARY,
+      ids,
+      properties: ["name"],
+    });
+    const match = (g.list as Array<{ id: string; name: string }>).find(
+      (d) => d.name === domain,
+    );
+    if (match) return (domainIdCache = match.id);
+  }
+  throw new Error(`Mail domain ${domain} not provisioned on the server.`);
 }
 
-export async function getMailUser(name: string): Promise<MailPrincipal> {
-  return api<MailPrincipal>(`/api/principal/${encodeURIComponent(name)}`);
-}
-
-/** Create a mailbox. `name` must be the full address (login = full address). */
-export async function createMailUser(opts: {
+type RawUser = {
+  id: string;
   name: string;
+  emailAddress?: string;
+  description?: string | null;
+  aliases?: Record<string, { name: string }>;
+  usedDiskQuota?: number;
+};
+
+function toMailUser(u: RawUser): MailUser {
+  const aliases = Object.values(u.aliases ?? {}).map((a) => a.name);
+  return {
+    id: u.id,
+    email: u.emailAddress || `${u.name}@${mailDomain()}`,
+    displayName: u.description ?? null,
+    aliases,
+    usedDiskQuota: u.usedDiskQuota ?? 0,
+  };
+}
+
+/** All mailboxes (individual user accounts). */
+export async function listMailUsers(): Promise<MailUser[]> {
+  const q = await jmap("x:Account/query", { accountId: PRIMARY });
+  const ids = (q.ids as string[]) ?? [];
+  if (!ids.length) return [];
+  const g = await jmap("x:Account/get", {
+    accountId: PRIMARY,
+    ids,
+    properties: ["name", "emailAddress", "description", "aliases", "usedDiskQuota"],
+  });
+  return (g.list as RawUser[])
+    .map(toMailUser)
+    .sort((a, b) => a.email.localeCompare(b.email));
+}
+
+/** Create a mailbox. `local` is the part before @; the domain is fixed. */
+export async function createMailUser(opts: {
+  local: string;
   password: string;
   displayName?: string | null;
-  quotaBytes?: number;
-  aliases?: string[];
-}): Promise<void> {
-  await api(`/api/principal`, {
-    method: "POST",
-    json: {
-      type: "individual",
-      name: opts.name,
-      secrets: [opts.password],
-      emails: [opts.name, ...(opts.aliases ?? [])],
-      description: opts.displayName || undefined,
-      quota: opts.quotaBytes ?? 2 * 1024 * 1024 * 1024,
-      roles: ["user"],
+}): Promise<string> {
+  const domainId = await primaryDomainId();
+  const res = await jmap("x:Account/set", {
+    accountId: PRIMARY,
+    create: {
+      u1: {
+        "@type": "User",
+        name: opts.local,
+        domainId,
+        description: opts.displayName || undefined,
+        credentials: { "0": { "@type": "Password", secret: opts.password } },
+      },
     },
   });
-}
-
-/** PATCH helper for principal fields (Stalwart update-list format). */
-async function patchPrincipal(
-  name: string,
-  updates: { action: "set" | "addItem" | "removeItem"; field: string; value: unknown }[],
-): Promise<void> {
-  await api(`/api/principal/${encodeURIComponent(name)}`, {
-    method: "PATCH",
-    json: updates,
-  });
+  const created = (res.created as Record<string, { id: string }>)?.u1;
+  if (!created) {
+    const err = (res.notCreated as Record<string, unknown>)?.u1;
+    throw new Error(`create failed: ${JSON.stringify(err)}`);
+  }
+  return created.id;
 }
 
 export async function setMailUserPassword(
-  name: string,
+  id: string,
   password: string,
 ): Promise<void> {
-  await patchPrincipal(name, [
-    { action: "set", field: "secrets", value: [password] },
-  ]);
-}
-
-export async function setMailUserAliases(
-  name: string,
-  aliases: string[],
-): Promise<void> {
-  await patchPrincipal(name, [
-    { action: "set", field: "emails", value: [name, ...aliases] },
-  ]);
-}
-
-export async function deleteMailUser(name: string): Promise<void> {
-  await api(`/api/principal/${encodeURIComponent(name)}`, { method: "DELETE" });
-}
-
-/* ── domain & DKIM (setup-time helpers) ────────────────────── */
-
-export async function ensureDomain(domain: string): Promise<void> {
-  try {
-    await api(`/api/domain/${encodeURIComponent(domain)}`, { method: "POST" });
-  } catch (e) {
-    // Already exists → fine.
-    if (!String(e).includes("exists") && !String(e).includes("409")) throw e;
+  const res = await jmap("x:Account/set", {
+    accountId: PRIMARY,
+    update: {
+      [id]: { credentials: { "0": { "@type": "Password", secret: password } } },
+    },
+  });
+  if (!(res.updated as Record<string, unknown>)?.[id] && (res.notUpdated as Record<string, unknown>)?.[id]) {
+    throw new Error(`password reset failed: ${JSON.stringify((res.notUpdated as Record<string, unknown>)[id])}`);
   }
 }
 
-/** DNS records Stalwart wants for the domain (MX/DKIM/SPF suggestions). */
-export async function dnsRecords(
-  domain: string,
-): Promise<{ type: string; name: string; content: string }[]> {
-  return api(`/api/dns/records/${encodeURIComponent(domain)}`);
+/** Replace alias list. Each entry is an EmailAlias {name, domainId}; the
+ * literal local part "@domain" (name "*"/catch-all handled by caller). */
+export async function setMailUserAliases(
+  id: string,
+  aliasLocals: string[],
+): Promise<void> {
+  const domainId = await primaryDomainId();
+  const aliases: Record<string, { name: string; domainId: string; enabled: boolean }> = {};
+  aliasLocals.forEach((local, i) => {
+    aliases[String(i)] = { name: local, domainId, enabled: true };
+  });
+  const res = await jmap("x:Account/set", {
+    accountId: PRIMARY,
+    update: { [id]: { aliases } },
+  });
+  if ((res.notUpdated as Record<string, unknown>)?.[id]) {
+    throw new Error(`alias update failed: ${JSON.stringify((res.notUpdated as Record<string, unknown>)[id])}`);
+  }
+}
+
+export async function deleteMailUser(id: string): Promise<void> {
+  const res = await jmap("x:Account/set", {
+    accountId: PRIMARY,
+    destroy: [id],
+  });
+  const destroyed = (res.destroyed as string[]) ?? [];
+  if (!destroyed.includes(id)) {
+    throw new Error(`delete failed: ${JSON.stringify(res.notDestroyed ?? {})}`);
+  }
 }

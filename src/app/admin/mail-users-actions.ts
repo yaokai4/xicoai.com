@@ -6,7 +6,6 @@ import { requireAdmin } from "@/lib/admin-auth";
 import {
   createMailUser,
   deleteMailUser,
-  getMailUser,
   mailDomain,
   setMailUserAliases,
   setMailUserPassword,
@@ -44,27 +43,19 @@ export async function createMailUserAction(
   if (!local) return { error: "用户名只能包含字母、数字、._-，且以字母/数字开头" };
   const displayName =
     String(formData.get("displayName") ?? "").trim().slice(0, 128) || null;
-  const quotaGb = Math.min(
-    50,
-    Math.max(1, Number(formData.get("quotaGb")) || 2),
-  );
 
   const account = `${local}@${mailDomain()}`;
   const password = generatePassword();
   try {
-    await createMailUser({
-      name: account,
-      password,
-      displayName,
-      quotaBytes: quotaGb * 1024 * 1024 * 1024,
-    });
+    await createMailUser({ local, password, displayName });
   } catch (e) {
     console.error("createMailUser failed", e);
     const msg = String(e);
     return {
-      error: msg.includes("exists") || msg.includes("409")
-        ? "该账号已存在"
-        : "创建失败（邮件后端未就绪或网络错误）",
+      error:
+        msg.includes("exists") || msg.includes("primaryKeyViolation")
+          ? "该账号已存在"
+          : "创建失败（邮件后端未就绪或网络错误）",
     };
   }
   revalidatePath("/admin/mail/users");
@@ -72,12 +63,13 @@ export async function createMailUserAction(
 }
 
 export async function resetMailPasswordAction(
+  id: string,
   account: string,
 ): Promise<MailUserActionState> {
   await requireAdmin();
   const password = generatePassword();
   try {
-    await setMailUserPassword(account, password);
+    await setMailUserPassword(id, password);
   } catch (e) {
     console.error("resetMailPassword failed", e);
     return { error: "重置失败" };
@@ -86,11 +78,11 @@ export async function resetMailPasswordAction(
 }
 
 export async function deleteMailUserAction(
-  account: string,
+  id: string,
 ): Promise<{ error?: string }> {
   await requireAdmin();
   try {
-    await deleteMailUser(account);
+    await deleteMailUser(id);
   } catch (e) {
     console.error("deleteMailUser failed", e);
     return { error: "删除失败" };
@@ -99,45 +91,26 @@ export async function deleteMailUserAction(
   return {};
 }
 
-/** Replace the alias list (extra receiving addresses) of an account. */
+/** Replace the alias list (extra receiving local-parts) of an account. */
 export async function setAliasesAction(
-  account: string,
+  id: string,
   aliasesRaw: string,
 ): Promise<{ error?: string }> {
   await requireAdmin();
-  const domain = mailDomain();
-  const aliases: string[] = [];
+  const locals: string[] = [];
   for (const line of aliasesRaw.split(/[\n,;]+/)) {
     const t = line.trim().toLowerCase();
     if (!t) continue;
-    if (t === "catch-all" || t === `@${domain}`) {
-      aliases.push(`@${domain}`); // literal "@domain" = catch-all in Stalwart
-      continue;
-    }
     const local = normalizeLocal(t);
     if (!local) return { error: `别名格式不合法：${t}` };
-    const addr = `${local}@${domain}`;
-    if (addr !== account) aliases.push(addr);
+    locals.push(local);
   }
   try {
-    await setMailUserAliases(account, [...new Set(aliases)]);
+    await setMailUserAliases(id, [...new Set(locals)]);
   } catch (e) {
     console.error("setAliases failed", e);
     return { error: "保存别名失败" };
   }
   revalidatePath("/admin/mail/users");
   return {};
-}
-
-/** Fetch one account fresh (for the alias editor). */
-export async function getMailUserAction(
-  account: string,
-): Promise<{ emails?: string[]; error?: string }> {
-  await requireAdmin();
-  try {
-    const p = await getMailUser(account);
-    return { emails: p.emails ?? [] };
-  } catch {
-    return { error: "读取失败" };
-  }
 }

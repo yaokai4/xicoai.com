@@ -33,8 +33,6 @@ const primary = "d333333"; // fallback-admin's account id in bootstrap mode
 const payload = {
   serverHostname: HOST,
   defaultDomain: DOMAIN,
-  username: ADMIN_USER,
-  secret: ADMIN_PASS,
   requestTlsCertificate: true,
   generateDkimKeys: true,
   dataStore: { "@type": "RocksDb", path: "/opt/stalwart/data" },

@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import {
   createMailUserAction,
   deleteMailUserAction,
-  getMailUserAction,
   resetMailPasswordAction,
   setAliasesAction,
   type MailUserActionState,
@@ -16,10 +15,10 @@ const field =
   "rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-brand";
 
 export type MailUserRow = {
-  name: string;
+  id: string;
+  email: string;
   displayName: string | null;
-  emails: string[];
-  quota: number;
+  aliases: string[];
   usedQuota: number;
 };
 
@@ -31,7 +30,8 @@ function CredentialCard({
   password: string;
 }) {
   const [copied, setCopied] = useState(false);
-  const text = `邮箱：${account}\n密码：${password}\n收件 IMAP：mail.${account.split("@")[1]} 端口 993（SSL）\n发件 SMTP：mail.${account.split("@")[1]} 端口 465（SSL）或 587（STARTTLS）\n用户名请填完整邮箱地址。`;
+  const domain = account.split("@")[1];
+  const text = `邮箱：${account}\n密码：${password}\n收件 IMAP：mail.${domain} 端口 993（SSL）\n发件 SMTP：mail.${domain} 端口 465（SSL）或 587（STARTTLS）\n用户名请填完整邮箱地址。`;
   return (
     <div className="mt-4 rounded-xl border border-brand/30 bg-brand/5 p-5">
       <p className="text-xs text-muted">
@@ -82,17 +82,6 @@ export function CreateUserForm({ domain }: { domain: string }) {
           <span className="text-xs text-muted">显示名（选填）</span>
           <input name="displayName" placeholder="Kevin / 客服" className={field} />
         </label>
-        <label className="flex flex-col gap-1.5">
-          <span className="text-xs text-muted">容量 (GB)</span>
-          <input
-            name="quotaGb"
-            type="number"
-            min={1}
-            max={50}
-            defaultValue={2}
-            className={`${field} w-[6rem]`}
-          />
-        </label>
         <button
           type="submit"
           disabled={pending}
@@ -121,48 +110,45 @@ export function MailUserTable({
     account: string;
     password: string;
   } | null>(null);
-  const [aliasFor, setAliasFor] = useState<string | null>(null);
+  const [aliasFor, setAliasFor] = useState<MailUserRow | null>(null);
   const [aliasText, setAliasText] = useState("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  function resetPassword(account: string) {
-    if (!confirm(`确认重置 ${account} 的密码？旧密码将立即失效。`)) return;
+  function resetPassword(u: MailUserRow) {
+    if (!confirm(`确认重置 ${u.email} 的密码？旧密码将立即失效。`)) return;
     startTransition(async () => {
-      const res = await resetMailPasswordAction(account);
+      const res = await resetMailPasswordAction(u.id, u.email);
       setError(res.error ?? null);
       if (res.ok && res.password) {
-        setCredential({ account, password: res.password });
+        setCredential({ account: u.email, password: res.password });
       }
     });
   }
 
-  function remove(account: string) {
+  function remove(u: MailUserRow) {
     if (
-      !confirm(
-        `确认删除 ${account}？该邮箱的所有邮件将被删除，且无法恢复。`,
-      )
+      !confirm(`确认删除 ${u.email}？该邮箱的所有邮件将被删除，且无法恢复。`)
     )
       return;
     startTransition(async () => {
-      const res = await deleteMailUserAction(account);
+      const res = await deleteMailUserAction(u.id);
       setError(res.error ?? null);
       router.refresh();
     });
   }
 
-  async function openAliases(account: string) {
-    setAliasFor(account);
-    setAliasText("…");
-    const res = await getMailUserAction(account);
-    const aliases = (res.emails ?? []).filter((e) => e !== account);
-    setAliasText(aliases.join("\n"));
+  function openAliases(u: MailUserRow) {
+    setAliasFor(u);
+    setAliasText(
+      u.aliases.map((a) => a.replace(`@${domain}`, "")).join("\n"),
+    );
   }
 
   function saveAliases() {
     if (!aliasFor) return;
     startTransition(async () => {
-      const res = await setAliasesAction(aliasFor, aliasText);
+      const res = await setAliasesAction(aliasFor.id, aliasText);
       setError(res.error ?? null);
       if (!res.error) setAliasFor(null);
       router.refresh();
@@ -183,74 +169,68 @@ export function MailUserTable({
       )}
 
       <div className="mt-4 overflow-x-auto rounded-xl border border-border">
-        <table className="w-full min-w-[760px] text-sm">
+        <table className="w-full min-w-[720px] text-sm">
           <thead>
             <tr className="border-b border-border text-left text-xs text-muted">
               <th className="px-4 py-3 font-medium">邮箱</th>
               <th className="px-4 py-3 font-medium">显示名</th>
               <th className="px-4 py-3 font-medium">别名/收信地址</th>
-              <th className="px-4 py-3 font-medium">已用/容量</th>
+              <th className="px-4 py-3 font-medium">已用</th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
           <tbody>
-            {users.map((u) => {
-              const aliases = u.emails.filter((e) => e !== u.name);
-              return (
-                <tr key={u.name} className="border-b border-border/50 align-top">
-                  <td className="px-4 py-2.5 font-mono text-[13px] text-foreground">
-                    {u.name}
-                  </td>
-                  <td className="px-4 py-2.5 text-muted">
-                    {u.displayName ?? "—"}
-                  </td>
-                  <td className="max-w-[260px] px-4 py-2.5 text-xs text-muted">
-                    {aliases.length
-                      ? aliases.map((a) => (
-                          <span
-                            key={a}
-                            className={`mr-1.5 inline-block rounded border border-border px-1.5 py-0.5 ${
-                              a.startsWith("@") ? "text-amber-400" : ""
-                            }`}
-                          >
-                            {a.startsWith("@") ? `catch-all（${a}）` : a}
-                          </span>
-                        ))
-                      : "—"}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2.5 text-muted">
-                    {(u.usedQuota / 1024 / 1024).toFixed(0)} MB /{" "}
-                    {(u.quota / 1024 / 1024 / 1024).toFixed(0)} GB
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2.5 text-right text-xs">
-                    <button
-                      type="button"
-                      disabled={pending}
-                      onClick={() => openAliases(u.name)}
-                      className="mr-3 text-muted transition-colors hover:text-foreground"
-                    >
-                      别名
-                    </button>
-                    <button
-                      type="button"
-                      disabled={pending}
-                      onClick={() => resetPassword(u.name)}
-                      className="mr-3 text-muted transition-colors hover:text-foreground"
-                    >
-                      重置密码
-                    </button>
-                    <button
-                      type="button"
-                      disabled={pending}
-                      onClick={() => remove(u.name)}
-                      className="text-red-400/70 transition-colors hover:text-red-400"
-                    >
-                      删除
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {users.map((u) => (
+              <tr key={u.id} className="border-b border-border/50 align-top">
+                <td className="px-4 py-2.5 font-mono text-[13px] text-foreground">
+                  {u.email}
+                </td>
+                <td className="px-4 py-2.5 text-muted">
+                  {u.displayName ?? "—"}
+                </td>
+                <td className="max-w-[240px] px-4 py-2.5 text-xs text-muted">
+                  {u.aliases.length
+                    ? u.aliases.map((a) => (
+                        <span
+                          key={a}
+                          className="mr-1.5 inline-block rounded border border-border px-1.5 py-0.5"
+                        >
+                          {a}
+                        </span>
+                      ))
+                    : "—"}
+                </td>
+                <td className="whitespace-nowrap px-4 py-2.5 text-muted">
+                  {(u.usedQuota / 1024 / 1024).toFixed(0)} MB
+                </td>
+                <td className="whitespace-nowrap px-4 py-2.5 text-right text-xs">
+                  <button
+                    type="button"
+                    disabled={pending}
+                    onClick={() => openAliases(u)}
+                    className="mr-3 text-muted transition-colors hover:text-foreground"
+                  >
+                    别名
+                  </button>
+                  <button
+                    type="button"
+                    disabled={pending}
+                    onClick={() => resetPassword(u)}
+                    className="mr-3 text-muted transition-colors hover:text-foreground"
+                  >
+                    重置密码
+                  </button>
+                  <button
+                    type="button"
+                    disabled={pending}
+                    onClick={() => remove(u)}
+                    className="text-red-400/70 transition-colors hover:text-red-400"
+                  >
+                    删除
+                  </button>
+                </td>
+              </tr>
+            ))}
             {!users.length && (
               <tr>
                 <td colSpan={5} className="px-4 py-10 text-center text-faint">
@@ -265,11 +245,10 @@ export function MailUserTable({
       {aliasFor && (
         <div className="mt-4 rounded-2xl border border-border p-5">
           <h3 className="text-sm font-semibold text-foreground">
-            {aliasFor} 的别名
+            {aliasFor.email} 的别名
           </h3>
           <p className="mt-1 text-xs text-faint">
-            每行一个（只写 @ 前面的部分即可，如 <code>support</code>）；填{" "}
-            <code>catch-all</code> 表示接收发往 @{domain} 下所有不存在地址的邮件。
+            每行一个（只写 @ 前面的部分，如 <code>support</code>）。发往这些地址的邮件都会进入此邮箱。
           </p>
           <textarea
             value={aliasText}
