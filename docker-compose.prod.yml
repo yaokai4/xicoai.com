@@ -49,9 +49,10 @@ services:
       - internal
       - web
 
-  # Self-hosted mail engine: inbound SMTP (host :25) + outbound queue worker.
-  # Inbound goes live once DNS MX points here and the Lightsail firewall
-  # opens TCP 25; outbound works as soon as SMTP_PASS (relay) is set.
+  # Site mail worker: outbound queue (transactional/marketing) + IMAP mirror
+  # that copies new mail from the hi@ mailbox into the /admin/mail web inbox.
+  # Protocol-level mail (MX :25, IMAP :993, submission :465/:587) is Stalwart's
+  # job below — this worker no longer listens on any port.
   mail:
     build: ./mailer
     image: xicoai-mailer
@@ -63,10 +64,30 @@ services:
     env_file: .env
     environment:
       DATABASE_URL: postgres://xico:${POSTGRES_PASSWORD}@db:5432/xico
-    ports:
-      - "25:2525"
     volumes:
       - maildata:/data
+    networks:
+      - internal
+      - web
+
+  # Enterprise mail backend (IMAP/SMTP/JMAP, one small Rust binary): real
+  # mailboxes for xxx@xicoai.com usable from QQ Mail / Gmail / Apple Mail /
+  # Outlook. Accounts are managed from /admin/mail/users via its REST API.
+  # TLS certs come from Let's Encrypt over HTTP-01 (Caddy forwards
+  # http://mail.xicoai.com/.well-known/acme-challenge here).
+  stalwart:
+    image: stalwartlabs/stalwart:latest
+    container_name: xicoai-stalwart
+    restart: unless-stopped
+    environment:
+      FALLBACK_ADMIN_SECRET: ${STALWART_ADMIN_SECRET:-}
+    ports:
+      - "25:25"     # MX inbound
+      - "465:465"   # SMTP submission (implicit TLS)
+      - "587:587"   # SMTP submission (STARTTLS)
+      - "993:993"   # IMAP (implicit TLS)
+    volumes:
+      - stalwart:/opt/stalwart
     networks:
       - internal
       - web
@@ -91,6 +112,7 @@ volumes:
   pgdata:
   uploads:
   maildata:
+  stalwart:
   caddy_data:
   caddy_config:
 

@@ -121,35 +121,115 @@ async function storeInbound(parsed, session) {
   console.log(`⬅︎ inbound #${id} from ${parsed.from?.value?.[0]?.address} to ${rcpt.join(",")}`);
 }
 
-const server = new SMTPServer({
-  name: HELO_NAME,
-  banner: "xicoai mail",
-  authOptional: true,
-  disabledCommands: ["AUTH"],
-  disableReverseLookup: true,
-  size: 25 * 1024 * 1024,
-  onRcptTo(address, _session, cb) {
-    if (rcptAccepted(address.address)) return cb();
-    const err = new Error("5.1.1 Mailbox not found");
-    err.responseCode = 550;
-    return cb(err);
-  },
-  onData(stream, session, cb) {
-    simpleParser(stream)
-      .then((parsed) => storeInbound(parsed, session))
-      .then(() => cb())
-      .catch((e) => {
-        console.error("inbound store failed", e);
-        const err = new Error("4.3.0 Temporary failure, try again");
-        err.responseCode = 451;
-        cb(err);
-      });
-  },
-});
-server.on("error", (e) => console.error("smtp server error", e.message));
-server.listen(SMTP_LISTEN_PORT, () =>
-  console.log(`SMTP inbound listening on :${SMTP_LISTEN_PORT} for ${MAIL_DOMAINS.join(", ")}`),
-);
+// Stalwart owns the real MX/IMAP now; this raw listener is kept only for
+// environments without it (MAIL_INBOUND=1).
+if (process.env.MAIL_INBOUND === "1") {
+  const server = new SMTPServer({
+    name: HELO_NAME,
+    banner: "xicoai mail",
+    authOptional: true,
+    disabledCommands: ["AUTH"],
+    disableReverseLookup: true,
+    size: 25 * 1024 * 1024,
+    onRcptTo(address, _session, cb) {
+      if (rcptAccepted(address.address)) return cb();
+      const err = new Error("5.1.1 Mailbox not found");
+      err.responseCode = 550;
+      return cb(err);
+    },
+    onData(stream, session, cb) {
+      simpleParser(stream)
+        .then((parsed) => storeInbound(parsed, session))
+        .then(() => cb())
+        .catch((e) => {
+          console.error("inbound store failed", e);
+          const err = new Error("4.3.0 Temporary failure, try again");
+          err.responseCode = 451;
+          cb(err);
+        });
+    },
+  });
+  server.on("error", (e) => console.error("smtp server error", e.message));
+  server.listen(SMTP_LISTEN_PORT, () =>
+    console.log(`SMTP inbound listening on :${SMTP_LISTEN_PORT} for ${MAIL_DOMAINS.join(", ")}`),
+  );
+}
+
+/* ── IMAP mirror: hi@ mailbox → /admin/mail web inbox ──────── */
+// Peeks (never marks read) new messages in the Stalwart mailbox and copies
+// them into mail_messages so the site's inbox keeps working alongside real
+// mail clients. UID cursor lives in the settings KV.
+
+const MIRROR_HOST = process.env.MAIL_MIRROR_HOST || "stalwart";
+const MIRROR_USER = process.env.MAIL_MIRROR_USER || "";
+const MIRROR_PASS = process.env.MAIL_MIRROR_PASS || "";
+const MIRROR_KEY = `mail_mirror_uid:${MIRROR_USER}`;
+
+async function mirrorTick() {
+  if (!MIRROR_USER || !MIRROR_PASS) return;
+  const { ImapFlow } = await import("imapflow");
+  const client = new ImapFlow({
+    host: MIRROR_HOST,
+    port: 993,
+    secure: true,
+    tls: { rejectUnauthorized: false }, // internal docker hop
+    auth: { user: MIRROR_USER, pass: MIRROR_PASS },
+    logger: false,
+  });
+  try {
+    await client.connect();
+    const lock = await client.getMailboxLock("INBOX");
+    try {
+      const row = await sql`SELECT value FROM settings WHERE key = ${MIRROR_KEY}`;
+      let lastUid = Number(row[0]?.value || 0);
+      const status = await client.status("INBOX", { uidNext: true });
+      if (status.uidNext && status.uidNext <= lastUid + 1) return;
+
+      for await (const msg of client.fetch(
+        { uid: `${lastUid + 1}:*` },
+        { uid: true, source: true },
+        { uid: true },
+      )) {
+        if (msg.uid <= lastUid) continue; // "*" can echo the last seen message
+        const parsed = await simpleParser(msg.source);
+        await sql`
+          INSERT INTO mail_messages (direction, from_email, from_name, to_email, rcpt,
+                                     subject, text, html, message_id, in_reply_to)
+          VALUES ('in',
+                  ${parsed.from?.value?.[0]?.address?.toLowerCase() ?? null},
+                  ${parsed.from?.value?.[0]?.name || null},
+                  ${MIRROR_USER},
+                  ${sql.json([MIRROR_USER])},
+                  ${parsed.subject || "(无主题)"},
+                  ${parsed.text || null},
+                  ${parsed.html || null},
+                  ${parsed.messageId || null},
+                  ${parsed.inReplyTo || null})`;
+        lastUid = msg.uid;
+        console.log(`⬅︎ mirrored uid ${msg.uid}: ${parsed.subject ?? ""}`);
+      }
+      await sql`
+        INSERT INTO settings (key, value, updated_at) VALUES (${MIRROR_KEY}, ${String(lastUid)}, now())
+        ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = now()`;
+    } finally {
+      lock.release();
+    }
+  } catch (e) {
+    // Quiet while Stalwart boots or the mailbox doesn't exist yet.
+    if (!String(e.message).includes("ECONNREFUSED")) {
+      console.error("imap mirror error:", e.message);
+    }
+  } finally {
+    try { await client.logout(); } catch { /* closed */ }
+  }
+}
+if (MIRROR_USER && MIRROR_PASS) {
+  setInterval(mirrorTick, 60_000);
+  mirrorTick();
+  console.log(`IMAP mirror active: ${MIRROR_USER}@${MIRROR_HOST} → web inbox`);
+} else {
+  console.log("IMAP mirror idle (set MAIL_MIRROR_USER / MAIL_MIRROR_PASS)");
+}
 
 /* ── outbound: mail_outbox queue → SMTP ────────────────────── */
 

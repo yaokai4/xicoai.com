@@ -10,6 +10,7 @@ const NAV = [
   { href: "/admin/licenses", label: "激活码" },
   { href: "/admin/pricing", label: "定价" },
   { href: "/admin/mail", label: "收件箱" },
+  { href: "/admin/mail/users", label: "邮箱账号" },
   { href: "/admin/mail/campaigns", label: "营销邮件" },
   { href: "/admin/mail/subscribers", label: "订阅者" },
   { href: "/admin/posts", label: "文章" },

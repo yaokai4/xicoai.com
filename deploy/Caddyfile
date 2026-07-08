@@ -29,3 +29,15 @@ mac.xicoai.com {
 	}
 	reverse_proxy app:3000
 }
+
+# Mail host: only Let's Encrypt HTTP-01 challenges are exposed (Stalwart's
+# ACME obtains certs for IMAP/SMTP TLS through here). Everything else on the
+# mail hostname bounces to the main site; the mail admin API stays internal.
+http://mail.xicoai.com {
+	handle /.well-known/acme-challenge/* {
+		reverse_proxy xicoai-stalwart:8080
+	}
+	handle {
+		redir https://xicoai.com{uri} permanent
+	}
+}
