@@ -38,10 +38,35 @@ services:
       DATABASE_URL: postgres://xico:${POSTGRES_PASSWORD}@db:5432/xico
       NODE_ENV: production
       UPLOAD_DIR: /app/uploads
+      MAIL_DATA_DIR: /maildata
     volumes:
       - uploads:/app/uploads
+      # Shared with the mailer so /admin/mail can serve inbound attachments.
+      - maildata:/maildata
     expose:
       - "3000"
+    networks:
+      - internal
+      - web
+
+  # Self-hosted mail engine: inbound SMTP (host :25) + outbound queue worker.
+  # Inbound goes live once DNS MX points here and the Lightsail firewall
+  # opens TCP 25; outbound works as soon as SMTP_PASS (relay) is set.
+  mail:
+    build: ./mailer
+    image: xicoai-mailer
+    container_name: xicoai-mail
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://xico:${POSTGRES_PASSWORD}@db:5432/xico
+    ports:
+      - "25:2525"
+    volumes:
+      - maildata:/data
     networks:
       - internal
       - web
@@ -65,6 +90,7 @@ services:
 volumes:
   pgdata:
   uploads:
+  maildata:
   caddy_data:
   caddy_config:
 

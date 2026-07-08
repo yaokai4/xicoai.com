@@ -60,6 +60,52 @@ export async function issueLicenseForOrder(order: MacOrder): Promise<string> {
 }
 
 /**
+ * Mint an activation key by hand from the admin console (source "manual") —
+ * the ONLY other legitimate origin of keys besides a paid order. Used for
+ * 卡密/线下 sales, giveaways and review copies. Same crypto & retry loop as
+ * purchase issuance; no order row is attached.
+ */
+export async function issueManualLicense(opts: {
+  plan: MacOrder["plan"];
+  email?: string | null;
+  note?: string | null;
+}): Promise<{ key: string; licenseId: number; licenseUid: string }> {
+  const db = getDb();
+  const seats = seatsForPlan(opts.plan);
+
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const code = generateKeyCode();
+    const licenseUid = randomUUID();
+    try {
+      const inserted = await db
+        .insert(macLicenses)
+        .values({
+          licenseUid,
+          keyHash: hashKey(code),
+          keyEncrypted: encryptKey(code),
+          keyLast4: keyLast4(code),
+          plan: opts.plan,
+          seats,
+          email: opts.email || null,
+          note: opts.note || null,
+          source: "manual",
+          orderId: null,
+        })
+        .returning({ id: macLicenses.id });
+      return { key: formatKey(code), licenseId: inserted[0].id, licenseUid };
+    } catch (e) {
+      // Only a key-hash unique collision justifies a retry; anything else
+      // (missing LICENSE_KEY_SECRET, DB down …) must surface, not loop.
+      const code23505 =
+        (e as { code?: string })?.code === "23505" ||
+        ((e as { cause?: { code?: string } })?.cause?.code === "23505");
+      if (!code23505) throw e;
+    }
+  }
+  throw new Error("Could not issue a unique license key after retries.");
+}
+
+/**
  * For the success page: returns the formatted key once the order is paid and a
  * key has been issued, else null (still processing).
  */

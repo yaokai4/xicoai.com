@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
+import { localeAlternates } from "@/lib/i18n-meta";
 import {
   MacPageHeader,
   MacCatalog,
@@ -27,11 +28,7 @@ export async function generateMetadata({
     description: t("meta.description"),
     alternates: {
       canonical: path,
-      languages: {
-        zh: "/mac/features",
-        ja: "/ja/mac/features",
-        en: "/en/mac/features",
-      },
+      languages: localeAlternates("/mac/features"),
     },
     openGraph: {
       type: "website",

@@ -7,13 +7,17 @@ import { Logo } from "@/components/brand/logo";
 
 const NAV = [
   { href: "/admin", label: "概览" },
+  { href: "/admin/licenses", label: "激活码" },
+  { href: "/admin/pricing", label: "定价" },
+  { href: "/admin/mail", label: "收件箱" },
+  { href: "/admin/mail/campaigns", label: "营销邮件" },
+  { href: "/admin/mail/subscribers", label: "订阅者" },
   { href: "/admin/posts", label: "文章" },
   { href: "/admin/jobs", label: "职位" },
   { href: "/admin/applications", label: "投递" },
   { href: "/admin/join", label: "Join 提交" },
   { href: "/admin/waitlist", label: "等候名单" },
   { href: "/admin/messages", label: "联系表单" },
-  { href: "/admin/pricing", label: "定价" },
   { href: "/admin/settings", label: "社交链接" },
 ];
 

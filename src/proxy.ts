@@ -1,6 +1,12 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
+import {
+  clientIp,
+  countryFromIp,
+  localeForCountry,
+  localeFromAcceptLanguage,
+} from "./lib/geo";
 
 const intlMiddleware = createMiddleware(routing);
 const LOCALES = routing.locales as readonly string[];
@@ -22,7 +28,44 @@ function macProductPath(pathname: string): string {
   return `${localePart}/mac${restPart}`;
 }
 
+/**
+ * First-visit language detection (Next 16 proxy = Node runtime, so the
+ * embedded IP table in lib/geo is fine here):
+ *   1. an explicit /locale prefix or a NEXT_LOCALE cookie always wins;
+ *   2. else the SYSTEM language (Accept-Language);
+ *   3. else the IP country;
+ * and only GET navigations redirect — server-action POSTs pass through
+ * untouched. Returns null when the request should proceed as-is.
+ */
+function detectLocaleRedirect(request: NextRequest): NextResponse | null {
+  if (request.method !== "GET") return null;
+  const { pathname } = request.nextUrl;
+  const first = pathname.split("/").filter(Boolean)[0];
+  if (first && LOCALES.includes(first)) return null; // explicit prefix
+  if (request.cookies.get("NEXT_LOCALE")?.value) return null; // remembered pick
+
+  const detected =
+    localeFromAcceptLanguage(request.headers.get("accept-language"), LOCALES) ??
+    localeForCountry(countryFromIp(clientIp(request.headers)));
+  if (!detected || detected === routing.defaultLocale) return null;
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${detected}${pathname === "/" ? "" : pathname}`;
+  const res = NextResponse.redirect(url, 307);
+  // Remember so the visitor isn't re-detected on every unprefixed hit; the
+  // language switcher overwrites this cookie on manual change.
+  res.cookies.set("NEXT_LOCALE", detected, {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+  });
+  return res;
+}
+
 export default function proxy(request: NextRequest) {
+  const redirect = detectLocaleRedirect(request);
+  if (redirect) return redirect;
+
   const host = (request.headers.get("host") ?? "").split(":")[0].toLowerCase();
 
   if (host.startsWith("mac.")) {

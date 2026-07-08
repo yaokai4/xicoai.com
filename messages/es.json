@@ -1,0 +1,1222 @@
+{
+  "notFound": {
+    "title": "Aquí no hay nada todavía",
+    "desc": "Puede que la página se haya movido o que la dirección sea incorrecta.",
+    "home": "Volver al inicio"
+  },
+  "meta": {
+    "title": "Changsha Zhixike Technology Co., Ltd. | Desarrollo de productos de software, entrega de IA y sistemas digitales",
+    "titleTemplate": "%s — XICO AI",
+    "description": "Changsha Zhixike Technology Co., Ltd. (XICO AI) desarrolla productos de software, aplicaciones de IA, sistemas web y móviles, y plataformas digitales, desde la definición de requisitos hasta un lanzamiento estable.",
+    "company": "Changsha Zhixike Technology Co., Ltd."
+  },
+  "nav": {
+    "home": "Inicio",
+    "work": "Productos",
+    "services": "Servicios",
+    "about": "Empresa",
+    "blog": "Novedades",
+    "careers": "Únete",
+    "contact": "Contacto",
+    "cta": "Iniciar una conversación",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "mac": "Xico Clean"
+  },
+  "hero": {
+    "eyebrow": "Changsha Zhixike Technology Co., Ltd.",
+    "titleLine1": "Software",
+    "titleLine2": "listo para producción.",
+    "subtitle": "XICO es una empresa de tecnología de software. Creamos nuestros propios productos y ayudamos a empresas y fundadores a avanzar desde la definición de requisitos y el diseño de interacción hasta la ingeniería, el lanzamiento y la operación continua. El objetivo es simple: entregar sistemas que funcionen, escalen y sigan mejorando.",
+    "ctaPrimary": "Ver productos y trabajos",
+    "ctaSecondary": "Agendar una conversación",
+    "scroll": "Continuar",
+    "stack": "Desarrollo de productos de software · Entrega de aplicaciones de IA · Plataformas web · Apps móviles · Sistemas de negocio"
+  },
+  "marquee": {
+    "items": [
+      "Productos de software",
+      "Aplicaciones de IA",
+      "Ingeniería full-stack",
+      "Diseño de producto",
+      "Apps móviles",
+      "Sistemas de negocio",
+      "Servicios multilingües",
+      "Operación a largo plazo"
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades clave",
+    "title": "De los requisitos al lanzamiento, la entrega tiene que ser sólida",
+    "subtitle": "Miramos más allá de la lista de funciones: alcance del producto, flujos de usuario, arquitectura técnica, límites de datos y el costo de mantenimiento después del lanzamiento.",
+    "items": [
+      {
+        "title": "Entrega de aplicaciones de IA",
+        "desc": "Integramos la capacidad de los modelos en flujos de trabajo reales: bases de conocimiento, preguntas y respuestas con IA, procesamiento de contenido, recuperación, evaluación, permisos y límites de datos.",
+        "tags": [
+          "Bases de conocimiento",
+          "Asistentes de IA",
+          "RAG",
+          "Evaluación de modelos"
+        ]
+      },
+      {
+        "title": "Productos web y móviles",
+        "desc": "Desde productos para clientes hasta paneles de administración, cubrimos arquitectura de información, flujos de interacción, sistemas de diseño, ingeniería full-stack y entrega responsiva.",
+        "tags": [
+          "iOS",
+          "Android",
+          "Next.js",
+          "Sistemas de diseño"
+        ]
+      },
+      {
+        "title": "Sistemas y plataformas de negocio",
+        "desc": "Pedidos, membresías, contenido, pagos, datos y consolas de operación, diseñados en torno a los flujos de trabajo, los permisos y la eficiencia de gestión.",
+        "tags": [
+          "SaaS",
+          "Consolas de administración",
+          "Pagos",
+          "Dashboards"
+        ]
+      },
+      {
+        "title": "Base técnica a largo plazo",
+        "desc": "Arquitectura clara, código mantenible, despliegue, monitoreo, límites de seguridad y trabajo de rendimiento que reducen el retrabajo después del lanzamiento.",
+        "tags": [
+          "Arquitectura",
+          "DevOps",
+          "Seguridad",
+          "Rendimiento"
+        ]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "Productos y trabajos",
+    "title": "Nuestros propios productos avalan nuestra forma de entregar",
+    "subtitle": "Machi, Shangence y nuestras líneas de estudios en el extranjero y comercio transfronterizo son productos a largo plazo de Changsha Zhixike Technology Co., Ltd. Ponen a prueba nuestros métodos en condiciones de negocio reales.",
+    "viewLabel": "Saber más",
+    "visit": "Visitar sitio",
+    "highlightsLabel": "Destacados",
+    "items": [
+      {
+        "key": "xicoclean",
+        "name": "Xico Clean",
+        "kind": "Limpiador y optimizador para macOS · App de escritorio insignia",
+        "tagline": "Haz que tu Mac vuelva a ser rápida y limpia",
+        "about": "Xico Clean es la app de escritorio insignia de Changsha Zhixike: un limpiador y optimizador premium para macOS creado para rivalizar con CleanMyMac X. Nativo en Swift 6 + SwiftUI, profundamente integrado con el sistema: escaneo inteligente con un toque, limpieza dedicada de basura de desarrollador, visualización Space Lens, detección de duplicados y fotos similares, desinstalaciones completas, privacidad y mantenimiento. Cada eliminación se puede previsualizar y deshacer, y todo se ejecuta en local: una limpieza segura y, además, hermosa.",
+        "desc": "Un limpiador de Mac creado en Swift nativo: escaneo inteligente, basura de desarrollador, visualización del espacio, archivos duplicados y limpieza de privacidad — todo en local, con vista previa y opción de deshacer.",
+        "highlights": [
+          "Escaneo inteligente con un toque",
+          "Limpieza de basura de desarrollador",
+          "Visualización Space Lens",
+          "Seguro · reversible · 100% local"
+        ],
+        "status": "Próximamente",
+        "platforms": "macOS 13+ · Apple silicon / Intel"
+      },
+      {
+        "key": "machi",
+        "name": "Machi",
+        "kind": "Plataforma de vida urbana",
+        "tagline": "Un punto de entrada de servicios para la vida en el extranjero",
+        "desc": "Información local, servicios y conexión comunitaria para estudiantes, recién llegados y personas que están conociendo una ciudad.",
+        "about": "Machi está pensada para quienes viven en el extranjero: estudiantes, nuevos inmigrantes y cualquiera que todavía esté aprendiendo las reglas locales y los recursos disponibles. Información de la ciudad, comunidad, vivienda, empleo, artículos de segunda mano, servicios locales y experiencia vivida se reúnen en un solo punto de entrada, para que los usuarios pasen más rápido de la búsqueda a la acción.",
+        "highlights": [
+          "Información de la ciudad y comunidad",
+          "Vivienda / empleo / segunda mano",
+          "Puntos de entrada a servicios locales",
+          "Expansión regional multilingüe"
+        ],
+        "status": "En desarrollo activo",
+        "platforms": "Web · iOS · Android"
+      },
+      {
+        "key": "shangence",
+        "name": "Shangence",
+        "kind": "Herramienta de decisión para emprender",
+        "tagline": "Apoyo a la decisión antes de abrir un negocio",
+        "desc": "Evaluación de riesgos, presupuesto de validación y plan de acción para pequeños emprendedores.",
+        "about": "Shangence ayuda a los fundadores a tomar una decisión más fundamentada antes del primer gasto importante. Revisa las condiciones del sector, la seguridad del capital, la capacidad personal, la dificultad de captación y las restricciones externas, y devuelve una puntuación de riesgo, un presupuesto de validación, un límite de pérdidas y un plan de acción de 30 días. No promete el éxito; le da a la decisión mejor evidencia.",
+        "highlights": [
+          "Puntuación de riesgo en cinco dimensiones",
+          "Línea de seguridad de caja y límite de pérdidas",
+          "Plan de validación de 30 días",
+          "Informe PDF exportable"
+        ],
+        "status": "Beta privada en construcción",
+        "platforms": "Web"
+      },
+      {
+        "key": "next",
+        "name": "Negocios en incubación",
+        "kind": "Estudios en el extranjero · Comercio transfronterizo",
+        "tagline": "Llevar la capacidad de producto a escenarios de industria definidos",
+        "desc": "Estamos desarrollando líneas de producto para estudios en el extranjero, comercio transfronterizo y servicios locales en China, Japón y mercados internacionales.",
+        "about": "Estudios en el extranjero, comercio transfronterizo y servicios locales son los próximos campos que XICO seguirá explorando. Llevamos la ingeniería de software, el diseño de experiencia y las herramientas operativas a industrias concretas, para que los productos sirvan a transacciones reales y a una operación de largo plazo.",
+        "highlights": [],
+        "status": "En planificación",
+        "platforms": ""
+      }
+    ],
+    "platformsLabel": "Plataformas",
+    "learnMore": "Saber más"
+  },
+  "approach": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "El buen software empieza con un alcance y una responsabilidad claros",
+    "subtitle": "El criterio de producto, el diseño de experiencia y la ingeniería tienen que avanzar juntos.",
+    "principles": [
+      {
+        "title": "Definir el problema y sus límites",
+        "desc": "Los requisitos no son una lista de funciones. Son decisiones entre usuarios, costo, tiempos, datos y alcance del negocio."
+      },
+      {
+        "title": "Convertir flujos de trabajo en interfaces claras",
+        "desc": "Las interfaces no son decoración. La jerarquía, la retroalimentación, los permisos y los casos límite determinan la eficiencia operativa."
+      },
+      {
+        "title": "Escribir código que se pueda mantener",
+        "desc": "Una estructura clara, límites de módulos y modelos de datos bien definidos hacen que un proyecto sea más fácil de iterar, traspasar y ampliar."
+      },
+      {
+        "title": "Diseñar para varios mercados desde el principio",
+        "desc": "Chino, japonés, inglés, cumplimiento normativo, pagos y hábitos de los usuarios deben entrar en el plan antes del lanzamiento."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Iniciar una conversación",
+    "title": "Antes de construir un sistema, alinea el objetivo y el alcance.",
+    "subtitle": "Tráenos un producto nuevo, un sistema heredado o un negocio a punto de lanzarse. Te ayudaremos a definir el alcance, las prioridades, la ruta técnica y el ritmo de entrega.",
+    "button": "Agendar una conversación",
+    "emailLabel": "O escríbenos directamente"
+  },
+  "footer": {
+    "tagline": "Productos de software, aplicaciones de IA y plataformas digitales. Hacemos claro lo complejo y duradero lo útil.",
+    "groups": {
+      "company": "Empresa",
+      "products": "Productos",
+      "connect": "Contacto",
+      "legal": "Legal"
+    },
+    "links": {
+      "about": "Acerca de",
+      "work": "Productos y trabajos",
+      "services": "Servicios",
+      "contact": "Contacto",
+      "careers": "Únete",
+      "join": "Inversores / Socios",
+      "machi": "Machi",
+      "shangence": "Shangence",
+      "email": "Correo",
+      "location": "Changsha, China",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de servicio",
+      "xicoclean": "Xico Clean"
+    },
+    "rights": "Todos los derechos reservados.",
+    "icp": "湘ICP备XXXXXXXX号",
+    "comingSoon": "Próximamente"
+  },
+  "about": {
+    "eyebrow": "Acerca de XICO",
+    "title": "Una empresa de tecnología de software construida en torno a la entrega de productos.",
+    "subtitle": "Changsha Zhixike Technology Co., Ltd. opera productos propios, desarrollo de software y entrega de aplicaciones de IA bajo la marca XICO AI｜智希可.",
+    "story": [
+      "Empezamos en Changsha y trabajamos hacia China, Japón y otros mercados internacionales. Creamos nuestros propios productos y abrimos nuestra capacidad de diseño de producto, desarrollo de software y operación de lanzamientos a proyectos externos.",
+      "Nos importa la tecnología, pero nos importa más que entre en un flujo de trabajo real. Un producto solo funciona cuando el requisito es claro, la interfaz es usable, el sistema es estable y el equipo puede mantenerlo después del lanzamiento.",
+      "Nuestra forma de trabajar es directa: confirmar el objetivo de negocio y el flujo de usuario, y después definir el alcance, la ruta técnica y el ritmo de iteración. Cada etapa debe poder explicarse, revisarse y estar lista para el siguiente paso."
+    ],
+    "values": {
+      "title": "Cómo evaluamos una entrega",
+      "items": [
+        {
+          "title": "Validar el valor antes de construir",
+          "desc": "No todos los requisitos pertenecen a la primera versión. Primero hay que confirmar el objetivo, los usuarios, el costo y el método de validación."
+        },
+        {
+          "title": "La experiencia decide si un sistema se usa",
+          "desc": "Las interfaces deben ser claras, estables y predecibles, para que los usuarios sepan qué hacer a continuación."
+        },
+        {
+          "title": "La ingeniería debe sostener la siguiente versión",
+          "desc": "Después del lanzamiento vienen el mantenimiento, la expansión, las correcciones y el crecimiento. El código necesita espacio para las versiones futuras."
+        }
+      ]
+    },
+    "founder": {
+      "eyebrow": "Fundador",
+      "name": "Yao Kai · 姚凱",
+      "role": "Fundador y CEO",
+      "quote": "Un producto no es una página. Es un sistema que puede usarse y mantenerse en el tiempo.",
+      "bio": [
+        "Fundé XICO para reunir el criterio de producto, el diseño de experiencia y la ejecución de ingeniería en un solo sistema de entrega. Muchos proyectos fracasan no por falta de código, sino porque el problema, los límites y las prioridades nunca quedaron claros.",
+        "Suelo mirar los productos desde una perspectiva full-stack: front-end, móvil, back-end, base de datos, pagos, administración, despliegue y operaciones tienen que conectarse. Si una parte falla, el usuario simplemente percibe el sistema como poco confiable.",
+        "Changsha Zhixike Technology Co., Ltd. seguirá construyendo sus propios productos mientras abre su capacidad de desarrollo de software y entrega de productos a sus socios. Queremos ser una empresa de tecnología capaz de entregar proyectos complejos de forma confiable."
+      ]
+    },
+    "company": {
+      "eyebrow": "Empresa",
+      "companyLabel": "Empresa",
+      "company": "Changsha Zhixike Technology Co., Ltd.",
+      "brandLabel": "Marca",
+      "brand": "XICO AI｜智希可",
+      "focusLabel": "Enfoque",
+      "focus": "Productos de software · Aplicaciones de IA · Plataformas digitales · Desarrollo móvil y web",
+      "marketsLabel": "Mercados",
+      "markets": "China · Japón · Mercados internacionales"
+    }
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Desarrollo de productos de software y entrega de aplicaciones de IA",
+    "subtitle": "Para productos nuevos de cero a uno, reconstrucciones de sistemas existentes, integración de capacidades de IA y equipos que necesitan un socio técnico a largo plazo.",
+    "sections": [
+      {
+        "title": "Definición de producto y requisitos",
+        "desc": "Antes de escribir código, aclaramos los objetivos de negocio, los flujos de usuario, el alcance de la entrega y los criterios de aceptación.",
+        "points": [
+          "Posicionamiento y alcance del producto",
+          "Recorridos de usuario y arquitectura de información",
+          "Planificación del MVP y cadencia de versiones",
+          "Prototipos, flujos y documentos de requisitos"
+        ]
+      },
+      {
+        "title": "Diseño de interfaz y experiencia",
+        "desc": "Diseñamos sistemas con estructura clara, operación fluida y un lenguaje visual acorde al contexto del negocio.",
+        "points": [
+          "Marca e identidad",
+          "Diseño UI / UX",
+          "Sistemas de diseño",
+          "Prototipado y motion"
+        ]
+      },
+      {
+        "title": "Desarrollo de software e integración",
+        "desc": "Desde el front-end, el móvil, el back-end y las bases de datos hasta servicios de terceros, construimos productos que se pueden desplegar y mantener.",
+        "points": [
+          "Web / H5 / consolas de administración",
+          "Aplicaciones iOS / Android",
+          "APIs, bases de datos y permisos",
+          "Pagos, correo, archivos e integraciones de terceros"
+        ]
+      },
+      {
+        "title": "Aplicaciones de IA y capacidad de datos",
+        "desc": "Colocamos la capacidad de los modelos dentro de flujos de negocio reales, con límites de recuperación, evaluación, permisos y seguridad de datos.",
+        "points": [
+          "Bases de conocimiento y preguntas y respuestas con IA",
+          "Flujos de generación y revisión de contenido",
+          "RAG, recuperación y evaluación",
+          "Dashboards y análisis operativo"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Envíanos el contexto de tu proyecto.",
+    "subtitle": "No necesitas un brief completo. Cuéntanos en qué etapa está, a quién sirve el sistema y cuándo debe salir a producción. Te ayudaremos a definir el siguiente paso.",
+    "form": {
+      "name": "Tu nombre",
+      "email": "Correo electrónico",
+      "company": "Empresa / equipo (opcional)",
+      "topic": "¿De qué te gustaría hablar?",
+      "topics": {
+        "collaboration": "Desarrollo de productos de software",
+        "consulting": "Entrega de aplicaciones de IA",
+        "careers": "Unirme a XICO",
+        "other": "Otro tema"
+      },
+      "message": "Contexto del proyecto / problema actual",
+      "submit": "Enviar a XICO",
+      "success": "Recibido. Lo leeremos con atención y te responderemos pronto.",
+      "note": "Solemos responder en 1–2 días hábiles.",
+      "build": "¿Qué tipo de proyecto es?",
+      "projectType": "Tipo de proyecto",
+      "projectTypes": {
+        "ai": "Aplicación de IA",
+        "mobile": "App móvil",
+        "web": "Web / sitio",
+        "internal": "Sistema interno de negocio",
+        "redesign": "Reconstrucción de sistema heredado",
+        "other": "Otro"
+      },
+      "timeline": "Plazos",
+      "budget": "Rango de presupuesto",
+      "note2": "Para alianzas, colaboraciones de producto y conversaciones estratégicas, escríbenos a hi@xicoai.com."
+    },
+    "direct": {
+      "title": "Otras vías",
+      "emailLabel": "Correo",
+      "locationLabel": "Ubicación",
+      "location": "Changsha, China"
+    }
+  },
+  "careers": {
+    "eyebrow": "Únete",
+    "title": "Construye con gente a la que le importa el trabajo.",
+    "subtitle": "XICO todavía está en una etapa temprana. Buscamos personas capaces de hacerse cargo de una parte del trabajo, con buen gusto y con ganas de seguir puliendo un producto.",
+    "openRoles": "Vacantes abiertas",
+    "noRoles": "Ahora mismo no hay vacantes públicas, pero las buenas colaboraciones merecen empezar cuanto antes. Escríbenos.",
+    "remote": "Remoto",
+    "onsite": "Presencial",
+    "joinCta": "¿Inversor, socio o colaborador?",
+    "joinCtaLink": "Ir a Join →",
+    "types": {
+      "full_time": "Tiempo completo",
+      "part_time": "Medio tiempo",
+      "intern": "Prácticas",
+      "partner": "Socio",
+      "contract": "Contrato"
+    },
+    "apply": "Postular a este puesto",
+    "applyTitle": "Postulación en línea",
+    "backToList": "← Volver a todas las vacantes",
+    "responsibilities": "Qué harás",
+    "requirements": "Qué buscamos",
+    "form": {
+      "name": "Tu nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono (opcional)",
+      "links": "Portafolio / GitHub / sitio (opcional)",
+      "resume": "Subir CV",
+      "resumeHint": "PDF o Word, ≤ 10MB",
+      "note": "Algo que quieras contarnos",
+      "submit": "Enviar postulación",
+      "sending": "Enviando…",
+      "success": "¡Postulación recibida! Te contactaremos pronto.",
+      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente por correo."
+    }
+  },
+  "join": {
+    "eyebrow": "Inversores · Socios · Colaboración",
+    "title": "Buscamos personas dispuestas a acompañarnos a largo plazo.",
+    "subtitle": "XICO está construyendo Machi y Shangence, y seguirá avanzando en estudios en el extranjero, comercio transfronterizo y servicios locales. Si eres inversor, socio o puedes aportar recursos y canales de la industria, nos gustaría tener una conversación seria.",
+    "tabs": {
+      "partner": "Inversor / Socio",
+      "collaborator": "Colaborador"
+    },
+    "intro": {
+      "partner": "Para inversores y socios de proyecto involucrados: conoce nuestra dirección, avances y planes, y ayúdanos a hacerlos crecer.",
+      "collaborator": "Trabajemos juntos a través de tecnología, diseño, canales, cadena de suministro o recursos de la industria."
+    },
+    "fields": {
+      "name": "Tu nombre",
+      "email": "Correo electrónico",
+      "org": "Organización / empresa (opcional)",
+      "links": "Enlaces relevantes (opcional)",
+      "intro": "Tu mensaje",
+      "submit": "Enviar",
+      "sending": "Enviando…",
+      "success": "Recibido, ¡gracias! Te contactaremos pronto.",
+      "error": "Algo salió mal. Inténtalo de nuevo.",
+      "investor": {
+        "field1": "Firma / tipo de fondo",
+        "field2": "Rango de inversión",
+        "field3": "Áreas de interés"
+      },
+      "partner": {
+        "field1": "Quién eres / firma (inversor o socio)",
+        "field2": "Qué aportas (capital o tiempo)",
+        "field3": "Áreas de interés / recursos"
+      },
+      "collaborator": {
+        "field1": "Tipo de colaboración",
+        "field2": "Tu rol / empresa",
+        "field3": "Cómo te gustaría colaborar"
+      }
+    }
+  },
+  "blog": {
+    "eyebrow": "Novedades",
+    "title": "Avances de producto y notas de la empresa",
+    "subtitle": "Notas públicas sobre producto, ingeniería, construcción de empresa y mercados.",
+    "empty": "Todavía no hay contenido público aquí.",
+    "readMore": "Leer más",
+    "backToList": "← Volver a todas las publicaciones",
+    "publishedOn": "Publicado"
+  },
+  "process": {
+    "eyebrow": "Proceso de entrega",
+    "title": "De la primera conversación al lanzamiento estable",
+    "subtitle": "El proceso no es complicado, pero cada paso tiene que hacerse bien.",
+    "steps": [
+      {
+        "title": "Diagnóstico y decisiones",
+        "desc": "Aclaramos objetivos, usuarios, presupuesto, tiempos y las funciones esenciales que deben salir."
+      },
+      {
+        "title": "Prototipo y plan",
+        "desc": "Trazamos los flujos, las pantallas y la ruta técnica para que los riesgos aparezcan pronto."
+      },
+      {
+        "title": "Construcción e integración",
+        "desc": "Front-end, back-end, base de datos, permisos, pagos y despliegue avanzan por versiones, con puntos de aceptación claros."
+      },
+      {
+        "title": "Lanzamiento e iteración",
+        "desc": "Después del lanzamiento, leemos los datos y el feedback, corregimos lo necesario y dejamos el producto en un estado de operación sostenible."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Quizá te lo preguntas",
+    "title": "Algunas cosas que aclarar antes de trabajar juntos",
+    "subtitle": "Si tu pregunta no está aquí, simplemente escríbenos.",
+    "items": [
+      {
+        "q": "¿Son más una empresa de desarrollo de software o un estudio de producto?",
+        "a": "Ambas cosas. XICO construye productos propios a largo plazo y también abre su capacidad de producto, diseño, desarrollo y lanzamiento a colaboraciones externas."
+      },
+      {
+        "q": "¿Podemos hablar si la idea todavía está verde?",
+        "a": "Sí. Muchos proyectos empiezan incompletos. Primero te ayudaremos a evaluar si la necesidad es real, qué tan pequeña debería ser la primera versión y qué funciones pueden esperar."
+      },
+      {
+        "q": "¿Qué tipo de proyectos suelen tomar?",
+        "a": "Productos de software, aplicaciones de IA, productos web y móviles, sistemas de administración, plataformas digitales, sitios corporativos y experiencia de marca."
+      },
+      {
+        "q": "¿Cuánto suele durar un proyecto?",
+        "a": "Depende del alcance. Una primera versión usable suele tomar de semanas a unos pocos meses. Preferimos hacer una primera versión clara y sólida, y luego iterar."
+      },
+      {
+        "q": "¿Dan soporte al producto después del lanzamiento?",
+        "a": "Sí. Despliegue, monitoreo, correcciones, iteración de funciones, contenido y mantenimiento de datos pueden continuar según lo que el proyecto necesite."
+      },
+      {
+        "q": "¿Cómo empezamos?",
+        "a": "Envía un correo o completa el formulario de contacto. Cuéntanos qué quieres construir, en qué punto está el proyecto y los tiempos esperados. Solemos responder en 1-2 días hábiles."
+      }
+    ]
+  },
+  "manifesto": {
+    "eyebrow": "Estándar de entrega",
+    "title": "Claro, confiable, mantenible.",
+    "body": [
+      "Evaluamos un proyecto por algo más que si la interfaz está terminada. El flujo de trabajo tiene que funcionar, los datos tienen que ser confiables, los permisos tienen que estar claros, y el despliegue y el mantenimiento tienen que ser sostenibles.",
+      "El software no es un entregable de una sola vez. Un sistema valioso puede lanzarse, usarse, corregirse y seguir creciendo hacia la siguiente etapa."
+    ]
+  },
+  "legal": {
+    "updated": "Última actualización: junio de 2026",
+    "privacy": {
+      "title": "Política de privacidad",
+      "intro": "Changsha Zhixike Technology Co., Ltd. (“XICO AI”, “nosotros”) respeta y protege tu privacidad. Esta política explica qué información recopilamos en xicoai.com, cómo la usamos y los derechos que tienes.",
+      "sections": [
+        {
+          "h": "Información que recopilamos",
+          "p": "Cuando nos contactas a través de un formulario, una consulta de colaboración o una postulación de empleo, recopilamos la información que decides proporcionar — como tu nombre, correo electrónico, empresa, mensaje y el archivo de CV que subes al postular. También recopilamos registros técnicos básicos (hora de la visita, páginas, tipo de dispositivo) para mantener el sitio seguro y estable."
+        },
+        {
+          "h": "Cómo la usamos",
+          "p": "Usamos esta información únicamente para responder a tus consultas, procesar solicitudes de colaboración o de empleo, y operar y mejorar el sitio. No vendemos tu información personal ni la usamos para fines no relacionados."
+        },
+        {
+          "h": "Almacenamiento y seguridad",
+          "p": "La información se almacena en servidores bajo nuestro control y se protege con medidas técnicas y organizativas razonables. La conservamos solo el tiempo necesario para los fines descritos arriba."
+        },
+        {
+          "h": "Cookies y almacenamiento local",
+          "p": "Solo usamos almacenamiento local esencial para recordar tu tema (claro/oscuro) y tu preferencia de idioma. No lo usamos para rastreo entre sitios."
+        },
+        {
+          "h": "Tus derechos",
+          "p": "Puedes contactarnos en cualquier momento en hi@xicoai.com para acceder a tu información personal, corregirla o eliminarla."
+        },
+        {
+          "h": "Actualizaciones",
+          "p": "Podemos actualizar esta política ocasionalmente. Los cambios sustanciales se publicarán en esta página. ¿Preguntas? Escribe a hi@xicoai.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos de servicio",
+      "intro": "Bienvenido a xicoai.com. Al acceder a este sitio o usarlo, aceptas los siguientes términos. Este sitio es operado por Changsha Zhixike Technology Co., Ltd. (“XICO AI”).",
+      "sections": [
+        {
+          "h": "Uso del sitio",
+          "p": "Este sitio presenta los productos, capacidades e información corporativa de XICO AI, y ofrece vías de contacto."
+        },
+        {
+          "h": "Propiedad intelectual",
+          "p": "Salvo que se indique lo contrario, los textos, el diseño, las marcas y el contenido de este sitio pertenecen a XICO AI y no pueden copiarse ni usarse con fines comerciales sin permiso. Las marcas de terceros pertenecen a sus respectivos titulares."
+        },
+        {
+          "h": "Exención de responsabilidad",
+          "p": "El contenido de este sitio se ofrece “tal cual”. Procuramos que sea preciso, pero no garantizamos que esté completo ni actualizado."
+        },
+        {
+          "h": "Limitación de responsabilidad",
+          "p": "En la medida en que lo permita la ley, XICO AI no será responsable de ninguna pérdida indirecta o incidental derivada del uso de este sitio."
+        },
+        {
+          "h": "Ley aplicable",
+          "p": "Estos términos se rigen por las leyes de la República Popular China."
+        },
+        {
+          "h": "Contacto",
+          "p": "Si tienes preguntas sobre estos términos, escribe a hi@xicoai.com."
+        }
+      ]
+    }
+  },
+  "mac": {
+    "meta": {
+      "title": "Xico Clean — un limpiador y optimizador nativo para Mac",
+      "description": "Xico Clean es una herramienta nativa de limpieza y optimización para macOS: escaneo inteligente con un toque, limpieza de basura de desarrollador, visualización Space Lens, archivos duplicados y fotos similares, desinstalación completa y limpieza de privacidad. Todo en local, con vista previa y opción de deshacer. Creado para Apple silicon — ya disponible, pruébalo gratis."
+    },
+    "nav": {
+      "features": "Funciones",
+      "safety": "Seguridad",
+      "privacy": "Privacidad",
+      "pricing": "Precios",
+      "faq": "Preguntas frecuentes",
+      "waitlist": "Unirse a la lista de espera",
+      "company": "XICO AI",
+      "home": "Inicio",
+      "security": "Seguridad",
+      "support": "Soporte",
+      "buy": "Comprar"
+    },
+    "badge": "v0.2 · Ya disponible",
+    "hero": {
+      "eyebrow": "App nativa para macOS · Creada para Apple silicon",
+      "titleLine1": "Haz que tu Mac vuelva a ser",
+      "titleLine2": "rápida y limpia",
+      "subtitle": "Xico Clean encuentra basura del sistema, cachés de desarrollador, archivos grandes y duplicados con un solo toque, y libera espacio en disco de forma segura. Creado en Swift nativo y 100% local: previsualiza antes de borrar y deshaz después.",
+      "ctaPrimary": "Unirse a la lista de espera",
+      "ctaSecondary": "Ver qué puede hacer",
+      "trust": [
+        "100% local",
+        "Con vista previa · reversible",
+        "Nativo para Apple silicon"
+      ],
+      "ctaDownload": "Descargar para Mac",
+      "downloadNote": "macOS 13+ · prueba gratis de 14 días · sin registro"
+    },
+    "window": {
+      "appName": "Xico Clean",
+      "scanTitle": "Escaneo inteligente",
+      "reclaimLabel": "recuperable",
+      "reclaimAmount": "11.4 GB",
+      "scanButton": "Limpiar",
+      "sidebar": [
+        "Escaneo inteligente",
+        "Basura del sistema",
+        "Basura de desarrollador",
+        "Space Lens",
+        "Duplicados",
+        "Desinstalador",
+        "Privacidad",
+        "Optimizar"
+      ],
+      "breakdown": [
+        {
+          "label": "Basura del sistema",
+          "value": "6.8 GB"
+        },
+        {
+          "label": "Cachés de desarrollador",
+          "value": "3.1 GB"
+        },
+        {
+          "label": "Duplicados",
+          "value": "820 MB"
+        },
+        {
+          "label": "Papelera",
+          "value": "640 MB"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "value": "0.9s",
+          "label": "escaneo inteligente completo"
+        },
+        {
+          "value": "11GB+",
+          "label": "recuperados en pruebas"
+        },
+        {
+          "value": "100%",
+          "label": "local, nunca se sube nada"
+        },
+        {
+          "value": "Pago único",
+          "label": "paga una vez, sin suscripción"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Todo lo que hace",
+      "title": "Una sola app para cuidar toda tu Mac",
+      "subtitle": "De la basura del sistema a las cachés de desarrollador, de la visualización del espacio a la limpieza de privacidad — Xico Clean reúne todo lo que el mantenimiento de una Mac necesita en una app nativa y pulida.",
+      "items": [
+        {
+          "name": "Escaneo inteligente",
+          "desc": "Escanea basura del sistema, privacidad y problemas de rendimiento con un toque, con un resumen claro y una limpieza segura de un clic."
+        },
+        {
+          "name": "Basura del sistema",
+          "desc": "Cachés de usuario y del sistema, registros, archivos de idioma, paquetes de actualización antiguos y cachés de apps — eliminados con precisión."
+        },
+        {
+          "name": "Basura de desarrollador",
+          "desc": "DerivedData de Xcode, simuladores, node_modules, cachés de Homebrew / npm / pip e imágenes huérfanas de Docker."
+        },
+        {
+          "name": "Space Lens",
+          "desc": "Convierte todo tu SSD en un treemap interactivo, desciende carpeta por carpeta y mira exactamente adónde se fue el espacio."
+        },
+        {
+          "name": "Archivos grandes y antiguos",
+          "desc": "Filtra por tamaño y fecha de último acceso para encontrar rápido los archivos grandes que vale la pena limpiar."
+        },
+        {
+          "name": "Duplicados",
+          "desc": "Deduplicación a nivel de contenido que reconoce los clones APFS para evitar falsos positivos y conserva una copia de forma inteligente."
+        },
+        {
+          "name": "Fotos similares",
+          "desc": "El clustering de Vision en el dispositivo encuentra fotos duplicadas y casi idénticas, y conserva la mejor toma."
+        },
+        {
+          "name": "Desinstalador",
+          "desc": "Elimina apps por completo — junto con sus cachés, preferencias, contenedores, ítems de inicio de sesión y recibos."
+        },
+        {
+          "name": "Limpieza de privacidad",
+          "desc": "Borra historial, cookies y cachés de Safari, Chrome, Firefox, Edge y Arc."
+        },
+        {
+          "name": "Optimizar y mantener",
+          "desc": "Gestiona ítems de inicio de sesión, libera memoria, ejecuta scripts de mantenimiento, reconstruye el índice y vacía la caché de DNS."
+        },
+        {
+          "name": "Monitor en la barra de menús",
+          "desc": "Vive en la barra de menús con estadísticas en vivo de CPU, memoria y red, y una limpieza rápida siempre a mano."
+        },
+        {
+          "name": "Eliminación de malware",
+          "desc": "Escanea adware y componentes maliciosos conocidos de macOS con una biblioteca de firmas verificada, y los elimina al detectarlos."
+        }
+      ]
+    },
+    "deepdive": {
+      "eyebrow": "Capacidades insignia",
+      "title": "Convertimos una limpieza tediosa en algo que se disfruta",
+      "subtitle": "Algunas capacidades que recordarás a primera vista — en las que más cuidado pusimos al pulirlas.",
+      "items": [
+        {
+          "tag": "Escaneo inteligente",
+          "title": "Un toque, y toda tu Mac se siente nueva",
+          "desc": "Basura del sistema, rastros de privacidad y problemas de rendimiento, resueltos en una sola pasada. Tras la animación de escaneo característica, recibes una tarjeta de resumen clara: cuánto puedes recuperar y qué encontramos. De forma predeterminada solo se marcan los elementos 100% seguros, y puedes revisarlos uno por uno.",
+          "points": [
+            "Escaneo combinado: basura del sistema, privacidad y rendimiento",
+            "Solo se marcan de forma predeterminada los elementos 100% seguros",
+            "Un resumen del espacio recuperable al terminar"
+          ]
+        },
+        {
+          "tag": "Space Lens",
+          "title": "Ve tu disco — y adónde se fue el espacio, de un vistazo",
+          "desc": "Convierte todo tu SSD en un treemap interactivo, para que sea evidente qué está ocupando espacio. Desciende hasta una carpeta concreta y muéstrala en el Finder o muévela a la Papelera ahí mismo.",
+          "points": [
+            "Visualización treemap de todo el disco",
+            "Desciende hasta carpetas concretas",
+            "Mostrar en el Finder o mover a la Papelera"
+          ]
+        },
+        {
+          "tag": "Basura de desarrollador",
+          "title": "Recupera decenas de gigabytes — hecho para desarrolladores",
+          "desc": "DerivedData, DeviceSupport, Archives y simuladores antiguos de Xcode, más node_modules, cachés de Homebrew / npm / pip e imágenes huérfanas de Docker — la basura de desarrollador que se come decenas de gigabytes en silencio, toda encontrada en una sola pasada.",
+          "points": [
+            "DerivedData / DeviceSupport / Archives de Xcode",
+            "Cachés de node_modules / Homebrew / npm / pip",
+            "Imágenes huérfanas de Docker y simuladores antiguos"
+          ]
+        },
+        {
+          "tag": "Duplicados y similares",
+          "title": "Archivos duplicados y fotos casi idénticas — conserva solo lo mejor",
+          "desc": "El hashing a nivel de contenido encuentra duplicados con precisión y reconoce los clones APFS para evitar falsos positivos, mientras que la detección de fotos similares usa el clustering de Vision en el dispositivo para ayudarte a quedarte con la mejor toma de una ráfaga. Siempre en local, nunca se sube nada.",
+          "points": [
+            "Hashing a nivel de contenido, consciente de los clones APFS",
+            "Clustering de fotos con Vision en el dispositivo",
+            "100% local, nunca se sube nada"
+          ]
+        }
+      ]
+    },
+    "safety": {
+      "eyebrow": "La seguridad primero",
+      "title": "El mayor miedo al limpiar es borrar lo que no debías — por eso construimos tranquilidad en cada paso",
+      "subtitle": "El mayor riesgo de confianza en cualquier limpiador es el borrado accidental. Por eso, de la vista previa al deshacer, de la lista blanca a la lista de protección, cada eliminación en Xico Clean deja un camino de vuelta.",
+      "items": [
+        {
+          "title": "Siempre con vista previa antes de borrar",
+          "desc": "Cada elemento se expande para mostrar su ruta y tamaño — nada se mueve hasta que confirmas."
+        },
+        {
+          "title": "Reversible",
+          "desc": "Los elementos van primero a la Papelera o a un área recuperable, así puedes deshacer tu última limpieza en cualquier momento."
+        },
+        {
+          "title": "Lista blanca y lista de ignorados",
+          "desc": "Protege ciertas rutas de forma permanente y Xico Clean no volverá a tocarlas."
+        },
+        {
+          "title": "Lista de protección integrada",
+          "desc": "Los archivos críticos del sistema, las rutas protegidas por SIP, el llavero y los datos de apps en ejecución están estrictamente fuera de alcance."
+        },
+        {
+          "title": "Solo elementos seguros, de forma predeterminada",
+          "desc": "Los elementos con riesgo — como archivos de idioma o cachés de apps activas — vienen desmarcados de forma predeterminada y claramente señalados."
+        },
+        {
+          "title": "Transparente por diseño",
+          "desc": "Cada categoría explica qué es y qué pasa si la borras — nunca una caja negra."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Privacidad",
+      "title": "Tus archivos se quedan en tu Mac — siempre",
+      "subtitle": "Limpiar es algo muy personal. Todo el escaneo y el análisis de Xico Clean ocurren en local — ni queremos ni podemos ver tus archivos.",
+      "points": [
+        "Todo el escaneo y el análisis se ejecutan en local",
+        "Nunca se sube el contenido de ningún archivo",
+        "La telemetría es anónima y se desactiva con un toque",
+        "La detección de fotos similares se hace por completo en el dispositivo con Vision"
+      ]
+    },
+    "performance": {
+      "eyebrow": "Rendimiento nativo",
+      "title": "Creado en Swift nativo — tan rápido que apenas lo notarás",
+      "subtitle": "Nos negamos rotundamente a usar Electron. Xico Clean es nativo de principio a fin y está creado para Apple silicon — escanea rápido, consume poco y se mueve con fluidez.",
+      "items": [
+        {
+          "value": "Swift 6 + SwiftUI",
+          "label": "100% nativo, sin Electron"
+        },
+        {
+          "value": "Apple silicon",
+          "label": "nativo, compatible con Intel"
+        },
+        {
+          "value": "60 / 120fps",
+          "label": "fluido incluso con enormes cantidades de archivos"
+        },
+        {
+          "value": "≈ 0 carga en reposo",
+          "label": "nunca molesta ni frena tu Mac"
+        }
+      ]
+    },
+    "pricing": {
+      "eyebrow": "Precios",
+      "title": "Paga una vez. Sin trampas de suscripción",
+      "subtitle": "En lugar de renovar cada año, paga una sola vez. Xico Clean es una compra única con actualizaciones gratuitas a largo plazo — y una prueba completa de 14 días para ayudarte a decidir.",
+      "priceLabel": "Personal / Familiar · pago único",
+      "priceNote": "Consulta el precio y las ofertas vigentes en la página de compra. Pruébalo gratis 14 días primero.",
+      "features": [
+        "Prueba gratuita de 14 días con todas las funciones",
+        "Compra una vez, actualizaciones gratis a largo plazo",
+        "Úsalo en todas tus propias Mac"
+      ],
+      "cta": "Ver planes y comprar"
+    },
+    "waitlist": {
+      "eyebrow": "Mantente al tanto",
+      "title": "Recibe las novedades de Xico Clean",
+      "subtitle": "Déjanos tu correo y te avisaremos de las nuevas versiones y las actualizaciones importantes.",
+      "fields": {
+        "email": "Tu correo electrónico",
+        "name": "Tu nombre (opcional)",
+        "placeholder": "you@example.com",
+        "submit": "Suscribirme",
+        "sending": "Enviando…",
+        "success": "¡Suscripción lista! Te avisaremos en cuanto haya una nueva versión.",
+        "error": "Algo salió mal. Inténtalo de nuevo."
+      },
+      "privacyNote": "Solo para avisos de actualizaciones del producto. Nada de spam, nunca."
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Quizá te lo preguntas",
+      "items": [
+        {
+          "q": "¿Qué Mac son compatibles?",
+          "a": "macOS 13 Ventura y posteriores, como binario universal para Apple silicon e Intel — un solo instalador para todas."
+        },
+        {
+          "q": "¿Es seguro? ¿Podría borrar algo que no debe?",
+          "a": "Cada eliminación se puede previsualizar y deshacer, una lista de protección integrada resguarda los archivos críticos del sistema, y de forma predeterminada solo se marcan los elementos 100% seguros."
+        },
+        {
+          "q": "¿Subirá mis archivos?",
+          "a": "No. Todo el escaneo y el análisis ocurren en local, nunca se sube el contenido de ningún archivo, y la telemetría se puede desactivar con un toque."
+        },
+        {
+          "q": "¿Es una suscripción?",
+          "a": "No. Xico Clean es una compra única con actualizaciones gratuitas a largo plazo, más una prueba de 14 días con todas las funciones."
+        },
+        {
+          "q": "¿Estará en el App Store?",
+          "a": "Se distribuye mediante Developer ID con notarización de Apple, por lo que sus funciones no quedan limitadas por el sandbox — y es igual de seguro de instalar."
+        },
+        {
+          "q": "¿Puedo descargarlo ya?",
+          "a": "Muy pronto. Únete a la lista de espera y te avisaremos en el momento del lanzamiento, con un precio de lanzamiento exclusivo para los miembros."
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Xico Clean — un limpiador y optimizador nativo para Mac. Nativo, seguro y 100% local.",
+      "productGroup": "Producto",
+      "companyGroup": "Empresa",
+      "by": "Hecho por XICO AI",
+      "links": {
+        "features": "Funciones",
+        "safety": "Seguridad",
+        "privacy": "Privacidad",
+        "pricing": "Precios",
+        "faq": "Preguntas frecuentes",
+        "waitlist": "Unirse a la lista de espera",
+        "company": "XICO AI",
+        "privacyPolicy": "Política de privacidad",
+        "terms": "Términos de servicio"
+      }
+    },
+    "pages": {
+      "featuresTitle": "Todo lo que necesitas para cuidar tu Mac por completo",
+      "featuresSubtitle": "Del escaneo inteligente con un toque a la basura de desarrollador, la visualización del espacio y el monitoreo en tiempo real — esto es todo lo que Xico Clean puede hacer.",
+      "supportTitle": "¿Necesitas ayuda?",
+      "supportSubtitle": "Preguntas frecuentes, requisitos del sistema y cómo contactarnos — todo en un solo lugar.",
+      "moreFeatures": "Ver todas las funciones",
+      "moreSecurity": "Explorar seguridad y privacidad",
+      "morePricing": "Ver precios"
+    },
+    "monitor": {
+      "eyebrow": "Control en tiempo real",
+      "title": "Vigila tu Mac directamente desde la barra de menús",
+      "desc": "Un monitor en vivo que vive en tu barra de menús: CPU, memoria, GPU, disco, red y temperatura de un vistazo — además de liberación rápida de memoria y limpieza con un toque. Muestreo nativo, con un consumo casi nulo.",
+      "points": [
+        "Curvas en vivo de CPU / memoria / GPU / red",
+        "Salud de la batería, temperatura y velocidad de los ventiladores",
+        "Libera memoria con un solo clic"
+      ],
+      "caption": "Monitor del sistema · interfaz real",
+      "menuCaption": "Paneles de la barra de menús"
+    },
+    "compare": {
+      "eyebrow": "Por qué pagar una sola vez",
+      "title": "Pago único vs. suscripción",
+      "oursLabel": "Xico Clean",
+      "theirsLabel": "Herramientas por suscripción",
+      "rows": [
+        {
+          "label": "Pago",
+          "ours": "Compra única",
+          "theirs": "Renovación anual"
+        },
+        {
+          "label": "Actualizaciones",
+          "ours": "Gratis a largo plazo",
+          "theirs": "Bloqueadas si dejas de pagar"
+        },
+        {
+          "label": "Varias Mac",
+          "ours": "Úsalo en tus propias Mac",
+          "theirs": "Suelen cobrar por dispositivo"
+        },
+        {
+          "label": "Tus datos",
+          "ours": "100% local, nunca se sube nada",
+          "theirs": "Varía según el producto"
+        }
+      ]
+    },
+    "support": {
+      "requirementsTitle": "Requisitos del sistema",
+      "requirements": [
+        "macOS 13 Ventura o posterior",
+        "Binario universal para Apple silicon e Intel",
+        "Alrededor de 60 MB de espacio en disco",
+        "Se necesita Acceso total al disco para la funcionalidad completa"
+      ],
+      "contactTitle": "¿Todavía tienes preguntas?",
+      "contactDesc": "Nos encanta ayudar. Escríbenos por correo y normalmente respondemos en un día hábil.",
+      "contactCta": "Escríbenos"
+    },
+    "shots": {
+      "dashboard": "Escaneo inteligente",
+      "monitor": "Monitor en tiempo real",
+      "spacelens": "Space Lens · gráfico sunburst",
+      "diskbench": "Velocidad del disco · benchmark",
+      "systemjunk": "Basura del sistema · un toque",
+      "uninstaller": "Desinstalar · sin residuos",
+      "hardware": "Salud del hardware · batería y temperaturas",
+      "duplicates": "Buscador de duplicados · por contenido",
+      "optimization": "Optimizar · aceleración con un toque"
+    },
+    "hardware": {
+      "eyebrow": "Hardware y salud",
+      "title": "Batería, temperatura y salud del disco — todo a la vista",
+      "desc": "Lee la salud de la batería y el número de ciclos; las temperaturas de CPU, GPU y SSD y la velocidad de los ventiladores; el estado SMART de tu SSD y el espacio libre; además de la información de memoria y pantalla — tan completo como las herramientas profesionales, pero más bonito.",
+      "points": [
+        "Salud de la batería, ciclos y estado de carga",
+        "Temperaturas de CPU / GPU / SSD y velocidad de los ventiladores",
+        "Salud SMART del SSD, capacidad e información de pantalla"
+      ],
+      "caption": "Hardware · interfaz real (tema claro)"
+    },
+    "catalog": {
+      "eyebrow": "Funciones completas",
+      "title": "Una app para cada rincón del mantenimiento de tu Mac",
+      "subtitle": "De la limpieza a la gestión de apps, de los archivos y el espacio al rendimiento y la seguridad — Xico Clean reúne todo lo que tu Mac necesita en una sola app nativa.",
+      "groups": [
+        {
+          "name": "Limpieza",
+          "items": [
+            {
+              "name": "Escaneo inteligente",
+              "desc": "Escanea basura del sistema, privacidad y problemas de rendimiento en una sola pasada, con un resumen claro y una limpieza segura de un clic."
+            },
+            {
+              "name": "Basura del sistema",
+              "desc": "Cachés de usuario y del sistema, registros, archivos de idioma, ítems de inicio de sesión y preferencias dañados, actualizaciones antiguas y cachés de apps."
+            },
+            {
+              "name": "Adjuntos de correo",
+              "desc": "Borra los adjuntos y descargas de correo almacenados en caché local — aligera tu buzón al instante."
+            },
+            {
+              "name": "Basura de fotos",
+              "desc": "Borra las cachés y copias sin optimizar de tu fototeca, sin tocar tus originales."
+            },
+            {
+              "name": "Copias de seguridad de iOS",
+              "desc": "Elimina copias de seguridad de iOS antiguas, firmware y archivos de soporte de dispositivos que ya no necesitas."
+            },
+            {
+              "name": "Papelera",
+              "desc": "Vacía la Papelera de todos los volúmenes de una sola vez."
+            },
+            {
+              "name": "Basura de desarrollador",
+              "desc": "DerivedData de Xcode, simuladores, node_modules, cachés de Homebrew / npm / pip e imágenes huérfanas de Docker."
+            }
+          ]
+        },
+        {
+          "name": "Aplicaciones",
+          "items": [
+            {
+              "name": "Desinstalador",
+              "desc": "Elimina apps por completo — junto con sus cachés, preferencias, contenedores, ítems de inicio de sesión y recibos."
+            },
+            {
+              "name": "Residuos",
+              "desc": "Encuentra archivos huérfanos dejados por apps que ya eliminaste."
+            },
+            {
+              "name": "Actualizador",
+              "desc": "Detecta las actualizaciones disponibles de tus apps instaladas, todo en un solo lugar."
+            },
+            {
+              "name": "Restablecer",
+              "desc": "Devuelve una app a su estado recién instalado: borra sus datos, conserva la app."
+            }
+          ]
+        },
+        {
+          "name": "Archivos y espacio",
+          "items": [
+            {
+              "name": "Space Lens",
+              "desc": "Un treemap de todo el disco por el que puedes descender, para localizar con exactitud qué ocupa espacio."
+            },
+            {
+              "name": "Archivos grandes y antiguos",
+              "desc": "Filtra por tamaño y fecha de último acceso para encontrar los elementos grandes que vale la pena limpiar."
+            },
+            {
+              "name": "Buscador de duplicados",
+              "desc": "Deduplicación a nivel de contenido que reconoce los clones APFS para evitar falsos positivos y conserva una copia de forma inteligente."
+            },
+            {
+              "name": "Fotos similares",
+              "desc": "El clustering de Vision en el dispositivo conserva la mejor toma de tus ráfagas y fotos casi idénticas."
+            },
+            {
+              "name": "Descargas y desorden",
+              "desc": "Ordena tu carpeta de Descargas, el desorden del escritorio y los instaladores viejos (.dmg / .pkg)."
+            }
+          ]
+        },
+        {
+          "name": "Rendimiento y seguridad",
+          "items": [
+            {
+              "name": "Optimización",
+              "desc": "Gestiona ítems de inicio de sesión y agentes de arranque, detecta procesos pesados en segundo plano y libera memoria."
+            },
+            {
+              "name": "Mantenimiento",
+              "desc": "Ejecuta scripts de mantenimiento del sistema, reconstruye el índice de Spotlight, vacía la caché de DNS y repara los permisos del disco."
+            },
+            {
+              "name": "Privacidad",
+              "desc": "Borra historial, cookies, cachés y elementos recientes de Safari, Chrome, Firefox, Edge y Arc."
+            },
+            {
+              "name": "Eliminación de malware",
+              "desc": "Escanea adware y componentes maliciosos conocidos de macOS con una biblioteca de firmas verificada, y los elimina al detectarlos."
+            },
+            {
+              "name": "Monitor en la barra de menús",
+              "desc": "Vive en la barra de menús con estadísticas en vivo de CPU, memoria, disco, red y batería, además de liberación rápida de memoria y limpieza."
+            }
+          ]
+        }
+      ]
+    },
+    "buy": {
+      "eyebrow": "Comprar",
+      "title": "Haz tuyo Xico Clean, para siempre",
+      "subtitle": "Paga una vez, recibe actualizaciones gratis, sin suscripción. Elige el plan que te convenga y actívalo en minutos.",
+      "recommended": "Popular",
+      "perpetual": "Pago único",
+      "save": "Ahorra {percent}%",
+      "plans": {
+        "personal": {
+          "name": "Personal",
+          "devices": "1 Mac"
+        },
+        "family": {
+          "name": "Familiar",
+          "devices": "Hasta 5 Mac"
+        }
+      },
+      "features": [
+        "Todas las funciones de limpieza y optimización",
+        "Procesamiento local, privacidad ante todo",
+        "Actualizaciones gratuitas",
+        "Garantía de devolución de 30 días"
+      ],
+      "cta": "Comprar ahora",
+      "ctaLoading": "Redirigiendo…",
+      "comingSoon": "La compra se abrirá muy pronto — mantente atento.",
+      "comingSoonCta": "Unirse a la lista de espera",
+      "canceledNote": "Pago cancelado. Puedes volver a comprar cuando quieras.",
+      "errorNote": "No se pudo crear el pedido. Inténtalo de nuevo.",
+      "activateNote": "¿Ya lo compraste? Abre Configuración → Mejorar a Pro en Xico Clean y pega tu clave para desbloquearlo todo.",
+      "trust": [
+        "Pago seguro con Stripe",
+        "Garantía de devolución de 30 días",
+        "Procesamiento local, privacidad ante todo"
+      ]
+    },
+    "buySuccess": {
+      "waitingTitle": "Confirmando tu pago…",
+      "waitingNote": "Tu clave de activación aparecerá aquí justo después del pago. Un momento.",
+      "paidTitle": "¡Pago realizado!",
+      "paidNote": "Aquí tienes tu clave de activación — guárdala en un lugar seguro.",
+      "keyLabel": "Clave de activación",
+      "copy": "Copiar clave",
+      "copied": "Copiada",
+      "openApp": "Abrir Xico Clean para activar",
+      "manualNote": "O pega la clave en Configuración → Mejorar a Pro dentro de la app.",
+      "emailNote": "También te hemos enviado la clave por correo.",
+      "timeoutTitle": "Confirmando el pago",
+      "timeoutNote": "Puede que tu pago todavía se esté procesando. La clave te llegará por correo; si no llega, contáctanos con tu número de pedido.",
+      "orderLabel": "Pedido",
+      "backHome": "Volver al inicio"
+    },
+    "download": {
+      "eyebrow": "Descargar",
+      "title": "Dale a tu Mac un nuevo comienzo",
+      "subtitle": "Descarga gratis, prueba completa de 14 días. Nativo para Apple silicon, con notarización de Apple, listo desde que lo abres.",
+      "cta": "Descargar para Mac",
+      "buy": "Ver planes de compra",
+      "reqs": [
+        "macOS 13 o posterior",
+        "Apple silicon e Intel",
+        "Con notarización de Apple",
+        "Sin registro"
+      ],
+      "trust": "Notarizado — Gatekeeper lo aprueba directamente. Solo arrástralo a Aplicaciones después de descargarlo."
+    },
+    "lens": {
+      "eyebrow": "Space Lens",
+      "title": "Todo tu disco, de un vistazo",
+      "desc": "El uso del disco dibujado como un sunburst navegable: el tono es la carpeta de nivel superior, el ángulo es el tamaño. Haz clic en un anillo para entrar y en el centro para volver — con resaltado por familia y análisis de solo lectura que van un paso más allá de DaisyDisk.",
+      "points": [
+        "Desciende nivel por nivel · clic en el centro para volver",
+        "El resaltado por familia muestra adónde fluye el espacio",
+        "Solo lectura · nunca toca tus archivos"
+      ],
+      "caption": "Space Lens · gráfico sunburst"
+    },
+    "speed": {
+      "eyebrow": "Prueba de velocidad del disco",
+      "title": "Un benchmark real de lectura/escritura de 10 GB",
+      "desc": "Dos medidores que oscilan en tiempo real. Escribe hasta 10 GB de datos completamente aleatorios, evitando las cachés del sistema y del firmware — mide el rendimiento sostenido real, no espejismos de caché. Cada ejecución se archiva automáticamente.",
+      "points": [
+        "F_NOCACHE lee directamente el medio",
+        "Los datos aleatorios burlan la compresión del firmware",
+        "El historial se archiva automáticamente"
+      ],
+      "caption": "Prueba de velocidad del disco · benchmark secuencial"
+    },
+    "allinone": {
+      "eyebrow": "Una app, cuatro reemplazadas",
+      "title": "Las capacidades de cuatro herramientas profesionales. Una sola compra.",
+      "desc": "Limpieza profunda, monitoreo en vivo, salud del hardware, herramientas de disco — capacidades que antes exigían cuatro apps de pago por separado, todas cubiertas por un solo Xico Clean.",
+      "appsLabel": "Comprarlas por separado",
+      "colOurs": "Xico Clean",
+      "rows": [
+        {
+          "label": "Limpieza profunda · desinstalación completa",
+          "ref": "CleanMyMac"
+        },
+        {
+          "label": "Monitoreo en vivo en la barra de menús",
+          "ref": "iStat Menus"
+        },
+        {
+          "label": "Salud del hardware · sensores",
+          "ref": "Sensei"
+        },
+        {
+          "label": "Visualización del espacio en disco",
+          "ref": "DaisyDisk"
+        },
+        {
+          "label": "Prueba de velocidad de disco de 10 GB",
+          "ref": "Sensei"
+        },
+        {
+          "label": "Protección contra amenazas · verificación por firmas",
+          "ref": "CleanMyMac"
+        }
+      ],
+      "footNote": "Cada una se vende por separado, algunas por suscripción; Xico Clean lo cubre todo con una sola compra."
+    },
+    "showcase": {
+      "eyebrow": "Una mirada más de cerca",
+      "title": "Un kit completo, cada herramienta a un toque",
+      "lede": "Limpieza de basura, desinstalación completa, buscador de duplicados, optimización — cada una refinada, todas en una sola app."
+    }
+  }
+}

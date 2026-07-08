@@ -273,6 +273,19 @@ export async function submitWaitlist(
       .onConflictDoNothing({ target: waitlistSignups.email })
       .returning({ id: waitlistSignups.id });
 
+    // Waitlist signups also join the marketing address book.
+    try {
+      const { upsertSubscriber } = await import("@/lib/mailer/subscribers");
+      await upsertSubscriber({
+        email: data.email.toLowerCase(),
+        name: data.name,
+        locale: data.locale,
+        source: "waitlist",
+      });
+    } catch (e) {
+      console.error("waitlist upsertSubscriber failed (non-fatal)", e);
+    }
+
     // Only notify on a genuinely new signup, not on duplicate submissions.
     if (inserted.length > 0) {
       await notifyTeam({

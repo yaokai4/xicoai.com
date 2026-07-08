@@ -22,17 +22,11 @@ import {
   verifySession,
 } from "@/lib/auth";
 import { SOCIAL_KEYS } from "@/lib/social";
-import { serializePricing, type MacPricing } from "@/lib/pricing";
+import { parsePricing, serializePricing } from "@/lib/pricing";
 import { PRICING_SETTINGS_KEY } from "@/lib/pricing.server";
+import { requireAdmin } from "@/lib/admin-auth";
 
 export type ActionState = { error?: string };
-
-async function requireAdmin() {
-  const token = (await cookies()).get(SESSION_COOKIE)?.value;
-  const session = await verifySession(token);
-  if (!session) redirect("/admin/login");
-  return session;
-}
 
 export async function loginAction(
   _prev: ActionState,
@@ -90,32 +84,18 @@ export async function saveMacPricing(
 ): Promise<ActionState> {
   await requireAdmin();
 
-  const num = (k: string) => {
-    const n = Number(String(formData.get(k) ?? "").trim());
-    return Number.isFinite(n) && n >= 0 ? n : 0;
-  };
-  const optNum = (k: string) => {
-    const v = String(formData.get(k) ?? "").trim();
-    if (!v) return null;
-    const n = Number(v);
-    return Number.isFinite(n) && n > 0 ? n : null;
-  };
-
-  const pricing: MacPricing = {
-    currency:
-      String(formData.get("currency") ?? "CNY")
-        .trim()
-        .toUpperCase() || "CNY",
-    active: formData.get("active") === "on",
-    personal: {
-      amount: num("personal_amount"),
-      compareAt: optNum("personal_compareAt"),
-    },
-    family: {
-      amount: num("family_amount"),
-      compareAt: optNum("family_compareAt"),
-    },
-  };
+  // The matrix editor submits the whole pricing object as JSON; round-trip it
+  // through parsePricing so anything malformed collapses to a sane shape.
+  const raw = String(formData.get("payload") ?? "");
+  const pricing = parsePricing(raw);
+  if (!Object.keys(pricing.currencies).length) {
+    return { error: "至少需要一种币种" };
+  }
+  for (const [code, cur] of Object.entries(pricing.currencies)) {
+    if (cur.personal.amount <= 0 || cur.family.amount <= 0) {
+      return { error: `${code} 的价格必须大于 0` };
+    }
+  }
 
   const value = serializePricing(pricing);
   const db = getDb();

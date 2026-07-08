@@ -7,9 +7,17 @@ import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 const LABELS: Record<string, string> = {
-  zh: "中文",
+  zh: "简体中文",
+  "zh-Hant": "繁體中文",
   ja: "日本語",
   en: "English",
+  ko: "한국어",
+  de: "Deutsch",
+  es: "Español",
+  fr: "Français",
+  it: "Italiano",
+  pt: "Português",
+  ru: "Русский",
 };
 
 export function LocaleSwitcher() {
@@ -32,6 +40,9 @@ export function LocaleSwitcher() {
   function select(next: string) {
     setOpen(false);
     if (next !== locale) {
+      // Remember the explicit choice so first-visit auto-detection (proxy.ts)
+      // never overrides it again.
+      document.cookie = `NEXT_LOCALE=${next};path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;
       router.replace(pathname, { locale: next });
     }
   }

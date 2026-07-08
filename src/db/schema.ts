@@ -232,6 +232,10 @@ export const macLicenses = pgTable("mac_licenses", {
   plan: macLicensePlan("plan").notNull(),
   seats: integer("seats").notNull().default(1),
   maxMajorVersion: integer("max_major_version").notNull().default(99),
+  /** How the key came to exist: "purchase" (Stripe order) or "manual" (admin console). */
+  source: varchar("source", { length: 16 }).notNull().default("purchase"),
+  /** Admin-facing note for manual keys (e.g. "淘宝卡密 batch #3", "送测 KOL"). */
+  note: varchar("note", { length: 256 }),
   email: varchar("email", { length: 256 }),
   // One license per order — makes webhook fulfilment idempotent under retries.
   orderId: integer("order_id")
@@ -277,3 +281,112 @@ export type MacOrder = typeof macOrders.$inferSelect;
 export type MacLicense = typeof macLicenses.$inferSelect;
 export type MacLicenseActivation = typeof macLicenseActivations.$inferSelect;
 export type MacLicensePlan = (typeof macLicensePlan.enumValues)[number];
+
+/* ─────────────────────────────────────────────────────────────
+ * Self-hosted mail: one address book, an outbound queue drained
+ * by the standalone `mailer/` worker container (SMTP relay or
+ * DKIM-signed direct delivery), and a unified message store that
+ * backs the admin inbox (direction "in") and sent mail ("out").
+ * Statuses are plain varchars (not pg enums) so adding states
+ * never needs an enum migration.
+ * ──────────────────────────────────────────────────────────── */
+
+/** Everyone we may email: buyers (source "order"), waitlist signups,
+ * manual/imported contacts. `token` authenticates one-click unsubscribe. */
+export const mailSubscribers = pgTable("mail_subscribers", {
+  id: serial("id").primaryKey(),
+  email: varchar("email", { length: 256 }).notNull().unique(),
+  name: varchar("name", { length: 128 }),
+  locale: varchar("locale", { length: 8 }),
+  source: varchar("source", { length: 16 }).notNull().default("manual"),
+  /** subscribed | unsubscribed | bounced */
+  status: varchar("status", { length: 16 }).notNull().default("subscribed"),
+  token: varchar("token", { length: 64 }).notNull().unique(),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+/** A marketing blast. Body is stored as plain text; the branded HTML
+ * wrapper + per-recipient unsubscribe link are rendered at queue time. */
+export const mailCampaigns = pgTable("mail_campaigns", {
+  id: serial("id").primaryKey(),
+  subject: varchar("subject", { length: 256 }).notNull(),
+  preheader: varchar("preheader", { length: 256 }),
+  bodyText: text("body_text").notNull(),
+  /** subscribed (everyone opted in) | purchasers | waitlist */
+  audience: varchar("audience", { length: 16 }).notNull().default("subscribed"),
+  /** draft | queued | sent */
+  status: varchar("status", { length: 16 }).notNull().default("draft"),
+  totalQueued: integer("total_queued").notNull().default(0),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  sentAt: timestamp("sent_at", { withTimezone: true }),
+});
+
+/** Outbound queue. The site only ever INSERTs here; the mailer worker
+ * claims rows (queued → sending → sent/failed) and does the SMTP work,
+ * so a slow or unconfigured transport never blocks a web request. */
+export const mailOutbox = pgTable("mail_outbox", {
+  id: serial("id").primaryKey(),
+  /** transactional | campaign | reply | compose */
+  kind: varchar("kind", { length: 16 }).notNull().default("transactional"),
+  campaignId: integer("campaign_id").references(() => mailCampaigns.id, {
+    onDelete: "set null",
+  }),
+  toEmail: varchar("to_email", { length: 320 }).notNull(),
+  subject: varchar("subject", { length: 512 }).notNull(),
+  text: text("text").notNull(),
+  html: text("html"),
+  headers: jsonb("headers").$type<Record<string, string>>(),
+  /** queued | sending | sent | failed | canceled */
+  status: varchar("status", { length: 16 }).notNull().default("queued"),
+  attempts: integer("attempts").notNull().default(0),
+  lastError: text("last_error"),
+  messageId: varchar("message_id", { length: 512 }),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  sentAt: timestamp("sent_at", { withTimezone: true }),
+});
+
+export type MailAttachment = {
+  filename: string;
+  path: string;
+  size: number;
+  contentType: string;
+};
+
+/** The mailbox: inbound mail captured by the mailer's SMTP listener
+ * (direction "in") plus archived copies of what we sent ("out"). */
+export const mailMessages = pgTable("mail_messages", {
+  id: serial("id").primaryKey(),
+  direction: varchar("direction", { length: 4 }).notNull(),
+  fromEmail: varchar("from_email", { length: 320 }),
+  fromName: varchar("from_name", { length: 256 }),
+  toEmail: varchar("to_email", { length: 320 }),
+  rcpt: jsonb("rcpt").$type<string[]>(),
+  subject: text("subject"),
+  text: text("text"),
+  html: text("html"),
+  messageId: varchar("message_id", { length: 512 }),
+  inReplyTo: varchar("in_reply_to", { length: 512 }),
+  attachments: jsonb("attachments").$type<MailAttachment[]>(),
+  unread: boolean("unread").notNull().default(true),
+  archived: boolean("archived").notNull().default(false),
+  outboxId: integer("outbox_id").references(() => mailOutbox.id, {
+    onDelete: "set null",
+  }),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export type MailSubscriber = typeof mailSubscribers.$inferSelect;
+export type MailCampaign = typeof mailCampaigns.$inferSelect;
+export type MailOutboxRow = typeof mailOutbox.$inferSelect;
+export type MailMessage = typeof mailMessages.$inferSelect;

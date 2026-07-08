@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
+import { localeAlternates } from "@/lib/i18n-meta";
 import { MacPricing, MacCompare, MacDownload } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -19,11 +20,7 @@ export async function generateMetadata({
     description: t("pricing.subtitle"),
     alternates: {
       canonical: path,
-      languages: {
-        zh: "/mac/pricing",
-        ja: "/ja/mac/pricing",
-        en: "/en/mac/pricing",
-      },
+      languages: localeAlternates("/mac/pricing"),
     },
     openGraph: {
       type: "website",

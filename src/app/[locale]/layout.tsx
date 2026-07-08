@@ -17,6 +17,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { FooterSwitch } from "@/components/footer-switch";
 import { MacFooter } from "@/components/mac/mac-footer";
 import { site } from "@/lib/site";
+import { localeAlternates } from "@/lib/i18n-meta";
 import "../globals.css";
 
 const inter = Inter({
@@ -33,8 +34,16 @@ const sora = Sora({
 
 const HTML_LANG: Record<string, string> = {
   zh: "zh-CN",
+  "zh-Hant": "zh-Hant",
   ja: "ja",
   en: "en",
+  ko: "ko",
+  de: "de",
+  es: "es",
+  fr: "fr",
+  it: "it",
+  pt: "pt-BR",
+  ru: "ru",
 };
 
 export function generateStaticParams() {
@@ -63,11 +72,7 @@ export async function generateMetadata({
     applicationName: site.name,
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
-      languages: {
-        zh: "/",
-        ja: "/ja",
-        en: "/en",
-      },
+      languages: localeAlternates(""),
     },
     openGraph: {
       type: "website",

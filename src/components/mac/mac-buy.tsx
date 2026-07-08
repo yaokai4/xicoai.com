@@ -20,11 +20,15 @@ export type PlanView = {
 
 export function MacBuy({
   canBuy,
-  plans,
+  currencies,
+  initialCurrency,
+  plansByCurrency,
   canceled,
 }: {
   canBuy: boolean;
-  plans: PlanView[];
+  currencies: string[];
+  initialCurrency: string;
+  plansByCurrency: Record<string, PlanView[]>;
   canceled?: boolean;
 }) {
   const t = useTranslations("mac.buy");
@@ -34,12 +38,16 @@ export function MacBuy({
   const [pending, startTransition] = useTransition();
   const [busyPlan, setBusyPlan] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [currency, setCurrency] = useState(
+    plansByCurrency[initialCurrency] ? initialCurrency : currencies[0],
+  );
+  const plans = plansByCurrency[currency] ?? [];
 
   function buy(planId: string) {
     setError(null);
     setBusyPlan(planId);
     startTransition(async () => {
-      const res = await startCheckout(planId, locale);
+      const res = await startCheckout(planId, locale, currency);
       if (res.ok && res.url) {
         window.location.assign(res.url);
       } else {
@@ -63,6 +71,28 @@ export function MacBuy({
             <p className="mx-auto mt-8 max-w-md rounded-2xl border border-amber-400/30 bg-amber-400/10 px-5 py-3 text-center text-sm text-amber-600 dark:text-amber-300">
               {t("canceledNote")}
             </p>
+          </Reveal>
+        )}
+
+        {canBuy && currencies.length > 1 && (
+          <Reveal>
+            <div className="mt-8 flex items-center justify-center gap-2">
+              {currencies.map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  onClick={() => setCurrency(c)}
+                  className={cn(
+                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
+                    c === currency
+                      ? "border-brand/50 bg-brand/10 text-brand"
+                      : "border-border text-muted hover:border-border-strong hover:text-foreground",
+                  )}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
           </Reveal>
         )}
 

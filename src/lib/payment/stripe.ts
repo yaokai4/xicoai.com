@@ -33,15 +33,31 @@ export type CheckoutParams = {
   successUrl: string;
   cancelUrl: string;
   email?: string | null;
-  locale?: "zh" | "ja" | "en";
+  locale?: string;
+};
+
+/** Site locale → Stripe Checkout display locale. */
+const STRIPE_LOCALES: Record<
+  string,
+  Stripe.Checkout.SessionCreateParams.Locale
+> = {
+  zh: "zh",
+  "zh-Hant": "zh-TW",
+  ja: "ja",
+  en: "en",
+  ko: "ko",
+  de: "de",
+  es: "es-419",
+  fr: "fr",
+  it: "it",
+  pt: "pt-BR",
+  ru: "ru",
 };
 
 function stripeLocale(
   locale?: string,
 ): Stripe.Checkout.SessionCreateParams.Locale {
-  if (locale === "ja") return "ja";
-  if (locale === "en") return "en";
-  return "zh";
+  return STRIPE_LOCALES[locale ?? ""] ?? "auto";
 }
 
 export async function createCheckoutSession(

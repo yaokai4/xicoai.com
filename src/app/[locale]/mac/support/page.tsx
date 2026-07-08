@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
+import { localeAlternates } from "@/lib/i18n-meta";
 import {
   MacPageHeader,
   MacFaq,
@@ -24,11 +25,7 @@ export async function generateMetadata({
     description: t("pages.supportSubtitle"),
     alternates: {
       canonical: path,
-      languages: {
-        zh: "/mac/support",
-        ja: "/ja/mac/support",
-        en: "/en/mac/support",
-      },
+      languages: localeAlternates("/mac/support"),
     },
     openGraph: {
       type: "website",

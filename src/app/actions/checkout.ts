@@ -6,44 +6,76 @@ import { eq } from "drizzle-orm";
 import { getDb } from "@/db";
 import { macOrders } from "@/db/schema";
 import { getMacPricing, planPricing } from "@/lib/pricing.server";
-import { toMinorUnits, type PlanId } from "@/lib/pricing";
+import {
+  toMinorUnits,
+  effectiveCurrency,
+  type PlanId,
+} from "@/lib/pricing";
 import {
   createCheckoutSession,
   stripeConfigured,
 } from "@/lib/payment/stripe";
+import { locales, type Locale } from "@/i18n/routing";
 
 export type CheckoutState = { ok: boolean; url?: string; error?: string };
 
-type Locale = "zh" | "ja" | "en";
-
 const PLAN_LABEL: Record<PlanId, Record<Locale, string>> = {
-  personal: { zh: "个人版", ja: "個人版", en: "Personal" },
-  family: { zh: "家庭版", ja: "ファミリー版", en: "Family" },
+  personal: {
+    zh: "个人版", "zh-Hant": "個人版", ja: "個人版", en: "Personal",
+    ko: "개인용", de: "Einzellizenz", es: "Personal", fr: "Personnelle",
+    it: "Personale", pt: "Pessoal", ru: "Личная",
+  },
+  family: {
+    zh: "家庭版", "zh-Hant": "家庭版", ja: "ファミリー版", en: "Family",
+    ko: "패밀리", de: "Familienlizenz", es: "Familiar", fr: "Famille",
+    it: "Famiglia", pt: "Família", ru: "Семейная",
+  },
 };
 const PLAN_DESC: Record<PlanId, Record<Locale, string>> = {
   personal: {
     zh: "1 台 Mac · 永久买断，长期免费更新",
+    "zh-Hant": "1 台 Mac · 永久買斷，長期免費更新",
     ja: "Mac 1台 · 買い切り、無料アップデート",
     en: "1 Mac · one-time purchase, free updates",
+    ko: "Mac 1대 · 평생 소장, 무료 업데이트",
+    de: "1 Mac · Einmalkauf, kostenlose Updates",
+    es: "1 Mac · pago único, actualizaciones gratis",
+    fr: "1 Mac · achat unique, mises à jour gratuites",
+    it: "1 Mac · acquisto una tantum, aggiornamenti gratuiti",
+    pt: "1 Mac · compra única, atualizações grátis",
+    ru: "1 Mac · разовая покупка, бесплатные обновления",
   },
   family: {
     zh: "最多 5 台 Mac · 永久买断，长期免费更新",
+    "zh-Hant": "最多 5 台 Mac · 永久買斷，長期免費更新",
     ja: "最大5台 · 買い切り、無料アップデート",
     en: "Up to 5 Macs · one-time purchase, free updates",
+    ko: "최대 Mac 5대 · 평생 소장, 무료 업데이트",
+    de: "Bis zu 5 Macs · Einmalkauf, kostenlose Updates",
+    es: "Hasta 5 Macs · pago único, actualizaciones gratis",
+    fr: "Jusqu'à 5 Mac · achat unique, mises à jour gratuites",
+    it: "Fino a 5 Mac · acquisto una tantum, aggiornamenti gratuiti",
+    pt: "Até 5 Macs · compra única, atualizações grátis",
+    ru: "До 5 Mac · разовая покупка, бесплатные обновления",
   },
 };
 
 function normLocale(v: string | undefined): Locale {
-  return v === "ja" || v === "en" ? v : "zh";
+  return (locales as readonly string[]).includes(v ?? "")
+    ? (v as Locale)
+    : "zh";
 }
 
 /**
  * Create a pending order + Stripe Checkout session for a plan and return the
- * hosted checkout URL. Called directly from the buy page client.
+ * hosted checkout URL. Called directly from the buy page client. `currencyRaw`
+ * is the buyer-visible currency picked on the page (validated against the
+ * admin-configured list — an unknown code falls back to the default).
  */
 export async function startCheckout(
   planRaw: string,
   localeRaw: string,
+  currencyRaw?: string,
 ): Promise<CheckoutState> {
   const plan: PlanId = planRaw === "family" ? "family" : "personal";
   const locale = normLocale(localeRaw);
@@ -52,8 +84,9 @@ export async function startCheckout(
   if (!pricing.active || !stripeConfigured()) {
     return { ok: false, error: "unavailable" };
   }
-  const tier = planPricing(pricing, plan);
-  const amount = toMinorUnits(tier.amount, pricing.currency);
+  const currency = effectiveCurrency(pricing, currencyRaw);
+  const tier = planPricing(pricing, currency, plan);
+  const amount = toMinorUnits(tier.amount, currency);
   if (!amount || amount < 1) return { ok: false, error: "unavailable" };
 
   // Return URLs: keep the buyer on whatever host they came from (the mac
@@ -79,7 +112,7 @@ export async function startCheckout(
         orderNo,
         plan,
         amount,
-        currency: pricing.currency,
+        currency,
         locale,
         status: "pending",
       })

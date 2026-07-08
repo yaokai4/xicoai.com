@@ -6,6 +6,7 @@ import { macOrders, macPaymentEvents } from "@/db/schema";
 import { BRAND, constructWebhookEvent } from "@/lib/payment/stripe";
 import { issueLicenseForOrder } from "@/lib/license/issue";
 import { sendKeyEmail, notifySale } from "@/lib/license/notify";
+import { upsertSubscriber } from "@/lib/mailer/subscribers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -99,6 +100,20 @@ async function fulfil(session: Stripe.Checkout.Session, orderNo: string) {
 
   const paidOrder = { ...order, email: email ?? order.email };
   const key = await issueLicenseForOrder(paidOrder);
+
+  if (paidOrder.email) {
+    // Buyers join the address book (marketing goes only to non-unsubscribed).
+    try {
+      await upsertSubscriber({
+        email: paidOrder.email,
+        name: session.customer_details?.name,
+        locale: order.locale,
+        source: "order",
+      });
+    } catch (e) {
+      console.error("upsertSubscriber failed (non-fatal)", e);
+    }
+  }
 
   if (paidOrder.email) {
     try {

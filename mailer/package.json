@@ -1,0 +1,16 @@
+{
+  "name": "xicoai-mailer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "mailparser": "^3.7.4",
+    "nodemailer": "^7.0.9",
+    "postgres": "^3.4.9",
+    "smtp-server": "^3.14.0"
+  }
+}

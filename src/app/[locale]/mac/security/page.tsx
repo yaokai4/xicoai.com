@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
+import { localeAlternates } from "@/lib/i18n-meta";
 import { MacPrivacy, MacSafety, MacWaitlist } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -19,11 +20,7 @@ export async function generateMetadata({
     description: t("privacy.subtitle"),
     alternates: {
       canonical: path,
-      languages: {
-        zh: "/mac/security",
-        ja: "/ja/mac/security",
-        en: "/en/mac/security",
-      },
+      languages: localeAlternates("/mac/security"),
     },
     openGraph: {
       type: "website",

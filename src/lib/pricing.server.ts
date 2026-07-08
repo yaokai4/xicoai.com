@@ -3,6 +3,7 @@ import "server-only";
 import { getSettings } from "@/lib/settings";
 import {
   parsePricing,
+  currencyPricing,
   type MacPricing,
   type PlanId,
   type PlanPricing,
@@ -16,6 +17,12 @@ export async function getMacPricing(): Promise<MacPricing> {
   return parsePricing(all[PRICING_SETTINGS_KEY]);
 }
 
-export function planPricing(pricing: MacPricing, plan: PlanId): PlanPricing {
-  return plan === "family" ? pricing.family : pricing.personal;
+/** Price of one plan in one currency (falls back to the default currency). */
+export function planPricing(
+  pricing: MacPricing,
+  currency: string,
+  plan: PlanId,
+): PlanPricing {
+  const c = currencyPricing(pricing, currency);
+  return plan === "family" ? c.family : c.personal;
 }

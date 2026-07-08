@@ -19,6 +19,7 @@ export async function sendKeyEmail(opts: {
   const { to, key, plan, orderNo } = opts;
   const label = PLAN_LABEL[plan];
   const buyUrl = process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com";
+  const activateUrl = `${buyUrl}/activate?key=${encodeURIComponent(key)}`;
   const text = [
     "感谢购买 Xico Clean！/ Thank you for buying Xico Clean!",
     "",
@@ -32,7 +33,8 @@ export async function sendKeyEmail(opts: {
     "2. 粘贴上面的激活码并点「激活」。",
     "   Paste the key above and click Activate.",
     "",
-    `购买页 / Purchase page: ${buyUrl}/buy`,
+    `激活引导页 / Activation guide: ${activateUrl}`,
+    `下载 / Download: ${buyUrl}/`,
   ].join("\n");
   await sendMail({
     to,
