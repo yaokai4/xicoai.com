@@ -1,0 +1,65 @@
+# Stalwart mail server — full bootstrap config (bypasses the web wizard).
+# Mounted read-only at /opt/stalwart/etc/config.toml; mail data lives on the
+# `stalwart` docker volume. Accounts/domains/DKIM are managed at runtime via
+# the management API (used by the site's /admin/mail/users).
+
+[server]
+hostname = "mail.xicoai.com"
+
+[server.listener."smtp"]
+bind = ["[::]:25"]
+protocol = "smtp"
+
+[server.listener."submissions"]
+bind = ["[::]:465"]
+protocol = "smtp"
+tls.implicit = true
+
+[server.listener."submission"]
+bind = ["[::]:587"]
+protocol = "smtp"
+
+[server.listener."imaptls"]
+bind = ["[::]:993"]
+protocol = "imap"
+tls.implicit = true
+
+[server.listener."http"]
+bind = ["[::]:8080"]
+protocol = "http"
+
+[storage]
+data = "rocksdb"
+fts = "rocksdb"
+blob = "rocksdb"
+lookup = "rocksdb"
+directory = "internal"
+
+[store."rocksdb"]
+type = "rocksdb"
+path = "/opt/stalwart/data"
+compression = "lz4"
+
+[directory."internal"]
+type = "internal"
+store = "rocksdb"
+
+[tracer."stdout"]
+type = "stdout"
+level = "info"
+ansi = false
+enable = true
+
+# Management API credential — the site's admin panel authenticates with this.
+[authentication.fallback-admin]
+user = "admin"
+secret = "%{env:STALWART_ADMIN_SECRET}%"
+
+# TLS via Let's Encrypt HTTP-01: Caddy forwards
+# http://mail.xicoai.com/.well-known/acme-challenge/* to our :8080.
+[acme."letsencrypt"]
+directory = "https://acme-v02.api.letsencrypt.org/directory"
+challenge = "http-01"
+contact = ["mailto:hi@xicoai.com"]
+domains = ["mail.xicoai.com"]
+default = true

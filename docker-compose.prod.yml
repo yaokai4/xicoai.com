@@ -80,8 +80,9 @@ services:
     container_name: xicoai-stalwart
     restart: unless-stopped
     environment:
-      # Pins the bootstrap/recovery admin so /admin/mail/users can always
-      # reach the management API with STALWART_ADMIN_SECRET.
+      # Management-API credential (config.toml references this env var); the
+      # recovery admin uses the same secret as a belt-and-braces fallback.
+      STALWART_ADMIN_SECRET: ${STALWART_ADMIN_SECRET:-}
       STALWART_RECOVERY_ADMIN: admin:${STALWART_ADMIN_SECRET:-}
     ports:
       - "25:25"     # MX inbound
@@ -90,6 +91,7 @@ services:
       - "993:993"   # IMAP (implicit TLS)
     volumes:
       - stalwart:/opt/stalwart
+      - ./deploy/stalwart.toml:/opt/stalwart/etc/config.toml:ro
     networks:
       - internal
       - web
