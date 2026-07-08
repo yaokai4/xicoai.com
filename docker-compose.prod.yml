@@ -79,9 +79,9 @@ services:
     image: stalwartlabs/stalwart:latest
     container_name: xicoai-stalwart
     restart: unless-stopped
-    # The image defaults to --config /etc/stalwart/config.json (web-wizard
-    # output); we boot from our declarative TOML instead.
-    command: ["--config", "/etc/stalwart/config.toml"]
+    # v0.16 expects JSON (a flat dotted-key map, same model as its internal
+    # settings store); we ship it declaratively instead of the web wizard.
+    command: ["--config", "/etc/stalwart/config.json"]
     environment:
       # Management-API credential (config.toml references this env var); the
       # recovery admin uses the same secret as a belt-and-braces fallback.
@@ -94,7 +94,7 @@ services:
       - "993:993"   # IMAP (implicit TLS)
     volumes:
       - stalwart:/opt/stalwart
-      - ./deploy/stalwart.toml:/etc/stalwart/config.toml:ro
+      - ./deploy/stalwart.json:/etc/stalwart/config.json:ro
     networks:
       - internal
       - web
