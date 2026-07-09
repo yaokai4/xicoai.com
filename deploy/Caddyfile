@@ -35,9 +35,15 @@ mac.xicoai.com {
 # ACME is stuck (after its first tls-alpn-01 attempt failed — 443 is taken by
 # Caddy — it never re-attempts), so deploy/sync-mail-cert.sh (a systemd timer)
 # copies Caddy's cert into Stalwart for its IMAP/SMTP TLS listeners.
-# Caddy also reverse-proxies to Stalwart's built-in web Portal at mail.xicoai.com
-# (webmail + account self-service + admin management console). WebSocket (JMAP
-# push) is upgraded automatically by reverse_proxy.
+# Caddy reverse-proxies mail.xicoai.com to OUR Next.js app, which serves the
+# Chinese webmail (proxy.ts rewrites "/" → /webmail). Stalwart's own English
+# portal on :8080 stays internal-only (used by the webmail BFF over JMAP).
 mail.xicoai.com {
-	reverse_proxy xicoai-stalwart:8080
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+	reverse_proxy app:3000
 }

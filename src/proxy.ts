@@ -63,10 +63,24 @@ function detectLocaleRedirect(request: NextRequest): NextResponse | null {
 }
 
 export default function proxy(request: NextRequest) {
+  const host = (request.headers.get("host") ?? "").split(":")[0].toLowerCase();
+
+  // Enterprise webmail lives on the `mail.` subdomain. Its own routes are the
+  // whole /webmail/* tree (excluded from this matcher, so they serve directly
+  // without i18n). Only the bare root needs steering there; every in-app link
+  // already carries the /webmail prefix, so nothing else is rewritten.
+  if (host.startsWith("mail.")) {
+    const p = request.nextUrl.pathname;
+    if (p === "/" || p === "") {
+      const url = request.nextUrl.clone();
+      url.pathname = "/webmail";
+      return NextResponse.rewrite(url);
+    }
+    return NextResponse.next();
+  }
+
   const redirect = detectLocaleRedirect(request);
   if (redirect) return redirect;
-
-  const host = (request.headers.get("host") ?? "").split(":")[0].toLowerCase();
 
   if (host.startsWith("mac.")) {
     const target = macProductPath(request.nextUrl.pathname);
@@ -100,6 +114,7 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Match all pathnames except API routes, the admin console, Next internals and static files.
-  matcher: ["/((?!api|admin|_next|_vercel|.*\\..*).*)"],
+  // Match all pathnames except API routes, the admin & webmail consoles, Next
+  // internals and static files. (webmail serves its own /webmail/* tree raw.)
+  matcher: ["/((?!api|admin|webmail|_next|_vercel|.*\\..*).*)"],
 };
