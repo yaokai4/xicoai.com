@@ -25,7 +25,9 @@ export function ChangePasswordForm() {
         />
       </label>
       <label className="flex flex-col gap-1.5">
-        <span className="text-xs text-muted">新密码（至少 8 位）</span>
+        <span className="text-xs text-muted">
+          新密码（至少 8 位，建议字母+数字+符号，避免常见词）
+        </span>
         <input
           name="next"
           type="password"

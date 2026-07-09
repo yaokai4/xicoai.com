@@ -85,6 +85,13 @@ export async function changePasswordAction(
     await setMailUserPassword(session.accountId, next);
   } catch (e) {
     console.error("changePassword failed", e);
+    const msg = String(e).toLowerCase();
+    if (msg.includes("weak") || msg.includes("invalidproperties")) {
+      return {
+        error:
+          "新密码强度不够：请用更长、更不常见的组合（避免生日、连续数字、常见单词）。",
+      };
+    }
     return { error: "修改失败，请稍后重试" };
   }
 

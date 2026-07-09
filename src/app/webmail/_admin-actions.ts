@@ -59,13 +59,14 @@ export async function wmCreateUserAction(
     await requirePasswordChange(account);
   } catch (e) {
     console.error("wmCreateUser failed", e);
-    const msg = String(e);
-    return {
-      error:
-        msg.includes("exists") || msg.includes("primaryKeyViolation")
-          ? "该账号已存在"
-          : "创建失败",
-    };
+    const msg = String(e).toLowerCase();
+    if (msg.includes("exists") || msg.includes("primarykeyviolation")) {
+      return { error: "该账号已存在" };
+    }
+    if (msg.includes("weak") || msg.includes("invalidproperties")) {
+      return { error: "初始密码强度不够，请用更长、更不常见的密码（或留空自动生成）。" };
+    }
+    return { error: "创建失败" };
   }
   revalidatePath("/webmail/admin");
   return { ok: true, account, password };
