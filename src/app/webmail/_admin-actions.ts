@@ -10,6 +10,7 @@ import {
   setMailUserAliases,
   setMailUserPassword,
 } from "@/lib/stalwart";
+import { requirePasswordChange } from "@/lib/webmail/password-policy";
 
 /** Gate: the current webmail user must be a configured mail super-admin. */
 async function requireMailAdmin(): Promise<void> {
@@ -45,10 +46,17 @@ export async function wmCreateUserAction(
   if (!local) return { error: "用户名只能包含字母、数字、._-，且以字母/数字开头" };
   const displayName =
     String(formData.get("displayName") ?? "").trim().slice(0, 128) || null;
+  // Optional custom initial password; blank → auto-generate a temp one.
+  const custom = String(formData.get("password") ?? "").trim();
+  if (custom && custom.length < 8) {
+    return { error: "自定义密码至少 8 位（留空则自动生成）" };
+  }
   const account = `${local}@${mailDomain()}`;
-  const password = generatePassword();
+  const password = custom || generatePassword();
   try {
     await createMailUser({ local, password, displayName });
+    // New accounts must set their own password on first login.
+    await requirePasswordChange(account);
   } catch (e) {
     console.error("wmCreateUser failed", e);
     const msg = String(e);
@@ -71,6 +79,8 @@ export async function wmResetPasswordAction(
   const password = generatePassword();
   try {
     await setMailUserPassword(id, password);
+    // An admin reset is a temp password — force the user to re-set it.
+    await requirePasswordChange(account);
   } catch (e) {
     console.error("wmResetPassword failed", e);
     return { error: "重置失败" };

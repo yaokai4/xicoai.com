@@ -21,6 +21,8 @@ import {
   clearWebmailSession,
   getWebmailCredentials,
 } from "@/lib/webmail/session";
+import { setMailUserPassword } from "@/lib/stalwart";
+import { clearPasswordChange } from "@/lib/webmail/password-policy";
 import { requireWebmail } from "@/app/webmail/_lib";
 
 export type LoginState = { error?: string };
@@ -52,6 +54,50 @@ export async function loginAction(
 export async function logoutAction() {
   await clearWebmailSession();
   redirect("/webmail/login");
+}
+
+/* ── self-service change password ──────────────────────────── */
+
+export type ChangePwState = { error?: string };
+
+export async function changePasswordAction(
+  _prev: ChangePwState,
+  formData: FormData,
+): Promise<ChangePwState> {
+  const cred = await getWebmailCredentials();
+  if (!cred) redirect("/webmail/login");
+
+  const current = String(formData.get("current") ?? "");
+  const next = String(formData.get("next") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+
+  if (next.length < 8) return { error: "新密码至少 8 位" };
+  if (next !== confirm) return { error: "两次输入的新密码不一致" };
+  if (next === current) return { error: "新密码不能与当前密码相同" };
+
+  // Verify the current password is correct (authoritative, via Stalwart).
+  const session = await jmapSession({ email: cred.email, password: current });
+  if (!session) return { error: "当前密码不正确" };
+
+  try {
+    // Set the new password on the user's OWN account (session.accountId is the
+    // registry id); the app authenticates to Stalwart with the fallback admin.
+    await setMailUserPassword(session.accountId, next);
+  } catch (e) {
+    console.error("changePassword failed", e);
+    return { error: "修改失败，请稍后重试" };
+  }
+
+  // The session stores the password for JMAP proxying — re-seal it, and clear
+  // the forced-change flag.
+  await setWebmailSession({ email: cred.email, password: next });
+  try {
+    await clearPasswordChange(cred.email);
+  } catch (e) {
+    console.error("clearPasswordChange failed (non-fatal)", e);
+  }
+
+  redirect("/webmail?pwchanged=1");
 }
 
 /* ── compose / send ────────────────────────────────────────── */

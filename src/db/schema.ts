@@ -390,3 +390,13 @@ export type MailSubscriber = typeof mailSubscribers.$inferSelect;
 export type MailCampaign = typeof mailCampaigns.$inferSelect;
 export type MailOutboxRow = typeof mailOutbox.$inferSelect;
 export type MailMessage = typeof mailMessages.$inferSelect;
+
+/** Forced-password-change policy per mailbox. A row = must change before use;
+ * set on admin create/reset, cleared on self-change. No row = not forced. */
+export const mailPasswordPolicy = pgTable("mail_password_policy", {
+  email: varchar("email", { length: 320 }).primaryKey(),
+  mustChange: boolean("must_change").notNull().default(true),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});

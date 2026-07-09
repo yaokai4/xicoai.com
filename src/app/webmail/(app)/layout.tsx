@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { requireWebmail } from "@/app/webmail/_lib";
 import { listMailboxes, type Mailbox } from "@/lib/webmail/jmap";
 import { isMailAdmin } from "@/lib/webmail/session";
+import { mustChangePassword } from "@/lib/webmail/password-policy";
 import { logoutAction } from "@/app/webmail/_actions";
 import { FolderNav } from "./_shell";
 
@@ -32,6 +34,12 @@ export default async function WebmailShell({
   children: React.ReactNode;
 }) {
   const { cred, session } = await requireWebmail();
+  // Force first-login / post-reset users to set their own password before they
+  // can use the mailbox. The change-password page is outside this (app) group,
+  // so it stays reachable and this never loops.
+  if (await mustChangePassword(cred.email)) {
+    redirect("/webmail/change-password");
+  }
   const mailboxes = sortFolders(await listMailboxes(cred, session));
   const admin = isMailAdmin(cred.email);
 
@@ -70,6 +78,12 @@ export default async function WebmailShell({
             className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-white/5 hover:text-foreground"
           >
             通讯录
+          </Link>
+          <Link
+            href="/webmail/change-password"
+            className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-white/5 hover:text-foreground"
+          >
+            修改密码
           </Link>
           {admin && (
             <Link

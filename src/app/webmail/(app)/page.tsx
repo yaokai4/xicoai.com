@@ -10,9 +10,15 @@ const PAGE = 40;
 export default async function InboxPage({
   searchParams,
 }: {
-  searchParams: Promise<{ folder?: string; q?: string; p?: string; sent?: string }>;
+  searchParams: Promise<{
+    folder?: string;
+    q?: string;
+    p?: string;
+    sent?: string;
+    pwchanged?: string;
+  }>;
 }) {
-  const { folder, q, p, sent } = await searchParams;
+  const { folder, q, p, sent, pwchanged } = await searchParams;
   const { cred, session } = await requireWebmail();
 
   const mailboxes = await listMailboxes(cred, session);
@@ -52,6 +58,11 @@ export default async function InboxPage({
         </form>
       </header>
 
+      {pwchanged === "1" && (
+        <p className="border-b border-emerald-500/20 bg-emerald-500/10 px-6 py-2 text-sm text-emerald-600 dark:text-emerald-400">
+          ✓ 密码已修改，请牢记新密码
+        </p>
+      )}
       {sent === "1" && (
         <p className="border-b border-emerald-500/20 bg-emerald-500/10 px-6 py-2 text-sm text-emerald-600 dark:text-emerald-400">
           ✓ 邮件已发送

@@ -107,6 +107,15 @@ export function AdminPanel({
             <span className="text-xs text-muted">显示名（选填）</span>
             <input name="displayName" placeholder="Kevin" className={field} />
           </label>
+          <label className="flex flex-col gap-1.5">
+            <span className="text-xs text-muted">初始密码（选填，留空自动生成）</span>
+            <input
+              name="password"
+              type="text"
+              placeholder="≥8 位"
+              className={field}
+            />
+          </label>
           <button
             type="submit"
             disabled={pending}
@@ -115,6 +124,9 @@ export function AdminPanel({
             {pending ? "创建中…" : "创建"}
           </button>
         </form>
+        <p className="mt-2 text-xs text-faint">
+          新用户首次登录会被要求把初始密码改成自己的密码。
+        </p>
         {state.error && <p className="mt-2 text-sm text-red-500">{state.error}</p>}
         {state.ok && state.account && state.password && (
           <Credential account={state.account} password={state.password} />
