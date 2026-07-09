@@ -18,6 +18,7 @@ import { FooterSwitch } from "@/components/footer-switch";
 import { MacFooter } from "@/components/mac/mac-footer";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
+import { organizationJsonLd, webSiteJsonLd, jsonLdScript } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({
@@ -115,6 +116,15 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLdScript([
+              organizationJsonLd(),
+              webSiteJsonLd(locale),
+            ]),
+          }}
+        />
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <Ambient />

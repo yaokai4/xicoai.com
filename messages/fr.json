@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — un nettoyeur et optimiseur natif pour Mac",
-      "description": "Xico Clean est un outil natif de nettoyage et d'optimisation pour macOS : analyse intelligente en un clic, nettoyage des fichiers de développeur, visualisation Lentille d'espace, doublons et photos similaires, désinstallation complète et nettoyage de confidentialité. Tout en local, prévisualisable, annulable. Conçu pour Apple silicon — disponible dès maintenant, essai gratuit."
+      "title": "Nettoyeur Mac Xico Clean — libérez de l'espace, optimisez",
+      "description": "Nettoyez votre Mac en un clic : caches, fichiers système et en double. Libérez de l'espace, désinstallez des apps, optimisez macOS. Essai gratuit, achat unique.",
+      "keywords": [
+        "nettoyer Mac",
+        "nettoyeur Mac",
+        "nettoyage disque Mac",
+        "libérer de l'espace",
+        "optimiser Mac",
+        "fichiers en double",
+        "désinstaller des apps",
+        "nettoyer les fichiers système",
+        "accélérer son Mac",
+        "supprimer les doublons",
+        "Xico Clean",
+        "Mac cleaner"
+      ],
+      "featuresTitle": "Nettoyer et optimiser Mac — fonctions de Xico Clean",
+      "featuresDescription": "Analyse en un clic, fichiers système et de développeur, Lentille d'espace, fichiers en double, désinstaller des apps, optimiser Mac : tout dans une app native.",
+      "securityTitle": "Nettoyage Mac sûr et confidentiel — Xico Clean",
+      "securityDescription": "Nettoyer sans supprimer le mauvais fichier : dans Xico Clean, chaque suppression est prévisualisable et annulable, et tout reste en local, jamais envoyé.",
+      "pricingTitle": "Prix Xico Clean — nettoyeur Mac en achat unique",
+      "pricingDescription": "Xico Clean est un achat unique : payez une fois, mises à jour gratuites à vie, sans abonnement. Essai complet de 14 jours, puis Personnel ou Famille.",
+      "supportTitle": "Assistance et FAQ — Xico Clean, nettoyeur Mac",
+      "supportDescription": "Configuration requise, FAQ et contact pour Xico Clean. Compatible macOS 13 et ultérieur, Apple silicon et Intel en binaire universel. Réponse sous un jour ouvré.",
+      "buyTitle": "Acheter Xico Clean — nettoyeur Mac, achat unique",
+      "buyDescription": "Achetez Xico Clean une fois et gardez-le à vie : mises à jour gratuites, sans abonnement. Paiement Stripe sécurisé, prix en monnaie locale, remboursé sous 30 jours."
     },
     "nav": {
       "features": "Fonctionnalités",
@@ -877,6 +901,18 @@
         {
           "q": "Puis-je le télécharger maintenant ?",
           "a": "Bientôt. Rejoignez la liste d'attente : nous vous préviendrons dès le lancement, avec un tarif préférentiel réservé aux inscrits."
+        },
+        {
+          "q": "Quelle différence entre Xico Clean et CleanMyMac ?",
+          "a": "Xico Clean est un nettoyeur natif développé en Swift, en achat unique : vous payez une fois, avec des mises à jour gratuites et sans abonnement. Au-delà du nettoyage en profondeur et de la désinstallation complète, il intègre un moniteur en temps réel dans la barre des menus, la santé matérielle, un benchmark disque de 10 Go et la Lentille d'espace — de quoi remplacer plusieurs apps par une seule. Tout se fait en local, aucun fichier n'est jamais envoyé."
+        },
+        {
+          "q": "Comment nettoyer son Mac et libérer de l'espace ?",
+          "a": "Ouvrez Xico Clean et lancez l'Analyse intelligente : en quelques secondes, elle repère les fichiers système inutiles, les caches de développement, les fichiers volumineux et en double. La Lentille d'espace dessine ensuite tout votre disque pour repérer d'un coup d'œil les dossiers les plus lourds — après un nettoyage sûr, vous récupérez de quelques à plusieurs dizaines de Go."
+        },
+        {
+          "q": "Existe-t-il un nettoyeur Mac gratuit ?",
+          "a": "Xico Clean propose un essai gratuit de 14 jours, toutes fonctions incluses : téléchargez et testez le nettoyage et l'optimisation sans même créer de compte. Ensuite, un seul achat unique suffit pour l'utiliser durablement — ce n'est pas un abonnement."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Paiement sécurisé par Stripe",
         "Garantie satisfait ou remboursé de 30 jours",
         "Traitement local, confidentialité d'abord"
-      ]
+      ],
+      "currencyNote": "Prix en {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Confirmation de votre paiement…",

@@ -43,7 +43,7 @@ export default function Image() {
               padding: "4px 14px",
             }}
           >
-            Coming soon
+            Free 14-day trial
           </div>
         </div>
         <div
@@ -55,10 +55,10 @@ export default function Image() {
             maxWidth: 960,
           }}
         >
-          Make your Mac fast and clean again.
+          The native Mac cleaner. Fast and clean again.
         </div>
         <div style={{ fontSize: 26, color: "#9aa1ad", marginTop: 32 }}>
-          Native macOS · Smart Scan · Space Lens · 100% local & undoable
+          Smart Scan · Space Lens · Developer junk · 100% local & undoable
         </div>
       </div>
     ),

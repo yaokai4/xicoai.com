@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
+import { breadcrumbJsonLd, jsonLdScript, absoluteUrl } from "@/lib/seo";
 import { MacPrivacy, MacSafety, MacWaitlist } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -14,10 +15,11 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "mac" });
   const path =
     locale === routing.defaultLocale ? "/mac/security" : `/${locale}/mac/security`;
-  const title = `${t("nav.security")} · ${t("safety.eyebrow")} — Xico Clean`;
+  const title = t("meta.securityTitle");
+  const description = t("meta.securityDescription");
   return {
     title: { absolute: title },
-    description: t("privacy.subtitle"),
+    description,
     alternates: {
       canonical: path,
       languages: localeAlternates("/mac/security"),
@@ -26,7 +28,7 @@ export async function generateMetadata({
       type: "website",
       siteName: "Xico Clean",
       title,
-      description: t("privacy.subtitle"),
+      description,
       url: `${site.url}${path}`,
     },
   };
@@ -39,8 +41,18 @@ export default async function MacSecurityPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "mac" });
+  const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
+    { name: t("nav.security"), url: absoluteUrl("/mac/security", lp) },
+  ]);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(breadcrumb) }}
+      />
       <MacSafety topPad />
       <MacPrivacy />
       <MacWaitlist />

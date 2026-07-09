@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — a native cleaner and optimizer for Mac",
-      "description": "Xico Clean is a native macOS cleanup & optimization tool: one-tap smart scan, developer-junk cleanup, Space Lens visualization, duplicate files and similar photos, complete uninstall, and privacy cleaning. All local, previewable, undoable. Built for Apple silicon — available now, free to try."
+      "title": "Mac Cleaner — Xico Clean: Clean My Mac & Free Up Space",
+      "description": "Xico Clean is a native Mac cleaner that frees up disk space fast: smart-scan junk, developer caches, and duplicate files. Buy once, try free for 14 days.",
+      "keywords": [
+        "Mac cleaner",
+        "clean my Mac",
+        "free up disk space",
+        "Mac optimizer",
+        "duplicate file finder",
+        "Mac uninstaller",
+        "CleanMyMac alternative",
+        "clear storage on Mac",
+        "Mac cleanup software",
+        "speed up Mac",
+        "disk space analyzer Mac",
+        "Xico Clean"
+      ],
+      "featuresTitle": "Mac Optimizer Features — Xico Clean Cleans & Speeds Up",
+      "featuresDescription": "Smart Scan, system and developer junk, Space Lens, a duplicate file finder, Uninstaller, privacy cleanup, and a live menu-bar monitor — a full Mac cleaner, one app.",
+      "securityTitle": "Mac Cleaner Safety — Xico Clean Won't Delete or Upload",
+      "securityDescription": "Xico Clean previews and undoes every deletion, with a protection list guarding key files. Scanning is on-device, so nothing uploads. Clean my Mac safely — try free.",
+      "pricingTitle": "Mac Cleaner Pricing — Xico Clean: Buy Once, No Subscription",
+      "pricingDescription": "Xico Clean is a one-time-purchase Mac optimizer: pay once, free updates for life, no subscription. Try all features free for 14 days, then use it on all your Macs.",
+      "supportTitle": "Mac Cleaner Support & FAQ — Xico Clean Help & Requirements",
+      "supportDescription": "Get help with Xico Clean, the native Mac cleaner: system requirements, FAQs, and contact. Runs on macOS 13+, Apple silicon and Intel — reply within a business day.",
+      "buyTitle": "Buy Xico Clean — Mac Cleaner, Buy Once, No Subscription",
+      "buyDescription": "Buy Xico Clean once and own this Mac cleaner for good: lifetime free updates, no subscription. Local-currency pricing, secure Stripe checkout, 30-day money-back."
     },
     "nav": {
       "features": "Features",
@@ -877,6 +901,18 @@
         {
           "q": "Can I download it now?",
           "a": "Coming soon. Join the waitlist and we'll tell you the moment it launches, with an early-bird price for members."
+        },
+        {
+          "q": "How is Xico Clean different from CleanMyMac?",
+          "a": "Xico Clean is a native Swift app you buy once — a single payment, free updates for the long haul, and no subscription. Beyond deep cleaning and complete uninstalls, it adds a live menu-bar monitor, hardware and battery health, a real 10 GB disk speed benchmark, and Space Lens disk visualization — folding what used to take several separate apps into one. Everything runs locally, and your files are never uploaded."
+        },
+        {
+          "q": "How do I clean my Mac and free up disk space?",
+          "a": "Open Xico Clean and tap Smart Scan — within seconds it surfaces system junk, developer caches, large files, and duplicates. Then open Space Lens to see your whole disk as an interactive map and pinpoint the folders eating the most room. A safe cleanup can reclaim anywhere from a few to dozens of gigabytes."
+        },
+        {
+          "q": "Is there a free Mac cleaner?",
+          "a": "Xico Clean includes a 14-day full-feature free trial — no signup needed to download and put the complete cleanup and optimization toolkit to work. After the trial, a single one-time purchase keeps it yours for good. It's not a subscription."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Secure checkout by Stripe",
         "30-day money-back guarantee",
         "Local processing, privacy-first"
-      ]
+      ],
+      "currencyNote": "Prices in {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Confirming your payment…",

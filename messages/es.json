@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — un limpiador y optimizador nativo para Mac",
-      "description": "Xico Clean es una herramienta nativa de limpieza y optimización para macOS: escaneo inteligente con un toque, limpieza de basura de desarrollador, visualización Space Lens, archivos duplicados y fotos similares, desinstalación completa y limpieza de privacidad. Todo en local, con vista previa y opción de deshacer. Creado para Apple silicon — ya disponible, pruébalo gratis."
+      "title": "Limpiar Mac con Xico Clean: libera espacio y optimiza",
+      "description": "Xico Clean es el limpiador de Mac nativo que libera espacio y optimiza: elimina basura, archivos duplicados y apps que no usas. Pruébalo gratis, sin suscripción.",
+      "keywords": [
+        "limpiar Mac",
+        "limpiador de Mac",
+        "liberar espacio en Mac",
+        "optimizar Mac",
+        "archivos duplicados",
+        "desinstalar apps Mac",
+        "limpiar almacenamiento Mac",
+        "acelerar Mac",
+        "limpieza de disco Mac",
+        "CleanMyMac alternativa",
+        "Xico Clean",
+        "Mac cleaner"
+      ],
+      "featuresTitle": "Optimizar Mac con Xico Clean: limpieza y gestión de disco",
+      "featuresDescription": "Escaneo inteligente, basura del sistema y de desarrollador, Space Lens, archivos duplicados, desinstalación y monitor en la barra de menús: limpia y optimiza tu Mac.",
+      "securityTitle": "Limpiar Mac sin riesgos con Xico Clean: privacidad total",
+      "securityDescription": "Limpiar tu Mac no da miedo con Xico Clean: vista previa y deshacer en cada borrado, protege los archivos del sistema y analiza todo en local, sin subir nada.",
+      "pricingTitle": "Limpiador de Mac Xico Clean: pago único, sin suscripción",
+      "pricingDescription": "Xico Clean es de pago único: pagas una vez, con actualizaciones gratis y sin suscripción. Prueba las funciones completas 14 días gratis y úsalo en tus varios Mac.",
+      "supportTitle": "Soporte de Xico Clean: ayuda para limpiar tu Mac",
+      "supportDescription": "Requisitos, preguntas frecuentes y contacto de Xico Clean. Compatible con macOS 13 o posterior, Apple silicon e Intel; te respondemos en un día laborable.",
+      "buyTitle": "Comprar Xico Clean: limpiador de Mac de pago único",
+      "buyDescription": "Compra Xico Clean con un pago único: para siempre, con actualizaciones gratis y sin suscripción. Precio en tu moneda, pago seguro con Stripe y 30 días de garantía."
     },
     "nav": {
       "features": "Funciones",
@@ -877,6 +901,18 @@
         {
           "q": "¿Puedo descargarlo ya?",
           "a": "Muy pronto. Únete a la lista de espera y te avisaremos en el momento del lanzamiento, con un precio de lanzamiento exclusivo para los miembros."
+        },
+        {
+          "q": "¿Qué diferencia a Xico Clean de CleanMyMac?",
+          "a": "Xico Clean es un limpiador nativo hecho en Swift, de pago único: pagas una vez, con actualizaciones gratis y sin suscripción. Además de la limpieza profunda y la desinstalación completa, incluye monitor en tiempo real en la barra de menús, estado del hardware, prueba de velocidad de disco de 10 GB y la visualización Space Lens; reúne en una sola app lo que antes exigía varios programas. Todo el procesamiento es local y nunca sube tus archivos."
+        },
+        {
+          "q": "¿Cómo limpio mi Mac y libero espacio de almacenamiento?",
+          "a": "Abre Xico Clean y pulsa «Escaneo inteligente»: en segundos encuentra basura del sistema, cachés de desarrollador, archivos grandes y duplicados. Después, Space Lens dibuja todo el disco en un mapa visual para ubicar de un vistazo las carpetas que más ocupan; al limpiarlas con seguridad liberas de varios a decenas de GB."
+        },
+        {
+          "q": "¿Existe un limpiador de Mac gratis?",
+          "a": "Xico Clean ofrece 14 días de prueba gratuita con todas las funciones: descárgalo sin registrarte y prueba toda la limpieza y optimización. Después, un único pago te da acceso permanente; no es una suscripción."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Pago seguro con Stripe",
         "Garantía de devolución de 30 días",
         "Procesamiento local, privacidad ante todo"
-      ]
+      ],
+      "currencyNote": "Precios en {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Confirmando tu pago…",

@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — pulizia e ottimizzazione native per Mac",
-      "description": "Xico Clean è uno strumento nativo di pulizia e ottimizzazione per macOS: scansione intelligente con un tocco, pulizia dei file inutili da sviluppatore, visualizzazione Space Lens, file duplicati e foto simili, disinstallazione completa e pulizia della privacy. Tutto in locale, con anteprima e annullamento. Costruito per Apple silicon — disponibile ora, provalo gratis."
+      "title": "Pulire Mac con Xico Clean: libera spazio e ottimizza",
+      "description": "App nativa per pulire il Mac: Xico Clean trova file inutili e duplicati, libera spazio su disco e ottimizza macOS. Provalo gratis, acquisto unico senza abbonamento.",
+      "keywords": [
+        "pulire Mac",
+        "pulizia Mac",
+        "liberare spazio su Mac",
+        "ottimizzare Mac",
+        "file duplicati",
+        "disinstallare app Mac",
+        "pulizia disco Mac",
+        "velocizzare Mac",
+        "rimuovere file inutili Mac",
+        "alternativa CleanMyMac",
+        "Xico Clean",
+        "Mac cleaner"
+      ],
+      "featuresTitle": "Pulire e ottimizzare Mac: le funzioni di Xico Clean",
+      "featuresDescription": "Scansione intelligente, file inutili, Space Lens, file duplicati e disinstallazione: Xico Clean pulisce e ottimizza il Mac in un'unica app nativa. Provalo gratis.",
+      "securityTitle": "Pulizia Mac sicura e privata con Xico Clean",
+      "securityDescription": "Pulire il Mac senza rischi: ogni eliminazione è visibile in anteprima e annullabile, e una lista protetta difende i file di sistema critici. Tutto resta in locale.",
+      "pricingTitle": "Prezzi Xico Clean: acquisto una tantum, senza abbonamento",
+      "pricingDescription": "Xico Clean è un acquisto una tantum: paghi una volta, aggiornamenti gratuiti, nessun abbonamento. Prova 14 giorni con tutte le funzioni, poi usalo sui tuoi Mac.",
+      "supportTitle": "Supporto e FAQ di Xico Clean per pulire il Mac",
+      "supportDescription": "Requisiti di sistema, FAQ e contatti di Xico Clean per pulire il Mac. Supporta macOS 13 e successivi, Apple silicon e Intel; rispondiamo entro un giorno lavorativo.",
+      "buyTitle": "Acquista Xico Clean: pulire il Mac, acquisto una tantum",
+      "buyDescription": "Acquista Xico Clean una volta e usalo per sempre: aggiornamenti gratuiti, nessun abbonamento. Pagamento sicuro con Stripe in valuta locale, rimborso entro 30 giorni."
     },
     "nav": {
       "features": "Funzioni",
@@ -877,6 +901,18 @@
         {
           "q": "Posso scaricarlo adesso?",
           "a": "In arrivo. Iscriviti alla lista d'attesa: ti avviseremo al momento del lancio, con un prezzo early bird riservato agli iscritti."
+        },
+        {
+          "q": "Che differenza c'è tra Xico Clean e CleanMyMac?",
+          "a": "Xico Clean è un cleaner nativo in Swift con acquisto una tantum: paghi una volta, aggiornamenti gratuiti a lungo termine, nessun abbonamento. Oltre alla pulizia profonda e alla disinstallazione completa, integra il monitor nella barra dei menu, la salute dell'hardware, il benchmark del disco da 10 GB e la visualizzazione Space Lens — le capacità di più app in una sola. Tutto avviene in locale, nessun file viene mai caricato."
+        },
+        {
+          "q": "Come posso pulire il Mac e liberare spazio?",
+          "a": "Apri Xico Clean e avvia la Scansione intelligente: in pochi secondi individua file inutili di sistema, cache da sviluppatore, file di grandi dimensioni e file duplicati. Con Space Lens visualizzi l'intero disco come una mappa e trovi a colpo d'occhio le cartelle che occupano più spazio; dopo una pulizia sicura liberi da qualche GB a decine di GB."
+        },
+        {
+          "q": "Esiste un programma gratis per pulire il Mac?",
+          "a": "Xico Clean offre una prova gratuita di 14 giorni con tutte le funzioni, senza registrazione: puoi scaricarlo e mettere alla prova l'intera pulizia e ottimizzazione. Poi lo sblocchi con un acquisto una tantum per usarlo a lungo termine — non è un abbonamento."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Pagamento sicuro con Stripe",
         "Garanzia di rimborso di 30 giorni",
         "Elaborazione locale, privacy al primo posto"
-      ]
+      ],
+      "currencyNote": "Prezzi in {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Stiamo confermando il pagamento…",

@@ -19,12 +19,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "mac.buy" });
+  const t = await getTranslations({ locale, namespace: "mac" });
   const path = locale === routing.defaultLocale ? "/mac/buy" : `/${locale}/mac/buy`;
-  const title = `${t("title")} — Xico Clean`;
+  const title = t("meta.buyTitle");
+  const description = t("meta.buyDescription");
   return {
     title: { absolute: title },
-    description: t("subtitle"),
+    description,
     alternates: {
       canonical: path,
       languages: localeAlternates("/mac/buy"),
@@ -33,7 +34,7 @@ export async function generateMetadata({
       type: "website",
       siteName: "Xico Clean",
       title,
-      description: t("subtitle"),
+      description,
       url: `${site.url}${path}`,
     },
   };

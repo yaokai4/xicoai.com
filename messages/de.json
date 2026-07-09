@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — der native Cleaner und Optimierer für den Mac",
-      "description": "Xico Clean ist ein natives Bereinigungs- und Optimierungstool für macOS: Smart Scan mit einem Klick, Bereinigung von Entwicklermüll, Space-Lens-Visualisierung, doppelte Dateien und ähnliche Fotos, restlose Deinstallation und Privatsphäre-Bereinigung. Alles lokal, mit Vorschau, rückgängig machbar. Für Apple silicon gebaut — jetzt verfügbar, kostenlos testen."
+      "title": "Mac reinigen & optimieren – Xico Clean Mac Cleaner",
+      "description": "Xico Clean, der native Mac Cleaner: Systemmüll und Duplikate finden, Speicher freigeben und Mac optimieren – lokal, mit Vorschau. 14 Tage gratis testen, kein Abo.",
+      "keywords": [
+        "Mac reinigen",
+        "Mac Cleaner",
+        "Mac aufräumen",
+        "Mac optimieren",
+        "Speicher freigeben",
+        "Festplatte aufräumen",
+        "Duplikate finden",
+        "Programme deinstallieren",
+        "Mac beschleunigen",
+        "CleanMyMac Alternative",
+        "Xico Clean",
+        "Mac cleaner"
+      ],
+      "featuresTitle": "Mac aufräumen & optimieren – alle Funktionen von Xico Clean",
+      "featuresDescription": "Smart Scan, Systemmüll, Entwickler-Caches, Space Lens, Duplikate finden, Deinstallierer und Menüleisten-Monitor: Xico Clean räumt den Mac auf – in einer nativen App.",
+      "securityTitle": "Sicher den Mac reinigen – Vorschau & Rückgängig · Xico Clean",
+      "securityDescription": "Sicher den Mac reinigen: Xico Clean zeigt vor jedem Löschen eine Vorschau, macht sie rückgängig und schützt Systemdateien. Alle Scans lokal, nie hochgeladen.",
+      "pricingTitle": "Xico Clean Preise: Einmalkauf ohne Abo – Mac Cleaner",
+      "pricingDescription": "Xico Clean ist ein Einmalkauf: einmal zahlen, dauerhaft kostenlose Updates, kein Abo. 14 Tage mit vollem Funktionsumfang gratis testen. Einzel- & Familienlizenz.",
+      "supportTitle": "Support & FAQ – Xico Clean Mac Cleaner für macOS",
+      "supportDescription": "Systemvoraussetzungen, häufige Fragen und Kontakt zu Xico Clean. Läuft ab macOS 13 auf Apple silicon und Intel; wir antworten in der Regel innerhalb eines Werktags.",
+      "buyTitle": "Xico Clean kaufen – Mac Cleaner, Einmalkauf ohne Abo",
+      "buyDescription": "Xico Clean kaufen: einmal zahlen, für immer nutzen, kostenlose Updates, kein Abo. Preise in lokaler Währung, Zahlung über Stripe, 30 Tage Geld-zurück-Garantie."
     },
     "nav": {
       "features": "Funktionen",
@@ -877,6 +901,18 @@
         {
           "q": "Kann ich es jetzt herunterladen?",
           "a": "Bald. Tragen Sie sich in die Warteliste ein — wir informieren Sie sofort zum Start, und Wartelisten-Mitglieder erhalten einen Frühbucherpreis."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Xico Clean und CleanMyMac?",
+          "a": "Xico Clean ist ein in nativem Swift gebauter Cleaner zum Einmalkauf – einmal zahlen, dauerhaft kostenlose Updates, kein Abo. Neben Tiefenreinigung und restloser Deinstallation bringt es einen Menüleisten-Monitor in Echtzeit, Hardware- und Batteriezustand, einen 10-GB-Festplatten-Benchmark und die Space-Lens-Visualisierung mit – Funktionen, für die Sie früher mehrere Apps brauchten, vereint in einer. Alles wird lokal verarbeitet, Dateien werden nie hochgeladen."
+        },
+        {
+          "q": "Wie räume ich meinen Mac auf und gebe Speicher frei?",
+          "a": "Öffnen Sie Xico Clean und starten Sie den Smart Scan: In Sekunden findet er Systemmüll, Entwickler-Caches, große Dateien und Duplikate. Mit Space Lens sehen Sie Ihre ganze Festplatte als Visualisierung und erkennen sofort, welche Ordner den meisten Platz belegen. Nach der sicheren Bereinigung sind schnell einige bis mehrere Dutzend Gigabyte wieder frei."
+        },
+        {
+          "q": "Gibt es kostenlose Mac-Reinigungssoftware?",
+          "a": "Xico Clean bietet eine 14-tägige kostenlose Testphase mit vollem Funktionsumfang – ohne Registrierung herunterladen und alle Reinigungs- und Optimierungsfunktionen ausprobieren. Danach schalten Sie mit einem einmaligen Kauf dauerhaft frei; es ist kein Abo."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Sichere Bezahlung über Stripe",
         "30 Tage Geld-zurück-Garantie",
         "Lokale Verarbeitung, Privatsphäre zuerst"
-      ]
+      ],
+      "currencyNote": "Preise in {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Ihre Zahlung wird bestätigt…",

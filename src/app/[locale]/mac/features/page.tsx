@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
+import { breadcrumbJsonLd, jsonLdScript, absoluteUrl } from "@/lib/seo";
 import {
   MacPageHeader,
   MacCatalog,
@@ -22,10 +23,11 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "mac" });
   const path =
     locale === routing.defaultLocale ? "/mac/features" : `/${locale}/mac/features`;
-  const title = `${t("pages.featuresTitle")} — Xico Clean`;
+  const title = t("meta.featuresTitle");
+  const description = t("meta.featuresDescription");
   return {
     title: { absolute: title },
-    description: t("meta.description"),
+    description,
     alternates: {
       canonical: path,
       languages: localeAlternates("/mac/features"),
@@ -34,7 +36,7 @@ export async function generateMetadata({
       type: "website",
       siteName: "Xico Clean",
       title,
-      description: t("meta.description"),
+      description,
       url: `${site.url}${path}`,
     },
   };
@@ -48,8 +50,17 @@ export default async function MacFeaturesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "mac" });
+  const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
+    { name: t("nav.features"), url: absoluteUrl("/mac/features", lp) },
+  ]);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(breadcrumb) }}
+      />
       <MacPageHeader
         kicker={t("nav.features")}
         title={t("pages.featuresTitle")}

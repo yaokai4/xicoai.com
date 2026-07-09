@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Band, Wrap, BandHeading } from "@/components/mac/mac-ui";
@@ -9,6 +9,7 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { CheckGlyph } from "@/components/mac/icons";
 import { ArrowIcon } from "@/components/ui/button";
 import { startCheckout } from "@/app/actions/checkout";
+import { LOCALE_TAG } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 export type PlanView = {
@@ -41,7 +42,31 @@ export function MacBuy({
   const [currency, setCurrency] = useState(
     plansByCurrency[initialCurrency] ? initialCurrency : currencies[0],
   );
+  const [picker, setPicker] = useState(false);
+  const pickerRef = useRef<HTMLDivElement>(null);
   const plans = plansByCurrency[currency] ?? [];
+
+  // Localized currency names for the (collapsed) switcher, e.g. "US Dollar".
+  const localeTag = LOCALE_TAG[locale] ?? "en-US";
+  let currencyName: (c: string) => string;
+  try {
+    const dn = new Intl.DisplayNames([localeTag], { type: "currency" });
+    currencyName = (c) => dn.of(c) ?? c;
+  } catch {
+    currencyName = (c) => c;
+  }
+
+  // Close the currency menu on outside click.
+  useEffect(() => {
+    if (!picker) return;
+    const onClick = (e: MouseEvent) => {
+      if (pickerRef.current && !pickerRef.current.contains(e.target as Node)) {
+        setPicker(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [picker]);
 
   function buy(planId: string) {
     setError(null);
@@ -74,24 +99,62 @@ export function MacBuy({
           </Reveal>
         )}
 
-        {canBuy && currencies.length > 1 && (
+        {/* Prices are quoted in the visitor's own local currency (detected
+            from their region). We show that one currency — not every country's
+            at once — with a discreet menu to switch if they prefer another. */}
+        {canBuy && (
           <Reveal>
-            <div className="mt-8 flex items-center justify-center gap-2">
-              {currencies.map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => setCurrency(c)}
-                  className={cn(
-                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
-                    c === currency
-                      ? "border-brand/50 bg-brand/10 text-brand"
-                      : "border-border text-muted hover:border-border-strong hover:text-foreground",
+            <div className="mt-8 flex items-center justify-center">
+              {currencies.length > 1 ? (
+                <div className="relative" ref={pickerRef}>
+                  <button
+                    type="button"
+                    onClick={() => setPicker((v) => !v)}
+                    aria-haspopup="listbox"
+                    aria-expanded={picker}
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-border-strong hover:text-foreground"
+                  >
+                    <GlobeGlyph />
+                    {t("currencyNote", { currency })}
+                    <CaretGlyph className={cn("transition-transform", picker && "rotate-180")} />
+                  </button>
+                  {picker && (
+                    <div
+                      role="listbox"
+                      className="absolute left-1/2 z-30 mt-2 max-h-72 w-60 -translate-x-1/2 overflow-auto rounded-2xl border border-border bg-bg p-1.5 shadow-[0_24px_60px_-24px_rgba(10,8,40,0.35)]"
+                    >
+                      {currencies.map((c) => (
+                        <button
+                          key={c}
+                          type="button"
+                          role="option"
+                          aria-selected={c === currency}
+                          onClick={() => {
+                            setCurrency(c);
+                            setPicker(false);
+                          }}
+                          className={cn(
+                            "flex w-full items-center justify-between gap-3 rounded-xl px-3.5 py-2 text-left text-sm transition-colors",
+                            c === currency
+                              ? "bg-brand/10 text-brand"
+                              : "text-foreground/90 hover:bg-surface",
+                          )}
+                        >
+                          <span className="truncate">{currencyName(c)}</span>
+                          <span className="shrink-0 font-medium tabular-nums text-faint">
+                            {c}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
                   )}
-                >
-                  {c}
-                </button>
-              ))}
+                </div>
+              ) : (
+                <span className="inline-flex items-center gap-2 text-sm text-faint">
+                  <GlobeGlyph />
+                  {t("currencyNote", { currency })}
+                </span>
+              )}
             </div>
           </Reveal>
         )}
@@ -214,5 +277,41 @@ export function MacBuy({
         </Reveal>
       </Wrap>
     </Band>
+  );
+}
+
+function GlobeGlyph() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M3 12h18M12 3c2.5 2.4 3.8 5.6 3.8 9s-1.3 6.6-3.8 9c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CaretGlyph({ className }: { className?: string }) {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+      className={className}
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

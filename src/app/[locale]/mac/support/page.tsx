@@ -4,6 +4,12 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
 import {
+  breadcrumbJsonLd,
+  faqJsonLd,
+  jsonLdScript,
+  absoluteUrl,
+} from "@/lib/seo";
+import {
   MacPageHeader,
   MacFaq,
   MacSupport,
@@ -19,10 +25,11 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "mac" });
   const path =
     locale === routing.defaultLocale ? "/mac/support" : `/${locale}/mac/support`;
-  const title = `${t("pages.supportTitle")} — Xico Clean`;
+  const title = t("meta.supportTitle");
+  const description = t("meta.supportDescription");
   return {
     title: { absolute: title },
-    description: t("pages.supportSubtitle"),
+    description,
     alternates: {
       canonical: path,
       languages: localeAlternates("/mac/support"),
@@ -31,7 +38,7 @@ export async function generateMetadata({
       type: "website",
       siteName: "Xico Clean",
       title,
-      description: t("pages.supportSubtitle"),
+      description,
       url: `${site.url}${path}`,
     },
   };
@@ -45,8 +52,22 @@ export default async function MacSupportPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "mac" });
+  const tfaq = await getTranslations({ locale, namespace: "mac.faq" });
+  const faqItems = tfaq.raw("items") as { q: string; a: string }[];
+  const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const nodes = [
+    breadcrumbJsonLd([
+      { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
+      { name: t("nav.support"), url: absoluteUrl("/mac/support", lp) },
+    ]),
+    faqJsonLd(faqItems),
+  ];
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(nodes) }}
+      />
       <MacPageHeader
         kicker={t("nav.support")}
         title={t("pages.supportTitle")}

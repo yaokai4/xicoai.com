@@ -78,7 +78,8 @@ export function discountPercent(p: PlanPricing): number | null {
   return Math.round((1 - p.amount / p.compareAt) * 100);
 }
 
-const LOCALE_TAG: Record<string, string> = {
+/** Site locale → BCP-47 tag for Intl formatting (prices, currency names). */
+export const LOCALE_TAG: Record<string, string> = {
   zh: "zh-CN",
   "zh-Hant": "zh-TW",
   ja: "ja-JP",
@@ -218,6 +219,19 @@ export function currencyPricing(
     pricing.currencies[pricing.defaultCurrency] ??
     Object.values(pricing.currencies)[0]
   );
+}
+
+/** Lowest / highest sellable plan price (major units) for one currency —
+ * feeds the SoftwareApplication AggregateOffer. Returns null if nothing is
+ * priced. */
+export function priceRange(
+  pricing: MacPricing,
+  currency: string,
+): { low: number; high: number } | null {
+  const c = currencyPricing(pricing, currency);
+  const amounts = [c.personal.amount, c.family.amount].filter((a) => a > 0);
+  if (!amounts.length) return null;
+  return { low: Math.min(...amounts), high: Math.max(...amounts) };
 }
 
 /** The currency actually used when asking for `currency` (handles fallback). */

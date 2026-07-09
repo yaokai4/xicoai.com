@@ -568,8 +568,32 @@
   },
   "mac": {
     "meta": {
-      "title": "Xico Clean — um limpador e otimizador nativo para Mac",
-      "description": "O Xico Clean é uma ferramenta nativa de limpeza e otimização para macOS: escaneamento inteligente com um toque, limpeza de lixo de desenvolvedor, visualização Space Lens, arquivos duplicados e fotos semelhantes, desinstalação completa e limpeza de privacidade. Tudo local, com pré-visualização e desfazer. Feito para Apple silicon — disponível agora, grátis para experimentar."
+      "title": "Limpar Mac com o Xico Clean — limpeza e otimização",
+      "description": "Xico Clean é o limpador nativo de Mac que remove lixo, caches e arquivos duplicados para liberar espaço e otimizar o Mac. Teste grátis, compra única sem assinatura.",
+      "keywords": [
+        "limpar Mac",
+        "limpeza de Mac",
+        "limpador de Mac",
+        "otimizar Mac",
+        "liberar espaço",
+        "liberar armazenamento Mac",
+        "arquivos duplicados",
+        "desinstalar apps",
+        "limpar cache do Mac",
+        "acelerar Mac",
+        "Xico Clean",
+        "Mac cleaner"
+      ],
+      "featuresTitle": "Limpeza e otimização do Mac — recursos do Xico Clean",
+      "featuresDescription": "Escaneamento Inteligente, arquivos duplicados, Space Lens, desinstalador e monitor em tempo real: toda a limpeza e otimização do Mac num app nativo. Teste grátis.",
+      "securityTitle": "Limpeza de Mac segura e privada — Xico Clean",
+      "securityDescription": "Limpe o Mac sem medo de errar: o Xico Clean pré-visualiza e desfaz cada exclusão, e faz todo o escaneamento localmente, sem enviar seus arquivos. Teste grátis.",
+      "pricingTitle": "Preços do Xico Clean: compra única, sem assinatura",
+      "pricingDescription": "Compra única para limpar o Mac: com o Xico Clean você paga uma vez e recebe atualizações gratuitas, sem assinatura. Experimente grátis 14 dias em todos os seus Macs.",
+      "supportTitle": "Suporte e perguntas frequentes — Xico Clean para Mac",
+      "supportDescription": "Requisitos, perguntas frequentes e contato do Xico Clean. Compatível com macOS 13, Apple silicon e Intel. Precisa de ajuda? Respondemos em um dia útil.",
+      "buyTitle": "Comprar Xico Clean — limpador de Mac, compra única",
+      "buyDescription": "Compre o Xico Clean uma vez e use para sempre, com atualizações gratuitas e sem assinatura. Checkout seguro com Stripe, preços na sua moeda e 30 dias de reembolso."
     },
     "nav": {
       "features": "Recursos",
@@ -877,6 +901,18 @@
         {
           "q": "Já posso baixar?",
           "a": "Em breve. Entre na lista de espera e avisaremos no momento do lançamento, com preço promocional exclusivo para inscritos."
+        },
+        {
+          "q": "Qual a diferença entre o Xico Clean e o CleanMyMac?",
+          "a": "O Xico Clean é um limpador nativo em Swift, de compra única: você paga uma vez, recebe atualizações gratuitas de longo prazo e não tem assinatura. Além da limpeza profunda e da desinstalação completa, ele traz monitor em tempo real na barra de menus, saúde do hardware, teste de velocidade de disco de 10 GB e a visualização Space Lens — reunindo num só app o que antes exigia vários programas. Todo o processamento é local, e seus arquivos nunca são enviados."
+        },
+        {
+          "q": "Como limpar o Mac e liberar espaço de armazenamento?",
+          "a": "Abra o Xico Clean e toque em Escaneamento Inteligente: em segundos ele encontra lixo do sistema, caches de desenvolvedor, arquivos grandes e duplicados. Depois, use o Space Lens para transformar o disco inteiro em um mapa visual e localizar de relance as pastas que mais ocupam espaço. Com uma limpeza segura, você libera de vários a dezenas de GB de armazenamento no Mac."
+        },
+        {
+          "q": "Existe um limpador de Mac gratuito?",
+          "a": "O Xico Clean oferece 14 dias de teste grátis com todos os recursos: você baixa e experimenta toda a limpeza e otimização do Mac sem cadastro. Depois, é só uma compra única para usar para sempre — não é assinatura."
         }
       ]
     },
@@ -1125,7 +1161,8 @@
         "Checkout seguro com Stripe",
         "Garantia de reembolso de 30 dias",
         "Processamento local, privacidade em primeiro lugar"
-      ]
+      ],
+      "currencyNote": "Preços em {currency}"
     },
     "buySuccess": {
       "waitingTitle": "Confirmando seu pagamento…",
