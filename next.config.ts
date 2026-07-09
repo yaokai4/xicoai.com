@@ -21,8 +21,15 @@ const nextConfig: NextConfig = {
     serverActions: {
       // résumé uploads can be up to 10MB
       bodySizeLimit: "12mb",
-      // forms run behind the Caddy reverse proxy (main site + product subdomain)
-      allowedOrigins: ["xicoai.com", "www.xicoai.com", "mac.xicoai.com"],
+      // forms run behind the Caddy reverse proxy (main site + product & mail
+      // subdomains). mail.xicoai.com MUST be here or the webmail's server
+      // actions (login/send/contacts) are rejected as cross-origin.
+      allowedOrigins: [
+        "xicoai.com",
+        "www.xicoai.com",
+        "mac.xicoai.com",
+        "mail.xicoai.com",
+      ],
     },
   },
 };

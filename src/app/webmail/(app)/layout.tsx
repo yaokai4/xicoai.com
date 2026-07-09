@@ -48,8 +48,8 @@ export default async function WebmailShell({
     <div className="flex h-screen">
       <aside className="flex w-60 shrink-0 flex-col border-r border-border bg-bg-soft">
         <div className="flex items-center gap-2 px-5 pb-4 pt-5">
-          <Link href="/webmail" className="text-lg font-semibold tracking-tight">
-            Xico 邮箱
+          <Link href="/webmail" className="text-base font-semibold tracking-tight">
+            智希可邮箱
           </Link>
         </div>
 

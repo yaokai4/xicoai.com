@@ -19,10 +19,11 @@ export default async function WebmailLoginPage({
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <div className="mb-2 inline-flex items-center gap-2">
-            <span className="text-xl font-semibold tracking-tight">Xico 邮箱</span>
+          <div className="inline-flex items-center gap-2">
+            <span className="text-xl font-semibold tracking-tight">
+              智希可科技邮箱系统
+            </span>
           </div>
-          <p className="text-sm text-muted">企业邮件 · 登录你的 @xicoai.com 账号</p>
         </div>
         <LoginForm expired={Boolean(expired)} />
         <p className="mt-6 text-center text-xs text-faint">

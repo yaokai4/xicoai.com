@@ -5,7 +5,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Xico 邮箱",
+  title: "智希可科技邮箱系统",
   robots: { index: false, follow: false },
 };
 
