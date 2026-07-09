@@ -30,14 +30,14 @@ mac.xicoai.com {
 	reverse_proxy app:3000
 }
 
-# Mail host: only Let's Encrypt HTTP-01 challenges are exposed (Stalwart's
-# ACME obtains certs for IMAP/SMTP TLS through here). Everything else on the
-# mail hostname bounces to the main site; the mail admin API stays internal.
-http://mail.xicoai.com {
-	handle /.well-known/acme-challenge/* {
-		reverse_proxy xicoai-stalwart:8080
-	}
-	handle {
-		redir https://xicoai.com{uri} permanent
-	}
+# Mail host: Caddy owns 80/443 and is a reliable ACME client, so it issues &
+# auto-renews the Let's Encrypt cert for mail.xicoai.com here. Stalwart's own
+# ACME is stuck (after its first tls-alpn-01 attempt failed — 443 is taken by
+# Caddy — it never re-attempts), so deploy/sync-mail-cert.sh (a systemd timer)
+# copies Caddy's cert into Stalwart for its IMAP/SMTP TLS listeners.
+# Caddy also reverse-proxies to Stalwart's built-in web Portal at mail.xicoai.com
+# (webmail + account self-service + admin management console). WebSocket (JMAP
+# push) is upgraded automatically by reverse_proxy.
+mail.xicoai.com {
+	reverse_proxy xicoai-stalwart:8080
 }
