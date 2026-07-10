@@ -14,6 +14,10 @@
 
 import { site } from "@/lib/site";
 
+/** Single source of truth for the shipped app version (keep in sync on release).
+ *  Used by SoftwareApplication JSON-LD so structured data never goes stale. */
+export const APP_VERSION = "0.3.0";
+
 /** Absolute URL for a locale-prefixed path (default locale has no prefix). */
 export function absoluteUrl(path: string, localePrefix = ""): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
@@ -61,7 +65,23 @@ export function organizationJsonLd() {
       "@type": "ImageObject",
       url: `${site.url}/icon.svg`,
     },
-    sameAs: ["https://machicity.com", "https://shangence.com"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: site.email,
+      contactType: "customer support",
+      availableLanguage: [
+        "en", "zh-Hans", "zh-Hant", "ja", "ko",
+        "de", "es", "fr", "it", "pt", "ru",
+      ],
+    },
+    // Real, verifiable presences that resolve the "XICO AI / Xico" entity for
+    // search + AI answer engines (public code repo + sibling product sites).
+    sameAs: [
+      "https://github.com/yaokai4",
+      "https://mac.xicoai.com",
+      "https://machicity.com",
+      "https://shangence.com",
+    ],
   };
 }
 
@@ -110,7 +130,7 @@ export function softwareAppJsonLd(opts: {
     applicationSubCategory: "Mac Cleaner",
     operatingSystem: "macOS 13.0 or later",
     processorRequirements: "Apple silicon or Intel (Universal)",
-    softwareVersion: "0.2.7",
+    softwareVersion: APP_VERSION,
     description: opts.description,
     inLanguage: inLanguage(opts.locale),
     url: `${site.url}/mac`,

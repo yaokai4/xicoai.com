@@ -27,9 +27,15 @@ function abs(locale: string, path: string): string {
   return `${site.url}${prefix}${path}` || site.url;
 }
 
+/** Captured once at module load (= build / server-start time), NOT per request.
+ * `new Date()` inside the handler stamps every URL "modified now" on every crawl,
+ * which Google treats as a false freshness signal and discounts. A stable
+ * per-deploy timestamp is honest: the sitemap reflects the currently-deployed build. */
+const BUILD_TIME = new Date();
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
-  const now = new Date();
+  const now = BUILD_TIME;
 
   for (const { path, priority, freq } of PATHS) {
     // One hreflang map per path, reused across every locale's entry so each

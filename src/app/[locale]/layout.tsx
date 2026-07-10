@@ -17,7 +17,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { FooterSwitch } from "@/components/footer-switch";
 import { MacFooter } from "@/components/mac/mac-footer";
 import { site } from "@/lib/site";
-import { localeAlternates } from "@/lib/i18n-meta";
+import { localeAlternates, ogLocales } from "@/lib/i18n-meta";
 import { organizationJsonLd, webSiteJsonLd, jsonLdScript } from "@/lib/seo";
 import "../globals.css";
 
@@ -81,6 +81,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: site.url,
+      ...ogLocales(locale),
     },
     twitter: {
       card: "summary_large_image",

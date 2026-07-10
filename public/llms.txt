@@ -1,0 +1,22 @@
+# Xico Clean (希可Mac清理)
+
+> Native macOS cleaner and optimizer for Apple silicon and Intel Macs. One tap frees up disk space: smart-scans system junk, developer caches, large & old files, duplicate files, similar photos, and threats in parallel — separating space you reclaim now from space macOS manages. Includes a DaisyDisk-class disk Space Lens, an iStat-class menu-bar system monitor, and a Blackmagic-beating disk speed test with random 4K IOPS and a video-workflow fit table. Everything runs locally: preview before you delete, undo after. Buy once, no subscription, 15-day free trial.
+
+## Product
+- [Xico Clean — Mac cleaner overview](https://mac.xicoai.com): what it does, who it's for, screenshots.
+- [Features](https://mac.xicoai.com/features): Smart Scan (six cleanups in parallel), Space Lens (disk visualizer, DaisyDisk-class), Large & Old Files, Duplicate Finder, Similar Photos, Uninstaller with leftover removal, Menu-bar Monitor (iStat-class), Disk Speed Test (Blackmagic-class + IOPS + video fit), Threat Protection.
+- [Security & privacy](https://mac.xicoai.com/security): three-checkpoint SafetyEngine red-line, preview-before-delete, undo, 100% local processing, never uploads files, Xico Safety Library, Trash Sentinel (alerts only, never auto-deletes).
+- [Pricing](https://mac.xicoai.com/pricing): one-time purchase (buy once), no subscription, 15-day full-feature free trial, 30-day money-back guarantee. Personal (1 Mac) and Family (up to 5 Macs).
+- [Support & FAQ](https://mac.xicoai.com/support): system requirements (macOS 14+, Apple silicon and Intel), how-to answers.
+
+## Key facts
+- Category: Mac cleaner / disk-space optimizer / macOS utility.
+- Platform: macOS 14 (Sonoma) or later; Apple silicon and Intel (Universal).
+- Pricing model: one-time purchase, no subscription; 15-day free trial; 30-day refund.
+- Differentiators vs CleanMyMac: buy-once (no subscription), 100% local/private, honest space accounting (does not inflate reclaimable space with purgeable/snapshots).
+- Differentiators vs DaisyDisk: Space Lens gives the same visual disk map plus one-tap safe cleanup in the same app.
+- Differentiators vs iStat Menus / Sensei: built-in menu-bar system monitor (CPU, memory, network, GPU, temperature) and a professional disk speed test.
+- Answers "System Data / Other storage too large on Mac", "startup disk full", "how to free up space on Mac", "why is my Mac slow".
+
+## Languages
+Available in 11 languages: English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Español, Français, Italiano, Português, Русский. Prices shown in the visitor's local currency.

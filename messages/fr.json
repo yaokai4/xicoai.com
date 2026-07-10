@@ -568,21 +568,23 @@
   },
   "mac": {
     "meta": {
-      "title": "Nettoyeur Mac Xico Clean — libérez de l'espace, optimisez",
-      "description": "Nettoyez votre Mac en un clic : caches, fichiers système et en double. Libérez de l'espace, désinstallez des apps, optimisez macOS. Essai gratuit, achat unique.",
+      "title": "Nettoyeur Mac — libérez de l'espace, optimisez | Xico Clean",
+      "description": "Nettoyez votre Mac et libérez de l'espace : inutiles, données système, doublons. Alternative à CleanMyMac en achat unique, sans abonnement. Essai 15 jours.",
       "keywords": [
-        "nettoyer Mac",
-        "nettoyeur Mac",
-        "nettoyage disque Mac",
-        "libérer de l'espace",
-        "optimiser Mac",
-        "fichiers en double",
-        "désinstaller des apps",
-        "nettoyer les fichiers système",
-        "accélérer son Mac",
-        "supprimer les doublons",
-        "Xico Clean",
-        "Mac cleaner"
+        "nettoyer mac",
+        "nettoyeur mac",
+        "libérer de l'espace sur mac",
+        "disque de démarrage plein mac",
+        "données système mac",
+        "supprimer données système mac",
+        "fichiers en double mac",
+        "désinstaller application mac",
+        "accélérer mac",
+        "mac lent",
+        "analyser espace disque mac",
+        "alternative à cleanmymac",
+        "meilleur nettoyeur mac gratuit",
+        "Xico Clean"
       ],
       "featuresTitle": "Nettoyer et optimiser Mac — fonctions de Xico Clean",
       "featuresDescription": "Analyse en un clic, fichiers système et de développeur, Lentille d'espace, fichiers en double, désinstaller des apps, optimiser Mac : tout dans une app native.",
@@ -917,6 +919,14 @@
         {
           "q": "Quelle différence entre la Lentille d'espace et DaisyDisk ?",
           "a": "Sous le capot, la même interface d'analyse système par lots — même vitesse, même précision : comptage selon l'occupation physique, liens physiques comptés une seule fois, « espaces cachés » compris. En plus, vous explorez sans limite jusqu'à chaque fichier et supprimez d'un clic, en toute sécurité et de façon annulable. Et ce n'est qu'un des outils de Xico Clean parmi plus d'une dizaine — inutile d'acheter à part un logiciel de visualisation de disque."
+        },
+        {
+          "q": "C'est quoi les données système sur Mac et comment les supprimer ?",
+          "a": "Les données système (anciennement « Autre ») sont les caches, journaux, instantanés locaux et fichiers d'apps de macOS ; une grande part est supprimable sans risque. L'analyse de Xico Clean trouve le récupérable et distingue honnêtement l'espace libéré maintenant de celui géré par macOS. Aperçu avant, annulation à tout moment."
+        },
+        {
+          "q": "Pourquoi mon Mac est lent et comment l'accélérer ?",
+          "a": "Un disque presque plein, des caches surchargés, trop d'éléments d'ouverture et des apps qui s'emballent ralentissent le Mac. Xico Clean libère de l'espace, nettoie les fichiers inutiles sûrs, et son moniteur dans la barre des menus affiche CPU, mémoire et disque en temps réel."
         },
         {
           "q": "Comment nettoyer son Mac et libérer de l'espace ?",

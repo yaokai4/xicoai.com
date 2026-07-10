@@ -568,20 +568,22 @@
   },
   "mac": {
     "meta": {
-      "title": "Mac Cleaner — Xico Clean: Clean My Mac & Free Up Space",
-      "description": "Xico Clean is a native Mac cleaner that frees up disk space fast: smart-scan junk, developer caches, and duplicate files. Buy once, try free for 15 days.",
+      "title": "Mac Cleaner — Clean My Mac & Free Up Space | Xico Clean",
+      "description": "Clean My Mac and free up disk space: junk, System Data, duplicates, large files. A buy-once CleanMyMac alternative — no subscription. Free 15-day trial.",
       "keywords": [
-        "Mac cleaner",
-        "clean my Mac",
-        "free up disk space",
-        "Mac optimizer",
-        "duplicate file finder",
-        "Mac uninstaller",
-        "CleanMyMac alternative",
-        "clear storage on Mac",
-        "Mac cleanup software",
-        "speed up Mac",
-        "disk space analyzer Mac",
+        "clean my mac",
+        "mac cleaner",
+        "free up space on mac",
+        "mac storage full",
+        "system data mac",
+        "clear system data mac",
+        "duplicate file finder mac",
+        "uninstall apps mac",
+        "speed up mac",
+        "why is my mac so slow",
+        "disk space analyzer mac",
+        "cleanmymac alternative",
+        "best free mac cleaner",
         "Xico Clean"
       ],
       "featuresTitle": "Mac Optimizer Features — Xico Clean Cleans & Speeds Up",
@@ -589,7 +591,7 @@
       "securityTitle": "Mac Cleaner Safety — Xico Clean Won't Delete or Upload",
       "securityDescription": "Xico Clean previews and undoes every deletion, with a protection list guarding key files. Scanning is on-device, so nothing uploads. Clean my Mac safely — try free.",
       "pricingTitle": "Mac Cleaner Pricing — Xico Clean: Buy Once, No Subscription",
-      "pricingDescription": "Xico Clean is a one-time-purchase Mac optimizer: pay once, free updates for life, no subscription. Try all features free for 15 days, then use it on all your Macs.",
+      "pricingDescription": "A CleanMyMac alternative you buy once — no subscription, free updates, one license for all your Macs. Try every feature free for 15 days, then decide.",
       "supportTitle": "Mac Cleaner Support & FAQ — Xico Clean Help & Requirements",
       "supportDescription": "Get help with Xico Clean, the native Mac cleaner: system requirements, FAQs, and contact. Runs on macOS 14+, Apple silicon and Intel — reply within a business day.",
       "buyTitle": "Buy Xico Clean — Mac Cleaner, Buy Once, No Subscription",
@@ -917,6 +919,14 @@
         {
           "q": "How is Space Lens different from DaisyDisk?",
           "a": "Under the hood it uses the same system bulk-scanning API, so speed and accuracy are in the same class: counted by physical footprint, hard links counted once, even “hidden space” fully reconciled. On top of that, you can drill down to any file and delete it safely right there (undoable, of course) — and it's just one of a dozen-plus tools in Xico Clean, so there's no separate disk visualizer to buy."
+        },
+        {
+          "q": "What is System Data on Mac and how do I clear it?",
+          "a": "System Data (once called “Other”) is macOS caches, logs, local snapshots and app support files. Much of it is safe to remove. Xico Clean’s Smart Scan finds the reclaimable part and honestly separates what you free now from space macOS manages, so you clear System Data without guesswork — preview first, undo anytime."
+        },
+        {
+          "q": "Why is my Mac slow, and how do I speed it up?",
+          "a": "A nearly full disk, bloated caches, heavy login items and runaway apps all slow a Mac down. Xico Clean frees disk space, clears safe junk, and its menu-bar monitor shows what’s using CPU, memory and disk in real time — so you can spot and fix the cause, not just the symptom."
         },
         {
           "q": "How do I clean my Mac and free up disk space?",

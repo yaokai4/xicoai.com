@@ -568,28 +568,30 @@
   },
   "mac": {
     "meta": {
-      "title": "Mac reinigen & optimieren – Xico Clean Mac Cleaner",
-      "description": "Xico Clean, der native Mac Cleaner: Systemmüll und Duplikate finden, Speicher freigeben und Mac optimieren – lokal, mit Vorschau. 15 Tage gratis testen, kein Abo.",
+      "title": "Mac Cleaner — Mac bereinigen & Speicher freigeben | Xico Clean",
+      "description": "Mac bereinigen und Speicher freigeben: Systemmüll, Systemdaten, Duplikate. CleanMyMac-Alternative zum Einmalkauf, kein Abo. 15 Tage gratis testen.",
       "keywords": [
-        "Mac reinigen",
-        "Mac Cleaner",
-        "Mac aufräumen",
-        "Mac optimieren",
-        "Speicher freigeben",
-        "Festplatte aufräumen",
-        "Duplikate finden",
-        "Programme deinstallieren",
-        "Mac beschleunigen",
-        "CleanMyMac Alternative",
-        "Xico Clean",
-        "Mac cleaner"
+        "mac bereinigen",
+        "mac cleaner",
+        "mac speicher freigeben",
+        "mac speicher voll",
+        "mac systemdaten löschen",
+        "sonstige volumes mac",
+        "doppelte dateien finden mac",
+        "programme deinstallieren mac",
+        "mac beschleunigen",
+        "mac langsam",
+        "festplatte analysieren mac",
+        "cleanmymac alternative",
+        "bester mac cleaner kostenlos",
+        "Xico Clean"
       ],
       "featuresTitle": "Mac aufräumen & optimieren – alle Funktionen von Xico Clean",
       "featuresDescription": "Smart Scan, Systemmüll, Entwickler-Caches, Space Lens, Duplikate finden, Deinstallierer und Menüleisten-Monitor: Xico Clean räumt den Mac auf – in einer nativen App.",
       "securityTitle": "Sicher den Mac reinigen – Vorschau & Rückgängig · Xico Clean",
       "securityDescription": "Sicher den Mac reinigen: Xico Clean zeigt vor jedem Löschen eine Vorschau, macht sie rückgängig und schützt Systemdateien. Alle Scans lokal, nie hochgeladen.",
       "pricingTitle": "Xico Clean Preise: Einmalkauf ohne Abo – Mac Cleaner",
-      "pricingDescription": "Xico Clean ist ein Einmalkauf: einmal zahlen, dauerhaft kostenlose Updates, kein Abo. 15 Tage mit vollem Funktionsumfang gratis testen. Einzel- & Familienlizenz.",
+      "pricingDescription": "Eine CleanMyMac-Alternative zum Einmalkauf — kein Abo, kostenlose Updates, eine Lizenz für alle deine Macs. Teste 15 Tage lang alle Funktionen gratis.",
       "supportTitle": "Support & FAQ – Xico Clean Mac Cleaner für macOS",
       "supportDescription": "Systemvoraussetzungen, häufige Fragen und Kontakt zu Xico Clean. Läuft ab macOS 14 auf Apple silicon und Intel; wir antworten in der Regel innerhalb eines Werktags.",
       "buyTitle": "Xico Clean kaufen – Mac Cleaner, Einmalkauf ohne Abo",
@@ -917,6 +919,14 @@
         {
           "q": "Worin unterscheidet sich Space Lens von DaisyDisk?",
           "a": "Unter der Haube nutzt Space Lens dieselbe System-Schnittstelle für Bulk-Scans — Tempo und Präzision auf demselben Niveau: Gezählt wird die physische Belegung, Hardlinks nur einmal, selbst „versteckter Speicher“ geht in der Rechnung auf. Darüber hinaus zoomen Sie unbegrenzt bis zur einzelnen Datei und löschen per Klick direkt und sicher (rückgängig machbar) — und Space Lens ist nur eines von über einem Dutzend Werkzeugen in Xico Clean. Eine separate Festplatten-Visualisierung müssen Sie nicht mehr kaufen."
+        },
+        {
+          "q": "Was sind Systemdaten auf dem Mac und wie lösche ich sie?",
+          "a": "Systemdaten (früher „Sonstige“) sind macOS-Caches, Logs, lokale Snapshots und App-Dateien – vieles davon ist sicher entfernbar. Der Smart Scan von Xico Clean findet den freigebbaren Teil und trennt ehrlich sofort freien von systemverwaltetem Speicher. Erst Vorschau, jederzeit rückgängig."
+        },
+        {
+          "q": "Warum ist mein Mac langsam und wie beschleunige ich ihn?",
+          "a": "Eine fast volle Festplatte, aufgeblähte Caches, zu viele Anmeldeobjekte und außer Kontrolle geratene Apps bremsen den Mac. Xico Clean gibt Speicher frei, entfernt sicheren Müll, und der Menüleisten-Monitor zeigt CPU, RAM und Datenträger in Echtzeit – so findest du die Ursache."
         },
         {
           "q": "Wie räume ich meinen Mac auf und gebe Speicher frei?",

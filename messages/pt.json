@@ -568,21 +568,23 @@
   },
   "mac": {
     "meta": {
-      "title": "Limpar Mac com o Xico Clean — limpeza e otimização",
-      "description": "Xico Clean é o limpador nativo de Mac que remove lixo, caches e arquivos duplicados para liberar espaço e otimizar o Mac. Teste grátis, compra única sem assinatura.",
+      "title": "Limpar Mac — libere espaço e otimize | Xico Clean",
+      "description": "Limpe o Mac e libere espaço: lixo, dados do sistema e duplicatas. Alternativa ao CleanMyMac de compra única, sem assinatura. Teste grátis 15 dias.",
       "keywords": [
-        "limpar Mac",
-        "limpeza de Mac",
-        "limpador de Mac",
-        "otimizar Mac",
-        "liberar espaço",
-        "liberar armazenamento Mac",
-        "arquivos duplicados",
-        "desinstalar apps",
-        "limpar cache do Mac",
-        "acelerar Mac",
-        "Xico Clean",
-        "Mac cleaner"
+        "limpar mac",
+        "limpador de mac",
+        "liberar espaço no mac",
+        "disco de inicialização cheio mac",
+        "dados do sistema mac",
+        "apagar dados do sistema mac",
+        "arquivos duplicados mac",
+        "desinstalar apps mac",
+        "acelerar mac",
+        "mac lento",
+        "analisar espaço em disco mac",
+        "alternativa ao cleanmymac",
+        "melhor limpador de mac grátis",
+        "Xico Clean"
       ],
       "featuresTitle": "Limpeza e otimização do Mac — recursos do Xico Clean",
       "featuresDescription": "Escaneamento Inteligente, arquivos duplicados, Space Lens, desinstalador e monitor em tempo real: toda a limpeza e otimização do Mac num app nativo. Teste grátis.",
@@ -917,6 +919,14 @@
         {
           "q": "Qual a diferença entre o Space Lens e o DaisyDisk?",
           "a": "Por baixo, é a mesma interface de escaneamento em lote do sistema — mesma velocidade, mesma precisão: contagem pelo espaço físico, hard links contados uma única vez e até o “espaço oculto” entra na conta. Além disso, você mergulha sem limite até cada arquivo e exclui com segurança dali mesmo (com desfazer) — e ele é só uma das mais de dez ferramentas do Xico Clean, então você não precisa comprar um visualizador de disco à parte."
+        },
+        {
+          "q": "O que são dados do sistema no Mac e como limpá-los?",
+          "a": "Dados do sistema (antes «Outros») são caches, logs, snapshots locais e arquivos de apps do macOS; boa parte pode ser removida com segurança. A verificação inteligente do Xico Clean encontra o recuperável e separa com honestidade o espaço que você libera já do que o macOS gerencia. Pré-visualize e desfaça quando quiser."
+        },
+        {
+          "q": "Por que meu Mac está lento e como acelerá-lo?",
+          "a": "Disco quase cheio, caches inchados, itens de início demais e apps descontrolados deixam o Mac lento. O Xico Clean libera espaço, limpa lixo seguro e seu monitor na barra de menus mostra CPU, memória e disco em tempo real para achar a causa."
         },
         {
           "q": "Como limpar o Mac e liberar espaço de armazenamento?",

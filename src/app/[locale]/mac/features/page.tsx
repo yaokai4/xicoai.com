@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { localeAlternates } from "@/lib/i18n-meta";
+import { localeAlternates, ogLocales } from "@/lib/i18n-meta";
 import { breadcrumbJsonLd, jsonLdScript, absoluteUrl, productName } from "@/lib/seo";
 import {
   MacPageHeader,
@@ -38,6 +38,12 @@ export async function generateMetadata({
       title,
       description,
       url: `${site.url}${path}`,
+      ...ogLocales(locale),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }

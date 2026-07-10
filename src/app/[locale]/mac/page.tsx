@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { localeAlternates } from "@/lib/i18n-meta";
+import { localeAlternates, ogLocales } from "@/lib/i18n-meta";
 import {
   softwareAppJsonLd,
   faqJsonLd,
@@ -49,6 +49,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: `${site.url}${path}`,
+      ...ogLocales(locale),
     },
     twitter: {
       card: "summary_large_image",

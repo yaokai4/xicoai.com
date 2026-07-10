@@ -39,3 +39,36 @@ export function localeAlternates(path: string): Record<string, string> {
   map["x-default"] = path || "/";
   return map;
 }
+
+/** OpenGraph `og:locale` code (language_TERRITORY) per site locale. */
+const OG_LOCALE: Record<string, string> = {
+  zh: "zh_CN",
+  "zh-Hant": "zh_TW",
+  ja: "ja_JP",
+  en: "en_US",
+  ko: "ko_KR",
+  de: "de_DE",
+  es: "es_ES",
+  fr: "fr_FR",
+  it: "it_IT",
+  pt: "pt_BR",
+  ru: "ru_RU",
+};
+
+/**
+ * `og:locale` + `og:locale:alternate` for the current locale. Spread into any
+ * page's `openGraph` so social/AI previews render in the right language and
+ * advertise the other 10 language variants. (Next replaces the parent
+ * `openGraph` when a page sets its own, so every page must include this.)
+ */
+export function ogLocales(locale: string): {
+  locale: string;
+  alternateLocale: string[];
+} {
+  return {
+    locale: OG_LOCALE[locale] ?? "en_US",
+    alternateLocale: routing.locales
+      .filter((l) => l !== locale)
+      .map((l) => OG_LOCALE[l] ?? l),
+  };
+}
