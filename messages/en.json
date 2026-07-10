@@ -569,7 +569,7 @@
   "mac": {
     "meta": {
       "title": "Mac Cleaner — Xico Clean: Clean My Mac & Free Up Space",
-      "description": "Xico Clean is a native Mac cleaner that frees up disk space fast: smart-scan junk, developer caches, and duplicate files. Buy once, try free for 14 days.",
+      "description": "Xico Clean is a native Mac cleaner that frees up disk space fast: smart-scan junk, developer caches, and duplicate files. Buy once, try free for 15 days.",
       "keywords": [
         "Mac cleaner",
         "clean my Mac",
@@ -589,7 +589,7 @@
       "securityTitle": "Mac Cleaner Safety — Xico Clean Won't Delete or Upload",
       "securityDescription": "Xico Clean previews and undoes every deletion, with a protection list guarding key files. Scanning is on-device, so nothing uploads. Clean my Mac safely — try free.",
       "pricingTitle": "Mac Cleaner Pricing — Xico Clean: Buy Once, No Subscription",
-      "pricingDescription": "Xico Clean is a one-time-purchase Mac optimizer: pay once, free updates for life, no subscription. Try all features free for 14 days, then use it on all your Macs.",
+      "pricingDescription": "Xico Clean is a one-time-purchase Mac optimizer: pay once, free updates for life, no subscription. Try all features free for 15 days, then use it on all your Macs.",
       "supportTitle": "Mac Cleaner Support & FAQ — Xico Clean Help & Requirements",
       "supportDescription": "Get help with Xico Clean, the native Mac cleaner: system requirements, FAQs, and contact. Runs on macOS 14+, Apple silicon and Intel — reply within a business day.",
       "buyTitle": "Buy Xico Clean — Mac Cleaner, Buy Once, No Subscription",
@@ -622,7 +622,7 @@
         "Native Apple silicon"
       ],
       "ctaDownload": "Download for Mac",
-      "downloadNote": "macOS 14+ · 14-day free trial · no signup"
+      "downloadNote": "macOS 14+ · 15-day free trial · no signup"
     },
     "window": {
       "appName": "Xico Clean",
@@ -686,7 +686,7 @@
       "items": [
         {
           "name": "Smart Scan",
-          "desc": "Scan for system junk, privacy, and performance issues in one tap, with a clear overview and a safe one-click cleanup."
+          "desc": "System junk, Trash, threats, duplicates, similar photos, and large files — six scans at once, each appearing as it finishes, honestly separating space you reclaim now from space macOS manages. One safe click to clean."
         },
         {
           "name": "System Junk",
@@ -809,6 +809,14 @@
         {
           "title": "Transparent by design",
           "desc": "Every category explains what it is and what happens if you delete it — never a black box."
+        },
+        {
+          "title": "Xico Safety Library",
+          "desc": "A continuously updated set of cleanup rules — every removable item explains why it’s safe to delete, and false positives can be reported and ignored locally in one click. All three checkpoints share the same rules."
+        },
+        {
+          "title": "Trash Sentinel",
+          "desc": "Drag an app to the Trash and Xico detects its leftover caches, preferences, and launch items — grouped by the original app, alerts only, never deleting anything automatically."
         }
       ]
     },
@@ -849,11 +857,11 @@
     "pricing": {
       "eyebrow": "Pricing",
       "title": "Pay once. No subscription traps",
-      "subtitle": "Instead of renewing every year, pay once. Xico Clean is a one-time purchase with free updates for the long haul — and a 14-day full-feature trial to help you decide.",
+      "subtitle": "Instead of renewing every year, pay once. Xico Clean is a one-time purchase with free updates for the long haul — and a 15-day full-feature trial to help you decide.",
       "priceLabel": "Personal / Family · one-time",
-      "priceNote": "See current pricing and offers on the purchase page. Try free for 14 days first.",
+      "priceNote": "See current pricing and offers on the purchase page. Try free for 15 days first.",
       "features": [
-        "14-day full-feature free trial",
+        "15-day full-feature free trial",
         "Buy once, free updates for the long haul",
         "Use it on all your own Macs"
       ],
@@ -892,7 +900,7 @@
         },
         {
           "q": "Is it a subscription?",
-          "a": "No. Xico Clean is a one-time purchase with free updates for the long haul, plus a 14-day full-feature trial."
+          "a": "No. Xico Clean is a one-time purchase with free updates for the long haul, plus a 15-day full-feature trial."
         },
         {
           "q": "Will it be on the App Store?",
@@ -916,7 +924,7 @@
         },
         {
           "q": "Is there a free Mac cleaner?",
-          "a": "Xico Clean includes a 14-day full-feature free trial — no signup needed to download and put the complete cleanup and optimization toolkit to work. After the trial, a single one-time purchase keeps it yours for good. It's not a subscription."
+          "a": "Xico Clean includes a 15-day full-feature free trial — no signup needed to download and put the complete cleanup and optimization toolkit to work. After the trial, a single one-time purchase keeps it yours for good. It's not a subscription."
         }
       ]
     },
@@ -1007,7 +1015,8 @@
       "uninstaller": "Uninstall · no leftovers",
       "hardware": "Hardware health · battery & temps",
       "duplicates": "Duplicate finder · by content",
-      "optimization": "Optimize · one-tap speedup"
+      "optimization": "Optimize · one-tap speedup",
+      "smartscan": "Smart Scan · six cleanups in parallel, honestly accounted"
     },
     "hardware": {
       "eyebrow": "Hardware & health",
@@ -1187,7 +1196,7 @@
     "download": {
       "eyebrow": "Download",
       "title": "Give your Mac a fresh start",
-      "subtitle": "Free download, 14-day full trial. Native Apple silicon, Apple-notarized, ready the moment you open it.",
+      "subtitle": "Free download, 15-day full trial. Native Apple silicon, Apple-notarized, ready the moment you open it.",
       "cta": "Download for Mac",
       "buy": "See purchase plans",
       "reqs": [
@@ -1211,12 +1220,13 @@
     },
     "speed": {
       "eyebrow": "Disk Speed Test",
-      "title": "A real 10 GB read/write benchmark",
-      "desc": "Twin gauges swing in real time. Writes up to 10 GB of fully random data, bypassing system and firmware caches — measuring sustained real performance, not cache mirages. Every run is archived automatically.",
+      "title": "Reads, writes, random IOPS, and video fit — more pro than Blackmagic",
+      "desc": "Aligned buffers and two concurrent streams read the medium directly — measured sequential speeds beat Blackmagic. Add random 4K IOPS with p50/p99 latency (the truth behind how responsive your Mac feels) and a ProRes / BRAW video-workflow fit table. Fully random, incompressible data measures sustained real performance, not a cache mirage.",
       "points": [
-        "F_NOCACHE reads the medium directly",
-        "Random data defeats firmware compression",
-        "History archived automatically"
+        "Aligned buffers + two streams — measured to beat Blackmagic",
+        "Random 4K IOPS with p50/p99 latency",
+        "ProRes / BRAW video-workflow fit table",
+        "F_NOCACHE reads the medium directly · fully random, incompressible data"
       ],
       "caption": "Disk Speed Test · sequential benchmark"
     },
@@ -1245,7 +1255,7 @@
         },
         {
           "label": "10 GB disk speed test",
-          "ref": "Sensei"
+          "ref": "Blackmagic"
         },
         {
           "label": "Threat protection · signature checks",

@@ -58,11 +58,12 @@ export async function generateMetadata({
   };
 }
 
+// SEO 结构化数据用英文白天模式新截图（canonical）。
 const SCREENSHOTS = [
-  "/mac/shots/dashboard.jpg",
-  "/mac/shots/spacelens.jpg",
-  "/mac/shots/monitor.jpg",
-  "/mac/shots/diskbench.jpg",
+  "/mac/shots/en/dashboard.jpg",
+  "/mac/shots/en/smartscan.jpg",
+  "/mac/shots/en/spacelens.jpg",
+  "/mac/shots/en/diskbench.jpg",
 ];
 
 export default async function MacHome({

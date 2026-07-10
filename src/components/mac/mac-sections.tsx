@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
 import { Fragment } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/reveal";
 import {
@@ -11,6 +11,7 @@ import {
   Lede,
   BandHeading,
   MacWindow,
+  shotDir,
 } from "@/components/mac/mac-ui";
 import { FeatureGlyph, SafetyGlyph, CheckGlyph } from "@/components/mac/icons";
 import {
@@ -141,6 +142,7 @@ function BentoTile({
 
 export function MacDeepDive() {
   const t = useTranslations("mac.deepdive");
+  const sd = shotDir(useLocale());
   const items = t.raw("items") as {
     tag: string;
     title: string;
@@ -168,7 +170,7 @@ export function MacDeepDive() {
             <Reveal delay={0.1} className="mx-auto mt-14 max-w-2xl">
               {i === 0 ? (
                 <MacWindow
-                  src="/mac/shots/dashboard.jpg"
+                  src={`/mac/shots/${sd}/dashboard.jpg`}
                   alt="希可Mac清理 — 智能扫描"
                   width={1400}
                   height={1275}
@@ -442,6 +444,7 @@ export function MacPageHeader({
 
 export function MacMonitor() {
   const t = useTranslations("mac.monitor");
+  const sd = shotDir(useLocale());
   const points = t.raw("points") as string[];
   return (
     <Band tone="surface" className="py-24 sm:py-32">
@@ -460,7 +463,7 @@ export function MacMonitor() {
 
         <Reveal delay={0.1} className="mx-auto mt-14 max-w-3xl">
           <MacWindow
-            src="/mac/shots/monitor.jpg"
+            src={`/mac/shots/${sd}/monitor.jpg`}
             alt="希可Mac清理 — 系统监视"
             width={1400}
             height={1025}
@@ -470,9 +473,9 @@ export function MacMonitor() {
 
         <Reveal delay={0.12} className="mx-auto mt-8 max-w-2xl">
           <div className="flex items-start justify-center gap-4">
-            <MenuShot src="/mac/shots/menu-cpu.jpg" />
-            <MenuShot src="/mac/shots/menu-temp.jpg" />
-            <MenuShot src="/mac/shots/menu-disk.jpg" />
+            <MenuShot src={`/mac/shots/${sd}/menu-cpu.jpg`} />
+            <MenuShot src={`/mac/shots/${sd}/menu-temp.jpg`} />
+            <MenuShot src={`/mac/shots/${sd}/menu-disk.jpg`} />
           </div>
           <p className="mt-3 text-center text-xs text-faint">{t("menuCaption")}</p>
         </Reveal>
@@ -515,6 +518,7 @@ function MenuShot({ src }: { src: string }) {
 
 export function MacHardware() {
   const t = useTranslations("mac.hardware");
+  const sd = shotDir(useLocale());
   const points = t.raw("points") as string[];
   return (
     <Band className="py-24 sm:py-32">
@@ -533,7 +537,7 @@ export function MacHardware() {
         <Reveal delay={0.1} className="mx-auto mt-14 max-w-3xl">
           <MacWindow
             theme="light"
-            src="/mac/shots/hardware.jpg"
+            src={`/mac/shots/${sd}/hardware.jpg`}
             alt="希可Mac清理 — 硬件与健康"
             width={1500}
             height={1098}
@@ -771,16 +775,18 @@ export function MacPricingTeaser() {
 
 /* ================= screenshot showcase ================= */
 
-const SHOWCASE: { src: string; w: number; h: number; key: string }[] = [
-  { src: "/mac/shots/systemjunk.jpg", w: 1400, h: 933, key: "systemjunk" },
-  { src: "/mac/shots/uninstaller.jpg", w: 1400, h: 933, key: "uninstaller" },
-  { src: "/mac/shots/duplicates.jpg", w: 1400, h: 933, key: "duplicates" },
-  { src: "/mac/shots/optimization.jpg", w: 1400, h: 933, key: "optimization" },
+// 画廊改用真实白天模式新截图（智能扫描六合一中枢领衔）；旧的卸载器/优化暗色图退役。
+const SHOWCASE: { name: string; w: number; h: number; key: string }[] = [
+  { name: "smartscan", w: 1400, h: 855, key: "smartscan" },
+  { name: "systemjunk", w: 1400, h: 933, key: "systemjunk" },
+  { name: "duplicates", w: 1400, h: 933, key: "duplicates" },
+  { name: "spacelens", w: 1400, h: 933, key: "spacelens" },
 ];
 
 export function MacShowcase() {
   const t = useTranslations("mac.showcase");
   const ts = useTranslations("mac.shots");
+  const sd = shotDir(useLocale());
   return (
     <Band tone="surface" className="py-24 sm:py-32">
       <Wrap>
@@ -789,7 +795,7 @@ export function MacShowcase() {
           {SHOWCASE.map((s, i) => (
             <Reveal key={s.key} delay={(i % 2) * 0.08}>
               <MacWindow
-                src={s.src}
+                src={`/mac/shots/${sd}/${s.name}.jpg`}
                 alt={ts(s.key)}
                 width={s.w}
                 height={s.h}
@@ -905,6 +911,7 @@ export function MacWaitlist() {
 
 export function MacLens() {
   const t = useTranslations("mac.lens");
+  const sd = shotDir(useLocale());
   const points = t.raw("points") as string[];
   return (
     <Band className="py-24 sm:py-32">
@@ -935,7 +942,7 @@ export function MacLens() {
           </div>
           <Reveal delay={0.1}>
             <MacWindow
-              src="/mac/shots/spacelens.jpg"
+              src={`/mac/shots/${sd}/spacelens.jpg`}
               alt="希可Mac清理 — 空间透镜放射环形图"
               width={1100}
               height={1145}
@@ -952,6 +959,7 @@ export function MacLens() {
 
 export function MacSpeed() {
   const t = useTranslations("mac.speed");
+  const sd = shotDir(useLocale());
   const points = t.raw("points") as string[];
   return (
     <Band tone="surface" className="py-24 sm:py-32">
@@ -959,7 +967,7 @@ export function MacSpeed() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal delay={0.1} className="order-2 lg:order-1">
             <MacWindow
-              src="/mac/shots/diskbench.jpg"
+              src={`/mac/shots/${sd}/diskbench.jpg`}
               alt="希可Mac清理 — 磁盘测速双仪表"
               width={1400}
               height={933}

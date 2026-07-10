@@ -2,15 +2,16 @@
 
 /* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { CheckGlyph } from "@/components/mac/icons";
-import { Band, Wrap, MacWindow } from "@/components/mac/mac-ui";
+import { Band, Wrap, MacWindow, shotDir } from "@/components/mac/mac-ui";
 
 export function MacHero() {
   const t = useTranslations("mac.hero");
   const tb = useTranslations("mac");
   const reduce = useReducedMotion();
   const trust = t.raw("trust") as string[];
+  const sd = shotDir(useLocale());
 
   const container: Variants = {
     hidden: {},
@@ -188,7 +189,7 @@ export function MacHero() {
           />
           <div className="relative">
             <MacWindow
-              src="/mac/shots/dashboard.jpg"
+              src={`/mac/shots/${sd}/dashboard.jpg`}
               alt="希可Mac清理 — 智能扫描仪表盘"
               width={1400}
               height={1275}

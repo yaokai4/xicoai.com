@@ -589,7 +589,7 @@
       "securityTitle": "Nettoyage Mac sûr et confidentiel — Xico Clean",
       "securityDescription": "Nettoyer sans supprimer le mauvais fichier : dans Xico Clean, chaque suppression est prévisualisable et annulable, et tout reste en local, jamais envoyé.",
       "pricingTitle": "Prix Xico Clean — nettoyeur Mac en achat unique",
-      "pricingDescription": "Xico Clean est un achat unique : payez une fois, mises à jour gratuites à vie, sans abonnement. Essai complet de 14 jours, puis Personnel ou Famille.",
+      "pricingDescription": "Xico Clean est un achat unique : payez une fois, mises à jour gratuites à vie, sans abonnement. Essai complet de 15 jours, puis Personnel ou Famille.",
       "supportTitle": "Assistance et FAQ — Xico Clean, nettoyeur Mac",
       "supportDescription": "Configuration requise, FAQ et contact pour Xico Clean. Compatible macOS 14 et ultérieur, Apple silicon et Intel en binaire universel. Réponse sous un jour ouvré.",
       "buyTitle": "Acheter Xico Clean — nettoyeur Mac, achat unique",
@@ -622,7 +622,7 @@
         "Natif Apple silicon"
       ],
       "ctaDownload": "Télécharger pour Mac",
-      "downloadNote": "macOS 14+ · essai gratuit de 14 jours · sans inscription"
+      "downloadNote": "macOS 14+ · essai gratuit de 15 jours · sans inscription"
     },
     "window": {
       "appName": "Xico Clean",
@@ -686,7 +686,7 @@
       "items": [
         {
           "name": "Analyse intelligente",
-          "desc": "Analysez d'un seul geste les fichiers inutiles, la confidentialité et les problèmes de performance, avec une vue d'ensemble claire et un nettoyage sûr en un clic."
+          "desc": "Fichiers inutiles, corbeille, menaces, doublons, photos similaires et gros fichiers : six analyses à la fois, affichées dès qu’elles se terminent, distinguant honnêtement l’espace récupérable immédiatement de celui géré par macOS. Un clic sûr pour nettoyer."
         },
         {
           "name": "Fichiers système inutiles",
@@ -809,6 +809,14 @@
         {
           "title": "Transparent dès la conception",
           "desc": "Chaque catégorie explique ce qu'elle contient et ce qui se passe si vous la supprimez — jamais de boîte noire."
+        },
+        {
+          "title": "Bibliothèque de sécurité Xico",
+          "desc": "Un ensemble de règles de nettoyage mis à jour en continu — chaque élément supprimable explique pourquoi il est sûr de le supprimer, et les faux positifs se signalent et s’ignorent localement en un clic. Les trois contrôles partagent les mêmes règles."
+        },
+        {
+          "title": "Sentinelle de la corbeille",
+          "desc": "Glissez une app dans la corbeille et Xico détecte ses caches, préférences et éléments de démarrage restants — regroupés par app d’origine, avec de simples alertes, sans jamais rien supprimer automatiquement."
         }
       ]
     },
@@ -849,11 +857,11 @@
     "pricing": {
       "eyebrow": "Tarifs",
       "title": "Payez une fois. Sans piège d'abonnement",
-      "subtitle": "Plutôt que de renouveler chaque année, payez une seule fois. Xico Clean est un achat unique avec mises à jour gratuites sur la durée — et un essai complet de 14 jours pour vous décider.",
+      "subtitle": "Plutôt que de renouveler chaque année, payez une seule fois. Xico Clean est un achat unique avec mises à jour gratuites sur la durée — et un essai complet de 15 jours pour vous décider.",
       "priceLabel": "Personnel / Famille · achat unique",
-      "priceNote": "Consultez les tarifs et offres en cours sur la page d'achat. Essayez d'abord gratuitement pendant 14 jours.",
+      "priceNote": "Consultez les tarifs et offres en cours sur la page d'achat. Essayez d'abord gratuitement pendant 15 jours.",
       "features": [
-        "Essai gratuit de 14 jours, toutes fonctionnalités incluses",
+        "Essai gratuit de 15 jours, toutes fonctionnalités incluses",
         "Achetez une fois, mises à jour gratuites sur la durée",
         "Utilisable sur tous vos propres Mac"
       ],
@@ -892,7 +900,7 @@
         },
         {
           "q": "Est-ce un abonnement ?",
-          "a": "Non. Xico Clean est un achat unique avec mises à jour gratuites sur la durée, plus un essai complet de 14 jours."
+          "a": "Non. Xico Clean est un achat unique avec mises à jour gratuites sur la durée, plus un essai complet de 15 jours."
         },
         {
           "q": "Sera-t-il sur l'App Store ?",
@@ -916,7 +924,7 @@
         },
         {
           "q": "Existe-t-il un nettoyeur Mac gratuit ?",
-          "a": "Xico Clean propose un essai gratuit de 14 jours, toutes fonctions incluses : téléchargez et testez le nettoyage et l'optimisation sans même créer de compte. Ensuite, un seul achat unique suffit pour l'utiliser durablement — ce n'est pas un abonnement."
+          "a": "Xico Clean propose un essai gratuit de 15 jours, toutes fonctions incluses : téléchargez et testez le nettoyage et l'optimisation sans même créer de compte. Ensuite, un seul achat unique suffit pour l'utiliser durablement — ce n'est pas un abonnement."
         }
       ]
     },
@@ -1007,7 +1015,8 @@
       "uninstaller": "Désinstallation · sans résidus",
       "hardware": "Santé matérielle · batterie et températures",
       "duplicates": "Détecteur de doublons · par contenu",
-      "optimization": "Optimisation · accélération en un clic"
+      "optimization": "Optimisation · accélération en un clic",
+      "smartscan": "Analyse intelligente · six nettoyages en parallèle, comptés honnêtement"
     },
     "hardware": {
       "eyebrow": "Matériel et santé",
@@ -1187,7 +1196,7 @@
     "download": {
       "eyebrow": "Télécharger",
       "title": "Offrez un nouveau départ à votre Mac",
-      "subtitle": "Téléchargement gratuit, essai complet de 14 jours. Natif Apple silicon, notarisé par Apple, prêt dès l'ouverture.",
+      "subtitle": "Téléchargement gratuit, essai complet de 15 jours. Natif Apple silicon, notarisé par Apple, prêt dès l'ouverture.",
       "cta": "Télécharger pour Mac",
       "buy": "Voir les offres d'achat",
       "reqs": [
@@ -1211,12 +1220,13 @@
     },
     "speed": {
       "eyebrow": "Test de vitesse du disque",
-      "title": "Un vrai benchmark de lecture/écriture de 10 Go",
-      "desc": "Deux jauges oscillent en temps réel. Le test écrit jusqu'à 10 Go de données entièrement aléatoires, en contournant les caches du système et du firmware — pour mesurer la performance réelle soutenue, pas les mirages du cache. Chaque test est archivé automatiquement.",
+      "title": "Lectures, écritures, IOPS aléatoires et compatibilité vidéo — plus pro que Blackmagic",
+      "desc": "Des tampons alignés et deux flux simultanés lisent le support directement — les vitesses séquentielles mesurées dépassent Blackmagic. Ajoutez des IOPS 4K aléatoires avec latence p50/p99 (la vérité sur la réactivité de votre Mac) et un tableau de compatibilité des flux vidéo ProRes / BRAW. Des données entièrement aléatoires et incompressibles mesurent la performance réelle soutenue, pas un mirage de cache.",
       "points": [
-        "F_NOCACHE lit directement le support",
-        "Les données aléatoires déjouent la compression du firmware",
-        "Historique archivé automatiquement"
+        "Tampons alignés + deux flux — mesuré pour dépasser Blackmagic",
+        "IOPS 4K aléatoires avec latence p50/p99",
+        "Tableau de compatibilité vidéo ProRes / BRAW",
+        "F_NOCACHE lit le support directement · données entièrement aléatoires et incompressibles"
       ],
       "caption": "Test de vitesse du disque · benchmark séquentiel"
     },
@@ -1241,11 +1251,11 @@
         },
         {
           "label": "Visualisation de l'espace disque",
-          "ref": "DaisyDisk"
+          "ref": "Blackmagic"
         },
         {
           "label": "Test de vitesse du disque de 10 Go",
-          "ref": "Sensei"
+          "ref": "Blackmagic"
         },
         {
           "label": "Protection contre les menaces · vérifications par signature",

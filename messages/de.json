@@ -569,7 +569,7 @@
   "mac": {
     "meta": {
       "title": "Mac reinigen & optimieren – Xico Clean Mac Cleaner",
-      "description": "Xico Clean, der native Mac Cleaner: Systemmüll und Duplikate finden, Speicher freigeben und Mac optimieren – lokal, mit Vorschau. 14 Tage gratis testen, kein Abo.",
+      "description": "Xico Clean, der native Mac Cleaner: Systemmüll und Duplikate finden, Speicher freigeben und Mac optimieren – lokal, mit Vorschau. 15 Tage gratis testen, kein Abo.",
       "keywords": [
         "Mac reinigen",
         "Mac Cleaner",
@@ -589,7 +589,7 @@
       "securityTitle": "Sicher den Mac reinigen – Vorschau & Rückgängig · Xico Clean",
       "securityDescription": "Sicher den Mac reinigen: Xico Clean zeigt vor jedem Löschen eine Vorschau, macht sie rückgängig und schützt Systemdateien. Alle Scans lokal, nie hochgeladen.",
       "pricingTitle": "Xico Clean Preise: Einmalkauf ohne Abo – Mac Cleaner",
-      "pricingDescription": "Xico Clean ist ein Einmalkauf: einmal zahlen, dauerhaft kostenlose Updates, kein Abo. 14 Tage mit vollem Funktionsumfang gratis testen. Einzel- & Familienlizenz.",
+      "pricingDescription": "Xico Clean ist ein Einmalkauf: einmal zahlen, dauerhaft kostenlose Updates, kein Abo. 15 Tage mit vollem Funktionsumfang gratis testen. Einzel- & Familienlizenz.",
       "supportTitle": "Support & FAQ – Xico Clean Mac Cleaner für macOS",
       "supportDescription": "Systemvoraussetzungen, häufige Fragen und Kontakt zu Xico Clean. Läuft ab macOS 14 auf Apple silicon und Intel; wir antworten in der Regel innerhalb eines Werktags.",
       "buyTitle": "Xico Clean kaufen – Mac Cleaner, Einmalkauf ohne Abo",
@@ -622,7 +622,7 @@
         "Nativ für Apple silicon"
       ],
       "ctaDownload": "Für Mac laden",
-      "downloadNote": "macOS 14+ · 14 Tage kostenlos testen · ohne Registrierung"
+      "downloadNote": "macOS 14+ · 15 Tage kostenlos testen · ohne Registrierung"
     },
     "window": {
       "appName": "Xico Clean",
@@ -686,7 +686,7 @@
       "items": [
         {
           "name": "Smart Scan",
-          "desc": "Scannt Systemmüll, Privatsphäre- und Performance-Probleme mit einem Klick — mit klarer Übersicht und sicherer Ein-Klick-Bereinigung."
+          "desc": "Systemmüll, Papierkorb, Bedrohungen, Duplikate, ähnliche Fotos und große Dateien — sechs Scans gleichzeitig, jeder erscheint sofort, und trennt ehrlich sofort freigebbaren von systemverwaltetem Speicher. Ein sicherer Klick zum Bereinigen."
         },
         {
           "name": "Systemmüll",
@@ -809,6 +809,14 @@
         {
           "title": "Transparent von Grund auf",
           "desc": "Jede Kategorie erklärt, was sie ist und was beim Löschen passiert — nie eine Blackbox."
+        },
+        {
+          "title": "Xico-Sicherheitsbibliothek",
+          "desc": "Ein laufend aktualisierter Satz von Bereinigungsregeln — jedes entfernbare Objekt erklärt, warum es sicher löschbar ist, und Fehlalarme lassen sich mit einem Klick melden und lokal ignorieren. Alle drei Kontrollpunkte nutzen dieselben Regeln."
+        },
+        {
+          "title": "Papierkorb-Wächter",
+          "desc": "Zieh eine App in den Papierkorb, und Xico erkennt zurückgelassene Caches, Einstellungen und Startobjekte — nach Ursprungs-App gruppiert, nur Hinweise, niemals automatisches Löschen."
         }
       ]
     },
@@ -849,11 +857,11 @@
     "pricing": {
       "eyebrow": "Preise",
       "title": "Einmal zahlen. Keine Abo-Fallen",
-      "subtitle": "Statt jedes Jahr zu verlängern: einmal zahlen. Xico Clean ist ein Einmalkauf mit dauerhaft kostenlosen Updates — und einer 14-tägigen Testphase mit vollem Funktionsumfang, die Ihnen die Entscheidung leicht macht.",
+      "subtitle": "Statt jedes Jahr zu verlängern: einmal zahlen. Xico Clean ist ein Einmalkauf mit dauerhaft kostenlosen Updates — und einer 15-tägigen Testphase mit vollem Funktionsumfang, die Ihnen die Entscheidung leicht macht.",
       "priceLabel": "Einzel- / Familienlizenz · einmalig",
-      "priceNote": "Aktuelle Preise und Angebote finden Sie auf der Kaufseite. Testen Sie zuerst 14 Tage kostenlos.",
+      "priceNote": "Aktuelle Preise und Angebote finden Sie auf der Kaufseite. Testen Sie zuerst 15 Tage kostenlos.",
       "features": [
-        "14 Tage kostenlos testen — mit allen Funktionen",
+        "15 Tage kostenlos testen — mit allen Funktionen",
         "Einmal kaufen, dauerhaft kostenlose Updates",
         "Auf all Ihren eigenen Macs nutzbar"
       ],
@@ -892,7 +900,7 @@
         },
         {
           "q": "Ist es ein Abo?",
-          "a": "Nein. Xico Clean ist ein Einmalkauf mit dauerhaft kostenlosen Updates — plus 14 Tage Testphase mit vollem Funktionsumfang."
+          "a": "Nein. Xico Clean ist ein Einmalkauf mit dauerhaft kostenlosen Updates — plus 15 Tage Testphase mit vollem Funktionsumfang."
         },
         {
           "q": "Kommt es in den App Store?",
@@ -916,7 +924,7 @@
         },
         {
           "q": "Gibt es kostenlose Mac-Reinigungssoftware?",
-          "a": "Xico Clean bietet eine 14-tägige kostenlose Testphase mit vollem Funktionsumfang – ohne Registrierung herunterladen und alle Reinigungs- und Optimierungsfunktionen ausprobieren. Danach schalten Sie mit einem einmaligen Kauf dauerhaft frei; es ist kein Abo."
+          "a": "Xico Clean bietet eine 15-tägige kostenlose Testphase mit vollem Funktionsumfang – ohne Registrierung herunterladen und alle Reinigungs- und Optimierungsfunktionen ausprobieren. Danach schalten Sie mit einem einmaligen Kauf dauerhaft frei; es ist kein Abo."
         }
       ]
     },
@@ -1007,7 +1015,8 @@
       "uninstaller": "Deinstallation · ohne Rückstände",
       "hardware": "Hardware-Zustand · Batterie & Temperaturen",
       "duplicates": "Duplikat-Finder · nach Inhalt",
-      "optimization": "Optimieren · Beschleunigung mit einem Klick"
+      "optimization": "Optimieren · Beschleunigung mit einem Klick",
+      "smartscan": "Smart Scan · sechs Bereinigungen parallel, ehrlich aufgeschlüsselt"
     },
     "hardware": {
       "eyebrow": "Hardware & Zustand",
@@ -1187,7 +1196,7 @@
     "download": {
       "eyebrow": "Download",
       "title": "Schenken Sie Ihrem Mac einen Neuanfang",
-      "subtitle": "Kostenlos laden, 14 Tage mit vollem Funktionsumfang testen. Nativ für Apple silicon, von Apple notarisiert — startklar in dem Moment, in dem Sie es öffnen.",
+      "subtitle": "Kostenlos laden, 15 Tage mit vollem Funktionsumfang testen. Nativ für Apple silicon, von Apple notarisiert — startklar in dem Moment, in dem Sie es öffnen.",
       "cta": "Für Mac laden",
       "buy": "Kaufoptionen ansehen",
       "reqs": [
@@ -1211,12 +1220,13 @@
     },
     "speed": {
       "eyebrow": "Festplatten-Benchmark",
-      "title": "Ein echter 10-GB-Lese-/Schreib-Benchmark",
-      "desc": "Zwei Zeiger schlagen in Echtzeit aus. Schreibt bis zu 10 GB vollständig zufällige Daten und umgeht System- und Firmware-Caches — gemessen wird echte Dauerleistung, keine Cache-Illusion. Jeder Lauf wird automatisch archiviert.",
+      "title": "Lesen, Schreiben, zufällige IOPS und Video-Eignung — professioneller als Blackmagic",
+      "desc": "Ausgerichtete Puffer und zwei parallele Streams lesen das Medium direkt — die gemessenen sequenziellen Werte schlagen Blackmagic. Dazu zufällige 4K-IOPS mit p50/p99-Latenz (die Wahrheit über die gefühlte Reaktion deines Macs) und eine ProRes-/BRAW-Video-Eignungstabelle. Vollständig zufällige, inkompressible Daten messen dauerhafte reale Leistung statt eines Cache-Trugbilds.",
       "points": [
-        "F_NOCACHE liest direkt vom Medium",
-        "Zufallsdaten hebeln Firmware-Kompression aus",
-        "Verlauf wird automatisch archiviert"
+        "Ausgerichtete Puffer + zwei Streams — gemessen schneller als Blackmagic",
+        "Zufällige 4K-IOPS mit p50/p99-Latenz",
+        "ProRes-/BRAW-Video-Eignungstabelle",
+        "F_NOCACHE liest das Medium direkt · vollständig zufällige, inkompressible Daten"
       ],
       "caption": "Festplatten-Benchmark · sequenzieller Test"
     },

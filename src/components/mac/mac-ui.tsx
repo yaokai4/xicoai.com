@@ -2,6 +2,14 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 
+/**
+ * 截图目录：中国区（zh / zh-Hant）用中文截图，其他地区用英文截图。
+ * 用法：`/mac/shots/${shotDir(locale)}/dashboard.jpg`。
+ */
+export function shotDir(locale: string): "zh" | "en" {
+  return locale.startsWith("zh") ? "zh" : "en";
+}
+
 type Tone = "base" | "surface" | "dark";
 
 const TONES: Record<Tone, string> = {
