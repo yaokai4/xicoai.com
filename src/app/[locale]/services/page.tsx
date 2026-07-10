@@ -13,8 +13,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("services") };
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: { absolute: t("servicesTitle") },
+    description: t("servicesDescription"),
+  };
 }
 
 export default async function ServicesPage({

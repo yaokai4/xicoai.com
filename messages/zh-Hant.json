@@ -5,10 +5,12 @@
     "home": "回首頁"
   },
   "meta": {
-    "title": "長沙智希可科技有限公司｜軟體產品開發 · AI 應用交付 · 數位化系統",
+    "title": "軟體產品開發 · AI 應用交付公司｜XICO AI 智希可",
     "titleTemplate": "%s — XICO AI",
-    "description": "長沙智希可科技有限公司（XICO AI｜智希可）專注軟體產品開發、AI 應用交付、Web 與行動端系統、數位化平台建設，協助專案從需求定義走到穩定上線。",
-    "company": "長沙智希可科技有限公司"
+    "description": "XICO AI（長沙智希可科技）專注軟體產品開發、AI 應用交付、Web 與行動端系統，助專案從需求走到穩定上線；也是原生 Mac 清理軟體 希可Mac清理 的開發商。",
+    "company": "長沙智希可科技有限公司",
+    "servicesTitle": "軟體開發服務：產品開發 · AI 應用 · Web 與行動端",
+    "servicesDescription": "XICO AI 提供端到端軟體開發服務：產品工程、AI 應用、Web 與行動端系統、數位化平台，從需求定義到穩定上線與後續支援。"
   },
   "nav": {
     "home": "首頁",

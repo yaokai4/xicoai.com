@@ -5,10 +5,12 @@
     "home": "回主页"
   },
   "meta": {
-    "title": "长沙智希可科技有限公司｜软件产品开发 · AI 应用交付 · 数字化系统",
+    "title": "软件产品开发 · AI 应用交付公司｜XICO AI 智希可",
     "titleTemplate": "%s — XICO AI",
-    "description": "长沙智希可科技有限公司（XICO AI｜智希可）专注软件产品开发、AI 应用交付、Web 与移动端系统、数字化平台建设，帮助项目从需求定义走到稳定上线。",
-    "company": "长沙智希可科技有限公司"
+    "description": "XICO AI（长沙智希可科技）专注软件产品开发、AI 应用交付、Web 与移动端系统，帮项目从需求走到稳定上线；也是原生 Mac 清理软件 希可Mac清理 的开发商。",
+    "company": "长沙智希可科技有限公司",
+    "servicesTitle": "软件开发服务：产品开发 · AI 应用 · Web 与移动端",
+    "servicesDescription": "XICO AI 提供端到端软件开发服务：产品工程、AI 应用、Web 与移动端系统、数字化平台，从需求定义到稳定上线与后续支持。"
   },
   "nav": {
     "home": "首页",

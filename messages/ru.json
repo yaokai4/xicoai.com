@@ -5,10 +5,12 @@
     "home": "На главную"
   },
   "meta": {
-    "title": "Changsha Zhixike Technology Co., Ltd. | Разработка программных продуктов, внедрение AI и цифровые системы",
+    "title": "Разработка ПО и ИИ-приложений — XICO AI",
     "titleTemplate": "%s — XICO AI",
-    "description": "Changsha Zhixike Technology Co., Ltd. (XICO AI) разрабатывает программные продукты, AI-приложения, веб- и мобильные системы и цифровые платформы — от определения требований до стабильного запуска.",
-    "company": "Changsha Zhixike Technology Co., Ltd."
+    "description": "XICO AI (Changsha Zhixike) создаёт программные продукты, ИИ-приложения, веб- и мобильные системы и Xico Clean — нативный клинер для Mac.",
+    "company": "Changsha Zhixike Technology Co., Ltd.",
+    "servicesTitle": "Услуги разработки ПО — продукты, ИИ, веб и мобайл",
+    "servicesDescription": "Полный цикл разработки ПО от XICO AI: продуктовая инженерия, ИИ-приложения, веб- и мобильные системы и цифровые платформы — от требований до стабильного запуска."
   },
   "nav": {
     "home": "Главная",

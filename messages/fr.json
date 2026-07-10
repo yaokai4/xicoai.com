@@ -5,10 +5,12 @@
     "home": "Retour à l'accueil"
   },
   "meta": {
-    "title": "Changsha Zhixike Technology Co., Ltd. | Développement de produits logiciels, applications IA et systèmes numériques",
+    "title": "Développement de logiciels et d'applications IA — XICO AI",
     "titleTemplate": "%s — XICO AI",
-    "description": "Changsha Zhixike Technology Co., Ltd. (XICO AI) conçoit et livre des produits logiciels, des applications IA, des systèmes web et mobiles et des plateformes numériques, de la définition des besoins jusqu'à un lancement stable.",
-    "company": "Changsha Zhixike Technology Co., Ltd."
+    "description": "XICO AI (Changsha Zhixike) conçoit des produits logiciels, des applications IA et des systèmes web et mobiles, et développe Xico Clean, le nettoyeur Mac natif.",
+    "company": "Changsha Zhixike Technology Co., Ltd.",
+    "servicesTitle": "Services de développement logiciel — produits, IA, web et mobile",
+    "servicesDescription": "Développement logiciel de bout en bout par XICO AI : ingénierie produit, applications IA, systèmes web et mobiles et plateformes numériques, du besoin au lancement stable."
   },
   "nav": {
     "home": "Accueil",

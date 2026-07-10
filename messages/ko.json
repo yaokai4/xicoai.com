@@ -5,10 +5,12 @@
     "home": "홈으로 돌아가기"
   },
   "meta": {
-    "title": "Changsha Zhixike Technology Co., Ltd. | 소프트웨어 제품 개발 · AI 애플리케이션 구축 · 디지털 시스템",
+    "title": "소프트웨어·AI 앱 개발 회사｜XICO AI 智希可",
     "titleTemplate": "%s — XICO AI",
-    "description": "Changsha Zhixike Technology Co., Ltd.(XICO AI)는 소프트웨어 제품, AI 애플리케이션, 웹·모바일 시스템, 디지털 플랫폼을 요구사항 정의부터 안정적인 출시까지 책임지고 구축합니다.",
-    "company": "Changsha Zhixike Technology Co., Ltd."
+    "description": "XICO AI(창사 즈시커)는 소프트웨어·AI 앱·웹/모바일 시스템을 개발하며, 네이티브 Mac 클리너 Xico Clean을 만듭니다.",
+    "company": "Changsha Zhixike Technology Co., Ltd.",
+    "servicesTitle": "소프트웨어 개발 서비스: 제품·AI·웹/모바일",
+    "servicesDescription": "XICO AI의 엔드투엔드 소프트웨어 개발 서비스: 제품 엔지니어링, AI 앱, 웹·모바일 시스템, 디지털 플랫폼을 요구사항부터 안정 출시·지원까지."
   },
   "nav": {
     "home": "홈",
