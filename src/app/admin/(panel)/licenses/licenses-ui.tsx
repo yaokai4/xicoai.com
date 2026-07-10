@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { Fragment, useState, useTransition } from "react";
 import { useActionState } from "react";
 import {
   generateLicenseAction,
+  listLicenseDevicesAction,
+  removeLicenseDeviceAction,
   revealLicenseKeyAction,
   setLicenseStatusAction,
+  type DeviceRow,
   type GenerateState,
 } from "@/app/admin/license-actions";
 
@@ -143,6 +146,9 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
   const [pending, startTransition] = useTransition();
   const [revealed, setRevealed] = useState<Record<number, string>>({});
   const [qrFor, setQrFor] = useState<number | null>(null);
+  const [devicesFor, setDevicesFor] = useState<number | null>(null);
+  const [devices, setDevices] = useState<Record<number, DeviceRow[]>>({});
+  const [devLoading, setDevLoading] = useState<number | null>(null);
 
   const q = query.trim().toLowerCase();
   const filtered = q
@@ -165,6 +171,29 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
   async function reveal(id: number) {
     const res = await revealLicenseKeyAction(id);
     if (res.key) setRevealed((m) => ({ ...m, [id]: res.key! }));
+  }
+
+  async function loadDevices(id: number) {
+    setDevLoading(id);
+    const res = await listLicenseDevicesAction(id);
+    setDevLoading(null);
+    if (res.devices) setDevices((m) => ({ ...m, [id]: res.devices! }));
+  }
+
+  async function toggleDevices(id: number) {
+    if (devicesFor === id) {
+      setDevicesFor(null);
+      return;
+    }
+    setDevicesFor(id);
+    if (!devices[id]) await loadDevices(id);
+  }
+
+  function removeDevice(licenseId: number, activationId: number) {
+    startTransition(async () => {
+      await removeLicenseDeviceAction(licenseId, activationId);
+      await loadDevices(licenseId);
+    });
   }
 
   return (
@@ -197,7 +226,8 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
           </thead>
           <tbody>
             {filtered.map((l) => (
-              <tr key={l.id} className="border-b border-border/50 align-top">
+              <Fragment key={l.id}>
+              <tr className="border-b border-border/50 align-top">
                 <td className="px-4 py-2.5">
                   {revealed[l.id] ? (
                     <div className="flex items-center gap-2">
@@ -221,13 +251,19 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
                   {l.plan === "family" ? "家庭" : "个人"}
                 </td>
                 <td className="px-4 py-2.5">
-                  <span
-                    className={
+                  <button
+                    type="button"
+                    onClick={() => toggleDevices(l.id)}
+                    title="点击查看已激活的设备"
+                    className={`underline-offset-2 transition-colors hover:underline ${
                       l.used >= l.seats ? "text-amber-400" : "text-foreground"
-                    }
+                    }`}
                   >
                     {l.used}/{l.seats}
-                  </span>
+                    <span className="ml-1 text-[10px] text-muted">
+                      {devicesFor === l.id ? "▲" : "▼"}
+                    </span>
+                  </button>
                 </td>
                 <td className="px-4 py-2.5">
                   <span
@@ -292,6 +328,20 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
                   )}
                 </td>
               </tr>
+              {devicesFor === l.id && (
+                <tr className="border-b border-border/50 bg-surface/40">
+                  <td colSpan={8} className="px-4 py-3">
+                    <DeviceList
+                      licenseId={l.id}
+                      loading={devLoading === l.id}
+                      devices={devices[l.id]}
+                      pending={pending}
+                      onRemove={removeDevice}
+                    />
+                  </td>
+                </tr>
+              )}
+              </Fragment>
             ))}
             {!filtered.length && (
               <tr>
@@ -304,5 +354,83 @@ export function LicenseTable({ licenses }: { licenses: LicenseRow[] }) {
         </table>
       </div>
     </section>
+  );
+}
+
+/* ── 已激活设备 ───────────────────────────────────────────── */
+
+function fmtTime(iso: string): string {
+  // YYYY-MM-DD HH:MM (server timestamps are UTC-based ISO strings)
+  return iso.replace("T", " ").slice(0, 16);
+}
+
+function DeviceList({
+  licenseId,
+  loading,
+  devices,
+  pending,
+  onRemove,
+}: {
+  licenseId: number;
+  loading: boolean;
+  devices: DeviceRow[] | undefined;
+  pending: boolean;
+  onRemove: (licenseId: number, activationId: number) => void;
+}) {
+  if (loading) return <p className="text-xs text-muted">加载设备中…</p>;
+  if (!devices) return <p className="text-xs text-muted">—</p>;
+  if (!devices.length)
+    return <p className="text-xs text-muted">尚无设备激活此激活码。</p>;
+
+  return (
+    <div className="flex flex-col gap-2">
+      <p className="text-xs font-medium text-muted">
+        已激活设备（{devices.length}）
+      </p>
+      <div className="overflow-x-auto rounded-lg border border-border/60">
+        <table className="w-full min-w-[560px] text-xs">
+          <thead>
+            <tr className="border-b border-border/60 text-left text-muted">
+              <th className="px-3 py-2 font-medium">设备名</th>
+              <th className="px-3 py-2 font-medium">设备标识</th>
+              <th className="px-3 py-2 font-medium">首次激活</th>
+              <th className="px-3 py-2 font-medium">最近在线</th>
+              <th className="px-3 py-2" />
+            </tr>
+          </thead>
+          <tbody>
+            {devices.map((d) => (
+              <tr key={d.id} className="border-b border-border/40">
+                <td className="px-3 py-2 text-foreground">
+                  {d.deviceName ?? "—"}
+                </td>
+                <td className="px-3 py-2 font-mono text-faint">
+                  {d.deviceId.length > 20
+                    ? `${d.deviceId.slice(0, 20)}…`
+                    : d.deviceId}
+                </td>
+                <td className="whitespace-nowrap px-3 py-2 text-muted">
+                  {fmtTime(d.createdAt)}
+                </td>
+                <td className="whitespace-nowrap px-3 py-2 text-muted">
+                  {fmtTime(d.lastSeenAt)}
+                </td>
+                <td className="whitespace-nowrap px-3 py-2 text-right">
+                  <button
+                    type="button"
+                    disabled={pending}
+                    onClick={() => onRemove(licenseId, d.id)}
+                    title="移除此设备，腾出一个授权名额"
+                    className="text-red-400/80 transition-colors hover:text-red-400 disabled:opacity-50"
+                  >
+                    移除
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }

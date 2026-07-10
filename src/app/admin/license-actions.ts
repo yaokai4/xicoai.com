@@ -1,9 +1,9 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import { getDb } from "@/db";
-import { macLicenses } from "@/db/schema";
+import { macLicenses, macLicenseActivations } from "@/db/schema";
 import { requireAdmin } from "@/lib/admin-auth";
 import { issueManualLicense } from "@/lib/license/issue";
 import { decryptKey, formatKey } from "@/lib/license/keys";
@@ -54,6 +54,81 @@ export async function setLicenseStatusAction(
   } catch (e) {
     console.error("setLicenseStatusAction failed", e);
     return { error: "操作失败" };
+  }
+}
+
+export type DeviceRow = {
+  id: number;
+  deviceId: string;
+  deviceName: string | null;
+  createdAt: string;
+  lastSeenAt: string;
+};
+
+/** List the devices (seats) that have activated a given license. */
+export async function listLicenseDevicesAction(
+  licenseId: number,
+): Promise<{ devices?: DeviceRow[]; error?: string }> {
+  await requireAdmin();
+  try {
+    const rows = await getDb()
+      .select({
+        id: macLicenseActivations.id,
+        deviceId: macLicenseActivations.deviceId,
+        deviceName: macLicenseActivations.deviceName,
+        createdAt: macLicenseActivations.createdAt,
+        lastSeenAt: macLicenseActivations.lastSeenAt,
+      })
+      .from(macLicenseActivations)
+      .where(eq(macLicenseActivations.licenseId, licenseId))
+      .orderBy(asc(macLicenseActivations.createdAt));
+    return {
+      devices: rows.map((r) => ({
+        id: r.id,
+        deviceId: r.deviceId,
+        deviceName: r.deviceName ?? null,
+        createdAt: r.createdAt.toISOString(),
+        lastSeenAt: r.lastSeenAt.toISOString(),
+      })),
+    };
+  } catch (e) {
+    console.error("listLicenseDevicesAction failed", e);
+    return { error: "读取失败" };
+  }
+}
+
+/** Admin-side seat release: remove one device from a license and re-sync the
+ * license's activatedCount. Frees a seat when a buyer can't reach the old Mac. */
+export async function removeLicenseDeviceAction(
+  licenseId: number,
+  activationId: number,
+): Promise<{ error?: string }> {
+  await requireAdmin();
+  try {
+    const db = getDb();
+    await db.transaction(async (tx) => {
+      await tx
+        .delete(macLicenseActivations)
+        .where(
+          and(
+            eq(macLicenseActivations.id, activationId),
+            eq(macLicenseActivations.licenseId, licenseId),
+          ),
+        );
+      const left = await tx
+        .select({ id: macLicenseActivations.id })
+        .from(macLicenseActivations)
+        .where(eq(macLicenseActivations.licenseId, licenseId));
+      await tx
+        .update(macLicenses)
+        .set({ activatedCount: left.length, updatedAt: new Date() })
+        .where(eq(macLicenses.id, licenseId));
+    });
+    revalidatePath("/admin/licenses");
+    return {};
+  } catch (e) {
+    console.error("removeLicenseDeviceAction failed", e);
+    return { error: "移除失败" };
   }
 }
 
