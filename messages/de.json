@@ -608,12 +608,12 @@
       "support": "Support",
       "buy": "Kaufen"
     },
-    "badge": "v0.2 · Jetzt verfügbar",
+    "badge": "v0.3 · Jetzt verfügbar",
     "hero": {
       "eyebrow": "Native macOS-App · Für Apple silicon gebaut",
       "titleLine1": "Machen Sie Ihren Mac",
       "titleLine2": "wieder schnell und sauber",
-      "subtitle": "Xico Clean findet Systemmüll, Entwickler-Caches, große Dateien und Duplikate mit einem einzigen Klick und gibt Speicherplatz sicher wieder frei. In nativem Swift gebaut und komplett lokal — Vorschau vor dem Löschen, Rückgängig danach.",
+      "subtitle": "Xico Clean findet Systemmüll, Entwickler-Caches, große Dateien und Duplikate mit einem Klick und gibt Speicherplatz sicher frei — Space Lens auf DaisyDisk-Niveau und Menüleisten-Monitoring auf iStat-Niveau inklusive. In nativem Swift gebaut, komplett lokal: Vorschau vor dem Löschen, Rückgängig danach.",
       "ctaPrimary": "Auf die Warteliste",
       "ctaSecondary": "Was es kann",
       "trust": [
@@ -633,11 +633,11 @@
       "sidebar": [
         "Smart Scan",
         "Systemmüll",
-        "Entwicklermüll",
-        "Space Lens",
-        "Duplikate",
         "Deinstallierer",
-        "Privatsphäre",
+        "Space Lens",
+        "Große & alte Dateien",
+        "Duplikate",
+        "Ähnliche Fotos",
         "Optimieren"
       ],
       "breakdown": [
@@ -698,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "Verwandelt Ihre gesamte SSD in eine interaktive Treemap — Ordner für Ordner hineinzoomen und genau sehen, wohin der Speicherplatz verschwunden ist."
+          "desc": "Ein Sunburst-Diagramm auf DaisyDisk-Niveau: die ganze Festplatte in ca. 90 Sekunden gescannt, physische Belegung exakt abgeglichen — Ebene für Ebene bis zur einzelnen Datei, per Klick sicher gelöscht."
         },
         {
           "name": "Große & alte Dateien",
@@ -751,12 +751,12 @@
         },
         {
           "tag": "Space Lens",
-          "title": "Ihre Festplatte sichtbar gemacht — und wohin der Platz verschwunden ist, auf einen Blick",
-          "desc": "Verwandeln Sie Ihre gesamte SSD in eine interaktive Treemap, die sofort zeigt, was Platz belegt. Zoomen Sie bis in einen bestimmten Ordner hinein, zeigen Sie ihn direkt im Finder an — oder legen Sie ihn gleich dort in den Papierkorb.",
+          "title": "Eine Engine auf DaisyDisk-Niveau — jedes GB sichtbar",
+          "desc": "Unter der Haube arbeitet dieselbe System-Schnittstelle für Bulk-Scans wie bei DaisyDisk: Die ganze Festplatte wird in rund 90 Sekunden zum Sunburst-Diagramm. Gezählt wird die physische Belegung — Hardlinks, Systemvolume-Klone und Sparse-Dateien sauber verbucht, selbst „versteckter Speicher“ geht in der Rechnung auf. Zoomen Sie Ebene für Ebene bis zur einzelnen Datei: anklicken, Vorschau ansehen, sammeln, sicher löschen.",
           "points": [
-            "Treemap-Visualisierung der ganzen Festplatte",
-            "Bis in einzelne Ordner hineinzoomen",
-            "Im Finder zeigen oder in den Papierkorb legen"
+            "Systemnaher Bulk-Scan · ganze Festplatte in ca. 90 s",
+            "Physische Belegung · deckt sich exakt mit dem belegten Speicher",
+            "Unbegrenzt hineinzoomen · Klick löscht · jederzeit rückgängig"
           ]
         },
         {
@@ -784,7 +784,7 @@
     "safety": {
       "eyebrow": "Sicherheit zuerst",
       "title": "Die größte Angst beim Aufräumen: das Falsche löschen. Deshalb bauen wir Sicherheit in jeden Schritt",
-      "subtitle": "Das größte Vertrauensrisiko jedes Cleaners ist versehentliches Löschen. Von der Vorschau bis zum Rückgängigmachen, von der Whitelist bis zur Schutzliste: Jede Löschung in Xico Clean lässt einen Weg zurück.",
+      "subtitle": "Das größte Vertrauensrisiko jedes Cleaners ist versehentliches Löschen. Deshalb stehen vor jeder Löschung in Xico Clean drei unabhängige Schranken — plus rote Linien, Vorschau und Rückgängig. Jeder Schritt lässt einen Weg zurück.",
       "items": [
         {
           "title": "Immer erst Vorschau, dann löschen",
@@ -799,12 +799,12 @@
           "desc": "Schützen Sie bestimmte Pfade dauerhaft — Xico Clean rührt sie nie wieder an."
         },
         {
-          "title": "Integrierte Schutzliste",
-          "desc": "Kritische Systemdateien, SIP-geschützte Pfade, der Schlüsselbund und Daten laufender Apps sind strikt tabu."
+          "title": "Rote Linien bleiben tabu",
+          "desc": "Kritische Systempfade, SSH-Schlüssel und Cloud-Zugangsdaten (etwa ~/.ssh, ~/.aws), der Schlüsselbund — das Regelwerk lehnt sie direkt ab, ohne Ausnahme."
         },
         {
-          "title": "Standardmäßig nur sichere Elemente",
-          "desc": "Riskante Elemente — etwa Sprachdateien oder Caches aktiver Apps — sind standardmäßig abgewählt und deutlich gekennzeichnet."
+          "title": "Drei unabhängige Prüfungen",
+          "desc": "Vorprüfung in der Oberfläche → Gegenprüfung der Sicherheits-Engine → letzte Kontrolle des System-Helfers vor dem Löschen — alle drei mit demselben Regelwerk."
         },
         {
           "title": "Transparent von Grund auf",
@@ -907,6 +907,10 @@
           "a": "Xico Clean ist ein in nativem Swift gebauter Cleaner zum Einmalkauf – einmal zahlen, dauerhaft kostenlose Updates, kein Abo. Neben Tiefenreinigung und restloser Deinstallation bringt es einen Menüleisten-Monitor in Echtzeit, Hardware- und Batteriezustand, einen 10-GB-Festplatten-Benchmark und die Space-Lens-Visualisierung mit – Funktionen, für die Sie früher mehrere Apps brauchten, vereint in einer. Alles wird lokal verarbeitet, Dateien werden nie hochgeladen."
         },
         {
+          "q": "Worin unterscheidet sich Space Lens von DaisyDisk?",
+          "a": "Unter der Haube nutzt Space Lens dieselbe System-Schnittstelle für Bulk-Scans — Tempo und Präzision auf demselben Niveau: Gezählt wird die physische Belegung, Hardlinks nur einmal, selbst „versteckter Speicher“ geht in der Rechnung auf. Darüber hinaus zoomen Sie unbegrenzt bis zur einzelnen Datei und löschen per Klick direkt und sicher (rückgängig machbar) — und Space Lens ist nur eines von über einem Dutzend Werkzeugen in Xico Clean. Eine separate Festplatten-Visualisierung müssen Sie nicht mehr kaufen."
+        },
+        {
           "q": "Wie räume ich meinen Mac auf und gebe Speicher frei?",
           "a": "Öffnen Sie Xico Clean und starten Sie den Smart Scan: In Sekunden findet er Systemmüll, Entwickler-Caches, große Dateien und Duplikate. Mit Space Lens sehen Sie Ihre ganze Festplatte als Visualisierung und erkennen sofort, welche Ordner den meisten Platz belegen. Nach der sicheren Bereinigung sind schnell einige bis mehrere Dutzend Gigabyte wieder frei."
         },
@@ -945,7 +949,7 @@
     "monitor": {
       "eyebrow": "Echtzeit-Kontrolle",
       "title": "Behalten Sie Ihren Mac im Blick — direkt aus der Menüleiste",
-      "desc": "Ein Live-Monitor, der in Ihrer Menüleiste wohnt: CPU, Arbeitsspeicher, GPU, Festplatte, Netzwerk und Temperatur auf einen Blick — plus Speicher-Schnellfreigabe und Schnellbereinigung per Klick. Natives Sampling, mit kaum messbarer Last.",
+      "desc": "Echtzeit-Monitoring auf iStat-Niveau, fest in der Menüleiste: CPU, Arbeitsspeicher, GPU, Festplatte, Netzwerk, Temperatur und Lüfter auf einen Blick — ein Klick öffnet Last pro Kern und Prozess-Ranking, dazu Speicherfreigabe und Schnellbereinigung im Vorbeigehen. Natives Sampling, praktisch ohne Last.",
       "points": [
         "Live-Kurven für CPU / Arbeitsspeicher / GPU / Netzwerk",
         "Batteriezustand, Temperatur und Lüfterdrehzahl",
@@ -1197,11 +1201,11 @@
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Ihre ganze Festplatte auf einen Blick",
-      "desc": "Die Festplattenbelegung als Sunburst-Diagramm zum Hineinzoomen: Der Farbton steht für den obersten Ordner, der Winkel für die Größe. Klicken Sie auf einen Ring, um einzutauchen, und auf die Mitte, um zurückzukehren — mit Familien-Hervorhebung und schreibgeschützter Analyse, die noch einen Schritt über DaisyDisk hinausgehen.",
+      "desc": "Dieselbe systemnahe Bulk-Scan-Engine wie DaisyDisk: die ganze Festplatte in rund 90 Sekunden analysiert. Gezählt wird die echte physische Belegung — Hardlinks und Systemvolume-Klone nie doppelt, die Zahl in der Mitte deckt sich exakt mit dem belegten Speicher, selbst „versteckter Speicher“ wie Schnappschüsse ist sauber verbucht. Im Sunburst-Diagramm zoomen Sie Ebene für Ebene unbegrenzt hinein: Klick auf einen Ordner taucht ein, Klick auf eine Datei wählt sie aus — per Rechtsklick oder Sammelkorb sicher löschen.",
       "points": [
-        "Ebene für Ebene hineinzoomen · Klick auf die Mitte führt zurück",
-        "Familien-Hervorhebung zeigt, wohin der Platz fließt",
-        "Nur Lesezugriff · rührt Ihre Dateien nie an"
+        "Dieselbe Scan-Engine wie DaisyDisk · ganze Festplatte in ca. 90 s",
+        "Physische Belegung exakt abgeglichen · versteckter Speicher inklusive",
+        "Unbegrenzt bis zur einzelnen Datei · auswählen und sicher löschen"
       ],
       "caption": "Space Lens · Sunburst-Diagramm"
     },

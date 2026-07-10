@@ -608,12 +608,12 @@
       "support": "Support",
       "buy": "Buy"
     },
-    "badge": "v0.2 · Available now",
+    "badge": "v0.3 · Available now",
     "hero": {
       "eyebrow": "Native macOS app · Built for Apple silicon",
       "titleLine1": "Make your Mac",
       "titleLine2": "fast and clean again",
-      "subtitle": "Xico Clean finds system junk, developer caches, large files, and duplicates in a single tap, then safely frees up disk space. Built in native Swift and fully local — preview before you delete, undo after.",
+      "subtitle": "Xico Clean finds system junk, developer caches, large files, and duplicates in a single tap, then safely frees up disk space — with a DaisyDisk-class Space Lens and iStat-class menu-bar monitoring included. Built in native Swift and fully local: preview before you delete, undo after.",
       "ctaPrimary": "Join the waitlist",
       "ctaSecondary": "See what it does",
       "trust": [
@@ -633,11 +633,11 @@
       "sidebar": [
         "Smart Scan",
         "System Junk",
-        "Developer Junk",
-        "Space Lens",
-        "Duplicates",
         "Uninstaller",
-        "Privacy",
+        "Space Lens",
+        "Large & Old Files",
+        "Duplicates",
+        "Similar Photos",
         "Optimize"
       ],
       "breakdown": [
@@ -698,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "Turn your whole SSD into an interactive treemap, drill down folder by folder, and see exactly where space went."
+          "desc": "A DaisyDisk-class sunburst chart: your whole disk scanned in about 90 seconds, physical footprint precisely reconciled, drill-down to any file, and safe click-to-delete."
         },
         {
           "name": "Large & Old Files",
@@ -751,12 +751,12 @@
         },
         {
           "tag": "Space Lens",
-          "title": "See your disk — and where the space went, at a glance",
-          "desc": "Turn your entire SSD into an interactive treemap, so it's obvious what's taking up room. Drill down to a specific folder, then reveal it in Finder or move it to the Trash right there.",
+          "title": "A DaisyDisk-class engine — every gigabyte in sight",
+          "desc": "Under the hood it uses the same system bulk-scanning API as DaisyDisk, mapping your entire disk into a sunburst chart in about 90 seconds. It counts precise physical footprint — hard links, system-volume clones, and sparse files all add up correctly, with even “hidden space” fully reconciled. Drill down level by level to any single file, then click to preview, collect, and delete safely.",
           "points": [
-            "Whole-disk treemap visualization",
-            "Drill down to specific folders",
-            "Reveal in Finder or move to Trash"
+            "System-level bulk scanning · full disk in about 90 seconds",
+            "Physical footprint reconciled · matches disk usage exactly",
+            "Unlimited drill-down · click to delete · always undoable"
           ]
         },
         {
@@ -784,7 +784,7 @@
     "safety": {
       "eyebrow": "Safety first",
       "title": "The biggest fear in cleaning is deleting the wrong thing — so we build peace of mind into every step",
-      "subtitle": "The biggest trust risk in any cleaner is accidental deletion. So from preview to undo, from whitelist to protection list, every deletion in Xico Clean leaves a way back.",
+      "subtitle": "The biggest trust risk in any cleaner is deleting the wrong thing. So Xico Clean puts three independent gates in front of every deletion — plus red lines, previews, and undo. Every step leaves a way back.",
       "items": [
         {
           "title": "Always preview, then delete",
@@ -799,12 +799,12 @@
           "desc": "Permanently protect certain paths, and Xico Clean will never touch them again."
         },
         {
-          "title": "Built-in protection list",
-          "desc": "Critical system files, SIP-protected paths, the keychain, and data from running apps are strictly off-limits."
+          "title": "Red lines, never crossed",
+          "desc": "Critical system paths, SSH keys and cloud credentials (like ~/.ssh and ~/.aws), the keychain — the rule library refuses them outright, no exceptions."
         },
         {
-          "title": "Safe items only, by default",
-          "desc": "Risky items — like language files or active app caches — are unchecked by default and clearly flagged."
+          "title": "Three independent checks",
+          "desc": "A pre-check in the UI → a second pass by the safety engine → a final verification by the system-level helper right before deletion — all three sharing one rule library."
         },
         {
           "title": "Transparent by design",
@@ -907,6 +907,10 @@
           "a": "Xico Clean is a native Swift app you buy once — a single payment, free updates for the long haul, and no subscription. Beyond deep cleaning and complete uninstalls, it adds a live menu-bar monitor, hardware and battery health, a real 10 GB disk speed benchmark, and Space Lens disk visualization — folding what used to take several separate apps into one. Everything runs locally, and your files are never uploaded."
         },
         {
+          "q": "How is Space Lens different from DaisyDisk?",
+          "a": "Under the hood it uses the same system bulk-scanning API, so speed and accuracy are in the same class: counted by physical footprint, hard links counted once, even “hidden space” fully reconciled. On top of that, you can drill down to any file and delete it safely right there (undoable, of course) — and it's just one of a dozen-plus tools in Xico Clean, so there's no separate disk visualizer to buy."
+        },
+        {
           "q": "How do I clean my Mac and free up disk space?",
           "a": "Open Xico Clean and tap Smart Scan — within seconds it surfaces system junk, developer caches, large files, and duplicates. Then open Space Lens to see your whole disk as an interactive map and pinpoint the folders eating the most room. A safe cleanup can reclaim anywhere from a few to dozens of gigabytes."
         },
@@ -945,7 +949,7 @@
     "monitor": {
       "eyebrow": "Real-time control",
       "title": "Keep an eye on your Mac, right from the menu bar",
-      "desc": "A live monitor that lives in your menu bar: CPU, memory, GPU, disk, network, and temperature at a glance — plus quick memory release and quick cleanup on tap. Native sampling, with barely any overhead.",
+      "desc": "iStat-class live monitoring that lives in your menu bar: CPU, memory, GPU, disk, network, temperature, and fans at a glance — click through for per-core load and top processes, free up memory on the spot, or clean up in one click. Native sampling, with barely any overhead.",
       "points": [
         "Live CPU / memory / GPU / network curves",
         "Battery health, temperature, and fan speed",
@@ -1197,11 +1201,11 @@
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Your whole disk, at a glance",
-      "desc": "Disk usage drawn as a drill-down sunburst: hue is the top-level folder, angle is size. Click a ring to dive in, click the center to go back — with family highlighting and read-only analysis that go a step beyond DaisyDisk.",
+      "desc": "The same system-level bulk-scanning engine as DaisyDisk analyzes your whole disk in about 90 seconds. It counts what files really occupy on disk — hard links and system-volume clones are never counted twice, so the center figure matches your used space exactly, with even “hidden space” like system snapshots fully accounted for. The sunburst chart drills down without limit: click a folder to step inside, click a file to select it, then right-click or drag it into the Collector to delete safely.",
       "points": [
-        "Drill down level by level · center click to go back",
-        "Family highlighting shows where space flows",
-        "Read-only · never touches your files"
+        "Same scan engine as DaisyDisk · full disk in about 90 seconds",
+        "Physical footprint, fully reconciled · hidden space included",
+        "Drill down to any file · select and delete safely"
       ],
       "caption": "Space Lens · sunburst chart"
     },

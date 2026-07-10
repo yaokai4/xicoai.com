@@ -608,12 +608,12 @@
       "support": "Assistance",
       "buy": "Acheter"
     },
-    "badge": "v0.2 · Disponible dès maintenant",
+    "badge": "v0.3 · Disponible dès maintenant",
     "hero": {
       "eyebrow": "App macOS native · Conçue pour Apple silicon",
       "titleLine1": "Redonnez à votre Mac",
       "titleLine2": "vitesse et propreté",
-      "subtitle": "Xico Clean détecte en un clic les fichiers système inutiles, les caches de développement, les fichiers volumineux et les doublons, puis libère de l'espace disque en toute sécurité. Développé en Swift natif et entièrement local — prévisualisez avant de supprimer, annulez après.",
+      "subtitle": "Xico Clean détecte en un clic les fichiers système inutiles, les caches de développement, les fichiers volumineux et les doublons, puis libère de l'espace disque en toute sécurité — Lentille d'espace digne de DaisyDisk et moniteur de barre des menus du niveau d'iStat compris. Développé en Swift natif et entièrement local : prévisualisez avant de supprimer, annulez après.",
       "ctaPrimary": "Rejoindre la liste d'attente",
       "ctaSecondary": "Voir ce qu'il sait faire",
       "trust": [
@@ -632,12 +632,12 @@
       "scanButton": "Nettoyer",
       "sidebar": [
         "Analyse intelligente",
-        "Fichiers système inutiles",
-        "Fichiers de développeur",
-        "Lentille d'espace",
-        "Doublons",
+        "Fichiers inutiles",
         "Désinstallateur",
-        "Confidentialité",
+        "Lentille d'espace",
+        "Fichiers volumineux",
+        "Doublons",
+        "Photos similaires",
         "Optimisation"
       ],
       "breakdown": [
@@ -698,7 +698,7 @@
         },
         {
           "name": "Lentille d'espace",
-          "desc": "Transformez tout votre SSD en treemap interactive, explorez dossier par dossier et voyez exactement où est passé l'espace."
+          "desc": "Un diagramme radial digne de DaisyDisk : disque entier analysé en environ 90 secondes, occupation physique au plus juste, exploration jusqu'à chaque fichier — et suppression sûre en un clic."
         },
         {
           "name": "Fichiers volumineux et anciens",
@@ -751,12 +751,12 @@
         },
         {
           "tag": "Lentille d'espace",
-          "title": "Votre disque en un coup d'œil — et où est passé l'espace",
-          "desc": "Transformez tout votre SSD en treemap interactive : ce qui prend de la place saute aux yeux. Descendez jusqu'à un dossier précis, puis affichez-le dans le Finder ou placez-le directement dans la Corbeille.",
+          "title": "Un moteur digne de DaisyDisk, chaque Go sous vos yeux",
+          "desc": "Sous le capot, la même interface d'analyse système par lots que DaisyDisk : le disque entier dessiné en anneaux radiaux en environ une minute et demie. Un comptage précis selon l'occupation physique — liens physiques, clones APFS et fichiers creux sont calculés au plus juste, « espaces cachés » compris. Explorez sans limite jusqu'à chaque fichier : un clic pour prévisualiser, collecter et supprimer en toute sécurité.",
           "points": [
-            "Treemap du disque entier",
-            "Exploration dossier par dossier",
-            "Afficher dans le Finder ou placer dans la Corbeille"
+            "Analyse système par lots · disque entier en environ 90 s",
+            "Occupation physique exacte · au plus juste avec l'espace utilisé",
+            "Exploration sans limite · un clic pour supprimer · toujours annulable"
           ]
         },
         {
@@ -784,7 +784,7 @@
     "safety": {
       "eyebrow": "La sécurité d'abord",
       "title": "La plus grande crainte du nettoyage, c'est de supprimer le mauvais fichier. Nous avons donc intégré la sérénité à chaque étape",
-      "subtitle": "Ce qui mine le plus la confiance dans un nettoyeur, c'est la suppression accidentelle. De la prévisualisation à l'annulation, de la liste blanche à la liste de protection, chaque suppression dans Xico Clean laisse toujours un moyen de revenir en arrière.",
+      "subtitle": "Le premier risque de confiance d'un nettoyeur, c'est la suppression accidentelle. Xico Clean place donc trois verrous indépendants sur chaque suppression — plus les lignes rouges, la prévisualisation et l'annulation. À chaque étape, un moyen de revenir en arrière.",
       "items": [
         {
           "title": "Toujours prévisualiser, puis supprimer",
@@ -799,12 +799,12 @@
           "desc": "Protégez définitivement certains chemins, et Xico Clean n'y touchera plus jamais."
         },
         {
-          "title": "Liste de protection intégrée",
-          "desc": "Fichiers système critiques, chemins protégés par SIP, trousseau et données des apps en cours d'exécution sont strictement intouchables."
+          "title": "Des lignes rouges intouchables",
+          "desc": "Chemins système critiques, clés SSH et identifiants cloud (comme ~/.ssh, ~/.aws), trousseau — la base de règles les refuse d'office, sans aucune exception."
         },
         {
-          "title": "Seuls les éléments sûrs, par défaut",
-          "desc": "Les éléments à risque — comme les fichiers de langue ou les caches d'apps actives — sont décochés par défaut et clairement signalés."
+          "title": "Trois vérifications indépendantes",
+          "desc": "Pré-contrôle dans l'interface → revérification par le moteur de sécurité → dernier contrôle de l'assistant système avant suppression, avec une seule et même base de règles pour les trois."
         },
         {
           "title": "Transparent dès la conception",
@@ -907,6 +907,10 @@
           "a": "Xico Clean est un nettoyeur natif développé en Swift, en achat unique : vous payez une fois, avec des mises à jour gratuites et sans abonnement. Au-delà du nettoyage en profondeur et de la désinstallation complète, il intègre un moniteur en temps réel dans la barre des menus, la santé matérielle, un benchmark disque de 10 Go et la Lentille d'espace — de quoi remplacer plusieurs apps par une seule. Tout se fait en local, aucun fichier n'est jamais envoyé."
         },
         {
+          "q": "Quelle différence entre la Lentille d'espace et DaisyDisk ?",
+          "a": "Sous le capot, la même interface d'analyse système par lots — même vitesse, même précision : comptage selon l'occupation physique, liens physiques comptés une seule fois, « espaces cachés » compris. En plus, vous explorez sans limite jusqu'à chaque fichier et supprimez d'un clic, en toute sécurité et de façon annulable. Et ce n'est qu'un des outils de Xico Clean parmi plus d'une dizaine — inutile d'acheter à part un logiciel de visualisation de disque."
+        },
+        {
           "q": "Comment nettoyer son Mac et libérer de l'espace ?",
           "a": "Ouvrez Xico Clean et lancez l'Analyse intelligente : en quelques secondes, elle repère les fichiers système inutiles, les caches de développement, les fichiers volumineux et en double. La Lentille d'espace dessine ensuite tout votre disque pour repérer d'un coup d'œil les dossiers les plus lourds — après un nettoyage sûr, vous récupérez de quelques à plusieurs dizaines de Go."
         },
@@ -945,7 +949,7 @@
     "monitor": {
       "eyebrow": "Contrôle en temps réel",
       "title": "Gardez un œil sur votre Mac, depuis la barre des menus",
-      "desc": "Un moniteur en direct qui vit dans votre barre des menus : CPU, mémoire, GPU, disque, réseau et température d'un coup d'œil — avec, en prime, la libération de mémoire et le nettoyage rapide en un clic. Échantillonnage natif, empreinte quasi nulle.",
+      "desc": "Une surveillance en temps réel digne d'iStat, à demeure dans la barre des menus : CPU, mémoire, GPU, disque, réseau, température et ventilateurs d'un coup d'œil — et, d'un clic, la charge par cœur, le classement des processus, la libération de mémoire et le nettoyage rapide. Échantillonnage natif, empreinte quasi nulle.",
       "points": [
         "Courbes CPU / mémoire / GPU / réseau en direct",
         "Santé de la batterie, température et vitesse des ventilateurs",
@@ -1197,11 +1201,11 @@
     "lens": {
       "eyebrow": "Lentille d'espace",
       "title": "Tout votre disque, en un coup d'œil",
-      "desc": "L'occupation du disque dessinée en anneaux radiaux à explorer : la teinte indique le dossier de premier niveau, l'angle la taille. Cliquez sur un anneau pour plonger, sur le centre pour revenir — avec une mise en évidence par famille et une analyse en lecture seule qui vont un cran plus loin que DaisyDisk.",
+      "desc": "Le même moteur d'analyse système par lots que DaisyDisk : tout le disque analysé en environ une minute et demie. Le calcul suit l'occupation physique réelle — liens physiques et clones APFS ne sont jamais comptés deux fois, et le chiffre central colle exactement à l'« espace utilisé », jusqu'aux « espaces cachés » comme les instantanés système. Le diagramme radial s'explore sans limite, niveau par niveau : cliquez sur un dossier pour y plonger, sur un fichier pour le sélectionner — clic droit ou glisser dans le panier de collecte pour supprimer en toute sécurité.",
       "points": [
-        "Exploration niveau par niveau · clic au centre pour revenir",
-        "La mise en évidence par famille montre où va l'espace",
-        "Lecture seule · ne touche jamais à vos fichiers"
+        "Même moteur d'analyse que DaisyDisk · disque entier en environ 90 s",
+        "Occupation physique au plus juste · espaces cachés inclus",
+        "Exploration jusqu'à chaque fichier · suppression sûre en un clic"
       ],
       "caption": "Lentille d'espace · diagramme radial"
     },

@@ -608,12 +608,12 @@
       "support": "Supporto",
       "buy": "Acquista"
     },
-    "badge": "v0.2 · Disponibile ora",
+    "badge": "v0.3 · Disponibile ora",
     "hero": {
       "eyebrow": "App nativa per macOS · Costruita per Apple silicon",
       "titleLine1": "Rendi il tuo Mac",
       "titleLine2": "di nuovo veloce e pulito",
-      "subtitle": "Xico Clean trova file inutili di sistema, cache da sviluppatore, file di grandi dimensioni e duplicati con un solo tocco, poi libera spazio su disco in tutta sicurezza. Costruito in Swift nativo e completamente locale: anteprima prima di eliminare, annullamento dopo.",
+      "subtitle": "Xico Clean trova con un tocco file inutili di sistema, cache da sviluppatore, file di grandi dimensioni e duplicati, e libera spazio su disco in tutta sicurezza — con in più Space Lens di classe DaisyDisk e il monitor nella barra dei menu di classe iStat. Costruito in Swift nativo e completamente locale: anteprima prima di eliminare, annullamento dopo.",
       "ctaPrimary": "Iscriviti alla lista d'attesa",
       "ctaSecondary": "Guarda cosa sa fare",
       "trust": [
@@ -633,12 +633,12 @@
       "sidebar": [
         "Scansione intelligente",
         "File inutili di sistema",
-        "File da sviluppatore",
-        "Space Lens",
-        "Duplicati",
         "Disinstallazione",
-        "Privacy",
-        "Ottimizza"
+        "Space Lens",
+        "File grandi e vecchi",
+        "Duplicati",
+        "Foto simili",
+        "Ottimizzazione"
       ],
       "breakdown": [
         {
@@ -698,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "Trasforma l'intero SSD in una treemap interattiva, esplora cartella per cartella e scopri esattamente dove è finito lo spazio."
+          "desc": "Sunburst di classe DaisyDisk: disco intero scansionato in circa 90 secondi, occupazione fisica al byte, esplorazione fino a ogni file — seleziona ed elimina in sicurezza."
         },
         {
           "name": "File grandi e vecchi",
@@ -751,12 +751,12 @@
         },
         {
           "tag": "Space Lens",
-          "title": "Guarda il tuo disco — e capisci al volo dove è finito lo spazio",
-          "desc": "Trasforma l'intero SSD in una treemap interattiva, così è subito evidente cosa occupa spazio. Scendi fino a una cartella specifica, poi mostrala nel Finder o spostala nel Cestino direttamente da lì.",
+          "title": "Motore di classe DaisyDisk: ogni GB, visibile",
+          "desc": "Sotto il cofano usa la stessa interfaccia di scansione batch di sistema di DaisyDisk: l'intero disco disegnato come sunburst in circa un minuto e mezzo. Conta l'occupazione fisica con precisione — hard link, cloni del volume di sistema e file sparsi calcolati come si deve, “spazi nascosti” compresi. Esplora livello per livello fino a ogni singolo file: un clic per vedere in anteprima, raccogliere ed eliminare in sicurezza.",
           "points": [
-            "Treemap dell'intero disco",
-            "Esplorazione fino alle singole cartelle",
-            "Mostra nel Finder o sposta nel Cestino"
+            "Scansione batch di sistema · disco intero in circa 90 secondi",
+            "Occupazione fisica al byte · coincide con lo spazio utilizzato",
+            "Esplorazione infinita · clic ed elimini · tutto annullabile"
           ]
         },
         {
@@ -784,7 +784,7 @@
     "safety": {
       "eyebrow": "La sicurezza prima di tutto",
       "title": "La paura più grande, quando si pulisce, è cancellare la cosa sbagliata — per questo mettiamo la tranquillità in ogni passaggio",
-      "subtitle": "Il rischio più grande per la fiducia in un cleaner è l'eliminazione accidentale. Per questo, dall'anteprima all'annullamento, dalla whitelist alla lista protetta, ogni eliminazione in Xico Clean lascia una via di ritorno.",
+      "subtitle": "Il rischio più grande per la fiducia in un cleaner è l'eliminazione accidentale. Per questo Xico Clean mette tre barriere indipendenti davanti a ogni eliminazione, più linee rosse, anteprima e annullamento: ogni passaggio lascia una via di ritorno.",
       "items": [
         {
           "title": "Prima l'anteprima, poi l'eliminazione",
@@ -799,12 +799,12 @@
           "desc": "Proteggi in modo permanente determinati percorsi: Xico Clean non li toccherà mai più."
         },
         {
-          "title": "Lista protetta integrata",
-          "desc": "File di sistema critici, percorsi protetti da SIP, portachiavi e dati delle app in esecuzione sono rigorosamente intoccabili."
+          "title": "Le linee rosse non si toccano mai",
+          "desc": "Percorsi critici di sistema, chiavi SSH e credenziali cloud (come ~/.ssh e ~/.aws), portachiavi: il database delle regole li rifiuta sempre, senza eccezioni."
         },
         {
-          "title": "Solo elementi sicuri, per impostazione predefinita",
-          "desc": "Gli elementi a rischio — come i file di lingua o le cache di app attive — non sono selezionati per impostazione predefinita e sono chiaramente segnalati."
+          "title": "Tre verifiche indipendenti",
+          "desc": "Pre-controllo nell'interfaccia → ricontrollo del motore di sicurezza → ultima verifica dell'helper di sistema prima di eliminare, tutti sullo stesso database di regole."
         },
         {
           "title": "Trasparente per scelta",
@@ -907,6 +907,10 @@
           "a": "Xico Clean è un cleaner nativo in Swift con acquisto una tantum: paghi una volta, aggiornamenti gratuiti a lungo termine, nessun abbonamento. Oltre alla pulizia profonda e alla disinstallazione completa, integra il monitor nella barra dei menu, la salute dell'hardware, il benchmark del disco da 10 GB e la visualizzazione Space Lens — le capacità di più app in una sola. Tutto avviene in locale, nessun file viene mai caricato."
         },
         {
+          "q": "Che differenza c'è tra Space Lens e DaisyDisk?",
+          "a": "Sotto il cofano usa la stessa interfaccia di scansione batch di sistema, con velocità e precisione dello stesso livello: conta l'occupazione fisica, gli hard link una sola volta, e anche gli “spazi nascosti” tornano nei conti. In più puoi esplorare all'infinito fino a ogni file ed eliminarlo in sicurezza con un clic (annullabile) — ed è solo uno dei più di dieci strumenti di Xico Clean: non serve comprare a parte un'app di visualizzazione del disco."
+        },
+        {
           "q": "Come posso pulire il Mac e liberare spazio?",
           "a": "Apri Xico Clean e avvia la Scansione intelligente: in pochi secondi individua file inutili di sistema, cache da sviluppatore, file di grandi dimensioni e file duplicati. Con Space Lens visualizzi l'intero disco come una mappa e trovi a colpo d'occhio le cartelle che occupano più spazio; dopo una pulizia sicura liberi da qualche GB a decine di GB."
         },
@@ -945,7 +949,7 @@
     "monitor": {
       "eyebrow": "Controllo in tempo reale",
       "title": "Tieni d'occhio il tuo Mac, direttamente dalla barra dei menu",
-      "desc": "Un monitor in tempo reale che vive nella barra dei menu: CPU, memoria, GPU, disco, rete e temperatura a colpo d'occhio — e con un tocco liberi la memoria o avvii una pulizia rapida. Campionamento nativo, con un impatto quasi nullo.",
+      "desc": "Un monitor in tempo reale di classe iStat che vive nella barra dei menu: CPU, memoria, GPU, disco, rete, temperatura e ventole a colpo d'occhio. Aprilo e trovi il carico per core e la classifica dei processi; con un tocco liberi la memoria o avvii una pulizia. Campionamento nativo, con un impatto quasi nullo.",
       "points": [
         "Curve in tempo reale di CPU / memoria / GPU / rete",
         "Salute della batteria, temperatura e velocità delle ventole",
@@ -1197,11 +1201,11 @@
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Tutto il tuo disco, a colpo d'occhio",
-      "desc": "L'utilizzo del disco disegnato come un sunburst esplorabile: il colore indica la cartella di primo livello, l'angolo la dimensione. Clicca un anello per entrare, clicca il centro per tornare indietro — con evidenziazione per famiglie e analisi in sola lettura che vanno un passo oltre DaisyDisk.",
+      "desc": "Lo stesso motore di scansione batch di sistema di DaisyDisk: l'intero disco analizzato in circa un minuto e mezzo. Calcola l'occupazione fisica reale — hard link e cloni del volume di sistema non vengono mai contati due volte, così il numero al centro coincide al byte con lo “spazio utilizzato”, compresi gli “spazi nascosti” come le istantanee di sistema. Il sunburst si esplora livello per livello, all'infinito: clicca una cartella per entrare, clicca un file per selezionarlo, poi tasto destro o trascina nel cestello per eliminarlo in sicurezza.",
       "points": [
-        "Esplora livello per livello · clic al centro per tornare",
-        "L'evidenziazione per famiglie mostra dove scorre lo spazio",
-        "Sola lettura · non tocca mai i tuoi file"
+        "Stesso motore di scansione di DaisyDisk · disco intero in circa 90 secondi",
+        "Occupazione fisica al byte · anche gli spazi nascosti tornano nei conti",
+        "Esplorazione infinita fino a ogni file · seleziona ed elimina in sicurezza"
       ],
       "caption": "Space Lens · grafico sunburst"
     },
