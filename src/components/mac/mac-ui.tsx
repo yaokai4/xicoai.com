@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -146,6 +147,7 @@ export function MacWindow({
   theme?: "dark" | "light";
 }) {
   const light = theme === "light";
+  const t = useTranslations("mac");
   return (
     <figure className={cn("group", className)}>
       <div
@@ -173,7 +175,7 @@ export function MacWindow({
               light ? "text-black/40" : "text-white/45",
             )}
           >
-            Xico Clean
+            {t("productName")}
           </span>
         </div>
         {/* real, pre-optimized screenshot rendered from the actual app */}
