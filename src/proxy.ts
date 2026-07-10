@@ -29,6 +29,22 @@ function macProductPath(pathname: string): string {
 }
 
 /**
+ * Canonical inverse of `macProductPath`: strip a redundant `/mac` segment so the
+ * product lives at the bare subdomain root. Returns the clean path, or null if
+ * there is no `/mac` segment to remove.
+ *   /mac        → /          · /en/mac      → /en
+ *   /mac/buy    → /buy       · /en/mac/buy  → /en/buy
+ */
+function stripMacSegment(pathname: string): string | null {
+  const parts = pathname.split("/").filter(Boolean);
+  const hasLocale = LOCALES.includes(parts[0]);
+  const idx = hasLocale ? 1 : 0;
+  if (parts[idx] !== "mac") return null;
+  const kept = [...parts.slice(0, idx), ...parts.slice(idx + 1)];
+  return "/" + kept.join("/");
+}
+
+/**
  * First-visit language detection (Next 16 proxy = Node runtime, so the
  * embedded IP table in lib/geo is fine here):
  *   1. an explicit /locale prefix or a NEXT_LOCALE cookie always wins;
@@ -83,6 +99,17 @@ export default function proxy(request: NextRequest) {
   if (redirect) return redirect;
 
   if (host.startsWith("mac.")) {
+    // Canonical URL: the product home is the bare subdomain root, so collapse the
+    // redundant "/mac" segment (mac.xicoai.com/mac → /, /mac/buy → /buy, …). Only
+    // GET navigations redirect; server-action POSTs fall through to the rewrite.
+    if (request.method === "GET") {
+      const clean = stripMacSegment(request.nextUrl.pathname);
+      if (clean && clean !== request.nextUrl.pathname) {
+        const url = request.nextUrl.clone();
+        url.pathname = clean;
+        return NextResponse.redirect(url, 308);
+      }
+    }
     const target = macProductPath(request.nextUrl.pathname);
     if (target !== request.nextUrl.pathname) {
       // 重建请求而非原地改 nextUrl：next-intl 对「带语言前缀」的路径（/ja、/en/…）
