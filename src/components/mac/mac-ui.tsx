@@ -1,17 +1,18 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 
 type Tone = "base" | "surface" | "dark";
 
+/* On the mac canvas the page is one continuous ink gradient; "surface" bands
+   are a whisper of white between hairlines, "dark" dips a step deeper. */
 const TONES: Record<Tone, string> = {
-  base: "bg-bg text-foreground",
-  surface: "bg-surface text-foreground",
-  // Fixed cinematic dark — reads as a dramatic dark "moment" in light mode and
-  // blends seamlessly in dark mode. Always light text.
-  dark: "bg-[#050609] text-white",
+  base: "",
+  surface: "bg-white/[0.015] border-y mac-hairline",
+  dark: "bg-black/25 border-y mac-hairline",
 };
 
-/** A full-bleed, opaque section band (Apple-style stacked page). */
+/** A full-bleed section band on the product canvas. */
 export function Band({
   tone = "base",
   id,
@@ -27,7 +28,7 @@ export function Band({
     <section
       id={id}
       className={cn(
-        "relative w-full overflow-hidden scroll-mt-16",
+        "relative w-full overflow-hidden scroll-mt-20",
         TONES[tone],
         className,
       )}
@@ -80,7 +81,7 @@ export function Kicker({
   );
 }
 
-/** Huge centered display headline (the Apple product-page voice). */
+/** Section headline. */
 export function BigTitle({
   children,
   className,
@@ -91,8 +92,8 @@ export function BigTitle({
   return (
     <h2
       className={cn(
-        "font-display font-semibold leading-[1.05] tracking-tight text-balance",
-        "text-[clamp(2rem,5vw,3.75rem)]",
+        "font-display font-bold leading-[1.1] tracking-tight text-balance",
+        "text-[clamp(1.9rem,4.2vw,2.5rem)]",
         className,
       )}
     >
@@ -112,7 +113,7 @@ export function Lede({
   return (
     <p
       className={cn(
-        "text-lg leading-relaxed text-muted text-pretty sm:text-xl",
+        "text-[17px] leading-[1.65] text-muted text-pretty",
         className,
       )}
     >
@@ -122,9 +123,9 @@ export function Lede({
 }
 
 /**
- * Wraps a real app screenshot in a fixed-dark macOS window chrome (traffic
- * lights + title bar), so the dark-mode app render reads as a real window in
- * both light and dark site themes.
+ * Wraps a real app screenshot in macOS window chrome (traffic lights +
+ * title bar) with a soft drop shadow and an optional brand glow underneath.
+ * Uses next/image so the layout is reserved before the shot loads (no CLS).
  */
 export function MacWindow({
   src,
@@ -135,6 +136,8 @@ export function MacWindow({
   className,
   eager = false,
   theme = "dark",
+  glow = false,
+  sizes,
 }: {
   src: string;
   alt: string;
@@ -144,25 +147,37 @@ export function MacWindow({
   className?: string;
   eager?: boolean;
   theme?: "dark" | "light";
+  glow?: boolean;
+  sizes?: string;
 }) {
   const light = theme === "light";
   return (
-    <figure className={cn("group", className)}>
+    <figure className={cn("group relative", className)}>
+      {glow && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-8 -bottom-10 top-1/2 -z-10 blur-[80px]"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(124,151,242,0.22), rgba(167,144,240,0.18) 55%, rgba(199,154,232,0.14))",
+          }}
+        />
+      )}
       <div
         className={cn(
-          "overflow-hidden rounded-2xl border shadow-[0_2px_8px_rgba(0,0,0,0.18),0_30px_70px_-30px_rgba(10,8,40,0.5)]",
-          light ? "border-black/10 bg-white" : "border-white/10 bg-[#0d0f15]",
+          "overflow-hidden rounded-xl border shadow-[0_2px_10px_rgba(0,0,0,0.35),0_40px_90px_-40px_rgba(0,0,0,0.7)]",
+          light ? "border-black/10 bg-white" : "border-white/[0.08] bg-[#0d0f15]",
         )}
       >
         <div
           className={cn(
-            "flex items-center gap-2 border-b px-4 py-3",
+            "flex items-center gap-2 border-b px-4 py-2.5",
             light
               ? "border-black/[0.06] bg-[#f2f3f6]"
-              : "border-white/[0.06] bg-[#15181f]",
+              : "border-white/[0.06] bg-[#141721]",
           )}
         >
-          <span className="flex gap-1.5">
+          <span className="flex gap-1.5" aria-hidden>
             <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
             <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
             <span className="h-3 w-3 rounded-full bg-[#28c840]" />
@@ -170,22 +185,19 @@ export function MacWindow({
           <span
             className={cn(
               "ml-2 text-xs font-medium",
-              light ? "text-black/40" : "text-white/45",
+              light ? "text-black/40" : "text-white/40",
             )}
           >
             Xico Clean
           </span>
         </div>
-        {/* real, pre-optimized screenshot rendered from the actual app */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
-          loading={eager ? "eager" : "lazy"}
-          fetchPriority={eager ? "high" : "auto"}
-          decoding="async"
+          priority={eager}
+          sizes={sizes ?? "(max-width: 768px) 100vw, 896px"}
           className="block h-auto w-full"
         />
       </div>
@@ -215,16 +227,16 @@ export function BandHeading({
   return (
     <div className={cn("mx-auto max-w-3xl text-center", className)}>
       {kicker && (
-        <Reveal>
+        <Reveal y={12} duration={0.5}>
           <Kicker tone={tone}>{kicker}</Kicker>
         </Reveal>
       )}
-      <Reveal delay={0.05}>
-        <BigTitle className={cn(kicker && "mt-4")}>{title}</BigTitle>
+      <Reveal y={12} duration={0.5} delay={0.06}>
+        <BigTitle className={cn(kicker && "mt-3")}>{title}</BigTitle>
       </Reveal>
       {lede && (
-        <Reveal delay={0.1}>
-          <Lede className="mx-auto mt-5 max-w-2xl">{lede}</Lede>
+        <Reveal y={12} duration={0.5} delay={0.12}>
+          <Lede className="mx-auto mt-4 max-w-2xl">{lede}</Lede>
         </Reveal>
       )}
     </div>

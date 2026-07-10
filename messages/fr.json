@@ -115,7 +115,7 @@
           "Sûr · annulable · entièrement local"
         ],
         "status": "Bientôt disponible",
-        "platforms": "macOS 13+ · Apple silicon / Intel"
+        "platforms": "macOS 14+ · Apple silicon / Intel"
       },
       {
         "key": "machi",
@@ -591,7 +591,7 @@
       "pricingTitle": "Prix Xico Clean — nettoyeur Mac en achat unique",
       "pricingDescription": "Xico Clean est un achat unique : payez une fois, mises à jour gratuites à vie, sans abonnement. Essai complet de 14 jours, puis Personnel ou Famille.",
       "supportTitle": "Assistance et FAQ — Xico Clean, nettoyeur Mac",
-      "supportDescription": "Configuration requise, FAQ et contact pour Xico Clean. Compatible macOS 13 et ultérieur, Apple silicon et Intel en binaire universel. Réponse sous un jour ouvré.",
+      "supportDescription": "Configuration requise, FAQ et contact pour Xico Clean. Compatible macOS 14 et ultérieur, Apple silicon et Intel en binaire universel. Réponse sous un jour ouvré.",
       "buyTitle": "Acheter Xico Clean — nettoyeur Mac, achat unique",
       "buyDescription": "Achetez Xico Clean une fois et gardez-le à vie : mises à jour gratuites, sans abonnement. Paiement Stripe sécurisé, prix en monnaie locale, remboursé sous 30 jours."
     },
@@ -606,23 +606,24 @@
       "home": "Accueil",
       "security": "Sécurité",
       "support": "Assistance",
-      "buy": "Acheter"
+      "buy": "Acheter",
+      "download": "Télécharger"
     },
-    "badge": "v0.2 · Disponible dès maintenant",
+    "badge": "v0.3.0 · Disponible dès maintenant",
     "hero": {
       "eyebrow": "App macOS native · Conçue pour Apple silicon",
       "titleLine1": "Redonnez à votre Mac",
       "titleLine2": "vitesse et propreté",
       "subtitle": "Xico Clean détecte en un clic les fichiers système inutiles, les caches de développement, les fichiers volumineux et les doublons, puis libère de l'espace disque en toute sécurité. Développé en Swift natif et entièrement local — prévisualisez avant de supprimer, annulez après.",
       "ctaPrimary": "Rejoindre la liste d'attente",
-      "ctaSecondary": "Voir ce qu'il sait faire",
+      "ctaSecondary": "Voir les tarifs",
       "trust": [
         "100 % local",
         "Prévisualisable · annulable",
         "Natif Apple silicon"
       ],
-      "ctaDownload": "Télécharger pour Mac",
-      "downloadNote": "macOS 13+ · essai gratuit de 14 jours · sans inscription"
+      "ctaDownload": "Télécharger Xico 0.3.0",
+      "downloadNote": "macOS 14+ · binaire universel · essai gratuit de 14 jours"
     },
     "window": {
       "appName": "Xico Clean",
@@ -679,6 +680,26 @@
         }
       ]
     },
+    "trustbar": {
+      "items": [
+        {
+          "title": "Rien ne quitte votre Mac",
+          "desc": "Chaque analyse s'exécute en local"
+        },
+        {
+          "title": "Suppression réversible",
+          "desc": "D'abord le panier, puis la Corbeille"
+        },
+        {
+          "title": "11 langues",
+          "desc": "App et site entièrement localisés"
+        },
+        {
+          "title": "Binaire universel",
+          "desc": "Un installateur pour Apple silicon et Intel"
+        }
+      ]
+    },
     "features": {
       "eyebrow": "Tout ce qu'il sait faire",
       "title": "Une seule app pour prendre soin de tout votre Mac",
@@ -698,7 +719,7 @@
         },
         {
           "name": "Lentille d'espace",
-          "desc": "Transformez tout votre SSD en treemap interactive, explorez dossier par dossier et voyez exactement où est passé l'espace."
+          "desc": "Tout votre disque en anneaux radiaux : en plongeant, les secteurs se métamorphosent dans une animation d'éclosion continue, les teintes restant ancrées pour ne jamais perdre le fil."
         },
         {
           "name": "Fichiers volumineux et anciens",
@@ -726,11 +747,27 @@
         },
         {
           "name": "Moniteur de barre des menus",
-          "desc": "Toujours dans la barre des menus, avec CPU, mémoire et réseau en temps réel, et un nettoyage rapide à portée de clic."
+          "desc": "Plusieurs mini-jauges côte à côte dans un seul élément de la barre des menus — histogramme CPU, camembert mémoire, débits réseau et batterie — chacune configurable séparément."
         },
         {
           "name": "Suppression des logiciels malveillants",
           "desc": "Détectez les adwares et composants malveillants macOS connus grâce à une bibliothèque de définitions signée, et supprimez-les dès détection."
+        },
+        {
+          "name": "Panier de collecte",
+          "desc": "Suppression en deux temps : on collecte et on prévisualise d'abord, on retire ce qu'on veut à tout moment ; 5 secondes pour annuler avant l'exécution, et tout part dans la Corbeille."
+        },
+        {
+          "name": "Score de santé explicable",
+          "desc": "Cinq sous-scores — espace libre, pression mémoire, température, pression thermique et SMART — chacun traçable jusqu'à des relevés réels et une formule publiée."
+        },
+        {
+          "name": "Libérer les copies iCloud",
+          "desc": "Supprime le cache local des fichiers déjà téléchargés. Tout reste intact dans iCloud, prêt à être retéléchargé à tout moment."
+        },
+        {
+          "name": "Alertes de seuil",
+          "desc": "Ne notifie que si CPU, mémoire, disque, température ou batterie dépasse la limite pendant la durée que vous fixez — avec un délai de repos contre les fausses alertes."
         }
       ]
     },
@@ -752,10 +789,10 @@
         {
           "tag": "Lentille d'espace",
           "title": "Votre disque en un coup d'œil — et où est passé l'espace",
-          "desc": "Transformez tout votre SSD en treemap interactive : ce qui prend de la place saute aux yeux. Descendez jusqu'à un dossier précis, puis affichez-le dans le Finder ou placez-le directement dans la Corbeille.",
+          "desc": "Votre disque dessiné en anneaux radiaux. En plongeant, les secteurs se métamorphosent dans une animation d'éclosion continue, les petits éléments se regroupent dans un arc « Autres », et les teintes restent ancrées — vous savez toujours où vous êtes. Affichez n'importe quel dossier dans le Finder ou placez-le dans la Corbeille, directement.",
           "points": [
-            "Treemap du disque entier",
-            "Exploration dossier par dossier",
+            "Éclosion à l'exploration — secteurs en métamorphose continue",
+            "Les petits éléments se regroupent dans « Autres » · teintes ancrées",
             "Afficher dans le Finder ou placer dans la Corbeille"
           ]
         },
@@ -788,11 +825,11 @@
       "items": [
         {
           "title": "Toujours prévisualiser, puis supprimer",
-          "desc": "Chaque élément se déploie pour afficher son chemin et sa taille — rien ne bouge sans votre confirmation."
+          "desc": "Les éléments passent d'abord par le panier de collecte : dépliez pour voir chemin et taille, retirez ce que vous voulez — rien ne s'exécute sans votre confirmation."
         },
         {
           "title": "Annulable",
-          "desc": "Les éléments vont d'abord dans la Corbeille ou une zone récupérable : vous pouvez annuler votre dernier nettoyage à tout moment."
+          "desc": "Un compte à rebours de 5 secondes, non bloquant, précède chaque nettoyage — annulable à tout moment. Les suppressions vont d'abord dans la Corbeille : tout reste récupérable."
         },
         {
           "title": "Liste blanche et liste d'exclusion",
@@ -800,7 +837,7 @@
         },
         {
           "title": "Liste de protection intégrée",
-          "desc": "Fichiers système critiques, chemins protégés par SIP, trousseau et données des apps en cours d'exécution sont strictement intouchables."
+          "desc": "Fichiers système critiques, chemins protégés par SIP et trousseau sont strictement intouchables — les éléments dangereux sont refusés automatiquement et n'entrent jamais dans le panier."
         },
         {
           "title": "Seuls les éléments sûrs, par défaut",
@@ -808,7 +845,7 @@
         },
         {
           "title": "Transparent dès la conception",
-          "desc": "Chaque catégorie explique ce qu'elle contient et ce qui se passe si vous la supprimez — jamais de boîte noire."
+          "desc": "Chaque catégorie explique ce qu'elle contient et ce qui se passe si vous la supprimez — et les lignes rouges de suppression sont publiées sur la page « Engagement de sécurité » de l'app."
         }
       ]
     },
@@ -842,7 +879,7 @@
         },
         {
           "value": "≈ 0 charge au repos",
-          "label": "ne vous dérange jamais et ne ralentit pas votre Mac"
+          "label": "barre des menus dessinée directement en CoreGraphics — plus douce pour la batterie"
         }
       ]
     },
@@ -880,11 +917,11 @@
       "items": [
         {
           "q": "Quels Mac sont pris en charge ?",
-          "a": "macOS 13 Ventura et versions ultérieures, en binaire universel pour Apple silicon et Intel — un seul programme d'installation pour tous."
+          "a": "macOS 14 Sonoma et versions ultérieures, en binaire universel pour Apple silicon et Intel — un seul programme d'installation pour tous."
         },
         {
           "q": "Est-ce sûr ? Peut-il supprimer le mauvais fichier ?",
-          "a": "Chaque suppression est prévisualisable et annulable, une liste de protection intégrée garde les fichiers système critiques, et seuls les éléments 100 % sûrs sont cochés par défaut."
+          "a": "Tout ce que vous supprimez passe d'abord par le panier de collecte, où vous pouvez prévisualiser et retirer des éléments. Un compte à rebours de 5 secondes précède chaque nettoyage, les suppressions vont dans la Corbeille et restent récupérables, et une liste de protection intégrée refuse automatiquement tout élément dangereux."
         },
         {
           "q": "Mes fichiers sont-ils envoyés en ligne ?",
@@ -896,11 +933,11 @@
         },
         {
           "q": "Sera-t-il sur l'App Store ?",
-          "a": "Il est distribué via un Developer ID notarisé par Apple : ses fonctionnalités ne sont pas limitées par la sandbox — et l'installation est tout aussi sûre."
+          "a": "Il est distribué directement en build Developer ID signée par le développeur : ses fonctionnalités ne sont pas limitées par la sandbox — et l'installation est tout aussi sûre."
         },
         {
           "q": "Puis-je le télécharger maintenant ?",
-          "a": "Bientôt. Rejoignez la liste d'attente : nous vous préviendrons dès le lancement, avec un tarif préférentiel réservé aux inscrits."
+          "a": "Oui — téléchargez Xico Clean 0.3.0 dès aujourd'hui et essayez toutes les fonctionnalités gratuitement pendant 14 jours, sans inscription."
         },
         {
           "q": "Quelle différence entre Xico Clean et CleanMyMac ?",
@@ -945,14 +982,43 @@
     "monitor": {
       "eyebrow": "Contrôle en temps réel",
       "title": "Gardez un œil sur votre Mac, depuis la barre des menus",
-      "desc": "Un moniteur en direct qui vit dans votre barre des menus : CPU, mémoire, GPU, disque, réseau et température d'un coup d'œil — avec, en prime, la libération de mémoire et le nettoyage rapide en un clic. Échantillonnage natif, empreinte quasi nulle.",
+      "desc": "Un moniteur en direct dans votre barre des menus, avec plusieurs mini-jauges côte à côte dans un seul élément : histogramme CPU, camembert mémoire, débits montant et descendant, et batterie. Passez d'un préréglage à l'autre en un clic — Minimal, Performance, Panorama — chaque jauge avec sa propre fréquence de rafraîchissement et ses couleurs.",
       "points": [
-        "Courbes CPU / mémoire / GPU / réseau en direct",
-        "Santé de la batterie, température et vitesse des ventilateurs",
-        "Libérez de la mémoire en un seul clic"
+        "Un seul élément dans la barre des menus, plusieurs jauges — réordonnables à volonté",
+        "Courbes sur trois fenêtres de temps ; survolez pour lire n'importe quel instant",
+        "Épinglez les panneaux en fenêtres flottantes · classement du trafic par processus"
       ],
       "caption": "Moniteur système · interface réelle",
       "menuCaption": "Panneaux de la barre des menus"
+    },
+    "menubar": {
+      "eyebrow": "Moniteur de barre de menus",
+      "title": "Le pouls de tout votre Mac, dans un seul emplacement",
+      "desc": "CPU, mémoire, réseau, disque et batterie cohabitent dans un seul élément de la barre de menus — dessiné pixel par pixel, pour un coût quasi nul. Un clic ouvre le panneau complet, que vous pouvez aussi épingler au bureau.",
+      "caption": "Jauges riches · rendu réel",
+      "captionCombined": "Mode combiné · plus compact",
+      "items": [
+        {
+          "title": "Un vrai élément combiné",
+          "desc": "Plusieurs jauges partagent un seul emplacement sans bousculer leurs voisines."
+        },
+        {
+          "title": "Trois fenêtres temporelles",
+          "desc": "Courbes courtes, moyennes ou longues — survolez pour lire n'importe quel instant."
+        },
+        {
+          "title": "Panneaux épinglables",
+          "desc": "Épinglez n'importe quel panneau en fenêtre flottante sur le bureau."
+        },
+        {
+          "title": "Classement du trafic",
+          "desc": "Trafic réseau par processus, classé : le voleur de bande passante saute aux yeux."
+        },
+        {
+          "title": "Trois préréglages",
+          "desc": "Minimal, Performance et Panorama en un clic, chacun configurable séparément."
+        }
+      ]
     },
     "compare": {
       "eyebrow": "Pourquoi l'achat unique",
@@ -985,7 +1051,7 @@
     "support": {
       "requirementsTitle": "Configuration requise",
       "requirements": [
-        "macOS 13 Ventura ou version ultérieure",
+        "macOS 14 Sonoma ou version ultérieure",
         "Binaire universel Apple silicon et Intel",
         "Environ 60 Mo d'espace disque",
         "L'accès complet au disque est requis pour toutes les fonctionnalités"
@@ -1008,7 +1074,7 @@
     "hardware": {
       "eyebrow": "Matériel et santé",
       "title": "Batterie, température et santé du disque — tout sous les yeux",
-      "desc": "Lisez la santé et le nombre de cycles de la batterie ; les températures CPU, GPU et SSD et la vitesse des ventilateurs ; l'état SMART et l'espace libre de votre SSD ; sans oublier les informations mémoire et écran — aussi complet que les outils pro, en plus élégant.",
+      "desc": "Lisez la santé et le nombre de cycles de la batterie ; les températures CPU, GPU et SSD et la vitesse des ventilateurs ; l'état SMART et l'espace libre de votre SSD ; sans oublier les informations mémoire et écran — avec un score de santé explicable, où chaque point remonte à un relevé réel et à une formule publiée.",
       "points": [
         "Santé de la batterie, cycles et état de charge",
         "Températures CPU / GPU / SSD et vitesse des ventilateurs",
@@ -1051,6 +1117,10 @@
             {
               "name": "Fichiers de développeur",
               "desc": "DerivedData de Xcode, simulateurs, node_modules, caches Homebrew / npm / pip et images Docker orphelines."
+            },
+            {
+              "name": "Panier de collecte",
+              "desc": "Suppression en deux temps : collecte et prévisualisation d'abord, retrait à tout moment ; 5 secondes pour annuler, et tout part dans la Corbeille."
             }
           ]
         },
@@ -1080,7 +1150,7 @@
           "items": [
             {
               "name": "Lentille d'espace",
-              "desc": "Une treemap du disque entier à explorer, pour repérer précisément ce qui prend de la place."
+              "desc": "Des anneaux radiaux à explorer, avec une animation d'éclosion continue entre les niveaux — repérez précisément ce qui prend de la place."
             },
             {
               "name": "Fichiers volumineux et anciens",
@@ -1097,6 +1167,10 @@
             {
               "name": "Téléchargements et désordre",
               "desc": "Rangez votre dossier Téléchargements, le désordre du bureau et les anciens fichiers d'installation (.dmg / .pkg)."
+            },
+            {
+              "name": "Libérer les copies iCloud",
+              "desc": "Supprime le cache local des fichiers téléchargés ; tout reste dans iCloud, prêt à être retéléchargé."
             }
           ]
         },
@@ -1121,7 +1195,15 @@
             },
             {
               "name": "Moniteur de barre des menus",
-              "desc": "Toujours dans la barre des menus, avec CPU, mémoire, disque, réseau et batterie en temps réel, plus libération de mémoire et nettoyage rapides."
+              "desc": "Plusieurs mini-jauges dans un seul élément de la barre des menus, préréglages en un clic, fréquence et couleurs propres à chaque jauge."
+            },
+            {
+              "name": "Score de santé explicable",
+              "desc": "Cinq sous-scores — espace libre, pression mémoire, température, pression thermique et SMART — chacun traçable jusqu'à des relevés réels et une formule publiée."
+            },
+            {
+              "name": "Alertes de seuil",
+              "desc": "Ne notifie que si une limite reste dépassée pendant la durée fixée, avec un délai de repos contre les fausses alertes."
             }
           ]
         }
@@ -1183,27 +1265,41 @@
     "download": {
       "eyebrow": "Télécharger",
       "title": "Offrez un nouveau départ à votre Mac",
-      "subtitle": "Téléchargement gratuit, essai complet de 14 jours. Natif Apple silicon, notarisé par Apple, prêt dès l'ouverture.",
+      "subtitle": "Téléchargement gratuit, essai complet de 14 jours. Natif Apple silicon, distribué avec signature développeur — prêt dès l'ouverture.",
       "cta": "Télécharger pour Mac",
       "buy": "Voir les offres d'achat",
       "reqs": [
-        "macOS 13 ou version ultérieure",
+        "macOS 14 ou version ultérieure",
         "Apple silicon et Intel",
-        "Notarisé par Apple",
+        "Signé par le développeur",
         "Sans inscription"
       ],
-      "trust": "Notarisé — Gatekeeper l'approuve directement. Glissez-le simplement dans Applications après le téléchargement."
+      "trust": "Distribué avec signature développeur : glissez-le dans Applications et votre essai de 14 jours commence aussitôt."
     },
     "lens": {
       "eyebrow": "Lentille d'espace",
       "title": "Tout votre disque, en un coup d'œil",
-      "desc": "L'occupation du disque dessinée en anneaux radiaux à explorer : la teinte indique le dossier de premier niveau, l'angle la taille. Cliquez sur un anneau pour plonger, sur le centre pour revenir — avec une mise en évidence par famille et une analyse en lecture seule qui vont un cran plus loin que DaisyDisk.",
-      "points": [
-        "Exploration niveau par niveau · clic au centre pour revenir",
-        "La mise en évidence par famille montre où va l'espace",
-        "Lecture seule · ne touche jamais à vos fichiers"
+      "desc": "L'occupation du disque dessinée en anneaux radiaux à explorer : la teinte indique le dossier de premier niveau, l'angle la taille. En plongeant, les secteurs se métamorphosent dans une animation d'éclosion continue, les petits éléments se regroupent dans un arc « Autres », et les teintes restent ancrées d'un niveau à l'autre — vous savez toujours où vous êtes et où est passé l'espace. Analyse en lecture seule, de bout en bout.",
+      "cards": [
+        {
+          "title": "Zoom en éclosion",
+          "desc": "Cliquez sur un secteur : le graphe se transforme en continu entre les niveaux, sans coupure."
+        },
+        {
+          "title": "L'arc « Autres »",
+          "desc": "Les petits éléments se regroupent en un arc — l'image reste toujours lisible."
+        },
+        {
+          "title": "Teintes ancrées",
+          "desc": "Chaque dossier racine garde sa teinte à toutes les profondeurs : impossible de se perdre."
+        },
+        {
+          "title": "Suppression en deux temps",
+          "desc": "D'abord le panier, avec aperçu — et 5 secondes pour annuler avant l'exécution."
+        }
       ],
-      "caption": "Lentille d'espace · diagramme radial"
+      "caption": "Lentille d'espace · diagramme radial",
+      "captionDrilled": "Après zoom · les teintes de la famille se prolongent"
     },
     "speed": {
       "eyebrow": "Test de vitesse du disque",

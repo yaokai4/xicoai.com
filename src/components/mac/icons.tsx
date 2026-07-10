@@ -25,6 +25,14 @@ const FEATURE_PATHS = [
   "M3 12h4l3 8 4-16 3 8h4",
   // 11 malware removal — shield
   "M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6zM9.5 12l1.8 1.8L15 10",
+  // 12 collection basket — basket
+  "M4 9h16l-1.6 10H5.6zM8 9l2.5-5M16 9l-2.5-5M9.5 13v3M14.5 13v3",
+  // 13 explainable health score — pulse in circle
+  "M12 21a9 9 0 100-18 9 9 0 000 18zM6.5 12h3l1.5-3.5 2 7 1.5-3.5h3",
+  // 14 free up iCloud copies — cloud with down arrow
+  "M7 17a4 4 0 01-.6-7.95A5.5 5.5 0 0117.4 8.6 3.7 3.7 0 0117 16M12 11v9m0 0l-3-3m3 3l3-3",
+  // 15 threshold alerts — bell
+  "M6 17h12v-1.2L16.5 13V9.5a4.5 4.5 0 10-9 0V13L6 15.8zM10 20a2 2 0 004 0",
 ];
 
 const SAFETY_PATHS = [

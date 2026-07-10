@@ -377,3 +377,132 @@
   filter: blur(56px);
   will-change: transform;
 }
+
+/* ============================================================
+   MAC PRODUCT THEME — "honest precision instrument"
+   The /mac marketing pages are dark-first and use the app's own
+   aurora palette. Scoped: every token consumed via var() inside
+   a .mac-theme subtree resolves to these values, regardless of
+   the site-wide light/dark toggle.
+   ============================================================ */
+
+.mac-theme {
+  color-scheme: dark;
+
+  --bg: #0b0d17;
+  --bg-soft: #0e1120;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.055);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --foreground: #f2f4fa;
+  --muted: rgba(235, 238, 250, 0.65);
+  --faint: rgba(235, 238, 250, 0.45);
+
+  --brand: #7c97f2;
+  --brand-soft: #a790f0;
+  --violet: #a790f0;
+  --accent: #35dea0;
+
+  --grad-1: #7c97f2;
+  --grad-2: #a790f0;
+  --grad-3: #c79ae8;
+
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.4), 0 22px 50px -30px rgba(0, 0, 0, 0.8);
+  --sb: rgba(255, 255, 255, 0.16);
+
+  --aurora-1: rgba(124, 151, 242, 0.4);
+  --aurora-2: rgba(167, 144, 240, 0.3);
+  --aurora-3: rgba(53, 222, 160, 0.16);
+
+  /* system stack — matches the app's native typography */
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", "PingFang SC", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Microsoft YaHei", system-ui, sans-serif;
+}
+
+.mac-theme .font-display {
+  font-family: inherit;
+  letter-spacing: -0.022em;
+}
+
+/* Ink-black page canvas: near-black vertical gradient plus two very faint
+   (4–7%) brand-tinted corner glows for depth. Deliberately not a rainbow. */
+.mac-canvas {
+  background-color: #07080f;
+  background-image: radial-gradient(
+      1000px 620px at 14% -60px,
+      rgba(124, 151, 242, 0.07),
+      transparent 70%
+    ),
+    radial-gradient(
+      900px 560px at 88% -80px,
+      rgba(199, 154, 232, 0.05),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #0b0d17 0%, #07080f 100%);
+  background-repeat: no-repeat;
+  background-size: auto, auto, 100% 100%;
+}
+
+/* Card surface: 3% white fill, hairline border, 1px top inner highlight. */
+.mac-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mac-lift {
+    transition-property: transform, border-color, background-color, box-shadow;
+    transition-duration: 320ms;
+    transition-timing-function: var(--ease-out-expo);
+  }
+  .mac-lift:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.045);
+  }
+}
+
+/* Floating chrome (nav / overlays): dark glass. */
+.mac-glass {
+  background: rgba(11, 13, 23, 0.72);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+}
+
+/* Primary CTA: the one gradient allowed per screen. Dark label for ≥7:1. */
+.cta-aurora {
+  background-image: linear-gradient(
+    135deg,
+    #7c97f2 0%,
+    #a790f0 55%,
+    #c79ae8 100%
+  );
+  color: #0a0c15;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cta-aurora:hover {
+    filter: brightness(1.07);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px -14px rgba(150, 140, 240, 0.55);
+  }
+  .cta-aurora:active {
+    transform: translateY(0);
+  }
+}
+
+/* Hairline divider used between mac sections. */
+.mac-hairline {
+  border-color: rgba(255, 255, 255, 0.06);
+}

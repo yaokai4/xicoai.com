@@ -4,7 +4,17 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
 import { breadcrumbJsonLd, jsonLdScript, absoluteUrl } from "@/lib/seo";
-import { MacPricing, MacCompare, MacDownload } from "@/components/mac/mac-sections";
+import { getMarketingPlans } from "@/lib/plan-views";
+import {
+  MacPricingSection,
+  MacAllInOne,
+  MacCompare,
+  MacDownload,
+} from "@/components/mac/mac-sections";
+
+// Prices come from the admin console (DB) and the visitor's region — always
+// render fresh.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -42,6 +52,7 @@ export default async function MacPricingPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "mac" });
+  const { active, plans } = await getMarketingPlans(locale);
   const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
   const breadcrumb = breadcrumbJsonLd([
     { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
@@ -53,7 +64,8 @@ export default async function MacPricingPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(breadcrumb) }}
       />
-      <MacPricing topPad />
+      <MacPricingSection plans={plans} active={active} topPad />
+      <MacAllInOne />
       <MacCompare />
       <MacDownload />
     </>

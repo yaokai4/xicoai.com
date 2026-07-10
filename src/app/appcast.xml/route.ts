@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.2.7";
-const PUBDATE = "Thu, 09 Jul 2026 04:00:00 +0000";
+const VERSION = "0.3.0";
+const PUBDATE = "Thu, 10 Jul 2026 14:00:00 +0000";
 const NOTES =
-  "0.2.7：正式接入在线授权体系——支持官网购买后输入激活码即时解锁 Pro；许可证增加定期在线校验（退款/失效的激活码将自动停用，正常用户离线使用不受任何影响）。";
+  "0.3.0：顶级化大版本——空间透镜「绽放」钻取动画与收集篮两段式删除（5 秒可撤销）；菜单栏真「合并项」多仪表并排、电池项、三挡历史时间窗、面板可钉住、每进程流量排行；可解释健康分（每一分可溯源）；释放 iCloud 本地副本；阈值告警防误报；全新 4 步新手引导与「安全承诺」页；全站真材质与暗色高程重绘，菜单栏渲染换血更省电。需要 macOS 14 或更高版本。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
