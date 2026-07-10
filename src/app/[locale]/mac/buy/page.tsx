@@ -55,42 +55,38 @@ export default async function MacBuyPage({
   const pricing = await getMacPricing();
   const canBuy = pricing.active && stripeConfigured();
 
-  // Quote the buyer's currency: IP country first, locale second — always
-  // limited to what the admin configured. The client can still switch.
+  // 按访客地区锁定一种货币（IP 国家优先，locale 兜底），只报这一种价——
+  // 日本区只有日元、中国区只有人民币，不给用户切换选择。
   const currencies = Object.keys(pricing.currencies);
   const country = countryFromIp(clientIp(await headers()));
-  const initialCurrency = detectCurrency({
+  const currency = detectCurrency({
     country,
     locale,
     available: currencies,
     fallback: pricing.defaultCurrency,
   });
 
-  const plansByCurrency: Record<string, PlanView[]> = {};
-  for (const currency of currencies) {
-    plansByCurrency[currency] = PLAN_IDS.map((id) => {
-      const tier = planPricing(pricing, currency, id);
-      // A compareAt at or below the real price is a data mistake — never
-      // render a "discount" that would make the price look raised.
-      const genuineCompareAt =
-        tier.compareAt && tier.compareAt > tier.amount ? tier.compareAt : null;
-      return {
-        id,
-        amountLabel: formatMoney(tier.amount, currency, locale),
-        compareLabel: genuineCompareAt
-          ? formatMoney(genuineCompareAt, currency, locale)
-          : null,
-        discount: discountPercent(tier),
-      };
-    });
-  }
+  const plans: PlanView[] = PLAN_IDS.map((id) => {
+    const tier = planPricing(pricing, currency, id);
+    // A compareAt at or below the real price is a data mistake — never
+    // render a "discount" that would make the price look raised.
+    const genuineCompareAt =
+      tier.compareAt && tier.compareAt > tier.amount ? tier.compareAt : null;
+    return {
+      id,
+      amountLabel: formatMoney(tier.amount, currency, locale),
+      compareLabel: genuineCompareAt
+        ? formatMoney(genuineCompareAt, currency, locale)
+        : null,
+      discount: discountPercent(tier),
+    };
+  });
 
   return (
     <MacBuy
       canBuy={canBuy}
-      currencies={currencies}
-      initialCurrency={initialCurrency}
-      plansByCurrency={plansByCurrency}
+      currency={currency}
+      plans={plans}
       canceled={Boolean(canceled)}
     />
   );

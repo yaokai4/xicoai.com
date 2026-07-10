@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Band, Wrap, BandHeading } from "@/components/mac/mac-ui";
@@ -9,7 +9,6 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { CheckGlyph } from "@/components/mac/icons";
 import { ArrowIcon } from "@/components/ui/button";
 import { startCheckout } from "@/app/actions/checkout";
-import { LOCALE_TAG } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 export type PlanView = {
@@ -19,17 +18,17 @@ export type PlanView = {
   discount: number | null;
 };
 
+// 货币由访客所在地区决定并锁定——日本区只显示日元、中国区只显示人民币，
+// 不提供切换选择（用户不该、也无需在“用哪国货币付款”上做选择）。
 export function MacBuy({
   canBuy,
-  currencies,
-  initialCurrency,
-  plansByCurrency,
+  currency,
+  plans,
   canceled,
 }: {
   canBuy: boolean;
-  currencies: string[];
-  initialCurrency: string;
-  plansByCurrency: Record<string, PlanView[]>;
+  currency: string;
+  plans: PlanView[];
   canceled?: boolean;
 }) {
   const t = useTranslations("mac.buy");
@@ -39,34 +38,6 @@ export function MacBuy({
   const [pending, startTransition] = useTransition();
   const [busyPlan, setBusyPlan] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [currency, setCurrency] = useState(
-    plansByCurrency[initialCurrency] ? initialCurrency : currencies[0],
-  );
-  const [picker, setPicker] = useState(false);
-  const pickerRef = useRef<HTMLDivElement>(null);
-  const plans = plansByCurrency[currency] ?? [];
-
-  // Localized currency names for the (collapsed) switcher, e.g. "US Dollar".
-  const localeTag = LOCALE_TAG[locale] ?? "en-US";
-  let currencyName: (c: string) => string;
-  try {
-    const dn = new Intl.DisplayNames([localeTag], { type: "currency" });
-    currencyName = (c) => dn.of(c) ?? c;
-  } catch {
-    currencyName = (c) => c;
-  }
-
-  // Close the currency menu on outside click.
-  useEffect(() => {
-    if (!picker) return;
-    const onClick = (e: MouseEvent) => {
-      if (pickerRef.current && !pickerRef.current.contains(e.target as Node)) {
-        setPicker(false);
-      }
-    };
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, [picker]);
 
   function buy(planId: string) {
     setError(null);
@@ -99,62 +70,15 @@ export function MacBuy({
           </Reveal>
         )}
 
-        {/* Prices are quoted in the visitor's own local currency (detected
-            from their region). We show that one currency — not every country's
-            at once — with a discreet menu to switch if they prefer another. */}
+        {/* 货币按访客地区锁定：只展示这一种、不提供切换。这里是一行静态说明，
+            告诉用户价格以其本地货币计价，而非让其选择。 */}
         {canBuy && (
           <Reveal>
             <div className="mt-8 flex items-center justify-center">
-              {currencies.length > 1 ? (
-                <div className="relative" ref={pickerRef}>
-                  <button
-                    type="button"
-                    onClick={() => setPicker((v) => !v)}
-                    aria-haspopup="listbox"
-                    aria-expanded={picker}
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-border-strong hover:text-foreground"
-                  >
-                    <GlobeGlyph />
-                    {t("currencyNote", { currency })}
-                    <CaretGlyph className={cn("transition-transform", picker && "rotate-180")} />
-                  </button>
-                  {picker && (
-                    <div
-                      role="listbox"
-                      className="absolute left-1/2 z-30 mt-2 max-h-72 w-60 -translate-x-1/2 overflow-auto rounded-2xl border border-border bg-bg p-1.5 shadow-[0_24px_60px_-24px_rgba(10,8,40,0.35)]"
-                    >
-                      {currencies.map((c) => (
-                        <button
-                          key={c}
-                          type="button"
-                          role="option"
-                          aria-selected={c === currency}
-                          onClick={() => {
-                            setCurrency(c);
-                            setPicker(false);
-                          }}
-                          className={cn(
-                            "flex w-full items-center justify-between gap-3 rounded-xl px-3.5 py-2 text-left text-sm transition-colors",
-                            c === currency
-                              ? "bg-brand/10 text-brand"
-                              : "text-foreground/90 hover:bg-surface",
-                          )}
-                        >
-                          <span className="truncate">{currencyName(c)}</span>
-                          <span className="shrink-0 font-medium tabular-nums text-faint">
-                            {c}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <span className="inline-flex items-center gap-2 text-sm text-faint">
-                  <GlobeGlyph />
-                  {t("currencyNote", { currency })}
-                </span>
-              )}
+              <span className="inline-flex items-center gap-2 text-sm text-faint">
+                <GlobeGlyph />
+                {t("currencyNote", { currency })}
+              </span>
             </div>
           </Reveal>
         )}
@@ -295,23 +219,3 @@ function GlobeGlyph() {
   );
 }
 
-function CaretGlyph({ className }: { className?: string }) {
-  return (
-    <svg
-      width="13"
-      height="13"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-      className={className}
-    >
-      <path
-        d="M6 9l6 6 6-6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
