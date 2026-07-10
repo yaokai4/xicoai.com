@@ -606,24 +606,23 @@
       "home": "Home",
       "security": "Sicurezza",
       "support": "Supporto",
-      "buy": "Acquista",
-      "download": "Scarica"
+      "buy": "Acquista"
     },
-    "badge": "v0.3.0 · Disponibile ora",
+    "badge": "v0.2 · Disponibile ora",
     "hero": {
       "eyebrow": "App nativa per macOS · Costruita per Apple silicon",
       "titleLine1": "Rendi il tuo Mac",
       "titleLine2": "di nuovo veloce e pulito",
       "subtitle": "Xico Clean trova file inutili di sistema, cache da sviluppatore, file di grandi dimensioni e duplicati con un solo tocco, poi libera spazio su disco in tutta sicurezza. Costruito in Swift nativo e completamente locale: anteprima prima di eliminare, annullamento dopo.",
       "ctaPrimary": "Iscriviti alla lista d'attesa",
-      "ctaSecondary": "Vedi i prezzi",
+      "ctaSecondary": "Guarda cosa sa fare",
       "trust": [
         "100% locale",
         "Con anteprima · annullabile",
         "Nativo per Apple silicon"
       ],
-      "ctaDownload": "Scarica Xico 0.3.0",
-      "downloadNote": "macOS 14+ · binario universale · 14 giorni di prova gratuita"
+      "ctaDownload": "Scarica per Mac",
+      "downloadNote": "macOS 14+ · 14 giorni di prova gratuita · senza registrazione"
     },
     "window": {
       "appName": "Xico Clean",
@@ -680,26 +679,6 @@
         }
       ]
     },
-    "trustbar": {
-      "items": [
-        {
-          "title": "Nulla lascia il tuo Mac",
-          "desc": "Ogni scansione avviene in locale"
-        },
-        {
-          "title": "Eliminazione reversibile",
-          "desc": "Prima il cestello, poi il Cestino"
-        },
-        {
-          "title": "11 lingue",
-          "desc": "App e sito completamente localizzati"
-        },
-        {
-          "title": "Binario universale",
-          "desc": "Un solo installer per Apple silicon e Intel"
-        }
-      ]
-    },
     "features": {
       "eyebrow": "Tutto quello che fa",
       "title": "Una sola app per prendersi cura di tutto il tuo Mac",
@@ -719,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "L'intero disco come un sunburst: entrando nei livelli, i settori si trasformano in un'animazione continua di fioritura, con i colori ancorati per non perdere mai l'orientamento."
+          "desc": "Trasforma l'intero SSD in una treemap interattiva, esplora cartella per cartella e scopri esattamente dove è finito lo spazio."
         },
         {
           "name": "File grandi e vecchi",
@@ -747,27 +726,11 @@
         },
         {
           "name": "Monitor nella barra dei menu",
-          "desc": "Più mini indicatori affiancati in un solo elemento della barra dei menu — istogramma CPU, torta della memoria, velocità di rete e batteria — ognuno configurabile a sé."
+          "desc": "Vive nella barra dei menu con statistiche in tempo reale su CPU, memoria e rete, più la pulizia rapida sempre a portata di mano."
         },
         {
           "name": "Rimozione malware",
           "desc": "Analizza il Mac alla ricerca di adware e componenti dannosi noti per macOS con una libreria di firme certificata, e li rimuove appena rilevati."
-        },
-        {
-          "name": "Cesto di raccolta",
-          "desc": "Eliminazione in due tempi: prima raccogli e visualizzi in anteprima, togli ciò che vuoi in qualsiasi momento; 5 secondi per annullare prima dell'esecuzione, e i file finiscono nel Cestino."
-        },
-        {
-          "name": "Punteggio di salute spiegabile",
-          "desc": "Cinque sotto-punteggi — spazio libero, pressione della memoria, temperatura, pressione termica e SMART — ognuno riconducibile a letture reali e a una formula pubblicata."
-        },
-        {
-          "name": "Libera copie iCloud",
-          "desc": "Rimuove la cache locale dei file già scaricati. Tutto resta intatto su iCloud, pronto per essere riscaricato in qualsiasi momento."
-        },
-        {
-          "name": "Avvisi a soglia",
-          "desc": "Notifica solo quando CPU, memoria, disco, temperatura o batteria restano oltre il limite per la durata che imposti — con un periodo di attesa contro i falsi allarmi."
         }
       ]
     },
@@ -789,10 +752,10 @@
         {
           "tag": "Space Lens",
           "title": "Guarda il tuo disco — e capisci al volo dove è finito lo spazio",
-          "desc": "Il tuo disco disegnato come un sunburst. Entrando nei livelli, i settori si trasformano in un'animazione continua di fioritura, gli elementi piccoli si raccolgono in un arco «Altro» e i colori restano ancorati — sai sempre dove sei. Mostra qualsiasi cartella nel Finder o spostala nel Cestino, direttamente da lì.",
+          "desc": "Trasforma l'intero SSD in una treemap interattiva, così è subito evidente cosa occupa spazio. Scendi fino a una cartella specifica, poi mostrala nel Finder o spostala nel Cestino direttamente da lì.",
           "points": [
-            "Fioritura all'esplorazione — settori in trasformazione continua",
-            "I piccoli elementi si raccolgono in «Altro» · colori ancorati",
+            "Treemap dell'intero disco",
+            "Esplorazione fino alle singole cartelle",
             "Mostra nel Finder o sposta nel Cestino"
           ]
         },
@@ -825,11 +788,11 @@
       "items": [
         {
           "title": "Prima l'anteprima, poi l'eliminazione",
-          "desc": "Gli elementi passano prima dal cesto di raccolta: espandili per vedere percorso e dimensione, togli ciò che vuoi — nulla parte finché non confermi."
+          "desc": "Ogni elemento si espande per mostrare percorso e dimensione: nulla si muove finché non confermi."
         },
         {
           "title": "Annullabile",
-          "desc": "Prima di ogni pulizia parte un conto alla rovescia di 5 secondi, non bloccante — annullabile in qualsiasi momento. Le eliminazioni vanno prima nel Cestino, quindi restano recuperabili."
+          "desc": "Gli elementi vanno prima nel Cestino o in un'area recuperabile, così puoi annullare l'ultima pulizia in qualsiasi momento."
         },
         {
           "title": "Whitelist e lista da ignorare",
@@ -837,7 +800,7 @@
         },
         {
           "title": "Lista protetta integrata",
-          "desc": "File di sistema critici, percorsi protetti da SIP e portachiavi sono rigorosamente intoccabili — gli elementi pericolosi vengono respinti in automatico e non entrano nemmeno nel cesto."
+          "desc": "File di sistema critici, percorsi protetti da SIP, portachiavi e dati delle app in esecuzione sono rigorosamente intoccabili."
         },
         {
           "title": "Solo elementi sicuri, per impostazione predefinita",
@@ -845,7 +808,7 @@
         },
         {
           "title": "Trasparente per scelta",
-          "desc": "Ogni categoria spiega cos'è e cosa succede se la elimini — e le linee rosse dell'eliminazione sono pubblicate nella pagina «Impegno di sicurezza» dell'app."
+          "desc": "Ogni categoria spiega cos'è e cosa succede se la elimini: mai una scatola nera."
         }
       ]
     },
@@ -879,7 +842,7 @@
         },
         {
           "value": "≈ 0 carico a riposo",
-          "label": "barra dei menu disegnata direttamente in CoreGraphics — più gentile con la batteria"
+          "label": "non disturba e non rallenta mai il tuo Mac"
         }
       ]
     },
@@ -921,7 +884,7 @@
         },
         {
           "q": "È sicuro? Potrebbe eliminare la cosa sbagliata?",
-          "a": "Tutto ciò che elimini passa prima dal cesto di raccolta, dove puoi vedere l'anteprima e togliere gli elementi. Prima di ogni pulizia parte un conto alla rovescia di 5 secondi, le eliminazioni vanno nel Cestino e restano recuperabili, e una lista protetta integrata respinge in automatico qualsiasi elemento pericoloso."
+          "a": "Ogni eliminazione è visualizzabile in anteprima e annullabile, una lista protetta integrata difende i file di sistema critici e per impostazione predefinita sono selezionati solo gli elementi sicuri al 100%."
         },
         {
           "q": "Caricherà i miei file online?",
@@ -933,11 +896,11 @@
         },
         {
           "q": "Sarà sull'App Store?",
-          "a": "Viene distribuito direttamente come build Developer ID firmata dallo sviluppatore, quindi le sue funzioni non sono limitate dal sandbox — ed è altrettanto sicuro da installare."
+          "a": "Viene distribuito con Developer ID autenticato da Apple, così le sue funzioni non sono limitate dalla sandbox — e installarlo è altrettanto sicuro."
         },
         {
           "q": "Posso scaricarlo adesso?",
-          "a": "Sì. Scarica Xico Clean 0.3.0 oggi stesso e prova tutte le funzioni gratis per 14 giorni, senza registrazione."
+          "a": "In arrivo. Iscriviti alla lista d'attesa: ti avviseremo al momento del lancio, con un prezzo early bird riservato agli iscritti."
         },
         {
           "q": "Che differenza c'è tra Xico Clean e CleanMyMac?",
@@ -982,43 +945,14 @@
     "monitor": {
       "eyebrow": "Controllo in tempo reale",
       "title": "Tieni d'occhio il tuo Mac, direttamente dalla barra dei menu",
-      "desc": "Un monitor in tempo reale nella barra dei menu, con più mini indicatori affiancati in un solo elemento: istogramma CPU, torta della memoria, velocità in salita e discesa, e batteria. Passa con un clic tra i preset Minimal, Prestazioni e Panorama — ogni indicatore con frequenza di aggiornamento e colori propri.",
+      "desc": "Un monitor in tempo reale che vive nella barra dei menu: CPU, memoria, GPU, disco, rete e temperatura a colpo d'occhio — e con un tocco liberi la memoria o avvii una pulizia rapida. Campionamento nativo, con un impatto quasi nullo.",
       "points": [
-        "Un solo elemento nella barra dei menu, più indicatori — riordinali come vuoi",
-        "Grafici su tre finestre temporali; passa il cursore per leggere qualsiasi istante",
-        "Fissa i pannelli come finestre fluttuanti · classifica del traffico per processo"
+        "Curve in tempo reale di CPU / memoria / GPU / rete",
+        "Salute della batteria, temperatura e velocità delle ventole",
+        "Libera la memoria con un solo clic"
       ],
       "caption": "Monitor di sistema · interfaccia reale",
       "menuCaption": "Pannelli della barra dei menu"
-    },
-    "menubar": {
-      "eyebrow": "Monitor nella barra dei menu",
-      "title": "Il battito di tutto il Mac, in un solo slot della barra",
-      "desc": "CPU, memoria, rete, disco e batteria affiancati in un unico elemento della barra dei menu — disegnato pixel per pixel, a costo quasi zero. Un clic apre il pannello completo, che puoi anche fissare sulla scrivania.",
-      "caption": "Indicatori ricchi · rendering reale",
-      "captionCombined": "Modalità combinata · più compatta",
-      "items": [
-        {
-          "title": "Un vero elemento combinato",
-          "desc": "Più indicatori condividono un solo slot senza schiacciare i vicini."
-        },
-        {
-          "title": "Tre finestre temporali",
-          "desc": "Grafici a corto, medio e lungo raggio: passa il cursore per leggere qualsiasi istante."
-        },
-        {
-          "title": "Pannelli fissabili",
-          "desc": "Fissa qualsiasi pannello come finestra flottante sempre sulla scrivania."
-        },
-        {
-          "title": "Classifica del traffico",
-          "desc": "Traffico di rete per processo, in classifica: il ladro di banda si vede subito."
-        },
-        {
-          "title": "Tre preset",
-          "desc": "Minimal, Prestazioni e Panorama con un clic, ognuno configurabile a parte."
-        }
-      ]
     },
     "compare": {
       "eyebrow": "Perché comprare una volta sola",
@@ -1074,7 +1008,7 @@
     "hardware": {
       "eyebrow": "Hardware e salute",
       "title": "Batteria, temperatura e salute del disco — tutto sotto controllo",
-      "desc": "Leggi salute e cicli della batteria; temperature di CPU, GPU e SSD e velocità delle ventole; stato SMART e spazio libero dell'SSD; più informazioni su memoria e display — con un punteggio di salute spiegabile, in cui ogni punto risale a una lettura reale e a una formula pubblicata.",
+      "desc": "Leggi salute e cicli della batteria; temperature di CPU, GPU e SSD e velocità delle ventole; stato SMART e spazio libero dell'SSD; più informazioni su memoria e display — dettagliato come gli strumenti professionali, solo più bello da vedere.",
       "points": [
         "Salute della batteria, cicli di ricarica e stato di carica",
         "Temperature di CPU / GPU / SSD e velocità delle ventole",
@@ -1117,10 +1051,6 @@
             {
               "name": "File inutili da sviluppatore",
               "desc": "DerivedData di Xcode, simulatori, node_modules, cache di Homebrew / npm / pip e immagini Docker orfane."
-            },
-            {
-              "name": "Cesto di raccolta",
-              "desc": "Eliminazione in due tempi: raccogli e visualizza in anteprima, togli ciò che vuoi; 5 secondi per annullare, e i file finiscono nel Cestino."
             }
           ]
         },
@@ -1150,7 +1080,7 @@
           "items": [
             {
               "name": "Space Lens",
-              "desc": "Un sunburst esplorabile con un'animazione continua di fioritura tra i livelli — individua con precisione cosa occupa spazio."
+              "desc": "Una treemap dell'intero disco da esplorare in profondità, per individuare con precisione cosa occupa spazio."
             },
             {
               "name": "File grandi e vecchi",
@@ -1167,10 +1097,6 @@
             {
               "name": "Download e disordine",
               "desc": "Metti in ordine la cartella Download, il disordine della scrivania e i vecchi installer (.dmg / .pkg)."
-            },
-            {
-              "name": "Libera copie iCloud",
-              "desc": "Rimuove la cache locale dei file scaricati; tutto resta su iCloud, pronto per essere riscaricato."
             }
           ]
         },
@@ -1195,15 +1121,7 @@
             },
             {
               "name": "Monitor nella barra dei menu",
-              "desc": "Più mini indicatori in un solo elemento della barra dei menu, preset con un clic, frequenza e colori propri per ogni indicatore."
-            },
-            {
-              "name": "Punteggio di salute spiegabile",
-              "desc": "Cinque sotto-punteggi — spazio libero, pressione della memoria, temperatura, pressione termica e SMART — ognuno riconducibile a letture reali e a una formula pubblicata."
-            },
-            {
-              "name": "Avvisi a soglia",
-              "desc": "Notifica solo quando un limite resta superato per la durata impostata, con un periodo di attesa contro i falsi allarmi."
+              "desc": "Vive nella barra dei menu con statistiche in tempo reale su CPU, memoria, disco, rete e batteria — e con un tocco liberi la memoria o avvii una pulizia rapida."
             }
           ]
         }
@@ -1265,41 +1183,27 @@
     "download": {
       "eyebrow": "Download",
       "title": "Regala al tuo Mac un nuovo inizio",
-      "subtitle": "Download gratuito, 14 giorni di prova completa. Nativo per Apple silicon, distribuito con firma dello sviluppatore — pronto appena lo apri.",
+      "subtitle": "Download gratuito, 14 giorni di prova completa. Nativo per Apple silicon, autenticato da Apple, pronto appena lo apri.",
       "cta": "Scarica per Mac",
       "buy": "Vedi i piani di acquisto",
       "reqs": [
         "macOS 14 o successivo",
         "Apple silicon e Intel",
-        "Firmato dallo sviluppatore",
+        "Autenticato da Apple",
         "Senza registrazione"
       ],
-      "trust": "Distribuito con firma dello sviluppatore: trascinalo in Applicazioni e la prova di 14 giorni inizia subito."
+      "trust": "Autenticato da Apple: Gatekeeper lo approva direttamente. Dopo il download, basta trascinarlo in Applicazioni."
     },
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Tutto il tuo disco, a colpo d'occhio",
-      "desc": "L'utilizzo del disco disegnato come un sunburst esplorabile: il colore indica la cartella di primo livello, l'angolo la dimensione. Entrando nei livelli, i settori si trasformano in un'animazione continua di fioritura, gli elementi piccoli si raccolgono in un arco «Altro» e i colori restano ancorati tra i livelli — sai sempre dove sei e dove è finito lo spazio. Analisi in sola lettura, dall'inizio alla fine.",
-      "cards": [
-        {
-          "title": "Drill-down in fioritura",
-          "desc": "Clicca su un settore e il grafico si trasforma con continuità tra i livelli, senza stacchi."
-        },
-        {
-          "title": "L'arco «Altro»",
-          "desc": "Gli elementi minuti si raccolgono in un arco: l'immagine resta sempre leggibile."
-        },
-        {
-          "title": "Tinte ancorate",
-          "desc": "Ogni cartella radice mantiene la sua tinta a ogni profondità: non ti perdi mai."
-        },
-        {
-          "title": "Eliminazione in due fasi",
-          "desc": "Prima nel cestello, con anteprima — e 5 secondi per annullare prima dell'esecuzione."
-        }
+      "desc": "L'utilizzo del disco disegnato come un sunburst esplorabile: il colore indica la cartella di primo livello, l'angolo la dimensione. Clicca un anello per entrare, clicca il centro per tornare indietro — con evidenziazione per famiglie e analisi in sola lettura che vanno un passo oltre DaisyDisk.",
+      "points": [
+        "Esplora livello per livello · clic al centro per tornare",
+        "L'evidenziazione per famiglie mostra dove scorre lo spazio",
+        "Sola lettura · non tocca mai i tuoi file"
       ],
-      "caption": "Space Lens · grafico sunburst",
-      "captionDrilled": "Dopo il drill-down · le tinte di famiglia continuano"
+      "caption": "Space Lens · grafico sunburst"
     },
     "speed": {
       "eyebrow": "Test velocità disco",

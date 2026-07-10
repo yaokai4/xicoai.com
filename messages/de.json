@@ -606,24 +606,23 @@
       "home": "Start",
       "security": "Sicherheit",
       "support": "Support",
-      "buy": "Kaufen",
-      "download": "Laden"
+      "buy": "Kaufen"
     },
-    "badge": "v0.3.0 · Jetzt verfügbar",
+    "badge": "v0.2 · Jetzt verfügbar",
     "hero": {
       "eyebrow": "Native macOS-App · Für Apple silicon gebaut",
       "titleLine1": "Machen Sie Ihren Mac",
       "titleLine2": "wieder schnell und sauber",
       "subtitle": "Xico Clean findet Systemmüll, Entwickler-Caches, große Dateien und Duplikate mit einem einzigen Klick und gibt Speicherplatz sicher wieder frei. In nativem Swift gebaut und komplett lokal — Vorschau vor dem Löschen, Rückgängig danach.",
       "ctaPrimary": "Auf die Warteliste",
-      "ctaSecondary": "Preise ansehen",
+      "ctaSecondary": "Was es kann",
       "trust": [
         "100% lokal",
         "Mit Vorschau · rückgängig machbar",
         "Nativ für Apple silicon"
       ],
-      "ctaDownload": "Xico 0.3.0 laden",
-      "downloadNote": "macOS 14+ · Universal Binary · 14 Tage kostenlos testen"
+      "ctaDownload": "Für Mac laden",
+      "downloadNote": "macOS 14+ · 14 Tage kostenlos testen · ohne Registrierung"
     },
     "window": {
       "appName": "Xico Clean",
@@ -680,26 +679,6 @@
         }
       ]
     },
-    "trustbar": {
-      "items": [
-        {
-          "title": "Nichts verlässt Ihren Mac",
-          "desc": "Jeder Scan läuft komplett lokal"
-        },
-        {
-          "title": "Löschen mit Rückweg",
-          "desc": "Erst Sammelkorb, dann Papierkorb"
-        },
-        {
-          "title": "11 Sprachen",
-          "desc": "App und Website vollständig lokalisiert"
-        },
-        {
-          "title": "Universal Binary",
-          "desc": "Ein Installer für Apple silicon und Intel"
-        }
-      ]
-    },
     "features": {
       "eyebrow": "Alles, was es kann",
       "title": "Eine App, die sich um Ihren ganzen Mac kümmert",
@@ -719,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "Die ganze Festplatte als Sunburst-Diagramm — beim Hineinzoomen verformen sich die Sektoren in einer durchgehenden Blüh-Animation, die Farbtöne bleiben verankert, damit Sie nie die Orientierung verlieren."
+          "desc": "Verwandelt Ihre gesamte SSD in eine interaktive Treemap — Ordner für Ordner hineinzoomen und genau sehen, wohin der Speicherplatz verschwunden ist."
         },
         {
           "name": "Große & alte Dateien",
@@ -747,27 +726,11 @@
         },
         {
           "name": "Menüleisten-Monitor",
-          "desc": "Mehrere Mini-Anzeigen nebeneinander in einem einzigen Menüleisten-Eintrag — CPU-Histogramm, Speicher-Kreisdiagramm, Netzwerkraten und Batterie — jede einzeln konfigurierbar."
+          "desc": "Sitzt in der Menüleiste mit Live-Werten für CPU, Arbeitsspeicher und Netzwerk — die Schnellbereinigung immer griffbereit."
         },
         {
           "name": "Malware-Entfernung",
           "desc": "Scannt mit einer signierten Definitionsbibliothek nach bekannter macOS-Adware und schädlichen Komponenten und entfernt sie direkt bei Erkennung."
-        },
-        {
-          "name": "Sammelkorb",
-          "desc": "Löschen in zwei Schritten: erst sammeln und prüfen, jederzeit wieder herausnehmen; 5 Sekunden Countdown vor der Ausführung, gelöscht wird in den Papierkorb."
-        },
-        {
-          "name": "Erklärbarer Gesundheitswert",
-          "desc": "Fünf Teilwerte — freier Speicherplatz, Speicherdruck, Temperatur, thermische Last und SMART — jeder rückverfolgbar bis zu echten Messwerten und einer offengelegten Formel."
-        },
-        {
-          "name": "iCloud-Kopien freigeben",
-          "desc": "Entfernt die lokalen Kopien bereits geladener Dateien. Alles bleibt vollständig in iCloud und lässt sich jederzeit erneut laden."
-        },
-        {
-          "name": "Schwellenwert-Alarme",
-          "desc": "Benachrichtigt nur, wenn CPU, Speicher, Festplatte, Temperatur oder Batterie den Grenzwert für eine von Ihnen gesetzte Dauer überschreitet — mit Abklingzeit gegen Fehlalarme."
         }
       ]
     },
@@ -789,10 +752,10 @@
         {
           "tag": "Space Lens",
           "title": "Ihre Festplatte sichtbar gemacht — und wohin der Platz verschwunden ist, auf einen Blick",
-          "desc": "Ihre Festplatte als Sunburst-Diagramm. Beim Hineinzoomen verformen sich die Sektoren in einer durchgehenden Blüh-Animation, kleine Einträge sammeln sich in einem „Sonstiges“-Bogen, und die Farbtöne bleiben verankert — Sie wissen immer, wo Sie sind. Jeden Ordner direkt im Finder zeigen oder in den Papierkorb legen.",
+          "desc": "Verwandeln Sie Ihre gesamte SSD in eine interaktive Treemap, die sofort zeigt, was Platz belegt. Zoomen Sie bis in einen bestimmten Ordner hinein, zeigen Sie ihn direkt im Finder an — oder legen Sie ihn gleich dort in den Papierkorb.",
           "points": [
-            "Blüh-Animation — Sektoren verformen sich durchgehend",
-            "Kleine Einträge sammeln sich im „Sonstiges“-Bogen · Farbtöne verankert",
+            "Treemap-Visualisierung der ganzen Festplatte",
+            "Bis in einzelne Ordner hineinzoomen",
             "Im Finder zeigen oder in den Papierkorb legen"
           ]
         },
@@ -825,11 +788,11 @@
       "items": [
         {
           "title": "Immer erst Vorschau, dann löschen",
-          "desc": "Zu löschende Elemente wandern erst in den Sammelkorb — aufklappen zeigt Pfad und Größe, alles lässt sich wieder herausnehmen, und nichts läuft ohne Ihre Bestätigung."
+          "desc": "Jedes Element lässt sich aufklappen und zeigt Pfad und Größe — nichts passiert, bevor Sie bestätigen."
         },
         {
           "title": "Rückgängig machbar",
-          "desc": "Vor jeder Bereinigung läuft ein 5-Sekunden-Countdown, der Sie nicht blockiert — jederzeit abbrechbar. Gelöscht wird zuerst in den Papierkorb, also bleibt alles wiederherstellbar."
+          "desc": "Elemente wandern zuerst in den Papierkorb oder einen wiederherstellbaren Bereich — Ihre letzte Bereinigung lässt sich jederzeit rückgängig machen."
         },
         {
           "title": "Whitelist & Ignorierliste",
@@ -837,7 +800,7 @@
         },
         {
           "title": "Integrierte Schutzliste",
-          "desc": "Kritische Systemdateien, SIP-geschützte Pfade und der Schlüsselbund sind strikt tabu — gefährliche Elemente werden automatisch abgewiesen und gelangen gar nicht erst in den Sammelkorb."
+          "desc": "Kritische Systemdateien, SIP-geschützte Pfade, der Schlüsselbund und Daten laufender Apps sind strikt tabu."
         },
         {
           "title": "Standardmäßig nur sichere Elemente",
@@ -845,7 +808,7 @@
         },
         {
           "title": "Transparent von Grund auf",
-          "desc": "Jede Kategorie erklärt, was sie ist und was beim Löschen passiert — und die roten Linien fürs Löschen sind auf der „Sicherheitsversprechen“-Seite der App offengelegt."
+          "desc": "Jede Kategorie erklärt, was sie ist und was beim Löschen passiert — nie eine Blackbox."
         }
       ]
     },
@@ -879,7 +842,7 @@
         },
         {
           "value": "≈ 0 Last im Leerlauf",
-          "label": "Menüleiste direkt mit CoreGraphics gezeichnet — schont die Batterie"
+          "label": "nervt nie und bremst Ihren Mac nicht aus"
         }
       ]
     },
@@ -921,7 +884,7 @@
         },
         {
           "q": "Ist es sicher? Kann es etwas Falsches löschen?",
-          "a": "Alles, was Sie entfernen, wandert zuerst in den Sammelkorb — dort können Sie jedes Element prüfen und wieder herausnehmen. Vor jeder Bereinigung läuft ein 5-Sekunden-Countdown, gelöscht wird in den Papierkorb und bleibt wiederherstellbar, und eine integrierte Schutzliste weist gefährliche Elemente automatisch ab."
+          "a": "Jede Löschung hat eine Vorschau und lässt sich rückgängig machen, eine integrierte Schutzliste bewahrt kritische Systemdateien, und standardmäßig sind nur 100% sichere Elemente ausgewählt."
         },
         {
           "q": "Lädt es meine Dateien hoch?",
@@ -933,11 +896,11 @@
         },
         {
           "q": "Kommt es in den App Store?",
-          "a": "Es wird direkt als signierter Developer-ID-Build verteilt — so ist der Funktionsumfang nicht durch die Sandbox begrenzt, und die Installation bleibt genauso sicher."
+          "a": "Es wird über eine von Apple notarisierte Developer ID verteilt — so ist der Funktionsumfang nicht durch die Sandbox begrenzt, und die Installation bleibt genauso sicher."
         },
         {
           "q": "Kann ich es jetzt herunterladen?",
-          "a": "Ja — laden Sie Xico Clean 0.3.0 noch heute und testen Sie alle Funktionen 14 Tage lang kostenlos, ganz ohne Registrierung."
+          "a": "Bald. Tragen Sie sich in die Warteliste ein — wir informieren Sie sofort zum Start, und Wartelisten-Mitglieder erhalten einen Frühbucherpreis."
         },
         {
           "q": "Was ist der Unterschied zwischen Xico Clean und CleanMyMac?",
@@ -982,43 +945,14 @@
     "monitor": {
       "eyebrow": "Echtzeit-Kontrolle",
       "title": "Behalten Sie Ihren Mac im Blick — direkt aus der Menüleiste",
-      "desc": "Ein Live-Monitor in der Menüleiste, mit mehreren Mini-Anzeigen nebeneinander in einem einzigen Eintrag: CPU-Histogramm, Speicher-Kreisdiagramm, Netzwerkraten und Batterie. Wechseln Sie mit einem Klick zwischen den Voreinstellungen Minimal, Leistung und Panorama — jede Anzeige mit eigener Aktualisierungsrate und Farbgebung.",
+      "desc": "Ein Live-Monitor, der in Ihrer Menüleiste wohnt: CPU, Arbeitsspeicher, GPU, Festplatte, Netzwerk und Temperatur auf einen Blick — plus Speicher-Schnellfreigabe und Schnellbereinigung per Klick. Natives Sampling, mit kaum messbarer Last.",
       "points": [
-        "Ein Menüleisten-Eintrag, viele Anzeigen — frei sortierbar",
-        "Kurven mit drei Zeitfenstern; per Mauszeiger jeden Moment ablesen",
-        "Panels als schwebende Fenster anheften · Datenverkehr pro Prozess"
+        "Live-Kurven für CPU / Arbeitsspeicher / GPU / Netzwerk",
+        "Batteriezustand, Temperatur und Lüfterdrehzahl",
+        "Arbeitsspeicher mit einem Klick freigeben"
       ],
       "caption": "Systemmonitor · echte Oberfläche",
       "menuCaption": "Menüleisten-Panels"
-    },
-    "menubar": {
-      "eyebrow": "Menüleisten-Monitor",
-      "title": "Der Puls Ihres ganzen Macs — in einem Menüleisten-Slot",
-      "desc": "CPU, Speicher, Netzwerk, Festplatte und Batterie sitzen nebeneinander in einem einzigen Menüleisten-Eintrag — Pixel für Pixel gezeichnet, bei fast null Last. Ein Klick öffnet das volle Instrumenten-Panel, das sich auch auf dem Schreibtisch anheften lässt.",
-      "caption": "Reiche Instrumente · echte Darstellung",
-      "captionCombined": "Kombinierter Modus · kompakter",
-      "items": [
-        {
-          "title": "Ein echtes Kombi-Element",
-          "desc": "Mehrere Instrumente teilen sich einen Slot, ohne die Nachbarn zu verdrängen."
-        },
-        {
-          "title": "Drei Zeitfenster",
-          "desc": "Kurze, mittlere und lange Diagrammspannen — per Hover jeden Moment ablesen."
-        },
-        {
-          "title": "Anheftbare Panels",
-          "desc": "Jedes Panel wird auf Wunsch zum schwebenden Fenster auf dem Schreibtisch."
-        },
-        {
-          "title": "Traffic-Rangliste",
-          "desc": "Netzwerkverkehr pro Prozess, sortiert — der Bandbreitendieb fällt sofort auf."
-        },
-        {
-          "title": "Drei Voreinstellungen",
-          "desc": "Minimal, Performance und Panorama — ein Klick, alles einzeln konfigurierbar."
-        }
-      ]
     },
     "compare": {
       "eyebrow": "Warum einmal kaufen",
@@ -1074,7 +1008,7 @@
     "hardware": {
       "eyebrow": "Hardware & Zustand",
       "title": "Batterie, Temperatur und Laufwerkszustand — alles im Blick",
-      "desc": "Batteriezustand und Ladezyklen ablesen; Temperaturen von CPU, GPU und SSD sowie Lüfterdrehzahl; SMART-Status und freier Speicher Ihrer SSD; dazu Arbeitsspeicher- und Display-Informationen — samt erklärbarem Gesundheitswert, bei dem jeder Punkt bis zum echten Messwert und zur offengelegten Formel rückverfolgbar ist.",
+      "desc": "Batteriezustand und Ladezyklen ablesen; Temperaturen von CPU, GPU und SSD sowie Lüfterdrehzahl; SMART-Status und freier Speicher Ihrer SSD; dazu Arbeitsspeicher- und Display-Informationen — so gründlich wie die Profi-Tools, nur schöner.",
       "points": [
         "Batteriezustand, Ladezyklen und Ladestatus",
         "Temperaturen von CPU / GPU / SSD und Lüfterdrehzahl",
@@ -1117,10 +1051,6 @@
             {
               "name": "Entwicklermüll",
               "desc": "Xcode DerivedData, Simulatoren, node_modules, Homebrew-/npm-/pip-Caches und verwaiste Docker-Images."
-            },
-            {
-              "name": "Sammelkorb",
-              "desc": "Löschen in zwei Schritten: erst sammeln und prüfen, jederzeit herausnehmen; 5 Sekunden Countdown, gelöscht wird in den Papierkorb."
             }
           ]
         },
@@ -1150,7 +1080,7 @@
           "items": [
             {
               "name": "Space Lens",
-              "desc": "Ein Sunburst-Diagramm zum Hineinzoomen mit durchgehender Blüh-Animation zwischen den Ebenen — so sehen Sie genau, was Platz belegt."
+              "desc": "Eine Treemap der ganzen Festplatte, in die Sie hineinzoomen können — so sehen Sie genau, was Platz belegt."
             },
             {
               "name": "Große & alte Dateien",
@@ -1167,10 +1097,6 @@
             {
               "name": "Downloads & Kleinkram",
               "desc": "Downloads-Ordner, Schreibtisch-Chaos und alte Installer (.dmg / .pkg) aufräumen."
-            },
-            {
-              "name": "iCloud-Kopien freigeben",
-              "desc": "Entfernt lokale Kopien geladener Dateien; alles bleibt in iCloud und lässt sich jederzeit erneut laden."
             }
           ]
         },
@@ -1195,15 +1121,7 @@
             },
             {
               "name": "Menüleisten-Monitor",
-              "desc": "Mehrere Mini-Anzeigen in einem einzigen Menüleisten-Eintrag, Voreinstellungen per Klick, eigene Aktualisierungsrate und Farbgebung je Anzeige."
-            },
-            {
-              "name": "Erklärbarer Gesundheitswert",
-              "desc": "Fünf Teilwerte — Speicherplatz, Speicherdruck, Temperatur, thermische Last und SMART — jeder rückverfolgbar bis zu echten Messwerten und einer offengelegten Formel."
-            },
-            {
-              "name": "Schwellenwert-Alarme",
-              "desc": "Benachrichtigt nur, wenn ein Grenzwert für die gesetzte Dauer überschritten bleibt — mit Abklingzeit gegen Fehlalarme."
+              "desc": "Sitzt in der Menüleiste mit Live-Werten für CPU, Arbeitsspeicher, Festplatte, Netzwerk und Batterie — plus Speicher-Schnellfreigabe und Bereinigung."
             }
           ]
         }
@@ -1265,41 +1183,27 @@
     "download": {
       "eyebrow": "Download",
       "title": "Schenken Sie Ihrem Mac einen Neuanfang",
-      "subtitle": "Kostenlos laden, 14 Tage mit vollem Funktionsumfang testen. Nativ für Apple silicon, mit Entwicklersignatur verteilt — startklar in dem Moment, in dem Sie es öffnen.",
+      "subtitle": "Kostenlos laden, 14 Tage mit vollem Funktionsumfang testen. Nativ für Apple silicon, von Apple notarisiert — startklar in dem Moment, in dem Sie es öffnen.",
       "cta": "Für Mac laden",
       "buy": "Kaufoptionen ansehen",
       "reqs": [
         "macOS 14 oder neuer",
         "Apple silicon & Intel",
-        "Mit Entwicklersignatur",
+        "Von Apple notarisiert",
         "Ohne Registrierung"
       ],
-      "trust": "Mit Entwicklersignatur verteilt — nach dem Download einfach in „Programme“ ziehen, und die 14-tägige Testphase beginnt sofort."
+      "trust": "Notarisiert — Gatekeeper lässt es direkt passieren. Nach dem Download einfach in „Programme“ ziehen."
     },
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Ihre ganze Festplatte auf einen Blick",
-      "desc": "Die Festplattenbelegung als Sunburst-Diagramm zum Hineinzoomen: Der Farbton steht für den obersten Ordner, der Winkel für die Größe. Beim Hineinzoomen verformen sich die Sektoren in einer durchgehenden Blüh-Animation, kleine Einträge sammeln sich in einem „Sonstiges“-Bogen, und die Farbtöne bleiben über die Ebenen hinweg verankert — Sie wissen immer, wo Sie sind und wohin der Platz verschwunden ist. Durchgehend schreibgeschützte Analyse.",
-      "cards": [
-        {
-          "title": "Bloom-Drilldown",
-          "desc": "Ein Klick auf einen Sektor lässt das Diagramm fließend zwischen Ebenen morphen — ohne harte Schnitte."
-        },
-        {
-          "title": "Der „Sonstiges“-Bogen",
-          "desc": "Kleinteiliges sammelt sich in einem Bogen — das Bild bleibt immer lesbar."
-        },
-        {
-          "title": "Verankerte Farbtöne",
-          "desc": "Jeder Top-Ordner behält seinen Farbton auf jeder Ebene. Sie verlaufen sich nie."
-        },
-        {
-          "title": "Löschen in zwei Schritten",
-          "desc": "Erst in den Sammelkorb, mit Vorschau — und bis 5 Sekunden nach dem Start widerrufbar."
-        }
+      "desc": "Die Festplattenbelegung als Sunburst-Diagramm zum Hineinzoomen: Der Farbton steht für den obersten Ordner, der Winkel für die Größe. Klicken Sie auf einen Ring, um einzutauchen, und auf die Mitte, um zurückzukehren — mit Familien-Hervorhebung und schreibgeschützter Analyse, die noch einen Schritt über DaisyDisk hinausgehen.",
+      "points": [
+        "Ebene für Ebene hineinzoomen · Klick auf die Mitte führt zurück",
+        "Familien-Hervorhebung zeigt, wohin der Platz fließt",
+        "Nur Lesezugriff · rührt Ihre Dateien nie an"
       ],
-      "caption": "Space Lens · Sunburst-Diagramm",
-      "captionDrilled": "Nach dem Drilldown · Familienfarben bleiben"
+      "caption": "Space Lens · Sunburst-Diagramm"
     },
     "speed": {
       "eyebrow": "Festplatten-Benchmark",

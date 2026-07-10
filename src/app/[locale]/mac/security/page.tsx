@@ -4,7 +4,7 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
 import { breadcrumbJsonLd, jsonLdScript, absoluteUrl } from "@/lib/seo";
-import { MacPrivacy, MacSafety, MacDownload } from "@/components/mac/mac-sections";
+import { MacPrivacy, MacSafety, MacWaitlist } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
   params,
@@ -55,7 +55,7 @@ export default async function MacSecurityPage({
       />
       <MacSafety topPad />
       <MacPrivacy />
-      <MacDownload />
+      <MacWaitlist />
     </>
   );
 }

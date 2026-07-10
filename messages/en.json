@@ -606,24 +606,23 @@
       "home": "Home",
       "security": "Security",
       "support": "Support",
-      "buy": "Buy",
-      "download": "Download"
+      "buy": "Buy"
     },
-    "badge": "v0.3.0 · Available now",
+    "badge": "v0.2 · Available now",
     "hero": {
       "eyebrow": "Native macOS app · Built for Apple silicon",
       "titleLine1": "Make your Mac",
       "titleLine2": "fast and clean again",
       "subtitle": "Xico Clean finds system junk, developer caches, large files, and duplicates in a single tap, then safely frees up disk space. Built in native Swift and fully local — preview before you delete, undo after.",
       "ctaPrimary": "Join the waitlist",
-      "ctaSecondary": "See pricing",
+      "ctaSecondary": "See what it does",
       "trust": [
         "100% local",
         "Previewable · undoable",
         "Native Apple silicon"
       ],
-      "ctaDownload": "Download Xico 0.3.0",
-      "downloadNote": "macOS 14+ · Universal binary · 14-day free trial"
+      "ctaDownload": "Download for Mac",
+      "downloadNote": "macOS 14+ · 14-day free trial · no signup"
     },
     "window": {
       "appName": "Xico Clean",
@@ -680,26 +679,6 @@
         }
       ]
     },
-    "trustbar": {
-      "items": [
-        {
-          "title": "Nothing leaves your Mac",
-          "desc": "Every scan and analysis runs locally"
-        },
-        {
-          "title": "Undoable deletion",
-          "desc": "Basket first, then the Trash"
-        },
-        {
-          "title": "11 languages",
-          "desc": "App and site, fully localized"
-        },
-        {
-          "title": "Universal binary",
-          "desc": "One installer for Apple silicon and Intel"
-        }
-      ]
-    },
     "features": {
       "eyebrow": "Everything it does",
       "title": "One app to look after your entire Mac",
@@ -719,7 +698,7 @@
         },
         {
           "name": "Space Lens",
-          "desc": "Your whole disk as a sunburst map — drilling in morphs the sectors in one continuous bloom, with hues anchored so you never lose track."
+          "desc": "Turn your whole SSD into an interactive treemap, drill down folder by folder, and see exactly where space went."
         },
         {
           "name": "Large & Old Files",
@@ -747,27 +726,11 @@
         },
         {
           "name": "Menu Bar Monitor",
-          "desc": "Several mini gauges side by side in a single menu-bar item — CPU histogram, memory pie, network up/down rates, and battery — each configurable on its own."
+          "desc": "Lives in the menu bar with live CPU, memory, and network stats, plus quick cleanup always at hand."
         },
         {
           "name": "Malware Removal",
           "desc": "Scan for known macOS adware and malicious components using a signed definitions library, and remove them on detection."
-        },
-        {
-          "name": "Collection Basket",
-          "desc": "Deletion in two stages: collect and preview first, take items back out anytime; a 5-second undo window before it runs, and files go to the Trash."
-        },
-        {
-          "name": "Explainable Health Score",
-          "desc": "Five sub-scores — free disk space, memory pressure, temperature, thermal pressure, and SMART — each traceable to real readings and a published formula."
-        },
-        {
-          "name": "Free Up iCloud Copies",
-          "desc": "Remove the local caches of already-downloaded files. Everything stays intact in iCloud, ready to re-download anytime."
-        },
-        {
-          "name": "Threshold Alerts",
-          "desc": "Notifies only when CPU, memory, disk, temperature, or battery stays over its limit for a duration you set — with a cooldown against false alarms."
         }
       ]
     },
@@ -789,10 +752,10 @@
         {
           "tag": "Space Lens",
           "title": "See your disk — and where the space went, at a glance",
-          "desc": "Your disk drawn as a sunburst. Drilling in morphs the sectors in one continuous bloom, small items gather into an 'Other' arc, and hues stay anchored between levels — you always know where you are. Reveal any folder in Finder or move it to the Trash right there.",
+          "desc": "Turn your entire SSD into an interactive treemap, so it's obvious what's taking up room. Drill down to a specific folder, then reveal it in Finder or move it to the Trash right there.",
           "points": [
-            "Bloom drill-down — sectors morph continuously",
-            "Small items gather into an 'Other' arc · hues stay anchored",
+            "Whole-disk treemap visualization",
+            "Drill down to specific folders",
             "Reveal in Finder or move to Trash"
           ]
         },
@@ -825,11 +788,11 @@
       "items": [
         {
           "title": "Always preview, then delete",
-          "desc": "Items head to the Collection Basket first — expand to see path and size, take anything back out, and nothing runs until you confirm."
+          "desc": "Every item expands to show its path and size — nothing moves until you confirm."
         },
         {
           "title": "Undoable",
-          "desc": "A 5-second, non-blocking countdown runs before every cleanup — cancel anytime. Deletions go to the Trash first, so you can still recover."
+          "desc": "Items go to the Trash or a recoverable area first, so you can undo your last cleanup anytime."
         },
         {
           "title": "Whitelist & ignore list",
@@ -837,7 +800,7 @@
         },
         {
           "title": "Built-in protection list",
-          "desc": "Critical system files, SIP-protected paths, and the keychain are strictly off-limits — dangerous items are auto-rejected and never enter the basket."
+          "desc": "Critical system files, SIP-protected paths, the keychain, and data from running apps are strictly off-limits."
         },
         {
           "title": "Safe items only, by default",
@@ -845,7 +808,7 @@
         },
         {
           "title": "Transparent by design",
-          "desc": "Every category explains what it is and what happens if you delete it — and the deletion red lines are published on the app's Safety Promise page."
+          "desc": "Every category explains what it is and what happens if you delete it — never a black box."
         }
       ]
     },
@@ -879,7 +842,7 @@
         },
         {
           "value": "≈ 0 idle load",
-          "label": "menu bar drawn in pure CoreGraphics — easy on the battery"
+          "label": "never nags or slows down your Mac"
         }
       ]
     },
@@ -921,7 +884,7 @@
         },
         {
           "q": "Is it safe? Could it delete the wrong thing?",
-          "a": "Everything you remove goes to the Collection Basket first, where you can preview items and take them back out. A 5-second countdown runs before every cleanup, deletions go to the Trash so they stay recoverable, and a built-in protection list auto-rejects anything dangerous."
+          "a": "Every deletion is previewable and undoable, a built-in protection list guards critical system files, and only 100% safe items are checked by default."
         },
         {
           "q": "Will it upload my files?",
@@ -933,11 +896,11 @@
         },
         {
           "q": "Will it be on the App Store?",
-          "a": "It ships directly as a signed Developer ID build, so its features aren't limited by the sandbox — and it's just as safe to install."
+          "a": "It's distributed through Apple-notarized Developer ID, so its features aren't limited by the sandbox — and it's just as safe to install."
         },
         {
           "q": "Can I download it now?",
-          "a": "Yes — download Xico Clean 0.3.0 today and try every feature free for 14 days, no signup required."
+          "a": "Coming soon. Join the waitlist and we'll tell you the moment it launches, with an early-bird price for members."
         },
         {
           "q": "How is Xico Clean different from CleanMyMac?",
@@ -982,43 +945,14 @@
     "monitor": {
       "eyebrow": "Real-time control",
       "title": "Keep an eye on your Mac, right from the menu bar",
-      "desc": "A live monitor in your menu bar, with several mini gauges side by side in a single menu-bar item: CPU histogram, memory pie, network up/down rates, and battery. Switch between Minimal, Performance, and Panorama presets in one click — each gauge with its own refresh rate and colors.",
+      "desc": "A live monitor that lives in your menu bar: CPU, memory, GPU, disk, network, and temperature at a glance — plus quick memory release and quick cleanup on tap. Native sampling, with barely any overhead.",
       "points": [
-        "One menu-bar item, many gauges — reorder them as you like",
-        "Charts with three time windows; hover to read any moment",
-        "Pin panels as floating windows · per-process traffic ranking"
+        "Live CPU / memory / GPU / network curves",
+        "Battery health, temperature, and fan speed",
+        "Free up memory in a single click"
       ],
       "caption": "System Monitor · real UI",
       "menuCaption": "Menu-bar panels"
-    },
-    "menubar": {
-      "eyebrow": "Menu-bar monitor",
-      "title": "Your whole Mac's pulse, in one menu-bar slot",
-      "desc": "CPU, memory, network, disk, and battery sit side by side in a single menu-bar item — drawn pixel by pixel, at near-zero cost. Click for the full gauge panel, or pin it to your desktop.",
-      "caption": "Rich gauges · actual rendering",
-      "captionCombined": "Combined mode · more compact",
-      "items": [
-        {
-          "title": "A true combined item",
-          "desc": "Several gauges share one menu-bar slot without crowding their neighbors."
-        },
-        {
-          "title": "Three time windows",
-          "desc": "Short, medium, and long chart spans — hover to read any moment."
-        },
-        {
-          "title": "Pinnable panels",
-          "desc": "Pin any panel as a floating window that stays on your desktop."
-        },
-        {
-          "title": "Traffic ranking",
-          "desc": "Per-process network traffic, ranked — spot the bandwidth thief at a glance."
-        },
-        {
-          "title": "Three presets",
-          "desc": "Minimal, Performance, and Panorama — one click apart, each fully configurable."
-        }
-      ]
     },
     "compare": {
       "eyebrow": "Why buy once",
@@ -1074,7 +1008,7 @@
     "hardware": {
       "eyebrow": "Hardware & health",
       "title": "Battery, temperature, and drive health — all in view",
-      "desc": "Read battery health and cycle count; CPU, GPU, and SSD temperatures and fan speed; your SSD's SMART status and free space; plus memory and display info — with an explainable health score where every point traces back to a real reading and a published formula.",
+      "desc": "Read battery health and cycle count; CPU, GPU, and SSD temperatures and fan speed; your SSD's SMART status and free space; plus memory and display info — as thorough as the pro tools, only better-looking.",
       "points": [
         "Battery health, cycle count, and charge status",
         "CPU / GPU / SSD temperatures and fan speed",
@@ -1117,10 +1051,6 @@
             {
               "name": "Developer Junk",
               "desc": "Xcode DerivedData, simulators, node_modules, Homebrew / npm / pip caches and dangling Docker images."
-            },
-            {
-              "name": "Collection Basket",
-              "desc": "Two-stage deletion: collect and preview first, remove items anytime; a 5-second undo window, and files go to the Trash."
             }
           ]
         },
@@ -1150,7 +1080,7 @@
           "items": [
             {
               "name": "Space Lens",
-              "desc": "A drill-down sunburst with a continuous bloom animation between levels — pinpoint exactly what's taking up room."
+              "desc": "A whole-disk treemap you can drill into, so you can pinpoint exactly what's taking up room."
             },
             {
               "name": "Large & Old Files",
@@ -1167,10 +1097,6 @@
             {
               "name": "Downloads & Clutter",
               "desc": "Tidy up your Downloads folder, desktop clutter, and old installers (.dmg / .pkg)."
-            },
-            {
-              "name": "Free Up iCloud Copies",
-              "desc": "Remove local caches of downloaded files; everything stays in iCloud, ready to re-download."
             }
           ]
         },
@@ -1195,15 +1121,7 @@
             },
             {
               "name": "Menu Bar Monitor",
-              "desc": "Several mini gauges in a single menu-bar item, one-click presets, and per-gauge refresh rate and colors."
-            },
-            {
-              "name": "Explainable Health Score",
-              "desc": "Five sub-scores — disk space, memory pressure, temperature, thermal pressure, and SMART — each traceable to real readings and a published formula."
-            },
-            {
-              "name": "Threshold Alerts",
-              "desc": "Notifies only when a limit stays exceeded for a duration you set, with a cooldown against false alarms."
+              "desc": "Lives in the menu bar with live CPU, memory, disk, network, and battery stats, plus quick memory release and cleanup."
             }
           ]
         }
@@ -1265,41 +1183,27 @@
     "download": {
       "eyebrow": "Download",
       "title": "Give your Mac a fresh start",
-      "subtitle": "Free download, 14-day full trial. Native Apple silicon, signed developer build — ready the moment you open it.",
+      "subtitle": "Free download, 14-day full trial. Native Apple silicon, Apple-notarized, ready the moment you open it.",
       "cta": "Download for Mac",
       "buy": "See purchase plans",
       "reqs": [
         "macOS 14 or later",
         "Apple silicon & Intel",
-        "Signed developer build",
+        "Apple-notarized",
         "No signup"
       ],
-      "trust": "Signed developer build — drag it into Applications and your 14-day trial starts right away."
+      "trust": "Notarized — Gatekeeper approves it directly. Just drag it into Applications after downloading."
     },
     "lens": {
       "eyebrow": "Space Lens",
       "title": "Your whole disk, at a glance",
-      "desc": "Disk usage drawn as a drill-down sunburst: hue is the top-level folder, angle is size. Drilling in morphs the sectors in one continuous bloom, small items gather into an 'Other' arc, and hues stay anchored between levels — you always know where you are and where the space went. Read-only analysis, all the way.",
-      "cards": [
-        {
-          "title": "Bloom drill-down",
-          "desc": "Click a sector and the chart morphs continuously between levels — no hard cuts."
-        },
-        {
-          "title": "The 'Other' arc",
-          "desc": "Tiny items gather into one arc, keeping the picture clean and readable."
-        },
-        {
-          "title": "Anchored hues",
-          "desc": "Each top-level folder keeps its hue at every depth, so you never get lost."
-        },
-        {
-          "title": "Two-step deletion",
-          "desc": "Collect to the basket first, preview freely — and undo within 5 seconds of running."
-        }
+      "desc": "Disk usage drawn as a drill-down sunburst: hue is the top-level folder, angle is size. Click a ring to dive in, click the center to go back — with family highlighting and read-only analysis that go a step beyond DaisyDisk.",
+      "points": [
+        "Drill down level by level · center click to go back",
+        "Family highlighting shows where space flows",
+        "Read-only · never touches your files"
       ],
-      "caption": "Space Lens · sunburst chart",
-      "captionDrilled": "Drilled in · family hues carry over"
+      "caption": "Space Lens · sunburst chart"
     },
     "speed": {
       "eyebrow": "Disk Speed Test",

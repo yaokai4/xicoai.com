@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
-import { softwareAppJsonLd, faqJsonLd, jsonLdScript } from "@/lib/seo";
-import { priceRange, PLAN_IDS } from "@/lib/pricing";
-import { getMarketingPlans } from "@/lib/plan-views";
+import {
+  softwareAppJsonLd,
+  faqJsonLd,
+  jsonLdScript,
+} from "@/lib/seo";
+import { getMacPricing } from "@/lib/pricing.server";
+import { priceRange, effectiveCurrency, PLAN_IDS } from "@/lib/pricing";
+import { clientIp, countryFromIp, detectCurrency } from "@/lib/geo";
 import { MacHero } from "@/components/mac/mac-hero";
 import {
-  MacTrustBar,
+  MacStats,
   MacFeatures,
   MacLens,
-  MacMenubar,
-  MacSafety,
-  MacPricingSection,
+  MacSpeed,
+  MacAllInOne,
+  MacShowcase,
+  MacPrivacyTeaser,
+  MacPricingTeaser,
   MacFaq,
   MacDownload,
 } from "@/components/mac/mac-sections";
@@ -50,10 +58,10 @@ export async function generateMetadata({
 }
 
 const SCREENSHOTS = [
-  "/shots-03/home-dark.png",
-  "/shots-03/spacelens-dark.png",
-  "/shots-03/spacelens-drilled-dark.png",
-  "/shots-03/menubar-rich.png",
+  "/mac/shots/dashboard.jpg",
+  "/mac/shots/spacelens.jpg",
+  "/mac/shots/monitor.jpg",
+  "/mac/shots/diskbench.jpg",
 ];
 
 export default async function MacHome({
@@ -74,9 +82,19 @@ export default async function MacHome({
   const faqItems = tfaq.raw("items") as { q: string; a: string }[];
 
   // Quote the offer in the visitor's own currency so the SERP price card
-  // matches what they'll see on the buy page. The same snapshot feeds the
-  // on-page pricing section.
-  const { pricing, active, currency, plans } = await getMarketingPlans(locale);
+  // matches what they'll see on the buy page.
+  const pricing = await getMacPricing();
+  const currencies = Object.keys(pricing.currencies);
+  const country = countryFromIp(clientIp(await headers()));
+  const currency = effectiveCurrency(
+    pricing,
+    detectCurrency({
+      country,
+      locale,
+      available: currencies,
+      fallback: pricing.defaultCurrency,
+    }),
+  );
   const range = priceRange(pricing, currency);
   const offer = range
     ? {
@@ -106,12 +124,14 @@ export default async function MacHome({
         dangerouslySetInnerHTML={{ __html: jsonLdScript(nodes) }}
       />
       <MacHero />
-      <MacTrustBar />
+      <MacStats />
       <MacFeatures moreHref="/mac/features" />
       <MacLens />
-      <MacMenubar />
-      <MacSafety />
-      <MacPricingSection plans={plans} active={active} />
+      <MacSpeed />
+      <MacAllInOne />
+      <MacShowcase />
+      <MacPrivacyTeaser />
+      <MacPricingTeaser />
       <MacFaq />
       <MacDownload />
     </>

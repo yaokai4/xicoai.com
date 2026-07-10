@@ -7,7 +7,6 @@ type RevealProps = {
   children: React.ReactNode;
   delay?: number;
   y?: number;
-  duration?: number;
   className?: string;
 } & Omit<HTMLMotionProps<"div">, "children">;
 
@@ -15,7 +14,6 @@ export function Reveal({
   children,
   delay = 0,
   y = 22,
-  duration = 0.7,
   className,
   ...rest
 }: RevealProps) {
@@ -26,7 +24,7 @@ export function Reveal({
       initial={reduce ? { opacity: 0 } : { opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       {...rest}
     >
       {children}

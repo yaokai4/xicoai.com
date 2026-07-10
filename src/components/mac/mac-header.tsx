@@ -1,21 +1,20 @@
 "use client";
 
-/* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Mark } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
-/* One-page narrative: the nav rows are anchors into /mac. Sub-pages link back
-   into the same anchors, so navigation feels identical everywhere. */
 const NAV = [
-  { key: "features", href: "/mac#features" },
-  { key: "safety", href: "/mac#safety" },
-  { key: "pricing", href: "/mac#pricing" },
-  { key: "faq", href: "/mac#faq" },
+  { key: "home", href: "/mac" },
+  { key: "features", href: "/mac/features" },
+  { key: "security", href: "/mac/security" },
+  { key: "pricing", href: "/mac/pricing" },
+  { key: "support", href: "/mac/support" },
 ] as const;
 
 const overlayVariants: Variants = {
@@ -34,6 +33,7 @@ const itemVariants: Variants = {
 
 export function MacHeader() {
   const t = useTranslations("mac.nav");
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -53,13 +53,15 @@ export function MacHeader() {
     };
   }, [menuOpen]);
 
+  const isActive = (href: string) => pathname === href;
+
   return (
-    <div className="mac-theme">
+    <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
+          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
           scrolled || menuOpen
-            ? "mac-glass border-b mac-hairline"
+            ? "border-b border-border bg-bg/80 backdrop-blur-xl"
             : "border-b border-transparent",
         )}
       >
@@ -71,17 +73,22 @@ export function MacHeader() {
             onClick={() => setMenuOpen(false)}
           >
             <Mark size={24} />
-            <span className="font-display text-[1.1rem] font-semibold tracking-tight text-foreground">
+            <span className="font-display text-[1.15rem] font-semibold tracking-tight text-foreground">
               Xico Clean
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Xico Clean">
+          <nav className="hidden items-center gap-1 md:flex">
             {NAV.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className="rounded-full px-3.5 py-2 text-sm text-muted transition-colors hover:text-foreground"
+                className={cn(
+                  "rounded-full px-3.5 py-2 text-sm transition-colors",
+                  isActive(item.href)
+                    ? "font-medium text-foreground"
+                    : "text-muted hover:text-foreground",
+                )}
               >
                 {t(item.key)}
               </Link>
@@ -89,16 +96,16 @@ export function MacHeader() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <div className="hidden md:block">
               <LocaleSwitcher />
             </div>
-            <a
-              href="/api/download/xico-clean"
-              className="cta-aurora hidden items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold sm:inline-flex"
+            <Link
+              href="/mac/buy"
+              className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-bg transition-transform hover:scale-[1.03] sm:inline-flex"
             >
-              <DownloadGlyph />
-              {t("download")}
-            </a>
+              {t("buy")}
+            </Link>
             <button
               type="button"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-border-strong md:hidden"
@@ -120,7 +127,7 @@ export function MacHeader() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="mac-canvas fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col md:hidden"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col bg-bg md:hidden"
           >
             <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pt-4">
               <nav className="flex flex-col gap-1">
@@ -129,7 +136,10 @@ export function MacHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center justify-between rounded-2xl px-3 py-3 text-[1.05rem] font-medium tracking-tight text-foreground transition-colors hover:bg-white/[0.04] active:bg-white/[0.06]"
+                      className={cn(
+                        "flex items-center justify-between rounded-2xl px-3 py-3 text-[1.05rem] font-medium tracking-tight transition-colors hover:bg-surface active:bg-surface",
+                        isActive(item.href) ? "text-brand" : "text-foreground",
+                      )}
                     >
                       {t(item.key)}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden className="text-faint">
@@ -140,48 +150,29 @@ export function MacHeader() {
                 ))}
               </nav>
               <motion.div variants={itemVariants}>
-                <a
-                  href="/api/download/xico-clean"
+                <Link
+                  href="/mac/buy"
                   onClick={() => setMenuOpen(false)}
-                  className="cta-aurora mt-5 flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-[0.95rem] font-semibold transition-transform active:scale-[0.99]"
+                  className="mt-5 flex w-full items-center justify-center rounded-2xl bg-foreground py-3.5 text-[0.95rem] font-medium text-bg transition-transform active:scale-[0.99]"
                 >
-                  <DownloadGlyph />
-                  {t("download")}
-                </a>
+                  {t("buy")}
+                </Link>
               </motion.div>
             </div>
 
             <motion.div
               variants={itemVariants}
-              className="flex items-center justify-between border-t mac-hairline px-5 py-4"
+              className="flex items-center justify-between border-t border-border px-5 py-4"
             >
-              <LocaleSwitcher />
-              <Link
-                href="/mac/support"
-                onClick={() => setMenuOpen(false)}
-                className="text-sm text-muted transition-colors hover:text-foreground"
-              >
-                {t("support")}
-              </Link>
+              <div className="flex items-center gap-2">
+                <LocaleSwitcher />
+                <ThemeToggle />
+              </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-function DownloadGlyph() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M12 3v11m0 0l-4-4m4 4l4-4M4.5 20h15"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    </>
   );
 }
 

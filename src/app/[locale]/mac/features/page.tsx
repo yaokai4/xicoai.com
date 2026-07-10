@@ -9,11 +9,9 @@ import {
   MacCatalog,
   MacDeepDive,
   MacMonitor,
-  MacSpeed,
   MacHardware,
-  MacShowcase,
   MacPerformance,
-  MacDownload,
+  MacWaitlist,
 } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -70,12 +68,10 @@ export default async function MacFeaturesPage({
       />
       <MacDeepDive />
       <MacMonitor />
-      <MacSpeed />
       <MacHardware />
-      <MacShowcase />
       <MacCatalog />
       <MacPerformance />
-      <MacDownload />
+      <MacWaitlist />
     </>
   );
 }
