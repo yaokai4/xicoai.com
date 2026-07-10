@@ -169,7 +169,7 @@ export function MacDeepDive() {
               {i === 0 ? (
                 <MacWindow
                   src="/mac/shots/dashboard.jpg"
-                  alt="Xico Clean — 智能扫描"
+                  alt="希可Mac清理 — 智能扫描"
                   width={1400}
                   height={1275}
                 />
@@ -461,7 +461,7 @@ export function MacMonitor() {
         <Reveal delay={0.1} className="mx-auto mt-14 max-w-3xl">
           <MacWindow
             src="/mac/shots/monitor.jpg"
-            alt="Xico Clean — 系统监视"
+            alt="希可Mac清理 — 系统监视"
             width={1400}
             height={1025}
             caption={t("caption")}
@@ -500,7 +500,7 @@ function MenuShot({ src }: { src: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
-        alt="Xico Clean 菜单栏面板"
+        alt="希可Mac清理 菜单栏面板"
         width={500}
         height={980}
         loading="lazy"
@@ -534,7 +534,7 @@ export function MacHardware() {
           <MacWindow
             theme="light"
             src="/mac/shots/hardware.jpg"
-            alt="Xico Clean — 硬件与健康"
+            alt="希可Mac清理 — 硬件与健康"
             width={1500}
             height={1098}
             caption={t("caption")}
@@ -936,7 +936,7 @@ export function MacLens() {
           <Reveal delay={0.1}>
             <MacWindow
               src="/mac/shots/spacelens.jpg"
-              alt="Xico Clean — 空间透镜放射环形图"
+              alt="希可Mac清理 — 空间透镜放射环形图"
               width={1100}
               height={1145}
               caption={t("caption")}
@@ -960,7 +960,7 @@ export function MacSpeed() {
           <Reveal delay={0.1} className="order-2 lg:order-1">
             <MacWindow
               src="/mac/shots/diskbench.jpg"
-              alt="Xico Clean — 磁盘测速双仪表"
+              alt="希可Mac清理 — 磁盘测速双仪表"
               width={1400}
               height={933}
               caption={t("caption")}

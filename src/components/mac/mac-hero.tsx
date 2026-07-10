@@ -189,7 +189,7 @@ export function MacHero() {
           <div className="relative">
             <MacWindow
               src="/mac/shots/dashboard.jpg"
-              alt="Xico Clean — 智能扫描仪表盘"
+              alt="希可Mac清理 — 智能扫描仪表盘"
               width={1400}
               height={1275}
               caption={tb("shots.dashboard")}
