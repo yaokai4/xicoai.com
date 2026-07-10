@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
-import { breadcrumbJsonLd, jsonLdScript, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLdScript, absoluteUrl, productName } from "@/lib/seo";
 import { MacPricing, MacCompare, MacDownload } from "@/components/mac/mac-sections";
 
 export async function generateMetadata({
@@ -26,7 +26,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Xico Clean",
+      siteName: productName(locale),
       title,
       description,
       url: `${site.url}${path}`,
@@ -44,7 +44,7 @@ export default async function MacPricingPage({
   const t = await getTranslations({ locale, namespace: "mac" });
   const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
   const breadcrumb = breadcrumbJsonLd([
-    { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
+    { name: productName(locale), url: absoluteUrl("/mac", lp) },
     { name: t("nav.pricing"), url: absoluteUrl("/mac/pricing", lp) },
   ]);
   return (

@@ -22,7 +22,7 @@
     "openMenu": "開啟選單",
     "closeMenu": "關閉選單",
     "language": "語言",
-    "mac": "Xico Clean"
+    "mac": "希可Mac清理"
   },
   "hero": {
     "eyebrow": "長沙智希可科技有限公司",
@@ -103,10 +103,10 @@
     "items": [
       {
         "key": "xicoclean",
-        "name": "Xico Clean",
+        "name": "希可Mac清理",
         "kind": "macOS 清理與最佳化 · 旗艦桌面產品",
         "tagline": "讓你的 Mac 重新變快、變乾淨",
-        "about": "Xico Clean 是長沙智希可科技的旗艦桌面產品，一款足以媲美 CleanMyMac X 的高階 macOS 清理與最佳化工具。原生 Swift 6 + SwiftUI，深度整合系統：一鍵智慧掃描、開發者垃圾專清、空間透鏡視覺化、重複檔案與相似照片、徹底解除安裝、隱私與維護。所有刪除都可預覽、可復原，全程在本機完成、不上傳——把「清理」做得既安心又好看。",
+        "about": "希可Mac清理 是長沙智希可科技的旗艦桌面產品，一款足以媲美 CleanMyMac X 的高階 macOS 清理與最佳化工具。原生 Swift 6 + SwiftUI，深度整合系統：一鍵智慧掃描、開發者垃圾專清、空間透鏡視覺化、重複檔案與相似照片、徹底解除安裝、隱私與維護。所有刪除都可預覽、可復原，全程在本機完成、不上傳——把「清理」做得既安心又好看。",
         "desc": "原生 Swift 打造的 Mac 清理工具：智慧掃描、開發者垃圾、空間視覺化、重複檔案、隱私清理，全程本機、可預覽可復原。",
         "highlights": [
           "智慧掃描一鍵清理",
@@ -215,7 +215,7 @@
       "location": "長沙 · 中國",
       "privacy": "隱私權政策",
       "terms": "服務條款",
-      "xicoclean": "Xico Clean"
+      "xicoclean": "希可Mac清理"
     },
     "rights": "保留一切權利。",
     "icp": "湘ICP备XXXXXXXX号",
@@ -568,8 +568,8 @@
   },
   "mac": {
     "meta": {
-      "title": "Mac 清理軟體 Xico Clean｜智慧掃描、釋放空間、優化加速",
-      "description": "Xico Clean 是原生 macOS 清理與優化軟體：一鍵智慧掃描系統垃圾、開發者快取、大型與重複檔案，安全釋放磁碟空間。空間透鏡視覺化、徹底解除安裝、隱私清理與選單列即時監控一應俱全。全程本機、可預覽、可復原，為 Apple 晶片打造。免費試用 14 天，買斷制無訂閱。",
+      "title": "Mac 清理軟體 希可Mac清理｜智慧掃描、釋放空間、優化加速",
+      "description": "希可Mac清理 是原生 macOS 清理與優化軟體：一鍵智慧掃描系統垃圾、開發者快取、大型與重複檔案，安全釋放磁碟空間。空間透鏡視覺化、徹底解除安裝、隱私清理與選單列即時監控一應俱全。全程本機、可預覽、可復原，為 Apple 晶片打造。免費試用 14 天，買斷制無訂閱。",
       "keywords": [
         "Mac 清理",
         "Mac 清理軟體",
@@ -581,19 +581,19 @@
         "Mac 解除安裝",
         "清理垃圾",
         "CleanMyMac 替代",
-        "Xico Clean",
+        "希可Mac清理",
         "Mac cleaner"
       ],
-      "featuresTitle": "Mac 清理工具全功能 Xico Clean｜清理垃圾、優化、磁碟管理",
-      "featuresDescription": "一鍵智慧掃描、系統與開發者垃圾清理、空間透鏡視覺化、重複檔案清理與相似照片、徹底解除安裝、隱私清理、磁碟測速與選單列即時監控——Xico Clean 把 Mac 保養需要的一切裝進一個原生應用程式。免費試用 14 天，買斷無訂閱。",
-      "securityTitle": "Mac 清理不誤刪 Xico Clean｜可預覽可復原、檔案不上傳",
-      "securityDescription": "清理最怕誤刪。Xico Clean 每一步刪除都可預覽、可復原，內建保護清單守住系統關鍵檔案；所有掃描分析都在本機完成，絕不上傳任何檔案內容。放心清理垃圾、釋放空間，免費試用 14 天。",
-      "pricingTitle": "Mac 清理軟體價格 Xico Clean｜買斷制，一次付費無訂閱",
-      "pricingDescription": "Xico Clean 採買斷制，一次付費、長期免費更新，沒有訂閱。先免費試用 14 天全功能再決定；個人版與家庭版都能用在你自己的多台 Mac，Stripe 安全結帳、30 天退款保證。",
-      "supportTitle": "Mac 清理軟體支援與常見問題 - Xico Clean 使用說明",
-      "supportDescription": "Xico Clean 的系統需求、常見問題與聯絡方式。支援 macOS 14 及以上，Apple 晶片與 Intel 通用；遇到問題一個工作天內回覆。免費試用 14 天，買斷制無訂閱。",
-      "buyTitle": "購買 Xico Clean Mac 清理軟體｜買斷制無訂閱",
-      "buyDescription": "買斷 Xico Clean，一次付費永久使用、長期免費更新，沒有訂閱。以你所在地區的當地貨幣計價，Stripe 安全結帳，30 天無條件退款。立即入手，釋放你的 Mac 空間。"
+      "featuresTitle": "Mac 清理工具全功能 希可Mac清理｜清理垃圾、優化、磁碟管理",
+      "featuresDescription": "一鍵智慧掃描、系統與開發者垃圾清理、空間透鏡視覺化、重複檔案清理與相似照片、徹底解除安裝、隱私清理、磁碟測速與選單列即時監控——希可Mac清理 把 Mac 保養需要的一切裝進一個原生應用程式。免費試用 14 天，買斷無訂閱。",
+      "securityTitle": "Mac 清理不誤刪 希可Mac清理｜可預覽可復原、檔案不上傳",
+      "securityDescription": "清理最怕誤刪。希可Mac清理 每一步刪除都可預覽、可復原，內建保護清單守住系統關鍵檔案；所有掃描分析都在本機完成，絕不上傳任何檔案內容。放心清理垃圾、釋放空間，免費試用 14 天。",
+      "pricingTitle": "Mac 清理軟體價格 希可Mac清理｜買斷制，一次付費無訂閱",
+      "pricingDescription": "希可Mac清理 採買斷制，一次付費、長期免費更新，沒有訂閱。先免費試用 14 天全功能再決定；個人版與家庭版都能用在你自己的多台 Mac，Stripe 安全結帳、30 天退款保證。",
+      "supportTitle": "Mac 清理軟體支援與常見問題 - 希可Mac清理 使用說明",
+      "supportDescription": "希可Mac清理 的系統需求、常見問題與聯絡方式。支援 macOS 14 及以上，Apple 晶片與 Intel 通用；遇到問題一個工作天內回覆。免費試用 14 天，買斷制無訂閱。",
+      "buyTitle": "購買 希可Mac清理 Mac 清理軟體｜買斷制無訂閱",
+      "buyDescription": "買斷 希可Mac清理，一次付費永久使用、長期免費更新，沒有訂閱。以你所在地區的當地貨幣計價，Stripe 安全結帳，30 天無條件退款。立即入手，釋放你的 Mac 空間。"
     },
     "nav": {
       "features": "功能",
@@ -613,7 +613,7 @@
       "eyebrow": "原生 macOS App · 為 Apple 晶片打造",
       "titleLine1": "讓你的 Mac",
       "titleLine2": "重新變快、變乾淨",
-      "subtitle": "Xico Clean 一鍵找出系統垃圾、開發者快取、大型檔案與重複檔案，安全釋放磁碟空間；DaisyDisk 級空間透鏡與 iStat 級選單列監控一併奉上。原生 Swift 打造，全程在本機執行，刪除前可預覽、刪除後可復原。",
+      "subtitle": "希可Mac清理 一鍵找出系統垃圾、開發者快取、大型檔案與重複檔案，安全釋放磁碟空間；DaisyDisk 級空間透鏡與 iStat 級選單列監控一併奉上。原生 Swift 打造，全程在本機執行，刪除前可預覽、刪除後可復原。",
       "ctaPrimary": "加入等候名單",
       "ctaSecondary": "看看它能做什麼",
       "trust": [
@@ -625,7 +625,7 @@
       "downloadNote": "macOS 14+ · 免費試用 14 天 · 無需註冊"
     },
     "window": {
-      "appName": "Xico Clean",
+      "appName": "希可Mac清理",
       "scanTitle": "智慧掃描",
       "reclaimLabel": "可釋放空間",
       "reclaimAmount": "11.4 GB",
@@ -682,7 +682,7 @@
     "features": {
       "eyebrow": "功能總覽",
       "title": "一個 App，照顧好整台 Mac",
-      "subtitle": "從系統垃圾到開發者快取，從空間視覺化到隱私清理，Xico Clean 把 Mac 保養需要的一切，都裝進一個精緻的原生應用程式裡。",
+      "subtitle": "從系統垃圾到開發者快取，從空間視覺化到隱私清理，希可Mac清理 把 Mac 保養需要的一切，都裝進一個精緻的原生應用程式裡。",
       "items": [
         {
           "name": "智慧掃描",
@@ -762,7 +762,7 @@
         {
           "tag": "開發者垃圾",
           "title": "專為開發者，省下數十 GB",
-          "desc": "Xcode 的 DerivedData、DeviceSupport、Archives、舊模擬器，加上 node_modules、Homebrew / npm / pip 快取、Docker 懸空映像檔——這些悄悄吃掉數十 GB 的開發者垃圾，Xico Clean 一次幫你找齊。",
+          "desc": "Xcode 的 DerivedData、DeviceSupport、Archives、舊模擬器，加上 node_modules、Homebrew / npm / pip 快取、Docker 懸空映像檔——這些悄悄吃掉數十 GB 的開發者垃圾，希可Mac清理 一次幫你找齊。",
           "points": [
             "Xcode DerivedData / DeviceSupport / Archives",
             "node_modules / Homebrew / npm / pip 快取",
@@ -784,7 +784,7 @@
     "safety": {
       "eyebrow": "安全第一",
       "title": "清理最怕誤刪。我們把「安心」做進每一步",
-      "subtitle": "清理工具最大的信任風險就是誤刪。所以 Xico Clean 為每一次刪除設下三道獨立的關卡，外加紅線、預覽與復原——每一步都留有退路。",
+      "subtitle": "清理工具最大的信任風險就是誤刪。所以 希可Mac清理 為每一次刪除設下三道獨立的關卡，外加紅線、預覽與復原——每一步都留有退路。",
       "items": [
         {
           "title": "永遠先預覽，再刪除",
@@ -796,7 +796,7 @@
         },
         {
           "title": "白名單與忽略清單",
-          "desc": "你可以永久保護某些路徑，Xico Clean 從此不再碰它們。"
+          "desc": "你可以永久保護某些路徑，希可Mac清理 從此不再碰它們。"
         },
         {
           "title": "永不觸碰紅線",
@@ -815,7 +815,7 @@
     "privacy": {
       "eyebrow": "隱私",
       "title": "你的檔案，永遠只留在你的 Mac 上",
-      "subtitle": "清理是一件很私密的事。Xico Clean 的所有掃描與分析都在本機完成，我們既不想、也沒有能力看到你的檔案。",
+      "subtitle": "清理是一件很私密的事。希可Mac清理 的所有掃描與分析都在本機完成，我們既不想、也沒有能力看到你的檔案。",
       "points": [
         "所有掃描與分析都在本機完成",
         "絕不上傳任何檔案內容",
@@ -826,7 +826,7 @@
     "performance": {
       "eyebrow": "原生效能",
       "title": "原生 Swift 打造，快得幾乎沒有存在感",
-      "subtitle": "我們堅決不用 Electron。Xico Clean 是徹頭徹尾的原生應用程式，為 Apple 晶片而生，掃得快、佔用低、動畫順。",
+      "subtitle": "我們堅決不用 Electron。希可Mac清理 是徹頭徹尾的原生應用程式，為 Apple 晶片而生，掃得快、佔用低、動畫順。",
       "items": [
         {
           "value": "Swift 6 + SwiftUI",
@@ -849,7 +849,7 @@
     "pricing": {
       "eyebrow": "價格",
       "title": "買斷制，一次付費，沒有訂閱陷阱",
-      "subtitle": "與其每年續費，不如一次買斷。Xico Clean 採用買斷制，長期免費更新——先用 14 天全功能試用，再決定也不遲。",
+      "subtitle": "與其每年續費，不如一次買斷。希可Mac清理 採用買斷制，長期免費更新——先用 14 天全功能試用，再決定也不遲。",
       "priceLabel": "個人版 / 家庭版 · 一次買斷",
       "priceNote": "請到購買頁查看目前價格與優惠；先免費試用 14 天再決定。",
       "features": [
@@ -861,7 +861,7 @@
     },
     "waitlist": {
       "eyebrow": "保持關注",
-      "title": "訂閱 Xico Clean 更新",
+      "title": "訂閱 希可Mac清理 更新",
       "subtitle": "留下你的電子郵件，有新版本或重要更新時，第一時間通知你。",
       "fields": {
         "email": "你的電子郵件",
@@ -892,7 +892,7 @@
         },
         {
           "q": "是訂閱制嗎？",
-          "a": "不是。Xico Clean 採用買斷制，一次付費、長期免費更新，還有 14 天全功能試用。"
+          "a": "不是。希可Mac清理 採用買斷制，一次付費、長期免費更新，還有 14 天全功能試用。"
         },
         {
           "q": "會上架 App Store 嗎？",
@@ -903,25 +903,25 @@
           "a": "即將推出。加入等候名單，上線第一時間通知你，並享有等候名單專屬早鳥價。"
         },
         {
-          "q": "Xico Clean 和 CleanMyMac 有什麼不同？",
-          "a": "Xico Clean 是以原生 Swift 打造的買斷制清理工具，一次付費、長期免費更新，沒有訂閱。除了深度清理與徹底解除安裝，還內建選單列即時監控、硬體健康、10 GB 磁碟測速與空間透鏡視覺化，把過去要裝好幾款軟體的能力整合進一個 App。全程本機處理，絕不上傳檔案。"
+          "q": "希可Mac清理 和 CleanMyMac 有什麼不同？",
+          "a": "希可Mac清理 是以原生 Swift 打造的買斷制清理工具，一次付費、長期免費更新，沒有訂閱。除了深度清理與徹底解除安裝，還內建選單列即時監控、硬體健康、10 GB 磁碟測速與空間透鏡視覺化，把過去要裝好幾款軟體的能力整合進一個 App。全程本機處理，絕不上傳檔案。"
         },
         {
           "q": "空間透鏡和 DaisyDisk 有什麼不同？",
-          "a": "底層採用同款的系統批次掃描介面，速度與精度同級：按物理佔用計數、硬連結只算一次、連「隱藏空間」都對好帳。在此之上還能無限深入到每個檔案、點選直接安全刪除（可復原），而且它只是 Xico Clean 十幾項工具中的一項——不必再另外購買一款磁碟視覺化軟體。"
+          "a": "底層採用同款的系統批次掃描介面，速度與精度同級：按物理佔用計數、硬連結只算一次、連「隱藏空間」都對好帳。在此之上還能無限深入到每個檔案、點選直接安全刪除（可復原），而且它只是 希可Mac清理 十幾項工具中的一項——不必再另外購買一款磁碟視覺化軟體。"
         },
         {
           "q": "怎麼清理 Mac、釋放儲存空間？",
-          "a": "打開 Xico Clean 點「智慧掃描」，幾秒內就能找出系統垃圾、開發者快取、大型與重複檔案；再用空間透鏡把整顆磁碟畫成視覺化圖，一眼定位最佔空間的資料夾，安全清理後即可釋放數 GB 到數十 GB。"
+          "a": "打開 希可Mac清理 點「智慧掃描」，幾秒內就能找出系統垃圾、開發者快取、大型與重複檔案；再用空間透鏡把整顆磁碟畫成視覺化圖，一眼定位最佔空間的資料夾，安全清理後即可釋放數 GB 到數十 GB。"
         },
         {
           "q": "有免費的 Mac 清理軟體嗎？",
-          "a": "Xico Clean 提供 14 天全功能免費試用，無需註冊就能下載，完整體驗清理與最佳化功能；之後一次買斷即可長期使用，不是訂閱。"
+          "a": "希可Mac清理 提供 14 天全功能免費試用，無需註冊就能下載，完整體驗清理與最佳化功能；之後一次買斷即可長期使用，不是訂閱。"
         }
       ]
     },
     "footer": {
-      "tagline": "Xico Clean — 為 Mac 而生的清理與最佳化工具。原生、安全、全程本機。",
+      "tagline": "希可Mac清理 — 為 Mac 而生的清理與最佳化工具。原生、安全、全程本機。",
       "productGroup": "產品",
       "companyGroup": "公司",
       "by": "由 XICO AI 出品",
@@ -939,7 +939,7 @@
     },
     "pages": {
       "featuresTitle": "照顧好整台 Mac 的每一個角落",
-      "featuresSubtitle": "從一鍵智慧掃描到開發者垃圾、空間視覺化與即時監控——這是 Xico Clean 的全部能力。",
+      "featuresSubtitle": "從一鍵智慧掃描到開發者垃圾、空間視覺化與即時監控——這是 希可Mac清理 的全部能力。",
       "supportTitle": "需要幫忙嗎？",
       "supportSubtitle": "常見問題、系統需求與聯絡方式，都在這裡。",
       "moreFeatures": "查看所有功能",
@@ -961,7 +961,7 @@
     "compare": {
       "eyebrow": "為什麼選買斷",
       "title": "買斷制 vs 訂閱制",
-      "oursLabel": "Xico Clean",
+      "oursLabel": "希可Mac清理",
       "theirsLabel": "訂閱制工具",
       "rows": [
         {
@@ -1023,7 +1023,7 @@
     "catalog": {
       "eyebrow": "完整功能",
       "title": "一款 App，涵蓋 Mac 保養的每個面向",
-      "subtitle": "從清理到應用程式管理，從檔案與空間到效能與安全——Xico Clean 把 Mac 需要的一切保養，都做進一個原生應用程式。",
+      "subtitle": "從清理到應用程式管理，從檔案與空間到效能與安全——希可Mac清理 把 Mac 需要的一切保養，都做進一個原生應用程式。",
       "groups": [
         {
           "name": "清理",
@@ -1133,7 +1133,7 @@
     },
     "buy": {
       "eyebrow": "購買",
-      "title": "買斷 Xico Clean，永久使用",
+      "title": "買斷 希可Mac清理，永久使用",
       "subtitle": "一次付費，長期免費更新，沒有訂閱。選擇適合你的版本，幾分鐘內即可啟用。",
       "recommended": "推薦",
       "perpetual": "永久買斷",
@@ -1160,7 +1160,7 @@
       "comingSoonCta": "加入等候名單",
       "canceledNote": "付款已取消，你隨時可以重新購買。",
       "errorNote": "建立訂單失敗，請稍後再試。",
-      "activateNote": "已經購買？在 Xico Clean 裡打開「設定 → 升級 Pro」，貼上啟用碼即可解鎖全部功能。",
+      "activateNote": "已經購買？在 希可Mac清理 裡打開「設定 → 升級 Pro」，貼上啟用碼即可解鎖全部功能。",
       "trust": [
         "由 Stripe 提供安全結帳",
         "30 天退款保證",
@@ -1176,7 +1176,7 @@
       "keyLabel": "啟用碼",
       "copy": "複製啟用碼",
       "copied": "已複製",
-      "openApp": "打開 Xico Clean 啟用",
+      "openApp": "打開 希可Mac清理 啟用",
       "manualNote": "或在 App 內「設定 → 升級 Pro」貼上啟用碼完成啟用。",
       "emailNote": "我們也已將啟用碼寄到你的信箱。",
       "timeoutTitle": "付款確認中",
@@ -1223,9 +1223,9 @@
     "allinone": {
       "eyebrow": "一款抵四款",
       "title": "四款專業工具的能力，一次買斷",
-      "desc": "深度清理、即時監控、硬體健康、磁碟工具——過去要裝四款各自付費的軟體，現在一款 Xico Clean 全部涵蓋。",
+      "desc": "深度清理、即時監控、硬體健康、磁碟工具——過去要裝四款各自付費的軟體，現在一款 希可Mac清理 全部涵蓋。",
       "appsLabel": "單獨購買這些能力",
-      "colOurs": "Xico Clean",
+      "colOurs": "希可Mac清理",
       "rows": [
         {
           "label": "深度清理 · 移除殘留",
@@ -1252,12 +1252,13 @@
           "ref": "CleanMyMac"
         }
       ],
-      "footNote": "每一款都得單獨付費，部分還按年訂閱；Xico Clean 一次買斷，全部涵蓋。"
+      "footNote": "每一款都得單獨付費，部分還按年訂閱；希可Mac清理 一次買斷，全部涵蓋。"
     },
     "showcase": {
       "eyebrow": "產品一覽",
       "title": "還有一整套一鍵利器",
       "lede": "垃圾清理、徹底解除安裝、重複檔案、最佳化維護……每一項都精緻好用，一個 App 全部搞定。"
-    }
+    },
+    "productName": "希可Mac清理"
   }
 }

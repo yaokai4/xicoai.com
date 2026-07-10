@@ -21,14 +21,14 @@ export async function sendKeyEmail(opts: {
   const buyUrl = process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com";
   const activateUrl = `${buyUrl}/activate?key=${encodeURIComponent(key)}`;
   const text = [
-    "感谢购买 Xico Clean！/ Thank you for buying Xico Clean!",
+    "感谢购买 希可Mac清理！/ Thank you for buying Xico Clean!",
     "",
     `套餐 / Plan: ${label}`,
     `激活码 / Activation key: ${key}`,
     `订单号 / Order: ${orderNo}`,
     "",
     "如何激活 / How to activate:",
-    "1. 打开 Xico Clean，进入「设置 / 升级 Pro」。",
+    "1. 打开 希可Mac清理，进入「设置 / 升级 Pro」。",
     "   Open Xico Clean → Settings / Upgrade to Pro.",
     "2. 粘贴上面的激活码并点「激活」。",
     "   Paste the key above and click Activate.",
@@ -38,7 +38,7 @@ export async function sendKeyEmail(opts: {
   ].join("\n");
   await sendMail({
     to,
-    subject: `你的 Xico Clean 激活码 / Your Xico Clean activation key`,
+    subject: `你的 希可Mac清理 激活码 / Your Xico Clean activation key`,
     text,
   });
 }
@@ -53,7 +53,7 @@ export async function notifySale(opts: {
 }) {
   await sendMail({
     to: notifyAddress(),
-    subject: `Xico Clean 售出：${PLAN_LABEL[opts.plan]}`,
+    subject: `希可Mac清理 售出：${PLAN_LABEL[opts.plan]}`,
     text: [
       `套餐 / Plan: ${PLAN_LABEL[opts.plan]}`,
       `金额 / Amount: ${opts.currency} ${

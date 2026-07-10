@@ -8,6 +8,7 @@ import {
   softwareAppJsonLd,
   faqJsonLd,
   jsonLdScript,
+  productName,
 } from "@/lib/seo";
 import { getMacPricing } from "@/lib/pricing.server";
 import { priceRange, effectiveCurrency, PLAN_IDS } from "@/lib/pricing";
@@ -44,7 +45,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Xico Clean",
+      siteName: productName(locale),
       title: t("title"),
       description: t("description"),
       url: `${site.url}${path}`,

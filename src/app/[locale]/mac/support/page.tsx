@@ -8,6 +8,7 @@ import {
   faqJsonLd,
   jsonLdScript,
   absoluteUrl,
+  productName,
 } from "@/lib/seo";
 import {
   MacPageHeader,
@@ -36,7 +37,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Xico Clean",
+      siteName: productName(locale),
       title,
       description,
       url: `${site.url}${path}`,
@@ -57,7 +58,7 @@ export default async function MacSupportPage({
   const lp = locale === routing.defaultLocale ? "" : `/${locale}`;
   const nodes = [
     breadcrumbJsonLd([
-      { name: "Xico Clean", url: absoluteUrl("/mac", lp) },
+      { name: productName(locale), url: absoluteUrl("/mac", lp) },
       { name: t("nav.support"), url: absoluteUrl("/mac/support", lp) },
     ]),
     faqJsonLd(faqItems),

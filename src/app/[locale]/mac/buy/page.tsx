@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { localeAlternates } from "@/lib/i18n-meta";
+import { productName } from "@/lib/seo";
 import { getMacPricing, planPricing } from "@/lib/pricing.server";
 import { formatMoney, discountPercent, PLAN_IDS } from "@/lib/pricing";
 import { clientIp, countryFromIp, detectCurrency } from "@/lib/geo";
@@ -32,7 +33,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Xico Clean",
+      siteName: productName(locale),
       title,
       description,
       url: `${site.url}${path}`,

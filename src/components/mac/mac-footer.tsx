@@ -34,7 +34,7 @@ export async function MacFooter() {
             <span className="inline-flex items-center gap-2">
               <Mark size={24} />
               <span className="font-display text-[1.15rem] font-semibold tracking-tight text-foreground">
-                Xico Clean
+                {tn("productName")}
               </span>
             </span>
             <p className="mt-5 text-sm leading-relaxed text-muted">

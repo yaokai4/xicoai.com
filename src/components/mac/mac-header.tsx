@@ -33,6 +33,7 @@ const itemVariants: Variants = {
 
 export function MacHeader() {
   const t = useTranslations("mac.nav");
+  const tm = useTranslations("mac");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -74,7 +75,7 @@ export function MacHeader() {
           >
             <Mark size={24} />
             <span className="font-display text-[1.15rem] font-semibold tracking-tight text-foreground">
-              Xico Clean
+              {tm("productName")}
             </span>
           </Link>
 

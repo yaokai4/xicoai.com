@@ -26,31 +26,31 @@ type Dict = {
 
 const DICTS: Record<string, Dict> = {
   zh: {
-    title: "激活 Xico Clean",
+    title: "激活 希可Mac清理",
     yourKey: "你的激活码",
     copy: "复制激活码",
     copied: "已复制 ✓",
     noKey: "此页面用于展示激活码。若你已购买，请查看购买成功页或邮件中的链接。",
     steps: [
-      "下载并打开 Xico Clean",
+      "下载并打开 希可Mac清理",
       "进入「设置 → 升级 Pro」，粘贴激活码",
       "点击「激活」，即刻解锁全部功能",
     ],
-    download: "下载 Xico Clean",
+    download: "下载 希可Mac清理",
     support: "遇到问题？联系支持",
   },
   "zh-Hant": {
-    title: "啟用 Xico Clean",
+    title: "啟用 希可Mac清理",
     yourKey: "你的啟用金鑰",
     copy: "複製金鑰",
     copied: "已複製 ✓",
     noKey: "此頁面用於顯示啟用金鑰。若你已購買，請查看購買成功頁或郵件中的連結。",
     steps: [
-      "下載並開啟 Xico Clean",
+      "下載並開啟 希可Mac清理",
       "進入「設定 → 升級 Pro」，貼上金鑰",
       "點擊「啟用」，立即解鎖全部功能",
     ],
-    download: "下載 Xico Clean",
+    download: "下載 希可Mac清理",
     support: "遇到問題？聯絡支援",
   },
   ja: {
@@ -189,7 +189,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const d = DICTS[locale] ?? DICTS.en;
   return {
-    title: { absolute: `${d.title} — Xico Clean` },
+    title: { absolute: d.title },
     robots: { index: false },
   };
 }

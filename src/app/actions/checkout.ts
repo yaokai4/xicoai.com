@@ -6,6 +6,7 @@ import { eq } from "drizzle-orm";
 import { getDb } from "@/db";
 import { macOrders } from "@/db/schema";
 import { getMacPricing, planPricing } from "@/lib/pricing.server";
+import { productName } from "@/lib/seo";
 import {
   toMinorUnits,
   effectiveCurrency,
@@ -121,7 +122,7 @@ export async function startCheckout(
 
     const session = await createCheckoutSession({
       order,
-      productName: `Xico Clean — ${PLAN_LABEL[plan][locale]}`,
+      productName: `${productName(locale)} — ${PLAN_LABEL[plan][locale]}`,
       productDescription: PLAN_DESC[plan][locale],
       locale,
       successUrl: `${base}/buy/success?order_no=${orderNo}&session_id={CHECKOUT_SESSION_ID}`,

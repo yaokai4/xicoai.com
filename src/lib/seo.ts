@@ -20,6 +20,13 @@ export function absoluteUrl(path: string, localePrefix = ""): string {
   return `${site.url}${localePrefix}${clean === "/" ? "" : clean}` || site.url;
 }
 
+/** The product's display name per locale — Chinese markets use 希可Mac清理,
+ *  everyone else keeps the Latin brand "Xico Clean". Single source of truth for
+ *  every server-rendered wordmark, siteName, breadcrumb and structured-data name. */
+export function productName(locale: string): string {
+  return locale === "zh" || locale === "zh-Hant" ? "希可Mac清理" : "Xico Clean";
+}
+
 /** BCP-47 tag Google prefers, per site locale. */
 const INLANG: Record<string, string> = {
   zh: "zh-Hans",
@@ -97,8 +104,8 @@ export function softwareAppJsonLd(opts: {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${site.url}/mac#software`,
-    name: "Xico Clean",
-    alternateName: ["希可清理", "Xico Mac Cleaner", "智希可清理"],
+    name: productName(opts.locale),
+    alternateName: ["Xico Clean", "希可Mac清理", "希可清理", "Xico Mac Cleaner", "智希可清理"],
     applicationCategory: "UtilitiesApplication",
     applicationSubCategory: "Mac Cleaner",
     operatingSystem: "macOS 13.0 or later",
