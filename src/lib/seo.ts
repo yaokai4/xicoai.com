@@ -16,7 +16,7 @@ import { site } from "@/lib/site";
 
 /** Single source of truth for the shipped app version (keep in sync on release).
  *  Used by SoftwareApplication JSON-LD so structured data never goes stale. */
-export const APP_VERSION = "0.3.0";
+export const APP_VERSION = "0.4.0";
 
 /** Absolute URL for a locale-prefixed path (default locale has no prefix). */
 export function absoluteUrl(path: string, localePrefix = ""): string {

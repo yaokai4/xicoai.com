@@ -12,10 +12,10 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.3.0";
-const PUBDATE = "Thu, 10 Jul 2026 14:00:00 +0000";
+const VERSION = "0.4.0";
+const PUBDATE = "Mon, 13 Jul 2026 06:00:00 +0000";
 const NOTES =
-  "0.3.0：空间透镜全盘扫描与钻取动画、收集篮两段式删除、菜单栏合并项/电池项/时间窗/钉住面板、可解释健康分、释放 iCloud 本地副本、阈值告警等大量升级。需要 macOS 14 或更高版本。";
+  "0.4.0：全新「服务器」远程 SSH 监控套件（无需装 agent 实时监控 CPU/内存/磁盘/网络/进程、交互式终端、SFTP 文件浏览、阈值告警与推送、端口转发、跳板机、导入 ~/.ssh/config、菜单栏迷你监视、Docker/systemd 容器管理）；全新「下载器」（1000+ 站点视频/音频、内置浏览抓取、剪贴板自动捕获、磁力/种子多线程下载、图片批量抓取）。需要 macOS 14 或更高版本。";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
