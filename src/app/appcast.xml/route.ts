@@ -12,10 +12,16 @@ export const dynamic = "force-dynamic";
  * on an older build will be told a new version is available and sent to the DMG.
  * Lives at a dotted path so the mac-subdomain proxy serves it verbatim.
  */
-const VERSION = "0.3.0";
-const PUBDATE = "Thu, 10 Jul 2026 14:00:00 +0000";
+const VERSION = "0.5.0";
+const BUILD = "93";
+const PUBDATE = "Mon, 13 Jul 2026 20:52:00 +0000";
 const NOTES =
-  "0.3.0：空间透镜全盘扫描与钻取动画、收集篮两段式删除、菜单栏合并项/电池项/时间窗/钉住面板、可解释健康分、释放 iCloud 本地副本、阈值告警等大量升级。需要 macOS 14 或更高版本。";
+  "0.5.0：全面升级智能扫描、系统垃圾、空间透镜、服务器监控与下载工具；新增危险输入可见隔离、下载任务即时停止与恢复、签名规则库和组件清单，并完成全局主题、菜单监控和交互细节精修。需要 macOS 14 或更高版本。";
+const DMG_LENGTH = 16878130;
+const DMG_SHA256 =
+  "ab1ec52aabcb1391f4ed94395dcdf747a334f960e5810e345aaa900fd9d890e7";
+const DMG_SIGNATURE =
+  "ut95u8Ko1xdbgU/xwqA+d/qv9U/yZAT5SWMXeZDC0KNt+49rmfxKH716AQGIITaBbeCAcEWU5YLUlux05NliBQ==";
 
 export async function GET() {
   const base = (process.env.NEXT_PUBLIC_MAC_URL || "https://mac.xicoai.com").replace(
@@ -33,11 +39,11 @@ export async function GET() {
     <item>
       <title>Xico Clean ${VERSION}</title>
       <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
-      <sparkle:version>${VERSION}</sparkle:version>
+      <sparkle:version>${BUILD}</sparkle:version>
       <description><![CDATA[${NOTES}]]></description>
       <pubDate>${PUBDATE}</pubDate>
       <link>${base}/mac</link>
-      <enclosure url="${dmg}" sparkle:shortVersionString="${VERSION}" sparkle:version="${VERSION}" type="application/x-apple-diskimage" length="0" />
+      <enclosure url="${dmg}" sparkle:shortVersionString="${VERSION}" sparkle:version="${BUILD}" sparkle:edSignature="${DMG_SIGNATURE}" sparkle:sha256="${DMG_SHA256}" type="application/x-apple-diskimage" length="${DMG_LENGTH}" />
     </item>
   </channel>
 </rss>`;
