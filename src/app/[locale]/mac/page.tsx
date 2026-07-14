@@ -13,19 +13,7 @@ import {
 import { getMacPricing } from "@/lib/pricing.server";
 import { priceRange, effectiveCurrency, PLAN_IDS } from "@/lib/pricing";
 import { clientIp, countryFromIp, detectCurrency } from "@/lib/geo";
-import { MacHero } from "@/components/mac/mac-hero";
-import {
-  MacStats,
-  MacFeatures,
-  MacLens,
-  MacSpeed,
-  MacAllInOne,
-  MacShowcase,
-  MacPrivacyTeaser,
-  MacPricingTeaser,
-  MacFaq,
-  MacDownload,
-} from "@/components/mac/mac-sections";
+import { MacHomeExperience } from "@/components/mac/mac-home-experience";
 
 export async function generateMetadata({
   params,
@@ -126,17 +114,7 @@ export default async function MacHome({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(nodes) }}
       />
-      <MacHero />
-      <MacStats />
-      <MacFeatures moreHref="/mac/features" />
-      <MacLens />
-      <MacSpeed />
-      <MacAllInOne />
-      <MacShowcase />
-      <MacPrivacyTeaser />
-      <MacPricingTeaser />
-      <MacFaq />
-      <MacDownload />
+      <MacHomeExperience />
     </>
   );
 }
