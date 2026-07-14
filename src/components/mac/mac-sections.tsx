@@ -623,8 +623,8 @@ export function MacCompare() {
       <Wrap>
         <BandHeading kicker={t("eyebrow")} title={t("title")} />
         <Reveal delay={0.1} className="mx-auto mt-12 max-w-2xl">
-          <div className="overflow-hidden rounded-3xl border border-border">
-            <div className="grid grid-cols-[1.1fr_1fr_1fr] text-sm">
+          <div className="overflow-x-auto rounded-3xl border border-border">
+            <div className="grid min-w-[560px] grid-cols-[1.1fr_1fr_1fr] text-sm">
               <div className="bg-surface p-4" />
               <div className="bg-brand/10 p-4 text-center font-display font-semibold text-brand">
                 {t("oursLabel")}
@@ -1024,9 +1024,9 @@ export function MacAllInOne() {
         </div>
 
         <Reveal delay={0.1} className="mx-auto mt-14 max-w-3xl">
-          <div className="overflow-hidden rounded-3xl border border-border bg-surface/60 shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--brand)_35%,transparent)]">
+          <div className="overflow-x-auto rounded-3xl border border-border bg-surface/60 shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--brand)_35%,transparent)]">
             {/* 表头 */}
-            <div className="grid grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border px-6 py-4 text-xs font-medium uppercase tracking-wide text-faint sm:px-8">
+            <div className="grid min-w-[560px] grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border px-6 py-4 text-xs font-medium uppercase tracking-wide text-faint sm:px-8">
               <span />
               <span className="w-28 text-center sm:w-36">{t("appsLabel")}</span>
               <span className="w-24 rounded-full bg-brand/10 px-3 py-1.5 text-center font-semibold normal-case tracking-normal text-brand sm:w-28">
@@ -1036,7 +1036,7 @@ export function MacAllInOne() {
             {rows.map((row) => (
               <div
                 key={row.label}
-                className="grid grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border/60 px-6 py-4 last:border-b-0 sm:px-8"
+                className="grid min-w-[560px] grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-border/60 px-6 py-4 last:border-b-0 sm:px-8"
               >
                 <span className="text-sm font-medium text-foreground">{row.label}</span>
                 <span className="w-28 text-center text-[13px] text-faint sm:w-36">{row.ref}</span>

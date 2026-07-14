@@ -36,7 +36,7 @@ export function Band({
     <section
       id={id}
       className={cn(
-        "relative w-full overflow-hidden scroll-mt-16",
+        "mac-product-surface relative w-full overflow-hidden scroll-mt-16",
         TONES[tone],
         className,
       )}
@@ -54,7 +54,7 @@ export function Wrap({
   children: React.ReactNode;
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-6 lg:px-8", className)}>
+    <div className={cn("mx-auto w-full max-w-[1280px] px-7 sm:px-12 lg:px-16", className)}>
       {children}
     </div>
   );
@@ -100,8 +100,8 @@ export function BigTitle({
   return (
     <h2
       className={cn(
-        "font-display font-semibold leading-[1.05] tracking-tight text-balance",
-        "text-[clamp(2rem,5vw,3.75rem)]",
+        "font-display font-semibold leading-[1.04] tracking-[-0.045em] text-balance",
+        "text-[clamp(2rem,4.7vw,4rem)]",
         className,
       )}
     >

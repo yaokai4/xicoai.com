@@ -1,10 +1,11 @@
 "use client";
 
 /* eslint-disable @next/next/no-html-link-for-pages -- Download CTAs intentionally hit a file API route. */
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
+  useInView,
   useReducedMotion,
   useScroll,
   useTransform,
@@ -111,7 +112,7 @@ function SectionHeading({
       <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#6f63e9]">
         {eyebrow}
       </p>
-      <h2 className="mt-4 font-display text-[clamp(2.2rem,4.7vw,4.55rem)] font-semibold leading-[1.03] tracking-[-0.05em] text-[#0a0c11] text-balance">
+      <h2 className="mt-4 font-display text-[clamp(2.15rem,4vw,3.9rem)] font-semibold leading-[1.06] tracking-[-0.045em] text-[#14161d] text-balance">
         {title}
       </h2>
       {description ? (
@@ -138,17 +139,17 @@ function EditorialFeatureCollection({
 }) {
   const [lead, ...rest] = features;
   return (
-    <section className={cn("px-4 py-28 sm:px-8 sm:py-40", tone === "white" ? "bg-white" : "bg-[#f5f5f7]")}>
-      <div className="mx-auto max-w-[1380px]">
+    <section className={cn("px-4 py-24 sm:px-8 sm:py-32", tone === "white" ? "bg-white" : "bg-[#f5f5f7]")}>
+      <div className="mx-auto max-w-[1280px]">
         <Reveal>
           <SectionHeading eyebrow={eyebrow} title={title} description={description} />
         </Reveal>
 
-        <Reveal className="mt-16 overflow-hidden rounded-[28px] border border-black/[0.055] bg-[#f5f5f7] sm:rounded-[40px]">
-          <article className="grid items-center gap-9 px-5 pb-5 pt-10 sm:px-9 sm:pb-9 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14 lg:px-14 lg:py-14">
+        <Reveal className={cn("mt-14 overflow-hidden rounded-[28px] border border-black/[0.055] sm:rounded-[36px]", tone === "white" ? "bg-[#f5f5f7]" : "bg-white/80")}>
+          <article className="grid items-center gap-9 px-5 pb-5 pt-9 sm:px-8 sm:pb-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12 lg:px-12 lg:py-12">
             <div className="px-2 lg:px-0">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#776be8]">{lead.detail}</p>
-              <h3 className="mt-4 font-display text-[clamp(2rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-[#151722] text-balance">{lead.title}</h3>
+              <h3 className="mt-4 font-display text-[clamp(1.95rem,3.4vw,3.35rem)] font-semibold leading-[1.06] tracking-[-0.045em] text-[#171922] text-balance">{lead.title}</h3>
               <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#6d7380]">{lead.description}</p>
             </div>
             <Screenshot src={lead.image} alt={lead.title} width={lead.width} height={lead.height} />
@@ -158,11 +159,11 @@ function EditorialFeatureCollection({
         <div className={cn("mt-5 grid gap-5", rest.length >= 3 ? "lg:grid-cols-3" : "md:grid-cols-2")}>
           {rest.map((feature, index) => (
             <Reveal key={feature.image} delay={index * 0.06}>
-              <article className="flex h-full flex-col overflow-hidden rounded-[26px] border border-black/[0.055] bg-[#f5f5f7] px-5 pb-5 pt-8 sm:rounded-[32px] sm:px-7 sm:pb-7">
-                <div className="px-1 pb-7">
+              <article className={cn("flex h-full flex-col overflow-hidden rounded-[26px] border border-black/[0.055] px-5 pb-5 pt-7 sm:rounded-[30px] sm:px-6 sm:pb-6", tone === "white" ? "bg-[linear-gradient(145deg,#f7f7f9_0%,#f2f3f7_100%)]" : "bg-white/80")}>
+                <div className="px-1 pb-6">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8b82df]">{feature.detail}</p>
-                  <h3 className="mt-3 font-display text-[clamp(1.7rem,2.7vw,2.7rem)] font-semibold leading-[1.04] tracking-[-0.045em] text-[#171922] text-balance">{feature.title}</h3>
-                  <p className="mt-4 text-[14px] leading-6 text-[#747a87]">{feature.description}</p>
+                  <h3 className="mt-3 font-display text-[clamp(1.65rem,2.2vw,2.15rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[#1a1c24] text-balance">{feature.title}</h3>
+                  <p className="mt-4 text-[13px] leading-6 text-[#747a87] sm:text-[14px]">{feature.description}</p>
                 </div>
                 <Screenshot src={feature.image} alt={feature.title} width={feature.width} height={feature.height} className="mt-auto" />
               </article>
@@ -194,6 +195,9 @@ export function MacHomeExperience() {
   const heroTextY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 46]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.78], [1, 0.38]);
   const [activeFeature, setActiveFeature] = useState(0);
+  const [featurePaused, setFeaturePaused] = useState(false);
+  const experienceRef = useRef<HTMLElement>(null);
+  const experienceIsInView = useInView(experienceRef, { amount: 0.32 });
 
   const deepDive = td.raw("items") as {
     tag: string;
@@ -252,9 +256,50 @@ export function MacHomeExperience() {
         metric: "4K IOPS",
         metricLabel: isZh ? "专业级基准" : "professional benchmark",
       },
+      {
+        label: isZh ? "安全下载" : "Downloads",
+        eyebrow: isZh ? "安全下载" : "Safe downloads",
+        title: isZh ? "链接一贴，下载即刻开始。" : "Paste a link. Start downloading.",
+        desc: isZh ? "把媒体任务、文件状态与隔离检查放在同一处。整个下载过程清晰可见，不必在浏览器与多个工具之间来回切换。" : "Keep media tasks, file status, and quarantine checks in one clear flow without jumping between browsers and utilities.",
+        points: isZh ? ["视频、音频与图片任务统一管理", "文件状态与隔离检查清晰可见", "队列、进度和结果集中呈现"] : ["Manage video, audio, and image tasks together", "Keep file and quarantine status visible", "See queues, progress, and results in one place"],
+        image: "/mac/product/live/downloader.png",
+        alt: isZh ? "希可 Mac 下载器真实界面" : "Xico Downloader interface",
+        metric: "1000+",
+        metricLabel: isZh ? "站点解析" : "supported sites",
+      },
+      {
+        label: isZh ? "远程服务器" : "Servers",
+        eyebrow: isZh ? "服务器套件" : "Server suite",
+        title: isZh ? "远程服务器，也在 Xico 里。" : "Your remote servers, inside Xico.",
+        desc: isZh ? "管理主机、SSH、终端和 SFTP，把常用连接与日常运维入口收进同一套原生体验。" : "Manage hosts, SSH, terminal, and SFTP through one native workspace built for everyday operations.",
+        points: isZh ? ["导入并管理常用 SSH 主机", "终端、文件与实时监控一处完成", "连接配置始终清楚可控"] : ["Import and manage SSH hosts", "Keep terminal, files, and live monitoring together", "Make every connection clear and controllable"],
+        image: "/mac/product/live/servers.png",
+        alt: isZh ? "希可 Mac 服务器套件真实界面" : "Xico Server Suite interface",
+        metric: "SSH",
+        metricLabel: isZh ? "终端 · SFTP" : "terminal · SFTP",
+      },
+      {
+        label: isZh ? "个性化设置" : "Settings",
+        eyebrow: isZh ? "个性化设置" : "Personal settings",
+        title: isZh ? "主题与行为，都按你的方式。" : "Make it work your way.",
+        desc: isZh ? "外观、主题、权限与产品偏好集中管理，让一款功能丰富的专业工具依然保持简单。" : "Control appearance, themes, permissions, and product preferences while keeping a powerful utility calm and simple.",
+        points: isZh ? ["浅色、深色与系统外观自由选择", "权限、更新与清理偏好集中设置", "每项选项都有明确说明"] : ["Choose light, dark, or system appearance", "Keep permissions, updates, and cleanup preferences together", "Understand every option before changing it"],
+        image: "/mac/product/live/settings.png",
+        alt: isZh ? "希可 Mac 个性化设置真实界面" : "Xico Settings interface",
+        metric: "3",
+        metricLabel: isZh ? "外观主题" : "appearance modes",
+      },
     ],
     [deepDive, isZh, screenshotLocale, tm, ts],
   );
+
+  useEffect(() => {
+    if (reduce || featurePaused || !experienceIsInView) return;
+    const timer = window.setTimeout(() => {
+      setActiveFeature((current) => (current + 1) % moments.length);
+    }, 6800);
+    return () => window.clearTimeout(timer);
+  }, [activeFeature, experienceIsInView, featurePaused, moments.length, reduce]);
 
   const cleaningFeatures: EditorialFeature[] = [
     {
@@ -274,27 +319,6 @@ export function MacHomeExperience() {
       title: isZh ? "所有更新，一处看完。" : "Every update in one place.",
       description: isZh ? "集中检查已安装应用的新版本、当前版本与更新状态，不必逐个打开寻找。" : "Review versions and available updates for installed apps without opening them one by one.",
       detail: isZh ? "应用更新" : "App Updater",
-    },
-  ];
-
-  const connectedFeatures: EditorialFeature[] = [
-    {
-      image: "/mac/product/live/downloader.png",
-      title: isZh ? "下载，更干净也更安心。" : "Downloads, cleaner and safer.",
-      description: isZh ? "媒体任务、文件状态与隔离检查放在一处，下载过程清晰可见。" : "Keep media tasks, file status, and quarantine checks together in one clear workflow.",
-      detail: isZh ? "安全下载" : "Safe Downloads",
-    },
-    {
-      image: "/mac/product/live/servers.png",
-      title: isZh ? "远程服务器，也在 Xico 里。" : "Your remote servers, inside Xico.",
-      description: isZh ? "管理主机、SSH、终端和 SFTP，把常用连接与运维入口收进同一套原生体验。" : "Manage hosts, SSH, terminal, and SFTP through one native workspace.",
-      detail: isZh ? "服务器套件" : "Server Suite",
-    },
-    {
-      image: "/mac/product/live/settings.png",
-      title: isZh ? "主题与行为，都按你的方式。" : "Make it work your way.",
-      description: isZh ? "外观、主题、权限与产品偏好集中管理，让专业工具也保持简单。" : "Control appearance, themes, permissions, and product preferences from one calm settings space.",
-      detail: isZh ? "个性化设置" : "Settings",
     },
   ];
 
@@ -340,25 +364,33 @@ export function MacHomeExperience() {
         <div aria-hidden className="xico-hero-glow xico-hero-glow--one" />
         <div aria-hidden className="xico-hero-glow xico-hero-glow--two" />
 
-        <div className="relative mx-auto grid w-full max-w-[1440px] gap-7 px-6 pb-20 sm:gap-12 sm:px-10 lg:min-h-[690px] lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-8 lg:px-12 xl:px-16">
-          <motion.div style={{ y: heroTextY, opacity: heroOpacity }} variants={heroContainer} initial="hidden" animate="show" className="relative z-20 max-w-[590px] lg:pb-8">
-            <motion.div variants={heroItem} className="inline-flex items-center gap-2 rounded-full border border-[#6d62e7]/20 bg-white/70 px-3 py-1.5 text-[12px] font-semibold tracking-[0.08em] text-[#665ae0] shadow-[0_10px_30px_-20px_rgba(75,62,190,0.5)] backdrop-blur-xl">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#42c8ad] shadow-[0_0_12px_rgba(66,200,173,0.8)]" />
+        <div className="relative mx-auto grid w-full max-w-[1280px] gap-7 px-7 pb-20 sm:gap-12 sm:px-12 lg:min-h-[690px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center lg:gap-16 lg:px-16">
+          <motion.div style={{ y: heroTextY, opacity: heroOpacity }} variants={heroContainer} initial="hidden" animate="show" className="relative z-20 min-w-0 max-w-[520px] lg:pb-8">
+            <motion.div variants={heroItem} className="inline-flex items-center gap-2 rounded-full border border-[#6d62e7]/16 bg-white/65 px-3.5 py-2 text-[11px] font-semibold tracking-[0.06em] text-[#685dde] shadow-[0_14px_38px_-28px_rgba(70,58,165,.55)] backdrop-blur-xl">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#42c8ad] shadow-[0_0_12px_rgba(66,200,173,0.72)]" />
               {t("badge")}
             </motion.div>
 
-            <motion.p variants={heroItem} className="mt-8 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#776be8]">
+            <motion.p variants={heroItem} className="mt-8 text-[12px] font-semibold uppercase tracking-[0.15em] text-[#776be8] sm:text-[13px]">
               {t("hero.eyebrow")}
             </motion.p>
-            <motion.h1 variants={heroItem} className="mt-4 font-display text-[clamp(3rem,5.3vw,5.45rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-[#050608] text-balance sm:text-[clamp(3.4rem,5.3vw,5.45rem)]">
+            <motion.h1
+              variants={heroItem}
+              className={cn(
+                "xico-hero-title-gradient mt-4 font-display font-semibold leading-[1.035]",
+                isZh
+                  ? "text-[clamp(2.35rem,11.4vw,3rem)] tracking-[-0.047em] sm:text-[clamp(3.25rem,4.35vw,4.35rem)]"
+                  : "max-w-[540px] text-[clamp(2.3rem,10vw,2.9rem)] tracking-[-0.04em] text-balance sm:text-[clamp(3rem,3.85vw,3.9rem)]",
+              )}
+            >
               {isZh ? (
-                <>让 Mac<br />回到最佳状态。</>
+                <>让 Mac<br /><span className="whitespace-nowrap">回到最佳状态。</span></>
               ) : (
-                <>{t("hero.titleLine1")}<br />{t("hero.titleLine2")}.</>
+                <>{t("hero.titleLine1")}<br /><span>{t("hero.titleLine2")}.</span></>
               )}
             </motion.h1>
-            <motion.p variants={heroItem} className="mt-7 max-w-[560px] text-[16px] leading-8 text-[#666d79] sm:text-[18px]">
-              {t("hero.subtitle")}
+            <motion.p variants={heroItem} className="mt-7 max-w-[500px] text-[16px] leading-[1.85] text-[#666d79] sm:text-[17px]">
+              {isZh ? "一键找出系统垃圾、开发者缓存、大文件与重复文件。空间透镜、实时监控与专业工具都在一处；全程本地，删除前可预览，删除后可撤销。" : t("hero.subtitle")}
             </motion.p>
 
             <motion.div variants={heroItem} className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -383,54 +415,43 @@ export function MacHomeExperience() {
             </motion.ul>
           </motion.div>
 
-          <motion.div style={{ y: heroVisualY, opacity: heroOpacity }} className="relative z-10 h-[430px] sm:h-[540px] lg:h-[620px]">
-            <motion.div
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.88, delay: 0.16, ease }}
-              className="xico-hero-app-badge"
-            >
-              <Image src="/mac/xico-app-icon.png" alt="" width={1024} height={1024} quality={100} priority className="xico-hero-app-icon" />
-              <span>
-                <strong>{isZh ? "希可 Mac 清理" : "Xico for Mac"}</strong>
-                <small>{isZh ? "原生 macOS 应用" : "Native macOS app"}</small>
-              </span>
-            </motion.div>
-            <motion.figure
-              initial={reduce ? { opacity: 0 } : { opacity: 0, x: 56, y: 24, scale: 0.94 }}
-              animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-              transition={{ duration: 1.08, delay: 0.24, ease }}
-              className="xico-hero-window"
-            >
-              <Image
-                src={`/mac/shots/${screenshotLocale}/smartscan.jpg`}
-                alt={isZh ? "希可 Mac 智能扫描界面" : "Xico Smart Scan interface"}
-                width={2360}
-                height={1440}
-                unoptimized
-                sizes="(max-width: 1023px) 92vw, 58vw"
-                loading="eager"
-                fetchPriority="high"
-                className="block h-auto w-full"
-              />
-            </motion.figure>
+          <motion.div style={{ y: heroVisualY, opacity: heroOpacity }} className="relative z-10 flex h-[340px] min-w-0 items-center justify-center sm:h-[500px] lg:h-[620px] lg:justify-end">
+            <div className="xico-hero-visual-stack">
+              <motion.figure
+                initial={reduce ? { opacity: 0 } : { opacity: 0, x: 56, y: 24, scale: 0.94 }}
+                animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1.08, delay: 0.24, ease }}
+                className="xico-hero-window"
+              >
+                <span className="xico-hero-window-surface">
+                  <Image
+                    src="/mac/product/live/smart-scan.png"
+                    alt={isZh ? "希可 Mac 完整产品主页与等待智能扫描界面" : "Complete Xico app window ready for a smart scan"}
+                    width={1080}
+                    height={734}
+                    quality={96}
+                    sizes="(max-width: 1023px) 94vw, 52vw"
+                    loading="eager"
+                    fetchPriority="high"
+                    className="block h-auto w-full"
+                  />
+                  <span aria-hidden className="xico-hero-scan-sheen" />
+                </span>
+              </motion.figure>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={reduce ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -6, 0] }}
+                transition={reduce ? { duration: 0.3 } : { opacity: { delay: 0.9, duration: 0.45 }, y: { delay: 1.2, duration: 4.8, repeat: Infinity, ease: "easeInOut" } }}
+                className="xico-hero-ready-chip"
+              >
+                <span aria-hidden className="xico-hero-ready-dot" />
+                {isZh ? "100% 本地 · 随时开始扫描" : "100% local · ready to scan"}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#f8f9fd]" />
-      </section>
-
-      <section aria-label={isZh ? "产品能力" : "Product capabilities"} className="relative z-20 border-y border-black/[0.05] bg-white/65 py-5 backdrop-blur-2xl">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-y-5 px-6 sm:grid-cols-4">
-          {moments.map((item, index) => (
-            <a key={item.label} href="#experience" onClick={() => setActiveFeature(index)} className="group flex min-h-12 items-center justify-center border-black/[0.06] px-3 text-center text-[13px] font-semibold text-[#747a87] hover:text-[#5e54d4] sm:border-r sm:last:border-r-0">
-              <span className="relative py-1">
-                {item.label}
-                <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-[#6f63e9] transition-transform duration-300 group-hover:scale-x-100" />
-              </span>
-            </a>
-          ))}
-        </div>
       </section>
 
       <section className="px-6 py-28 sm:px-10 sm:py-36">
@@ -455,37 +476,86 @@ export function MacHomeExperience() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-20 px-4 pb-32 sm:px-8 sm:pb-40">
-        <div className="mx-auto max-w-[1380px] rounded-[30px] border border-black/[0.06] bg-white/72 p-3 shadow-[0_40px_120px_-70px_rgba(64,54,150,0.36)] backdrop-blur-2xl sm:rounded-[42px] sm:p-6 lg:p-9">
-          <div className="grid gap-8 lg:grid-cols-[170px_0.7fr_1.35fr] lg:gap-10">
-            <nav aria-label={isZh ? "功能章节" : "Feature chapters"} className="flex gap-2 overflow-x-auto rounded-[22px] bg-[#f3f3f8] p-2 lg:flex-col lg:overflow-visible lg:rounded-[26px] lg:p-3">
+      <section
+        id="experience"
+        ref={experienceRef}
+        onMouseEnter={() => setFeaturePaused(true)}
+        onMouseLeave={() => setFeaturePaused(false)}
+        onFocusCapture={() => setFeaturePaused(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setFeaturePaused(false);
+        }}
+        className="scroll-mt-20 px-4 pb-32 sm:px-8 sm:pb-40"
+      >
+        <div className="mx-auto max-w-[1280px] rounded-[30px] border border-black/[0.06] bg-white/72 p-3 shadow-[0_40px_120px_-70px_rgba(64,54,150,0.36)] backdrop-blur-2xl sm:rounded-[42px] sm:p-6 lg:p-9">
+          <div className="grid gap-8 xl:grid-cols-[170px_minmax(0,0.86fr)_minmax(0,1.14fr)] xl:gap-9">
+            <nav
+              role="tablist"
+              aria-label={isZh ? "功能章节" : "Feature chapters"}
+              onKeyDown={(event) => {
+                let nextIndex: number | null = null;
+                if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (activeFeature + 1) % moments.length;
+                if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (activeFeature - 1 + moments.length) % moments.length;
+                if (event.key === "Home") nextIndex = 0;
+                if (event.key === "End") nextIndex = moments.length - 1;
+                if (nextIndex === null) return;
+                event.preventDefault();
+                setActiveFeature(nextIndex);
+                window.requestAnimationFrame(() => document.getElementById(`feature-tab-${nextIndex}`)?.focus());
+              }}
+              className="flex max-w-full gap-2 overflow-x-auto rounded-[22px] bg-[#f3f3f8] p-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:rounded-[26px] xl:p-3"
+            >
               {moments.map((item, index) => (
                 <button
                   key={item.label}
                   type="button"
                   onClick={() => setActiveFeature(index)}
-                  aria-pressed={activeFeature === index}
+                  role="tab"
+                  id={`feature-tab-${index}`}
+                  aria-controls="feature-panel"
+                  aria-selected={activeFeature === index}
+                  tabIndex={activeFeature === index ? 0 : -1}
                   className={cn(
-                    "relative min-h-12 shrink-0 rounded-2xl px-4 py-3 text-left text-[13px] font-semibold transition-colors lg:min-h-20 lg:w-full lg:pl-9",
-                    activeFeature === index ? "bg-white text-[#262330] shadow-[0_8px_28px_-20px_rgba(50,45,120,0.55)]" : "text-[#858997] hover:bg-white/60 hover:text-[#575165]",
+                    "relative min-h-12 shrink-0 overflow-hidden rounded-2xl px-4 py-3 text-left text-[13px] font-semibold transition-colors xl:min-h-[68px] xl:w-full xl:pl-9",
+                    activeFeature === index ? "text-[#262330]" : "text-[#858997] hover:bg-white/60 hover:text-[#575165]",
                   )}
                 >
-                  <span className={cn("absolute left-3 top-1/2 hidden h-7 w-[2px] -translate-y-1/2 rounded-full bg-[#6e62e7] lg:block", activeFeature === index ? "opacity-100" : "opacity-0")} />
-                  <span className="mr-2 text-[10px] tracking-[0.1em] text-[#9a93de]">0{index + 1}</span>
-                  {item.label}
+                  {activeFeature === index ? (
+                    <motion.span
+                      layoutId="active-feature-tab"
+                      className="absolute inset-0 rounded-2xl bg-white shadow-[0_8px_28px_-20px_rgba(50,45,120,0.55)]"
+                      transition={{ duration: reduce ? 0 : 0.42, ease }}
+                    />
+                  ) : null}
+                  <span className={cn("absolute left-3 top-1/2 z-10 hidden h-7 w-[2px] -translate-y-1/2 rounded-full bg-[#6e62e7] transition-opacity xl:block", activeFeature === index ? "opacity-100" : "opacity-0")} />
+                  <span className="relative z-10 mr-2 text-[10px] tracking-[0.1em] text-[#9a93de]">0{index + 1}</span>
+                  <span className="relative z-10">{item.label}</span>
+                  {activeFeature === index && !reduce ? (
+                    <span
+                      key={`feature-progress-${activeFeature}-${featurePaused ? "paused" : "running"}`}
+                      aria-hidden
+                      className="xico-feature-progress"
+                      style={{ animationPlayState: featurePaused ? "paused" : "running" }}
+                    />
+                  ) : null}
                 </button>
               ))}
             </nav>
 
-            <div className="flex min-h-[520px] flex-col justify-center px-3 py-7 sm:px-7 lg:min-h-[620px] lg:px-2">
+            <div
+              id="feature-panel"
+              role="tabpanel"
+              aria-labelledby={`feature-tab-${activeFeature}`}
+              className="flex min-h-[500px] flex-col justify-center px-3 py-7 sm:px-7 xl:min-h-[590px] xl:px-1"
+            >
               <AnimatePresence mode="wait">
                 <motion.div key={activeFeature} initial={reduce ? { opacity: 0 } : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }} transition={{ duration: 0.48, ease }}>
                   <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#7569e8]">{moments[activeFeature].eyebrow}</p>
-                  <h2 className="mt-4 font-display text-[clamp(2.25rem,4vw,4.2rem)] font-semibold leading-[1.02] tracking-[-0.055em] text-[#101119] text-balance">
+                  <h2 className="mt-4 font-display text-[clamp(2.05rem,3.45vw,3.35rem)] font-semibold leading-[1.07] tracking-[-0.045em] text-[#171922] text-balance">
                     {moments[activeFeature].title}
                   </h2>
-                  <p className="mt-6 text-[15px] leading-7 text-[#6c7280]">{moments[activeFeature].desc}</p>
-                  <ul className="mt-7 space-y-3">
+                  <p className="mt-5 text-[15px] leading-7 text-[#6c7280]">{moments[activeFeature].desc}</p>
+                  <ul className="mt-6 space-y-2.5">
                     {moments[activeFeature].points.map((point) => (
                       <li key={point} className="flex gap-3 text-[13px] leading-6 text-[#565c69]">
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4dc5ae]" />
@@ -493,7 +563,7 @@ export function MacHomeExperience() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-9 flex gap-8 border-t border-black/[0.06] pt-6">
+                  <div className="mt-8 flex gap-8 border-t border-black/[0.06] pt-5">
                     <div>
                       <p className="font-display text-[25px] font-semibold tracking-[-0.04em] text-[#6b60e2]">{moments[activeFeature].metric}</p>
                       <p className="mt-1 text-[11px] text-[#969aa5]">{moments[activeFeature].metricLabel}</p>
@@ -507,9 +577,17 @@ export function MacHomeExperience() {
               </AnimatePresence>
             </div>
 
-            <div className="relative flex min-h-[360px] items-center overflow-hidden rounded-[24px] bg-[#f5f5f7] p-3 sm:min-h-[560px] sm:p-6 lg:min-h-[620px] lg:rounded-[30px]">
+            <div className="relative flex min-h-[360px] items-center overflow-hidden rounded-[24px] bg-[#f5f5f7] p-3 sm:min-h-[540px] sm:p-6 xl:min-h-[590px] xl:rounded-[30px]">
               <AnimatePresence mode="wait">
-                <motion.div key={moments[activeFeature].image} initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.94, x: 24 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.97, x: -18 }} transition={{ duration: 0.62, ease }} className="relative z-10 w-full">
+                <motion.div
+                  key={moments[activeFeature].image}
+                  initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.94, x: 24 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.97, x: -18 }}
+                  whileHover={reduce ? undefined : { y: -5, scale: 1.008 }}
+                  transition={{ duration: 0.62, ease }}
+                  className="relative z-10 w-full"
+                >
                   <Screenshot src={moments[activeFeature].image} alt={moments[activeFeature].alt} width={moments[activeFeature].imageWidth} height={moments[activeFeature].imageHeight} />
                 </motion.div>
               </AnimatePresence>
@@ -526,33 +604,6 @@ export function MacHomeExperience() {
         tone="white"
       />
 
-      <section className="overflow-hidden border-y border-black/[0.05] bg-white py-28 sm:py-36">
-        <div className="mx-auto max-w-[1380px] px-6 sm:px-10">
-          <Reveal>
-            <SectionHeading
-              eyebrow={isZh ? "连接与工作流" : "Connections & workflow"}
-              title={isZh ? "从清理到服务器。" : "From cleanup to servers."}
-              description={isZh ? "Xico 不只照顾本机，也把安全下载、远程服务器和个性化设置统一进一套清爽的原生工作流。" : "Xico goes beyond the local Mac, bringing safe downloads, remote servers, and personal preferences into one calm native workflow."}
-            />
-          </Reveal>
-        </div>
-
-        <div className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-[max(24px,calc((100vw-1380px)/2))] pb-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-7">
-          {connectedFeatures.map((item, index) => (
-            <Reveal key={item.image} delay={index * 0.06} className="w-[84vw] max-w-[560px] shrink-0 snap-center sm:w-[58vw] lg:w-[42vw]">
-              <article>
-                <Screenshot src={item.image} alt={item.title} width={item.width} height={item.height} />
-                <div className="mt-6 px-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8b82df]">{item.detail}</p>
-                  <h3 className="font-display text-2xl font-semibold tracking-[-0.035em] text-[#151722]">{item.title}</h3>
-                  <p className="mt-3 text-[14px] leading-6 text-[#777d89]">{item.description}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       <EditorialFeatureCollection
         eyebrow={isZh ? "系统照顾" : "System care"}
         title={isZh ? "整台 Mac，时刻保持好状态。" : "Keep your whole Mac in shape."}
@@ -567,7 +618,7 @@ export function MacHomeExperience() {
             <Image src="/mac/xico-app-icon.png" alt="" width={1024} height={1024} quality={100} loading="eager" className="h-14 w-14" />
           </div>
           <p className="mt-8 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#7367e5]">{tp("eyebrow")}</p>
-          <h2 className="mt-4 font-display text-[clamp(2.5rem,5.6vw,5.2rem)] font-semibold leading-[1.02] tracking-[-0.055em] text-[#11131b] text-balance">
+          <h2 className="mt-4 font-display text-[clamp(2.35rem,4.8vw,4.55rem)] font-semibold leading-[1.04] tracking-[-0.05em] text-[#11131b] text-balance">
             {isZh ? "本地处理，从不上传。" : tp("title")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-8 text-[#6a707d]">{tp("subtitle")}</p>
@@ -581,8 +632,102 @@ export function MacHomeExperience() {
         </Reveal>
       </section>
 
-      <section className="px-4 pb-28 sm:px-8 sm:pb-36">
-        <Reveal className="mx-auto max-w-[1380px]">
+      <section className="bg-white px-4 py-28 sm:px-8 sm:py-40">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <SectionHeading
+              eyebrow={isZh ? "完整能力" : "Complete capabilities"}
+              title={isZh ? "不只是清理。是完整照顾你的 Mac。" : "More than cleanup. Complete care for your Mac."}
+              description={isZh ? "从释放空间，到看懂系统状态，再到日常维护与专业工具。Xico 把每一项能力都做成真正可用、彼此连贯的原生体验。" : "From reclaiming space to understanding system health, maintenance, and pro tools, Xico turns every capability into one coherent native experience."}
+            />
+          </Reveal>
+
+          <div className="mt-16 grid gap-5 lg:grid-cols-12 lg:grid-rows-2">
+            <Reveal className="lg:col-span-7 lg:row-span-2">
+              <article className="relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-[32px] bg-[#0b0c12] p-7 text-white shadow-[0_38px_100px_-58px_rgba(24,20,62,.85)] sm:rounded-[40px] sm:p-11">
+                <div aria-hidden className="absolute -right-28 -top-32 h-96 w-96 rounded-full bg-[#786bea]/24 blur-[100px]" />
+                <div aria-hidden className="absolute -bottom-40 -left-28 h-96 w-96 rounded-full bg-[#43c7ad]/10 blur-[110px]" />
+                <div className="relative max-w-xl">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#a79eff]">{isZh ? "一款 App，四套核心能力" : "One app, four essential systems"}</p>
+                  <h3 className="mt-5 font-display text-[clamp(2.25rem,3.9vw,4.1rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-balance">
+                    {isZh ? "清理只是开始。" : "Cleanup is only the beginning."}
+                  </h3>
+                  <p className="mt-5 max-w-lg text-[15px] leading-7 text-white/52">
+                    {isZh ? "不用在多款工具之间来回切换。真正重要的 Mac 能力，都在同一套熟悉、克制的界面里。" : "Stop jumping between utilities. The Mac tools that matter live in one familiar, focused interface."}
+                  </p>
+                </div>
+
+                <div className="relative mt-auto grid gap-x-8 gap-y-7 pt-14 sm:grid-cols-2">
+                  {[
+                    ["01", isZh ? "智能清理" : "Smart cleanup", isZh ? "六类内容并行扫描，先预览再清理。" : "Six categories scanned together, with preview first."],
+                    ["02", isZh ? "空间洞察" : "Storage insight", isZh ? "快速看清每一 GB 到底去了哪里。" : "See exactly where every gigabyte is going."],
+                    ["03", isZh ? "实时监控" : "Live monitoring", isZh ? "CPU、内存、GPU 与网络持续可见。" : "Keep CPU, memory, GPU, and network visible."],
+                    ["04", isZh ? "专业工具" : "Pro tools", isZh ? "测速、硬件健康、维护与服务器。" : "Benchmarks, hardware health, maintenance, and servers."],
+                  ].map(([number, title, detail]) => (
+                    <div key={number} className="border-t border-white/10 pt-5">
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-[10px] font-semibold tracking-[0.12em] text-[#8075ec]">{number}</span>
+                        <h4 className="font-display text-[17px] font-semibold tracking-[-0.025em] text-white/92">{title}</h4>
+                      </div>
+                      <p className="mt-2 pl-8 text-[12px] leading-5 text-white/40">{detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.06} className="lg:col-span-5">
+              <article className="relative flex min-h-[270px] flex-col overflow-hidden rounded-[32px] border border-black/[0.055] bg-[linear-gradient(145deg,#f5f3ff_0%,#f7f8fc_52%,#eef8f6_100%)] p-7 sm:rounded-[40px] sm:p-10">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7165df]">{isZh ? "先体验，再决定" : "Try first, decide later"}</p>
+                <div className="mt-auto flex items-end justify-between gap-6 pt-10">
+                  <div>
+                    <p className="font-display text-[clamp(3.7rem,7vw,6.3rem)] font-semibold leading-[0.82] tracking-[-0.075em] text-[#151621]">15</p>
+                    <p className="mt-4 font-display text-[20px] font-semibold tracking-[-0.03em] text-[#242631]">{isZh ? "天全功能免费试用" : "days, full-feature trial"}</p>
+                    <p className="mt-2 text-[12px] text-[#777d89]">{isZh ? "无需注册 · 下载即可体验" : "No signup · download and start"}</p>
+                  </div>
+                  <span className="mb-1 h-3 w-3 shrink-0 rounded-full bg-[#45c3aa] shadow-[0_0_0_8px_rgba(69,195,170,.10),0_0_24px_rgba(69,195,170,.35)]" />
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.1} className="lg:col-span-5">
+              <article className="flex min-h-[270px] flex-col rounded-[32px] border border-black/[0.055] bg-[#f5f5f7] p-7 sm:rounded-[40px] sm:p-10">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#777d89]">{isZh ? "简单的拥有方式" : "Simple ownership"}</p>
+                <h3 className="mt-5 font-display text-[clamp(2rem,3vw,3.1rem)] font-semibold leading-[1.04] tracking-[-0.045em] text-[#151621] text-balance">
+                  {isZh ? "一次买断。没有订阅。" : "Buy once. No subscription."}
+                </h3>
+                <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
+                  <Link href="/mac/pricing" className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#151621] px-6 py-3 text-[13px] font-semibold text-white hover:-translate-y-0.5 hover:bg-[#2b2d38]">
+                    {isZh ? "查看定价" : "See pricing"}
+                  </Link>
+                  <Link href="/mac/features" className="inline-flex min-h-11 items-center justify-center rounded-full px-4 py-3 text-[13px] font-semibold text-[#655bd2] hover:bg-white/70">
+                    {isZh ? "全部功能 →" : "All features →"}
+                  </Link>
+                </div>
+              </article>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-5">
+            <div className="grid overflow-hidden rounded-[28px] border border-black/[0.055] bg-[#f8f8fa] sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                [isZh ? "100% 本地" : "100% on-device", isZh ? "文件内容绝不上传" : "Files never leave your Mac"],
+                [isZh ? "删除可撤销" : "Undo cleanup", isZh ? "关键操作留有退路" : "A safe way back"],
+                [isZh ? "Apple 公证" : "Apple notarized", isZh ? "原生 Swift 构建" : "Built natively in Swift"],
+                [isZh ? "30 天保障" : "30-day guarantee", isZh ? "放心购买，不合适可退" : "Buy with confidence"],
+              ].map(([title, detail]) => (
+                <div key={title} className="border-b border-black/[0.055] px-6 py-6 last:border-b-0 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(3)]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
+                  <p className="font-display text-[15px] font-semibold tracking-[-0.02em] text-[#20222c]">{title}</p>
+                  <p className="mt-1.5 text-[11px] text-[#8a8f9a]">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="download" className="scroll-mt-20 bg-white px-4 pb-28 sm:px-8 sm:pb-36">
+        <Reveal className="mx-auto max-w-[1280px]">
           <div className="relative overflow-hidden rounded-[32px] bg-[#090a10] px-7 py-10 text-white shadow-[0_42px_100px_-48px_rgba(12,10,28,.85)] sm:rounded-[42px] sm:px-12 sm:py-12 lg:grid lg:grid-cols-[auto_1.3fr_0.9fr] lg:items-center lg:gap-12 lg:px-16">
             <div aria-hidden className="absolute -left-20 -top-28 h-80 w-80 rounded-full bg-[#6b5ee5]/25 blur-[90px]" />
             <div aria-hidden className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#49c9b0]/10 blur-[100px]" />
@@ -591,7 +736,7 @@ export function MacHomeExperience() {
             </div>
             <div className="relative mt-7 lg:mt-0">
               <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#a99fff]">{tdownload("eyebrow")}</p>
-              <h2 className="mt-3 font-display text-[clamp(2.1rem,4vw,4.2rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-white text-balance">
+              <h2 className="mt-3 font-display text-[clamp(2rem,3.4vw,3.6rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-white text-balance">
                 {tdownload("title")}
               </h2>
               <p className="mt-4 max-w-xl text-[14px] leading-7 text-white/55">{tdownload("subtitle")}</p>
@@ -606,17 +751,6 @@ export function MacHomeExperience() {
               <p className="mt-1 text-[10px] text-white/35">{tdownload("trust")}</p>
             </div>
           </div>
-        </Reveal>
-      </section>
-
-      <section className="bg-white px-6 py-24 sm:px-10 sm:py-32">
-        <Reveal className="mx-auto max-w-4xl text-center">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#776be8]">{isZh ? "完整能力" : "Complete capabilities"}</p>
-          <h2 className="mt-4 font-display text-[clamp(2rem,4.5vw,4rem)] font-semibold leading-[1.04] tracking-[-0.05em] text-[#151722] text-balance">{isZh ? "不只是看起来专业。每一项都真的能用。" : "Not just polished. Genuinely capable."}</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-7 text-[#737987]">{isZh ? "首页展示的是当前产品的真实界面。更完整的功能、安全策略与技术细节，都可以继续深入了解。" : "Every interface on this page comes from the current product. Explore the complete capability and security details."}</p>
-          <Link href="/mac/features" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-black/[0.09] bg-white px-7 py-3 text-[14px] font-semibold text-[#292b35] shadow-[0_16px_36px_-26px_rgba(40,35,100,.5)] hover:-translate-y-0.5 hover:border-[#756ae4]/25 hover:text-[#6157cb]">
-            {isZh ? "查看全部功能说明" : "Explore every feature"}
-          </Link>
         </Reveal>
       </section>
     </div>

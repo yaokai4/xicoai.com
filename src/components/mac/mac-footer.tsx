@@ -1,23 +1,24 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import { Mark } from "@/components/brand/logo";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import type { Locale } from "@/i18n/routing";
 
 export async function MacFooter() {
   const t = await getTranslations("mac.footer");
   const tn = await getTranslations("mac");
+  const td = await getTranslations("mac.download");
   const tf = await getTranslations("footer");
   const locale = (await getLocale()) as Locale;
   const year = new Date().getFullYear();
   const prefix = locale === "zh" ? "" : `/${locale}`;
 
   const productLinks = [
-    { label: t("links.features"), href: "#features" },
-    { label: t("links.safety"), href: "#safety" },
-    { label: t("links.privacy"), href: "#privacy" },
-    { label: t("links.pricing"), href: "#pricing" },
-    { label: t("links.faq"), href: "#faq" },
-    { label: t("links.waitlist"), href: "#waitlist" },
+    { label: t("links.features"), href: `${prefix}/mac/features` },
+    { label: t("links.safety"), href: `${prefix}/mac/security#safety` },
+    { label: t("links.privacy"), href: `${prefix}/mac/security#privacy` },
+    { label: t("links.pricing"), href: `${prefix}/mac/pricing` },
+    { label: t("links.faq"), href: `${prefix}/mac/support#faq` },
+    { label: td("cta"), href: `${prefix}/mac#download` },
   ];
 
   const companyLinks = [
@@ -27,12 +28,19 @@ export async function MacFooter() {
   ];
 
   return (
-    <footer className="relative border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
+    <footer className="mac-product-surface relative border-t border-border">
+      <div className="mx-auto max-w-[1280px] px-7 py-16 sm:px-12 lg:px-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div className="max-w-xs">
             <span className="inline-flex items-center gap-2">
-              <Mark size={24} />
+              <Image
+                src="/mac/xico-app-icon.png"
+                alt=""
+                width={1024}
+                height={1024}
+                quality={100}
+                className="h-8 w-8"
+              />
               <span className="font-display text-[1.15rem] font-semibold tracking-tight text-foreground">
                 {tn("productName")}
               </span>

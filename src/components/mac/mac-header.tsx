@@ -60,13 +60,13 @@ export function MacHeader() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          "mac-product-surface fixed inset-x-0 top-0 z-50 transition-all duration-500",
           scrolled || menuOpen
             ? "border-b border-border bg-bg/80 backdrop-blur-xl"
             : "border-b border-transparent",
         )}
       >
-        <div className="mx-auto flex h-[58px] max-w-[1380px] items-center justify-between px-5 sm:px-7 lg:px-12">
+        <div className="mx-auto flex h-[58px] max-w-[1280px] items-center justify-between px-6 sm:px-9 lg:px-12">
           <Link
             href="/mac"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
@@ -82,12 +82,12 @@ export function MacHeader() {
               priority
               className="h-8 w-8 shrink-0"
             />
-            <span className="font-display text-[1.05rem] font-semibold tracking-[-0.025em] text-foreground">
+            <span className="font-display text-[1.05rem] font-semibold tracking-[-0.025em] text-foreground max-[379px]:hidden">
               {tm("productName")}
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
               <Link
                 key={item.key}
@@ -105,19 +105,21 @@ export function MacHeader() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <ThemeToggle />
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
+              <ThemeToggle />
+            </div>
+            <div className="hidden lg:block">
               <LocaleSwitcher />
             </div>
             <Link
               href="/mac/buy"
-              className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-bg transition-transform hover:scale-[1.03] sm:inline-flex"
+              className="inline-flex rounded-full bg-foreground px-3.5 py-2 text-[13px] font-medium text-bg transition-transform hover:scale-[1.03] sm:px-4 sm:text-sm"
             >
               {t("buy")}
             </Link>
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-border-strong md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-border-strong lg:hidden"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Menu"
               aria-expanded={menuOpen}
@@ -136,7 +138,7 @@ export function MacHeader() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="fixed inset-x-0 bottom-0 top-[58px] z-40 flex flex-col bg-bg md:hidden"
+            className="mac-product-surface fixed inset-x-0 bottom-0 top-[58px] z-40 flex flex-col bg-bg lg:hidden"
           >
             <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pt-4">
               <nav className="flex flex-col gap-1">
