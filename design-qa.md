@@ -4,7 +4,7 @@ source visual truth paths: `/Users/yaokai/.codex/generated_images/019f5e65-13f9-
 
 implementation screenshot paths: `/tmp/xico-final-desktop-1440x900.png`, `/tmp/xico-final-fullpage-1440.png`, and `/tmp/xico-final-mobile-390x844.png`
 
-viewport: desktop 1440 × 900 at DPR 1; mobile 390 × 844 at DPR 1
+viewport: desktop 1440 × 900 and compact desktop 1280 × 720 at DPR 1; mobile 390 × 844 at DPR 1
 
 state: `/mac`, Chinese locale, light theme, initial hero; focused states cover the selected core-feature tab, cleanup chapter, system-care chapter, privacy chapter, download CTA, and expanded mobile menu.
 
@@ -44,6 +44,7 @@ console errors checked: the final browser/dev-server pass emitted no runtime err
 - Iteration 2 — [P2] Grid texture, oversized glow, stacked shadows, and concentric privacy decoration reduced the clean Apple feel. Fix: removed the grid and concentric treatments, softened elevation, and moved large feature chapters onto calm `#f5f5f7` surfaces. Evidence: `/tmp/xico-refine-desktop-end.png` and `/tmp/xico-refine-desktop-cta.png`.
 - Iteration 3 — [P2] Several high-resolution app captures were technically sharp but showed empty or incomplete states. Fix: kept the native high-resolution hero, then restored information-rich real product views for System Junk, Uninstaller, and Optimization. Evidence: `/tmp/xico-refine-desktop-care-detail.png`.
 - Iteration 3 — [P2] The mobile product badge began at the fold and looked like an orphaned card. Fix: hid the redundant mobile badge, tightened the text-to-visual gap, and moved the real product screenshot to begin at 768 px. Evidence: `/tmp/xico-final-mobile-390x844.png`.
+- Iteration 4 — [P1] The first live check at 1280 × 720 showed a 46 px collision between the copy column and product window. Fix: reduced the desktop hero window from 56vw to 50vw, preserving its scale at wide viewports while restoring a 30 px gap on compact desktops. Evidence: `/tmp/xico-live-1280x720.png`.
 
 ## Implementation Checklist
 
@@ -53,6 +54,7 @@ console errors checked: the final browser/dev-server pass emitted no runtime err
 - [x] Pair every highlighted function with its own screenshot and explanation.
 - [x] Verify CTAs, feature tabs, mobile menu, image loading, and URL state.
 - [x] Verify 1440 × 900 desktop and 390 × 844 mobile rendering.
+- [x] Verify 1280 × 720 compact desktop rendering without hero overlap.
 - [x] Verify no horizontal overflow, broken images, console errors, or final framework warnings.
 
 final result: passed
