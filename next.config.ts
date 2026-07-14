@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 96, 100],
   },
   experimental: {
     serverActions: {

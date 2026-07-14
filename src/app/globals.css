@@ -365,19 +365,6 @@
     radial-gradient(circle at 72% 30%, rgba(113, 101, 232, 0.16), transparent 38%);
 }
 
-.xico-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.36;
-  background-image:
-    linear-gradient(rgba(101, 88, 190, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(101, 88, 190, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, black, transparent 78%);
-}
-
 .xico-hero-glow {
   position: absolute;
   border-radius: 999px;
@@ -386,11 +373,11 @@
 }
 
 .xico-hero-glow--one {
-  right: -9%;
-  top: 2%;
+  right: -14%;
+  top: -8%;
   width: min(64vw, 900px);
   height: min(64vw, 900px);
-  background: radial-gradient(circle, rgba(137, 125, 241, 0.2), rgba(105, 180, 235, 0.08) 45%, transparent 72%);
+  background: radial-gradient(circle, rgba(137, 125, 241, 0.13), rgba(105, 180, 235, 0.045) 45%, transparent 72%);
 }
 
 .xico-hero-glow--two {
@@ -398,105 +385,88 @@
   bottom: -30%;
   width: min(52vw, 760px);
   height: min(52vw, 760px);
-  background: radial-gradient(circle, rgba(79, 210, 184, 0.12), transparent 68%);
+  background: radial-gradient(circle, rgba(79, 210, 184, 0.075), transparent 68%);
 }
 
-.xico-hero-orbit {
+.xico-hero-app-badge {
   position: absolute;
-  right: -12%;
-  bottom: -34%;
-  width: 72vw;
-  height: 72vw;
-  min-width: 700px;
-  min-height: 700px;
-  border: 1px solid rgba(111, 99, 233, 0.08);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 80px rgba(111, 99, 233, 0.025),
-    0 0 0 170px rgba(76, 199, 174, 0.018);
-  transform: rotate(-10deg);
-}
-
-.xico-hero-icon {
-  position: absolute;
-  left: 13%;
+  right: 4%;
   top: 2%;
-  z-index: 16;
-  width: clamp(100px, 13vw, 180px);
-  filter: drop-shadow(0 32px 42px rgba(86, 71, 176, 0.28));
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 15px 10px 10px;
+  border: 1px solid rgba(26, 24, 48, 0.065);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 54px -34px rgba(48, 40, 115, 0.5);
+  backdrop-filter: blur(24px);
 }
 
-.xico-hero-shot {
+.xico-hero-app-icon {
+  width: 72px;
+  height: 72px;
+  flex: none;
+  filter: drop-shadow(0 14px 22px rgba(86, 71, 176, 0.22));
+}
+
+.xico-hero-app-badge span {
+  display: grid;
+  gap: 3px;
+}
+
+.xico-hero-app-badge strong {
+  color: #151620;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.xico-hero-app-badge small {
+  color: #858b98;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.xico-hero-window {
   position: absolute;
   overflow: hidden;
-  width: min(48vw, 650px);
-  border: 1px solid rgba(50, 45, 90, 0.09);
-  border-radius: 18px;
+  right: -1%;
+  top: 20%;
+  width: min(56vw, 800px);
+  border: 1px solid rgba(35, 31, 70, 0.075);
+  border-radius: 28px;
   background: white;
-  box-shadow: 0 36px 80px -38px rgba(46, 38, 112, 0.5);
-  transform-origin: 50% 100%;
-}
-
-.xico-hero-shot--far {
-  right: -9%;
-  top: 7%;
-  z-index: 2;
-  opacity: 0.54;
-  transform: rotate(6deg) scale(0.9);
-}
-
-.xico-hero-shot--back {
-  right: -3%;
-  top: 19%;
-  z-index: 4;
-  opacity: 0.68;
-  transform: rotate(3.6deg) scale(0.94);
-}
-
-.xico-hero-shot--mid {
-  right: 3%;
-  top: 31%;
-  z-index: 6;
-  opacity: 0.82;
-  transform: rotate(1.7deg) scale(0.97);
-}
-
-.xico-hero-shot--front {
-  right: 9%;
-  top: 43%;
-  z-index: 8;
+  box-shadow:
+    0 46px 110px -58px rgba(47, 39, 112, 0.46),
+    0 18px 44px -30px rgba(20, 18, 50, 0.24);
 }
 
 @media (max-width: 1023px) {
-  .xico-hero-icon {
-    left: 6%;
-    top: -5%;
-    width: clamp(90px, 18vw, 145px);
+  .xico-hero-app-badge {
+    left: 7%;
+    right: auto;
+    top: 0;
   }
-  .xico-hero-shot {
-    width: min(78vw, 620px);
+  .xico-hero-window {
+    right: 1%;
+    top: 20%;
+    width: min(88vw, 760px);
   }
-  .xico-hero-shot--far { right: -10%; top: 0; }
-  .xico-hero-shot--back { right: -5%; top: 11%; }
-  .xico-hero-shot--mid { right: 0; top: 22%; }
-  .xico-hero-shot--front { right: 5%; top: 33%; }
 }
 
 @media (max-width: 639px) {
-  .xico-hero-icon {
-    left: 2%;
-    top: -1%;
-    width: 90px;
+  .xico-hero-app-badge {
+    display: none;
   }
-  .xico-hero-shot {
-    width: 82vw;
-    border-radius: 12px;
-    box-shadow: 0 28px 54px -32px rgba(46, 38, 112, 0.55);
+  .xico-hero-window {
+    right: -4%;
+    top: 0;
+    width: 94vw;
+    border-radius: 18px;
+    box-shadow: 0 30px 72px -42px rgba(46, 38, 112, 0.5);
   }
-  .xico-hero-shot--far { right: -24%; top: 2%; }
-  .xico-hero-shot--back { right: -16%; top: 15%; }
-  .xico-hero-shot--mid { right: -8%; top: 28%; }
-  .xico-hero-shot--front { right: 0; top: 41%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

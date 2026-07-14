@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { Mark } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -66,15 +66,23 @@ export function MacHeader() {
             : "border-b border-transparent",
         )}
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-8">
+        <div className="mx-auto flex h-[58px] max-w-[1380px] items-center justify-between px-5 sm:px-7 lg:px-12">
           <Link
             href="/mac"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
             aria-label="Xico Clean"
             onClick={() => setMenuOpen(false)}
           >
-            <Mark size={24} />
-            <span className="font-display text-[1.15rem] font-semibold tracking-tight text-foreground">
+            <Image
+              src="/mac/xico-app-icon.png"
+              alt=""
+              width={1024}
+              height={1024}
+              quality={100}
+              priority
+              className="h-8 w-8 shrink-0"
+            />
+            <span className="font-display text-[1.05rem] font-semibold tracking-[-0.025em] text-foreground">
               {tm("productName")}
             </span>
           </Link>
@@ -85,7 +93,7 @@ export function MacHeader() {
                 key={item.key}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-3.5 py-2 text-sm transition-colors",
+                  "rounded-full px-3.5 py-2 text-[13px] transition-colors",
                   isActive(item.href)
                     ? "font-medium text-foreground"
                     : "text-muted hover:text-foreground",
@@ -128,7 +136,7 @@ export function MacHeader() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col bg-bg md:hidden"
+            className="fixed inset-x-0 bottom-0 top-[58px] z-40 flex flex-col bg-bg md:hidden"
           >
             <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pt-4">
               <nav className="flex flex-col gap-1">
