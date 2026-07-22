@@ -28,7 +28,7 @@ const STYLES: Record<
   },
   machi: {
     span: "lg:col-span-7",
-    glow: "color-mix(in oklab, var(--brand) 22%, transparent)",
+    glow: "color-mix(in oklab, var(--brand) 24%, transparent)",
     monogram: "M",
   },
   shangence: {
@@ -60,7 +60,7 @@ export function Work() {
           {items.map((item, i) => {
             const s = STYLES[item.key] ?? STYLES.machi;
             const isNext = item.key === "next";
-            const isFeatured = item.key === "xicoclean";
+            const isFeatured = item.key === "xicoclean" || item.key === "machi";
             const route = productRoutes[item.key];
             const url = productUrls[item.key];
             return (

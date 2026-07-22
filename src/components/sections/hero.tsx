@@ -20,8 +20,11 @@ const RING_BG =
 const RING_MASK =
   "radial-gradient(closest-side, transparent 58%, #000 60%, #000 66%, transparent 70%)";
 
+type HeroProduct = { key: string; name: string; tagline: string; meta: string };
+
 export function Hero() {
   const t = useTranslations("hero");
+  const products = t.raw("products") as HeroProduct[];
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -68,7 +71,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       onMouseMove={onMove}
-      className="relative flex min-h-[88svh] items-center overflow-hidden pt-24 pb-16 sm:min-h-[92vh] sm:pt-28 sm:pb-20"
+      className="relative flex min-h-[88svh] items-center overflow-hidden pt-24 pb-16 sm:min-h-[92vh] sm:pt-28 sm:pb-24 md:pb-28"
     >
       {/* conic ring — scroll + cursor parallax */}
       <motion.div
@@ -149,9 +152,18 @@ export function Hero() {
               {t("ctaPrimary")}
               <ArrowIcon />
             </Link>
-            <Link href="/contact" className={buttonClass("secondary", "w-full sm:w-auto")}>
+            <Link href="/about" className={buttonClass("secondary", "w-full sm:w-auto")}>
               {t("ctaSecondary")}
             </Link>
+          </motion.div>
+
+          <motion.div
+            variants={item}
+            className="mt-12 grid w-full max-w-2xl grid-cols-1 gap-3 sm:mt-14 sm:grid-cols-2"
+          >
+            {products.map((p) => (
+              <ProductCard key={p.key} product={p} />
+            ))}
           </motion.div>
         </motion.div>
       </Container>
@@ -160,7 +172,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-[0.25em] text-faint"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-[11px] uppercase tracking-[0.25em] text-faint md:block"
       >
         <span className="flex flex-col items-center gap-2">
           {t("scroll")}
@@ -168,6 +180,101 @@ export function Hero() {
         </span>
       </motion.div>
     </section>
+  );
+}
+
+const PRODUCT_STYLE: Record<
+  string,
+  { href: string; external?: boolean; tile: string; glyph: React.ReactNode }
+> = {
+  xicoclean: {
+    href: "/mac",
+    tile: "linear-gradient(135deg, #6f63e9, #8b7bed 55%, #48bfa9)",
+    glyph: (
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path
+          d="M12 2.5c.7 5.4 3.1 7.8 8.5 8.5-5.4.7-7.8 3.1-8.5 8.5-.7-5.4-3.1-7.8-8.5-8.5 5.4-.7 7.8-3.1 8.5-8.5Z"
+          fill="currentColor"
+        />
+        <circle cx="19" cy="18.4" r="1.7" fill="currentColor" opacity="0.75" />
+      </svg>
+    ),
+  },
+  machi: {
+    href: "https://machicity.com",
+    external: true,
+    tile: "linear-gradient(135deg, #e96f8f, #b07cff 60%, #7c8cff)",
+    glyph: (
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden>
+        {/* torii gate — life in Japan */}
+        <path
+          d="M3.5 6.2c2.6 1 5.5 1.5 8.5 1.5s5.9-.5 8.5-1.5M5 7.4l-.4 3.1h14.8L19 7.4M6.3 10.5 5.6 20.5M18.4 20.5l-.7-10M12 7.7v2.8"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+};
+
+function ProductCard({ product }: { product: HeroProduct }) {
+  const s = PRODUCT_STYLE[product.key];
+  if (!s) return null;
+
+  const inner = (
+    <>
+      <span
+        aria-hidden
+        className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-white shadow-[0_8px_20px_-8px_rgba(91,99,230,0.55)] transition-transform duration-500 group-hover:scale-105"
+        style={{ background: s.tile }}
+      >
+        {s.glyph}
+      </span>
+      <span className="min-w-0 flex-1 text-left">
+        <span className="flex items-baseline gap-2">
+          <span className="truncate font-display text-[0.95rem] font-semibold text-foreground">
+            {product.name}
+          </span>
+          <span className="hidden shrink-0 text-[10px] font-medium uppercase tracking-wider text-faint sm:inline">
+            {product.meta}
+          </span>
+        </span>
+        <span className="mt-0.5 block truncate text-[13px] text-muted">
+          {product.tagline}
+        </span>
+      </span>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden
+        className="shrink-0 text-faint transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-brand"
+      >
+        <path
+          d="M5 12h14M13 6l6 6-6 6"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </>
+  );
+
+  const className =
+    "glass group interactive-surface flex items-center gap-3.5 rounded-2xl px-4 py-3.5 sm:px-5";
+
+  return s.external ? (
+    <a href={s.href} target="_blank" rel="noreferrer" className={className}>
+      {inner}
+    </a>
+  ) : (
+    <Link href={s.href} className={className}>
+      {inner}
+    </Link>
   );
 }
 

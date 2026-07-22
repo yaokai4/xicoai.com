@@ -77,16 +77,16 @@ export function organizationJsonLd() {
     // Topical + geographic entity signals: help search + AI resolve "XICO AI"
     // as a software/AI development company and its area of expertise.
     knowsAbout: [
-      "Software product development",
       "AI application development",
-      "Web and mobile app development",
       "Mac software development",
-      "Digital platform engineering",
+      "Native macOS and iOS app development",
+      "Consumer software products",
+      "Software engineering",
     ],
     areaServed: "Worldwide",
     foundingLocation: {
       "@type": "Place",
-      name: "Changsha, China",
+      name: "Guangzhou, China",
     },
     // Real, verifiable presences that resolve the "XICO AI / Xico" entity for
     // search + AI answer engines (public code repo + sibling product sites).

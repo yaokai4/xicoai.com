@@ -33,10 +33,10 @@ export default async function HomePage({
       />
       <Hero />
       <Marquee />
+      <Work />
+      <Divider />
       <Capabilities />
       <Approach />
-      <Divider />
-      <Work />
       <Process />
       <Manifesto />
       <Faq />

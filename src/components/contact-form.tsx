@@ -7,19 +7,19 @@ import { TextField, TextArea, Honeypot } from "@/components/ui/form";
 import { SubmitButton } from "@/components/ui/submit-button";
 import { FormSuccess } from "@/components/form-success";
 
-const PROJECT_TYPES = [
-  "ai",
-  "mobile",
-  "web",
-  "internal",
-  "redesign",
+const TOPICS = [
+  "xicoclean",
+  "machi",
+  "partnership",
+  "press",
+  "careers",
   "other",
 ] as const;
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
   const locale = useLocale();
-  const [ptype, setPtype] = useState<string>(PROJECT_TYPES[0]);
+  const [topic, setTopic] = useState<string>(TOPICS[0]);
   const [state, action, pending] = useActionState<SubmitState, FormData>(
     submitContact,
     { ok: false },
@@ -31,7 +31,7 @@ export function ContactForm() {
     <form action={action} className="flex flex-col gap-5">
       <Honeypot />
       <input type="hidden" name="locale" value={locale} />
-      <input type="hidden" name="topic" value={t(`projectTypes.${ptype}`)} />
+      <input type="hidden" name="topic" value={t(`topics.${topic}`)} />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <TextField name="name" label={t("name")} required />
@@ -40,32 +40,27 @@ export function ContactForm() {
       <TextField name="company" label={t("company")} />
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm text-muted">{t("projectType")}</span>
+        <span className="text-sm text-muted">{t("topic")}</span>
         <div className="flex flex-wrap gap-2">
-          {PROJECT_TYPES.map((key) => (
+          {TOPICS.map((key) => (
             <button
               type="button"
               key={key}
-              onClick={() => setPtype(key)}
+              onClick={() => setTopic(key)}
               className={
                 "rounded-full border px-4 py-2 text-sm transition-all " +
-                (ptype === key
+                (topic === key
                   ? "border-brand/50 bg-brand/10 text-foreground"
                   : "border-border text-muted hover:border-border-strong hover:text-foreground")
               }
             >
-              {t(`projectTypes.${key}`)}
+              {t(`topics.${key}`)}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <TextField name="timeline" label={t("timeline")} />
-        <TextField name="budget" label={t("budget")} />
-      </div>
-
-      <TextArea name="message" label={t("build")} rows={5} required />
+      <TextArea name="message" label={t("message")} rows={5} required />
 
       {state.error && <p className="text-sm text-red-400">{t("note")}</p>}
 

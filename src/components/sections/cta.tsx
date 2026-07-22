@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { buttonClass, ArrowIcon } from "@/components/ui/button";
-import { site } from "@/lib/site";
+import { site, productUrls } from "@/lib/site";
 
 export function CTA() {
   const t = useTranslations("cta");
@@ -29,18 +29,26 @@ export function CTA() {
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 {t("subtitle")}
               </p>
-              <div className="mt-9 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
-                <Link href="/contact" className={buttonClass("primary", "w-full sm:w-auto")}>
+              <div className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
+                <Link href="/mac" className={buttonClass("primary", "w-full sm:w-auto")}>
                   {t("button")}
                   <ArrowIcon />
                 </Link>
                 <a
-                  href={`mailto:${site.email}`}
-                  className="interactive-link break-all text-center text-sm text-muted transition-colors hover:text-foreground sm:break-normal"
+                  href={productUrls.machi}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={buttonClass("secondary", "w-full sm:w-auto")}
                 >
-                  {t("emailLabel")} · {site.email}
+                  {t("buttonSecondary")}
                 </a>
               </div>
+              <a
+                href={`mailto:${site.email}`}
+                className="interactive-link mt-6 break-all text-center text-sm text-muted transition-colors hover:text-foreground sm:break-normal"
+              >
+                {t("emailLabel")} · {site.email}
+              </a>
             </div>
           </div>
         </Reveal>

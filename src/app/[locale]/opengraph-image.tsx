@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "XICO AI — AI Products, Software & Digital Platforms";
+export const alt = "XICO AI — AI & Software Products: Xico Clean · Machi";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,10 +43,10 @@ export default function Image() {
             maxWidth: 940,
           }}
         >
-          Products that actually run — built with AI, engineering & design.
+          AI & craft, built into software people open every day.
         </div>
         <div style={{ fontSize: 27, color: "#9aa1ad", marginTop: 34 }}>
-          AI Products · Mobile Apps · Web Platforms · Digital Systems
+          Xico Clean · Machi · AI Engineering · Native Apps
         </div>
       </div>
     ),
