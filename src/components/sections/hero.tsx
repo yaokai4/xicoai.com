@@ -80,7 +80,7 @@ export function Hero() {
         style={{ x: cx, y: ringY }}
       >
         <div
-          className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-40 [animation:spin_36s_linear_infinite] max-md:h-[560px] max-md:w-[560px]"
+          className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-40 [animation:spin_36s_linear_infinite] max-md:h-[560px] max-md:w-[560px] lg:h-[980px] lg:w-[980px]"
           style={{
             background: RING_BG,
             maskImage: RING_MASK,
@@ -115,7 +115,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-6 font-display text-[2.55rem] font-semibold leading-[1.05] tracking-tight text-balance max-[380px]:text-[2.25rem] sm:mt-7 sm:text-6xl md:text-7xl"
+            className="mt-6 font-display text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-balance max-[380px]:text-[2.1rem] sm:mt-7 sm:text-5xl md:text-6xl"
           >
             <span className="block text-foreground">{t("titleLine1")}</span>
             <span className="block text-gradient">{t("titleLine2")}</span>
@@ -152,7 +152,7 @@ export function Hero() {
               {t("ctaPrimary")}
               <ArrowIcon />
             </Link>
-            <Link href="/about" className={buttonClass("secondary", "w-full sm:w-auto")}>
+            <Link href="/contact" className={buttonClass("secondary", "w-full sm:w-auto")}>
               {t("ctaSecondary")}
             </Link>
           </motion.div>

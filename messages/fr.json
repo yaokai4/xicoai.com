@@ -5,17 +5,17 @@
     "home": "Retour à l'accueil"
   },
   "meta": {
-    "title": "XICO AI — Entreprise d'IA et de logiciels | Xico Clean · Machi",
+    "title": "XICO AI — Entreprise de développement IA et logiciel | Xico Clean · Machi",
     "titleTemplate": "%s — XICO AI",
-    "description": "Zhixike Technology (Guangzhou) Co., Ltd. est une entreprise d'IA et de logiciels qui conçoit ses propres produits : Xico Clean, le nettoyeur et optimiseur macOS natif, et Machi, l'app du quotidien pour la vie au Japon.",
+    "description": "Zhixike Technology (Guangzhou) Co., Ltd. est une entreprise de développement IA et logiciel. Nous créons et exploitons Xico Clean (nettoyage et optimisation macOS) et Machi (app pour la vie au Japon), réalisons des applications IA et des logiciels sur mesure pour nos clients, et préparons une activité de développement de jeux.",
     "company": "Zhixike Technology (Guangzhou) Co., Ltd.",
-    "servicesTitle": "Technologie et ingénierie — IA, plateformes Apple natives, full-stack | XICO AI",
-    "servicesDescription": "L'ingénierie derrière Xico Clean et Machi : ingénierie IA, développement Swift natif, produit full-stack et infrastructure mondiale. Nous ne vendons pas ces compétences — nous les mettons dans nos propres produits."
+    "servicesTitle": "Développement d'applications IA et de logiciels sur mesure | XICO AI",
+    "servicesDescription": "XICO propose le développement d'applications IA, le développement web et mobile sur mesure, le développement natif macOS/iOS et une maintenance de longue durée après la mise en ligne. Nos produits Xico Clean et Machi sont la référence directe de la qualité que nous livrons."
   },
   "nav": {
     "home": "Accueil",
     "work": "Produits",
-    "services": "Technologie",
+    "services": "Services",
     "about": "Entreprise",
     "blog": "Actualités",
     "careers": "Carrières",
@@ -28,13 +28,13 @@
   },
   "hero": {
     "eyebrow": "Zhixike Technology (Guangzhou) Co., Ltd.",
-    "titleLine1": "Nous créons des logiciels",
-    "titleLine2": "qu'on ouvre chaque jour.",
-    "subtitle": "XICO est une entreprise d'IA et de logiciels basée à Guangzhou. Nous développons nos propres produits : Xico Clean, un nettoyeur et optimiseur macOS natif, et Machi, le compagnon tout-en-un de la vie au Japon. IA de pointe, ingénierie solide, design sobre — des logiciels qui méritent d'être ouverts chaque jour.",
+    "titleLine1": "L'entreprise de développement",
+    "titleLine2": "qui fait ses propres produits.",
+    "subtitle": "XICO est une entreprise de développement IA et logiciel basée à Guangzhou. Nous créons et exploitons deux produits, Xico Clean et Machi, et réalisons pour nos clients des applications IA et des logiciels sur mesure. Nos produits sont utilisés chaque jour ; les projets clients sont livrés selon le même standard.",
     "ctaPrimary": "Découvrir nos produits",
-    "ctaSecondary": "À propos de XICO",
+    "ctaSecondary": "Discuter de votre projet",
     "scroll": "Continuer",
-    "stack": "Xico Clean · Machi · Ingénierie IA · Expérience native · 11 langues",
+    "stack": "Xico Clean · Machi · Développement IA · Développement sur mesure · 11 langues",
     "products": [
       {
         "key": "xicoclean",
@@ -53,66 +53,66 @@
   "marquee": {
     "items": [
       "Nos propres produits",
-      "Ingénierie IA",
+      "Développement IA",
+      "Développement sur mesure",
       "macOS natif",
-      "Apps mobiles",
-      "Design systems",
+      "Mobile et web",
       "11 langues",
-      "Confidentialité d'abord",
-      "Pensé pour durer"
+      "Maintenance longue durée",
+      "Développement de jeux · en préparation"
     ]
   },
   "capabilities": {
     "eyebrow": "Compétences clés",
-    "title": "L'IA et l'ingénierie, entièrement en interne",
-    "subtitle": "Nous ne vendons pas ces compétences — chacune d'elles passe dans nos propres produits, peaufinée de la couche modèle jusqu'au pixel.",
+    "title": "Les mêmes compétences, pour les produits et les projets",
+    "subtitle": "Chaque compétence est d'abord rodée dans nos propres produits, puis mise au service des projets clients.",
     "items": [
       {
-        "title": "Ingénierie IA",
-        "desc": "Grands modèles et intelligence embarquée intégrés à l'expérience : analyse intelligente, perception d'images, recherche et compréhension — l'IA comme partie du produit, pas comme un gadget.",
+        "title": "Développement d'applications IA",
+        "desc": "Applications de grands modèles, bases de connaissances et flux intelligents : de la conception au développement, jusqu'à l'évaluation des résultats. L'analyse intelligente et la reconnaissance d'images de Xico Clean mettent ces compétences à l'épreuve tous les jours.",
         "tags": [
           "Apps LLM",
+          "RAG",
           "IA embarquée",
-          "Vision",
           "Évaluation"
         ]
       },
       {
         "title": "Plateformes Apple natives",
-        "desc": "Une ingénierie système poussée en Swift 6 + SwiftUI : performance, animations et intégration système sans compromis. Xico Clean en est la preuve.",
+        "desc": "Développement macOS et iOS en Swift 6 + SwiftUI : intégration système poussée, optimisation des performances, distribution notarisée. Nous avons déjà franchi toutes les étapes qu'exige un produit publié.",
         "tags": [
           "Swift 6",
           "SwiftUI",
           "macOS",
-          "120fps"
+          "iOS"
         ]
       },
       {
-        "title": "Produits mobiles et web",
-        "desc": "iOS, Android et web full-stack, avec un seul langage de design et une expérience cohérente sur toutes les plateformes — Machi s'affine chaque jour dans la vraie vie.",
+        "title": "Web et mobile",
+        "desc": "Développement multiplateforme avec Next.js, iOS et Android : consoles d'administration, paiements, internationalisation et autres cas métier courants. Machi et ce site reposent sur cette stack.",
         "tags": [
+          "Next.js",
           "iOS",
           "Android",
-          "Next.js",
-          "Design systems"
+          "Paiements"
         ]
       },
       {
-        "title": "Infrastructure produit mondiale",
-        "desc": "Onze langues, paiements multidevises, déploiement, supervision et sécurité des données — des produits sur lesquels le monde entier peut compter.",
+        "title": "Livraison et maintenance",
+        "desc": "Déploiement, supervision, sécurité des données et rythme d'itération. Après la mise en ligne, nous restons responsables : pas de livraison sans suivi.",
         "tags": [
-          "11 langues",
-          "Paiements internationaux",
-          "Confidentialité",
-          "Infrastructure"
+          "Déploiement",
+          "Supervision",
+          "Sécurité des données",
+          "Maintenance longue durée"
         ]
       }
     ]
   },
   "work": {
     "eyebrow": "Nos produits",
-    "title": "Conçus par nous. Entretenus pendant des années.",
-    "subtitle": "Xico Clean et Machi sont les lignes de produits que XICO conçoit, développe et exploite sur le long terme. Chaque détail porte notre nom.",
+    "title": "Conçus par nous. Maintenus pendant des années.",
+    "subtitle": "Xico Clean et Machi sont développés et exploités par XICO. Pour évaluer notre capacité à livrer, commencez par essayer ces deux produits.",
     "viewLabel": "Visiter le site",
     "visit": "Voir le produit",
     "highlightsLabel": "Points forts",
@@ -122,7 +122,7 @@
         "name": "Xico Clean",
         "kind": "Nettoyeur et optimiseur macOS · App de bureau phare",
         "tagline": "Redonnez à votre Mac vitesse et propreté",
-        "about": "Xico Clean est l'application de bureau phare de XICO — un nettoyeur et optimiseur macOS haut de gamme conçu pour rivaliser avec CleanMyMac X. Développé en Swift 6 + SwiftUI natif et profondément intégré au système : analyse intelligente en un clic, nettoyage dédié des fichiers de développeur, visualisation Lentille d'espace, détection des doublons et des photos similaires, désinstallation complète, confidentialité et maintenance. Chaque suppression peut être prévisualisée et annulée, et tout s'exécute en local — un nettoyage à la fois sûr et élégant.",
+        "about": "Xico Clean est l'application de bureau phare de XICO : un nettoyeur et optimiseur macOS haut de gamme, conçu pour rivaliser avec CleanMyMac X. Swift 6 + SwiftUI natif, intégration système poussée : analyse intelligente en un clic, nettoyage dédié des fichiers de développeur, visualisation Lentille d'espace, doublons et photos similaires, désinstallation complète, confidentialité et maintenance. Chaque suppression peut être prévisualisée et annulée, et tout s'exécute en local.",
         "desc": "Un nettoyeur Mac développé en Swift natif : analyse intelligente, fichiers de développeur, visualisation de l'espace, doublons et nettoyage de confidentialité — tout en local, prévisualisable et annulable.",
         "highlights": [
           "Analyse intelligente en un clic",
@@ -139,7 +139,7 @@
         "kind": "L'app du quotidien pour la vie au Japon",
         "tagline": "La vie au Japon — une seule app suffit",
         "desc": "Une plateforme tout-en-un pour les étudiants, les actifs et les nouveaux arrivants au Japon : guides urbains, logement, emploi, marché de l'occasion et communauté locale.",
-        "about": "Machi s'adresse à tous ceux qui vivent au Japon : étudiants, actifs et nouveaux résidents. En arrivant dans une nouvelle ville, le plus difficile est de décoder les règles locales et de trouver des ressources fiables. Machi réunit guides urbains, logement, emploi, annonces d'occasion, communauté et expérience vécue en un seul endroit, pour raccourcir la distance entre chercher une information et faire aboutir sa démarche.",
+        "about": "Machi s'adresse à tous ceux qui vivent au Japon : étudiants, actifs, nouveaux résidents. Quand on arrive dans une nouvelle ville, le plus difficile est de comprendre les règles locales et de trouver des ressources fiables. Machi réunit guides urbains, logement, emploi, annonces d'occasion, communauté locale et retours d'expérience en un seul endroit : moins de sites à consulter, moins d'erreurs à commettre.",
         "highlights": [
           "Guides urbains et communauté locale",
           "Logement / emploi / occasion",
@@ -155,7 +155,7 @@
         "kind": "Outil de décision entrepreneuriale · Expérimentation",
         "tagline": "Un appui à la décision avant de lancer son commerce",
         "desc": "Évaluation des risques, budget de validation et plan d'action pour les petits entrepreneurs.",
-        "about": "Shangence aide les fondateurs à prendre une décision plus solide avant la première grosse dépense. Il examine les conditions du secteur, la sécurité du capital, les capacités personnelles, la difficulté d'acquisition et les contraintes externes, puis restitue un score de risque, un budget de validation, un seuil de stop-loss et un plan d'action sur 30 jours. Il ne promet pas le succès ; il donne à la décision des bases plus solides.",
+        "about": "Shangence aide les entrepreneurs à trancher avant la première grosse dépense. Il examine les conditions du secteur, la ligne de sécurité financière, les capacités personnelles, la difficulté d'acquisition et les contraintes externes, puis fournit un score de risque, un budget de validation, un seuil de stop-loss et un plan d'action sur 30 jours. Il ne promet pas le succès ; il donne à la décision de meilleures bases.",
         "highlights": [
           "Score de risque en cinq dimensions",
           "Seuil de sécurité de trésorerie et stop-loss",
@@ -167,13 +167,13 @@
       },
       {
         "key": "next",
-        "name": "Le prochain produit",
-        "kind": "XICO Labs",
-        "tagline": "Des expérimentations produit pour l'ère de l'IA",
-        "desc": "Nous continuons d'explorer de nouvelles idées de produits dans les applications IA et les services du quotidien — pour que notre socle technique donne naissance à la prochaine œuvre.",
-        "about": "L'IA redéfinit ce que peut être un logiciel. Nous investissons notre expérience de l'ingénierie native, des produits multilingues et des applications IA dans le prochain produit qui mérite d'exister — en restant petits, affûtés et curieux.",
+        "name": "Développement de jeux",
+        "kind": "Nouvelle activité · En préparation",
+        "tagline": "Nous préparons une activité de développement de jeux",
+        "desc": "Notre expérience de l'ingénierie native, du graphisme et de l'interaction s'étend vers le divertissement interactif. Les demandes de partenariat sont les bienvenues.",
+        "about": "Le jeu vidéo est notre prochaine ligne d'activité. Des années de travail sur la performance native, le graphisme et les animations détermineront notre façon de faire des jeux : petites équipes, grand soin du détail. Nous en sommes encore à la phase de préparation : suivez nos actualités, ou contactez-nous pour un partenariat.",
         "highlights": [],
-        "status": "En incubation",
+        "status": "En préparation",
         "platforms": ""
       }
     ],
@@ -181,38 +181,38 @@
     "learnMore": "En savoir plus"
   },
   "approach": {
-    "eyebrow": "Philosophie produit",
-    "title": "Notre façon de faire des produits",
-    "subtitle": "Du premier pixel à la centième version, l'exigence reste la même.",
+    "eyebrow": "Notre façon de travailler",
+    "title": "Les règles que nous suivons",
+    "subtitle": "Elles viennent du travail quotidien sur nos produits et encadrent chaque projet que nous livrons.",
     "principles": [
       {
-        "title": "Soustraire d'abord",
-        "desc": "Moins de fonctionnalités, jamais moins de soin. Chaque produit s'attaque sérieusement à un seul vrai problème — et le résout bien."
+        "title": "Définir le problème d'abord",
+        "desc": "Avant d'écrire du code : confirmer l'objectif, les utilisateurs et les limites. Un périmètre clair donne aux délais et aux budgets une base solide."
       },
       {
         "title": "Le détail fait la qualité",
-        "desc": "Animations, textes, états vides et messages d'erreur — tout ce que l'utilisateur ressent comme « premium » se joue dans les détails."
+        "desc": "Interfaces, textes, états d'erreur, vitesse de chargement : les utilisateurs ressentent tout. Nous ne laissons rien passer sur ces points."
       },
       {
-        "title": "Performance et confidentialité comme socle",
-        "desc": "Natif d'abord, local d'abord. La vitesse est une marque de respect élémentaire ; les données qui restent entre les mains de l'utilisateur, un principe de base."
+        "title": "La sécurité des données est un préalable",
+        "desc": "Ce qui peut être traité en local ne part pas sur un serveur, et les données clients ont des limites d'accès explicites. Ce point n'est pas négociable."
       },
       {
-        "title": "Pensé pour durer",
-        "desc": "L'achat unique plutôt que le piège de l'abonnement, des mises à jour continues et une vraie réponse à chaque e-mail. Nos relations avec les utilisateurs se comptent en années."
+        "title": "Responsables après la mise en ligne",
+        "desc": "Nos produits continuent d'être mis à jour ; les projets clients bénéficient d'une maintenance de longue durée. Nous ne sommes pas une équipe qui disparaît après la livraison."
       }
     ]
   },
   "cta": {
-    "eyebrow": "Essayez-les dès aujourd'hui",
-    "title": "Faites entrer nos produits dans votre quotidien.",
-    "subtitle": "Offrez un second souffle à votre Mac avec Xico Clean, ou commencez votre vie au Japon avec Machi. Une idée, un retour ? Nous lisons chaque message.",
-    "button": "Télécharger Xico Clean gratuitement",
-    "buttonSecondary": "Découvrir Machi",
-    "emailLabel": "Écrivez-nous"
+    "eyebrow": "Démarrer un projet",
+    "title": "Parlez-nous de votre projet, ou essayez d'abord nos produits.",
+    "subtitle": "Vous avez une application IA ou un projet logiciel en tête ? Écrivez-nous en précisant le contexte et les objectifs. Vous pouvez aussi télécharger Xico Clean et juger par vous-même du niveau de nos produits.",
+    "button": "Nous contacter",
+    "buttonSecondary": "Télécharger Xico Clean",
+    "emailLabel": "Ou écrivez-nous directement"
   },
   "footer": {
-    "tagline": "Une entreprise d'IA et de logiciels. Nous créons Xico Clean et Machi — de la bonne ingénierie et du bon design, dans des produits qu'on ouvre chaque jour.",
+    "tagline": "Une entreprise de développement IA et logiciel à Guangzhou. Nous créons Xico Clean et Machi, et livrons des projets IA et logiciels pour nos clients.",
     "groups": {
       "company": "Entreprise",
       "products": "Produits",
@@ -222,7 +222,7 @@
     "links": {
       "about": "À propos",
       "work": "Tous les produits",
-      "services": "Technologie",
+      "services": "Services de développement",
       "contact": "Contact",
       "careers": "Carrières",
       "join": "Investisseurs / Partenaires",
@@ -240,27 +240,27 @@
   },
   "about": {
     "eyebrow": "À propos de XICO",
-    "title": "Une entreprise d'IA qui traite le logiciel comme un artisanat.",
-    "subtitle": "Zhixike Technology (Guangzhou) Co., Ltd. conçoit et exploite ses propres produits logiciels sous la marque XICO AI｜智希可.",
+    "title": "Une entreprise de développement qui crée ses propres produits.",
+    "subtitle": "Zhixike Technology (Guangzhou) Co., Ltd. développe ses propres produits logiciels et fournit des services de développement IA et logiciel sous la marque XICO AI｜智希可.",
     "story": [
-      "XICO est née à Guangzhou, entreprise d'IA et de développement logiciel. Pas de sous-traitance, pas de projets sur commande — uniquement nos propres produits : Xico Clean, un nettoyeur et optimiseur macOS natif, et Machi, l'app tout-en-un de la vie au Japon.",
-      "Nous sommes convaincus qu'une petite équipe peut créer des logiciels de classe mondiale. L'IA démultiplie la créativité individuelle — nous l'utilisons pour accélérer l'ingénierie et tester des idées, jamais pour remplacer notre jugement sur la qualité.",
-      "Notre exigence est simple : seul un produit que nous avons nous-mêmes envie d'ouvrir chaque jour mérite d'arriver entre les mains des utilisateurs. Chaque pixel, chaque milliseconde et chaque e-mail d'utilisateur est pris au sérieux."
+      "XICO est une entreprise de développement IA et logiciel basée à Guangzhou. Nous avons deux produits à nous : Xico Clean, un nettoyeur et optimiseur macOS, et Machi, l'app du quotidien pour la vie au Japon. Nous réalisons aussi des applications IA et des logiciels sur mesure pour nos clients.",
+      "Nous continuons à faire nos propres produits parce qu'ils nous obligent à affronter de vrais utilisateurs : un besoin réel ou non, une expérience qui tient ou non, un système qui reste maintenable ou non, tout se voit dans les téléchargements et les avis. Ce jugement passe tel quel dans les projets clients.",
+      "Nous préparons maintenant notre entrée dans le développement de jeux. C'est le prolongement naturel de notre travail d'ingénierie, de graphisme et d'interaction, et une direction dans laquelle nous nous engageons sur le long terme."
     ],
     "values": {
-      "title": "Trois convictions",
+      "title": "Trois principes qui ne changent pas",
       "items": [
         {
-          "title": "Les produits sont des œuvres",
-          "desc": "Ne pas courir après les tendances, ne pas empiler les fonctionnalités. Résoudre un vrai problème avec élégance vaut mieux que tout."
+          "title": "Un standard de niveau produit",
+          "desc": "Les projets clients et nos propres produits sont réalisés par les mêmes personnes, selon le même standard. Il n'y a pas de qualité « interne » ni de qualité « externe »."
         },
         {
-          "title": "Natif et confidentiel",
-          "desc": "La performance et la sécurité des données ne sont pas des arguments de vente — c'est le socle. Ce qui peut s'exécuter en local ne passe jamais par le cloud."
+          "title": "Performance et confidentialité",
+          "desc": "Natif d'abord, local d'abord. Les données des utilisateurs comme celles des clients ont des limites claires."
         },
         {
-          "title": "Le long terme",
-          "desc": "Achat unique, mises à jour gratuites et une vraie réponse à chaque e-mail. Nos relations avec les utilisateurs se comptent en années."
+          "title": "Responsables sur la durée",
+          "desc": "Les produits continuent d'être mis à jour ; les projets bénéficient d'une maintenance continue. Nous voulons que chaque collaboration se compte en années."
         }
       ]
     },
@@ -268,11 +268,11 @@
       "eyebrow": "Fondateur",
       "name": "Yao Kai · 姚凱",
       "role": "Fondateur & CEO",
-      "quote": "Un bon logiciel est comme un outil bien fait : discret, fiable, et meilleur à mesure qu'on s'en sert.",
+      "quote": "La qualité d'ingénierie et la qualité d'expérience sont une seule et même chose.",
       "bio": [
-        "J'ai créé XICO pour prouver une chose : à l'ère de l'IA, une petite équipe affûtée peut créer des logiciels qui touchent le monde entier.",
-        "Je construis les produits en full-stack — du client Swift natif au back-end, aux paiements et au déploiement, j'ai façonné chaque maillon de mes mains. Qualité d'ingénierie et qualité d'expérience n'ont jamais été deux choses distinctes.",
-        "Zhixike Technology (Guangzhou) Co., Ltd. fera toujours ses propres produits. Xico Clean et Machi ne sont qu'un début — nous voulons créer plus de logiciels qu'on a sincèrement plaisir à ouvrir chaque jour."
+        "J'ai commencé en full-stack et j'ai tout fait moi-même : clients Swift natifs, back-end, paiements, déploiement, exploitation. Les produits de XICO et la livraison des projets reposent sur cette expérience de terrain.",
+        "Xico Clean et Machi sont utilisés chaque jour par de vraies personnes ; rien d'approximatif n'y reste caché longtemps. C'est cette exigence qui garantit la qualité des projets clients.",
+        "XICO continuera à créer des produits, à fournir des services, et se lancera dans le développement de jeux. L'activité s'élargira ; le standard restera le même."
       ]
     },
     "company": {
@@ -282,68 +282,69 @@
       "brandLabel": "Marque",
       "brand": "XICO AI｜智希可",
       "focusLabel": "Spécialités",
-      "focus": "Applications IA · Apps natives macOS et iOS · Produits web",
+      "focus": "Développement IA · Développement sur mesure · Nos propres produits · Jeux (en préparation)",
       "marketsLabel": "Marchés",
       "markets": "Chine · Japon · International"
     }
   },
   "services": {
-    "eyebrow": "Technologie et ingénierie",
-    "title": "Le travail invisible derrière les produits",
-    "subtitle": "Rien de tout cela n'est à vendre — tout passe dans Xico Clean et Machi. Voici la stack et le niveau d'exigence derrière nos produits.",
+    "eyebrow": "Services de développement",
+    "title": "Développement d'applications IA et de logiciels sur mesure",
+    "subtitle": "Pour les équipes qui veulent mettre l'IA en production, construire un produit de zéro ou s'appuyer sur un partenaire technique de long terme. Nos propres produits, Xico Clean et Machi, sont la référence concrète de la qualité que nous livrons.",
     "sections": [
       {
-        "title": "Ingénierie IA",
-        "desc": "Grands modèles et intelligence embarquée intégrés à l'expérience produit — pas greffés sous forme de fenêtre de chat.",
+        "title": "Développement d'applications IA",
+        "desc": "Intégrer les capacités des grands modèles à un vrai métier : de la conception au développement, jusqu'à l'évaluation des résultats.",
         "points": [
-          "Applications LLM et flux intelligents",
-          "Perception d'images Vision en local",
-          "Recherche, compréhension et traitement de contenu",
-          "Évaluation et ajustement continus"
+          "Applications LLM et assistants",
+          "Bases de connaissances et RAG",
+          "Traitement de contenu et automatisation",
+          "Évaluation et ajustement continu"
         ]
       },
       {
-        "title": "Ingénierie des plateformes Apple natives",
-        "desc": "Un développement système poussé en Swift 6 + SwiftUI — chaque image fluide de Xico Clean vient de là.",
+        "title": "Développement logiciel sur mesure",
+        "desc": "Une livraison complète sur web, mobile et desktop : design, développement et mise en ligne.",
         "points": [
-          "Swift 6 / SwiftUI / AppKit",
-          "Intégration système poussée et modèles de permissions",
-          "Performance et animations à 120fps",
-          "Distribution notarisée par Apple et mises à jour automatiques"
-        ]
-      },
-      {
-        "title": "Ingénierie produit full-stack",
-        "desc": "Du mobile au web, back-end, paiements et licences — chaque produit est un système full-stack complet.",
-        "points": [
-          "iOS / Android / Next.js",
+          "Applications web et consoles d'administration",
+          "Applications iOS / Android",
           "API, bases de données et authentification",
-          "Paiements internationaux et gestion de licences",
-          "Design systems et langage d'animation"
+          "Paiements et intégrations tierces"
         ]
       },
       {
-        "title": "Internationalisation et infrastructure",
-        "desc": "Servir les utilisateurs du monde entier de façon fiable — tout en protégeant les données de chacun.",
+        "title": "Développement natif pour les plateformes Apple",
+        "desc": "Développement natif macOS et iOS en Swift 6 + SwiftUI, avec des performances et une finition au niveau des meilleures apps de chaque plateforme.",
         "points": [
-          "Internationalisation en 11 langues",
+          "Applications natives macOS / iOS",
+          "Intégration système poussée",
+          "Performance et animations",
+          "Distribution notarisée et mises à jour automatiques"
+        ]
+      },
+      {
+        "title": "Maintenance de longue durée",
+        "desc": "Déploiement, supervision, itération et support opérationnel : le système reste fiable après la mise en ligne.",
+        "points": [
           "Déploiement, supervision et automatisation",
-          "Sécurité des données et frontières de confidentialité",
-          "E-mails et système d'assistance"
+          "Internationalisation",
+          "Sécurité des données et limites de confidentialité",
+          "Itérations de versions et support opérationnel"
         ]
       }
     ]
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Nous serions ravis de vous lire.",
-    "subtitle": "Retours produit, questions, partenariats ou presse — écrivez-nous. Chaque e-mail est lu attentivement et reçoit une réponse.",
+    "title": "Un projet, une idée ? Écrivez-nous.",
+    "subtitle": "Demandes de projet, retours produit, presse ou envie de rejoindre l'équipe : tout se discute. Une vraie personne lit chaque e-mail et y répond.",
     "form": {
       "name": "Votre nom",
       "email": "E-mail",
       "company": "Entreprise / équipe (facultatif)",
       "topic": "De quoi souhaitez-vous parler ?",
       "topics": {
+        "dev": "Développement sur mesure",
         "xicoclean": "Xico Clean",
         "machi": "Machi",
         "partnership": "Partenariat",
@@ -355,7 +356,7 @@
       "submit": "Envoyer à XICO",
       "success": "Bien reçu. Nous le lirons attentivement et vous répondrons rapidement.",
       "note": "Nous répondons généralement sous 1 à 2 jours ouvrés.",
-      "note2": "Pour un investissement, un partenariat approfondi ou des ressources de distribution, écrivez-nous directement à hi@xicoai.com."
+      "note2": "Pour une demande de projet, joignez le contexte, les objectifs et le calendrier envisagé : cela nous aide à répondre avec des éléments concrets."
     },
     "direct": {
       "title": "Autres moyens",
@@ -449,65 +450,65 @@
     "publishedOn": "Publié le"
   },
   "process": {
-    "eyebrow": "Comment nous construisons",
-    "title": "Chaque produit suit le même chemin exigeant",
-    "subtitle": "Le processus n'est pas compliqué — chaque étape doit simplement être faite proprement.",
+    "eyebrow": "Déroulement d'un projet",
+    "title": "Du premier échange à la mise en ligne et à la maintenance",
+    "subtitle": "Nos propres produits suivent le même processus, et chaque étape a un livrable clair.",
     "steps": [
       {
-        "title": "Trouver le vrai besoin",
-        "desc": "Partir d'une vraie difficulté — la nôtre et celle de nos utilisateurs — et décider si cela vaut la peine d'être construit, et pourquoi par nous."
+        "title": "Échanger et évaluer",
+        "desc": "Comprendre le contexte, les objectifs et les contraintes ; évaluer le périmètre et l'approche technique ; donner un avis honnête."
       },
       {
-        "title": "Design et prototype",
-        "desc": "D'abord réussir l'expérience : architecture de l'information, parcours et langage visuel, itérés dans des prototypes."
+        "title": "Concevoir et prototyper",
+        "desc": "Architecture de l'information, prototypes interactifs et plan technique d'abord, pour que les risques apparaissent avant le développement."
       },
       {
-        "title": "Ingénierie et finition",
-        "desc": "Des choix techniques natifs d'abord, une architecture solide, des tests approfondis — peaufiné jusqu'à en être fiers, puis livré."
+        "title": "Développer et valider",
+        "desc": "Le travail avance par versions, avec un suivi transparent ; chaque étape produit un résultat vérifiable."
       },
       {
-        "title": "Lancement et attention",
-        "desc": "La sortie n'est que la ligne de départ. Les données, les retours et un rythme de mises à jour régulier rendent le produit meilleur avec le temps."
+        "title": "Mettre en ligne et maintenir",
+        "desc": "Déploiement, supervision, corrections et itérations. Après la mise en ligne, nous restons responsables."
       }
     ]
   },
   "faq": {
-    "eyebrow": "Vous vous demandez peut-être",
-    "title": "Ce qu'on nous demande souvent à propos de XICO",
+    "eyebrow": "Questions fréquentes",
+    "title": "Quelques questions qui reviennent souvent",
     "subtitle": "Pas de réponse ici ? Écrivez-nous, tout simplement.",
     "items": [
       {
         "q": "Quel genre d'entreprise est XICO ?",
-        "a": "Une entreprise d'IA et de développement logiciel basée à Guangzhou. Nous nous consacrons à nos propres produits — Xico Clean et Machi — et n'acceptons ni sous-traitance ni projets sur commande."
+        "a": "Une entreprise de développement IA et logiciel basée à Guangzhou. Nous créons nos propres produits, Xico Clean et Machi, et réalisons pour nos clients des applications IA et des logiciels sur mesure."
       },
       {
-        "q": "Quels produits créez-vous ?",
-        "a": "Deux lignes principales : Xico Clean, un nettoyeur et optimiseur macOS natif — achat unique, entièrement local ; et Machi, l'app tout-en-un de la vie au Japon. Sans oublier les nouveaux produits en incubation chez XICO Labs."
+        "q": "Prenez-vous des projets de développement sur mesure ?",
+        "a": "Oui. Applications IA, web, mobile et desktop font partie de notre périmètre. Les projets clients sont livrés selon le même standard que nos propres produits, avec une maintenance de longue durée après la mise en ligne."
       },
       {
-        "q": "Où télécharger Xico Clean ?",
-        "a": "Directement sur ce site — téléchargement gratuit, essai complet de 15 jours, sans inscription. Et s'il vous séduit, un seul achat suffit, avec des mises à jour gratuites sur la durée."
+        "q": "Quels sont vos propres produits ?",
+        "a": "Xico Clean : un nettoyeur et optimiseur macOS natif, en achat unique, avec traitement local et essai gratuit téléchargeable sur ce site. Machi : l'app tout-en-un de la vie au Japon ; la version web est en ligne, les apps mobiles sont en cours de développement."
       },
       {
-        "q": "Comment utiliser Machi ?",
-        "a": "Rendez-vous sur machicity.com pour la version web ; les apps iOS et Android sont en plein développement."
+        "q": "Vous vous lancez dans le développement de jeux ?",
+        "a": "Oui, cette activité est en préparation. Notre expérience de l'ingénierie native, du graphisme et de l'interaction y sera directement réinvestie. Suivez nos actualités, ou contactez-nous pour un partenariat."
       },
       {
-        "q": "Acceptez-vous la sous-traitance ou le développement sur mesure ?",
-        "a": "Non. Toute notre énergie va à nos propres produits. Pour un partenariat produit ou un échange technique, nous serons ravis d'en parler — écrivez-nous."
+        "q": "Comment démarre un projet ?",
+        "a": "Écrivez-nous par e-mail ou via le formulaire, en décrivant le contexte, les objectifs et le calendrier envisagé. Nous répondons généralement sous 1 à 2 jours ouvrés ; nous clarifions d'abord le besoin, puis nous parlons solution et devis."
       },
       {
-        "q": "Comment vous joindre pour un partenariat ou un poste ?",
-        "a": "Partenariats, presse et investissement : hi@xicoai.com. Pour les postes, consultez la page Carrières — les candidatures spontanées sont les bienvenues."
+        "q": "Où peut-on essayer vos produits ?",
+        "a": "Xico Clean se télécharge gratuitement sur ce site, avec un essai complet de 15 jours. Machi est accessible sur machicity.com."
       }
     ]
   },
   "manifesto": {
-    "eyebrow": "Nos convictions",
-    "title": "Moins, mais mieux. Rapide, et stable. Fait pour durer.",
+    "eyebrow": "Notre standard",
+    "title": "Bien faire un logiciel demande un vrai travail.",
     "body": [
-      "Un bon logiciel a du caractère : sobre, vif, respectueux de l'attention et de la confiance. Comme un outil bien fait, il accomplit sa tâche discrètement et bien.",
-      "L'IA ouvre au logiciel de nouvelles possibilités, mais le jugement reste humain. Nous gardons la complexité pour nous et offrons aux utilisateurs la simplicité et la certitude."
+      "Nos produits et les projets clients partagent un même standard : structure claire, performances solides, maintenabilité sur la durée. C'est ce qui permet à un logiciel de tenir dans le temps.",
+      "L'IA change la façon de construire les logiciels et ce qu'ils peuvent être. Nous l'utilisons sur de vrais problèmes : d'abord dans nos propres produits, puis dans les projets clients une fois son utilité démontrée."
     ]
   },
   "legal": {

@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { buttonClass, ArrowIcon } from "@/components/ui/button";
-import { site, productUrls } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function CTA() {
   const t = useTranslations("cta");
@@ -30,18 +30,13 @@ export function CTA() {
                 {t("subtitle")}
               </p>
               <div className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
-                <Link href="/mac" className={buttonClass("primary", "w-full sm:w-auto")}>
+                <Link href="/contact" className={buttonClass("primary", "w-full sm:w-auto")}>
                   {t("button")}
                   <ArrowIcon />
                 </Link>
-                <a
-                  href={productUrls.machi}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={buttonClass("secondary", "w-full sm:w-auto")}
-                >
+                <Link href="/mac" className={buttonClass("secondary", "w-full sm:w-auto")}>
                   {t("buttonSecondary")}
-                </a>
+                </Link>
               </div>
               <a
                 href={`mailto:${site.email}`}
