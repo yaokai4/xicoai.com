@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
 import { productUrls, productRoutes } from "@/lib/site";
+import { pageAlternates } from "@/lib/i18n-meta";
 import { cn } from "@/lib/utils";
 
 type Item = {
@@ -27,7 +28,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("work") };
+  return {
+    title: t("work"),
+    alternates: pageAlternates("/work", locale),
+  };
 }
 
 export default async function WorkPage({

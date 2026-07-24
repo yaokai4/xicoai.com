@@ -3,7 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { Logo, wordmarkFor } from "@/components/brand/logo";
 import { SocialLinks } from "@/components/social-links";
 import { getSocialLinks } from "@/lib/settings";
-import { site, productUrls } from "@/lib/site";
+import { site, productUrls, registration } from "@/lib/site";
+import { businessLicenseImage } from "@/lib/legal";
 import type { Locale } from "@/i18n/routing";
 
 export async function SiteFooter() {
@@ -70,21 +71,35 @@ export async function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-border pt-8 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             <p>© {year} XICO AI. {t("rights")}</p>
-            <p className="text-faint/70">{site.fullName[locale]}</p>
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-faint/70">
+              <span>{site.fullName[locale]}</span>
+              <span aria-hidden className="text-faint/40">·</span>
+              <a
+                href={registration.verifyUrl}
+                target="_blank"
+                rel="noreferrer"
+                title={t("creditCodeVerify")}
+                className="tabular-nums transition-colors hover:text-muted"
+              >
+                {t("creditCodeLabel")} {registration.creditCode}
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
             <FooterLink href="/privacy">{t("links.privacy")}</FooterLink>
             <FooterLink href="/terms">{t("links.terms")}</FooterLink>
-            <a
-              href="https://beian.miit.gov.cn/"
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-muted"
-            >
-              {t("icp")}
-            </a>
+            {businessLicenseImage && (
+              <a
+                href={businessLicenseImage}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-muted"
+              >
+                {t("license")}
+              </a>
+            )}
             <span className="text-faint/60">{site.domain}</span>
           </div>
         </div>

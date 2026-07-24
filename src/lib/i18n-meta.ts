@@ -40,6 +40,20 @@ export function localeAlternates(path: string): Record<string, string> {
   return map;
 }
 
+/**
+ * A page's own `alternates` block (self-canonical + hreflang). Every non-home
+ * page MUST set this: Next.js merges metadata, so a page that omits `alternates`
+ * inherits the ROOT canonical (the homepage) and tells Google it is a duplicate
+ * of the homepage — dropping it from the index. `path` is the default-locale
+ * path (e.g. "/about"); the canonical is locale-prefixed for non-default locales.
+ */
+export function pageAlternates(path: string, locale: string) {
+  return {
+    canonical: locale === routing.defaultLocale ? path : `/${locale}${path}`,
+    languages: localeAlternates(path),
+  };
+}
+
 /** OpenGraph `og:locale` code (language_TERRITORY) per site locale. */
 const OG_LOCALE: Record<string, string> = {
   zh: "zh_CN",

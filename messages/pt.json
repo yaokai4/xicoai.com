@@ -235,8 +235,10 @@
       "xicoclean": "Xico Clean"
     },
     "rights": "Todos os direitos reservados.",
-    "icp": "粤ICP备XXXXXXXX号",
-    "comingSoon": "Em breve"
+    "comingSoon": "Em breve",
+    "license": "Alvará comercial",
+    "creditCodeLabel": "Código de crédito social unificado",
+    "creditCodeVerify": "Verificar no Sistema Nacional de Informação de Crédito das Empresas da China"
   },
   "about": {
     "eyebrow": "Sobre a XICO",
@@ -284,7 +286,13 @@
       "focusLabel": "Foco",
       "focus": "Desenvolvimento de IA · Software sob Medida · Produtos Próprios · Jogos (em preparação)",
       "marketsLabel": "Mercados",
-      "markets": "China · Japão · Global"
+      "markets": "China · Japão · Global",
+      "creditCodeLabel": "Código de crédito social unificado",
+      "creditCodeVerify": "Verificar no Sistema Nacional de Informação de Crédito das Empresas da China",
+      "legalRepLabel": "Representante legal",
+      "establishedLabel": "Fundada",
+      "addressLabel": "Endereço registrado",
+      "viewLicense": "Ver alvará comercial"
     }
   },
   "services": {
@@ -512,7 +520,7 @@
     ]
   },
   "legal": {
-    "updated": "Última atualização: junho de 2026",
+    "updated": "Última atualização: julho de 2026",
     "privacy": {
       "title": "Política de Privacidade",
       "intro": "A Zhixike Technology (Guangzhou) Co., Ltd. (“XICO AI”, “nós”) respeita e protege a sua privacidade. Esta política explica quais informações coletamos em xicoai.com, como as usamos e quais são os seus direitos.",

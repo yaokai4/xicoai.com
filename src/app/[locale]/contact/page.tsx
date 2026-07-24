@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ContactForm } from "@/components/contact-form";
 import { site } from "@/lib/site";
+import { pageAlternates } from "@/lib/i18n-meta";
 
 export async function generateMetadata({
   params,
@@ -14,7 +15,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("contact") };
+  return {
+    title: t("contact"),
+    alternates: pageAlternates("/contact", locale),
+  };
 }
 
 export default async function ContactPage({

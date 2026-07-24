@@ -235,8 +235,10 @@
       "xicoclean": "希可Mac清理"
     },
     "rights": "保留所有权利。",
-    "icp": "粤ICP备XXXXXXXX号",
-    "comingSoon": "敬请期待"
+    "comingSoon": "敬请期待",
+    "license": "营业执照",
+    "creditCodeLabel": "统一社会信用代码",
+    "creditCodeVerify": "在国家企业信用信息公示系统核验"
   },
   "about": {
     "eyebrow": "关于智希可",
@@ -266,7 +268,7 @@
     },
     "founder": {
       "eyebrow": "创始人",
-      "name": "姚凱 · Yao Kai",
+      "name": "姚凯 · Yao Kai",
       "role": "创始人 & CEO",
       "quote": "工程质量和体验品质，是同一件事。",
       "bio": [
@@ -284,7 +286,13 @@
       "focusLabel": "专注",
       "focus": "AI 应用开发 · 软件定制开发 · 自研产品 · 游戏（筹备中）",
       "marketsLabel": "市场",
-      "markets": "中国 · 日本 · 全球市场"
+      "markets": "中国 · 日本 · 全球市场",
+      "creditCodeLabel": "统一社会信用代码",
+      "creditCodeVerify": "在国家企业信用信息公示系统核验",
+      "legalRepLabel": "法定代表人",
+      "establishedLabel": "成立日期",
+      "addressLabel": "注册地址",
+      "viewLicense": "查看营业执照"
     }
   },
   "services": {
@@ -512,7 +520,7 @@
     ]
   },
   "legal": {
-    "updated": "最后更新：2026 年 6 月",
+    "updated": "最后更新：2026 年 7 月",
     "privacy": {
       "title": "隐私政策",
       "intro": "智希可科技（广州）有限公司（“XICO AI”“我们”）尊重并保护你的隐私。本政策说明我们在 xicoai.com 上会收集哪些信息、如何使用，以及你拥有的权利。",

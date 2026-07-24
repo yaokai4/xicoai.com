@@ -8,6 +8,7 @@ import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
 import { getOpenJobs } from "@/lib/jobs";
 import { pickL10n } from "@/lib/content";
+import { pageAlternates } from "@/lib/i18n-meta";
 import type { Job } from "@/db/schema";
 
 export const dynamic = "force-dynamic";
@@ -19,7 +20,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("careers") };
+  return {
+    title: t("careers"),
+    alternates: pageAlternates("/careers", locale),
+  };
 }
 
 export default async function CareersPage({

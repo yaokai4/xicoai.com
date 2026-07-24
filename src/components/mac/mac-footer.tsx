@@ -1,6 +1,7 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
-import { site } from "@/lib/site";
+import { site, registration } from "@/lib/site";
+import { businessLicenseImage } from "@/lib/legal";
 import type { Locale } from "@/i18n/routing";
 
 export async function MacFooter() {
@@ -80,21 +81,35 @@ export async function MacFooter() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-border pt-8 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             <p>
               © {year} XICO AI. {t("by")}
             </p>
-            <p className="text-faint/70">{site.fullName[locale]}</p>
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-faint/70">
+              <span>{site.fullName[locale]}</span>
+              <span aria-hidden className="text-faint/40">·</span>
+              <a
+                href={registration.verifyUrl}
+                target="_blank"
+                rel="noreferrer"
+                title={tf("creditCodeVerify")}
+                className="tabular-nums transition-colors hover:text-muted"
+              >
+                {tf("creditCodeLabel")} {registration.creditCode}
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-            <a
-              href="https://beian.miit.gov.cn/"
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-muted"
-            >
-              {tf("icp")}
-            </a>
+            {businessLicenseImage && (
+              <a
+                href={`${site.url}${businessLicenseImage}`}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-muted"
+              >
+                {tf("license")}
+              </a>
+            )}
             <span className="text-faint/60">mac.xicoai.com</span>
           </div>
         </div>

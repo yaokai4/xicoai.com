@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { getPublishedPosts } from "@/lib/posts";
 import { pickL10n } from "@/lib/content";
+import { pageAlternates } from "@/lib/i18n-meta";
 import type { Post } from "@/db/schema";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
-  return { title: t("eyebrow"), description: t("subtitle") };
+  return {
+    title: t("eyebrow"),
+    description: t("subtitle"),
+    alternates: pageAlternates("/blog", locale),
+  };
 }
 
 export default async function BlogPage({

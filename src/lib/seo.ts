@@ -12,7 +12,7 @@
  * only when real, verifiable ratings exist.
  */
 
-import { site } from "@/lib/site";
+import { site, registration } from "@/lib/site";
 
 /** Single source of truth for the shipped app version (keep in sync on release).
  *  Used by SoftwareApplication JSON-LD so structured data never goes stale. */
@@ -58,12 +58,32 @@ export function organizationJsonLd() {
     "@id": `${site.url}/#organization`,
     name: "XICO AI",
     legalName: site.fullName.en,
-    alternateName: ["智希可", "XICO", "Xico"],
+    alternateName: ["智希可", "智希可科技（广州）有限公司", "XICO", "Xico"],
     url: site.url,
     email: site.email,
     logo: {
       "@type": "ImageObject",
       url: `${site.url}/icon.svg`,
+    },
+    // Verifiable legal identity: the PRC unified social credit code, the
+    // registered address and the founding date make the Organization a
+    // real-world, checkable entity (gsxt.gov.cn) rather than an anonymous brand.
+    foundingDate: registration.established,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "Unified Social Credit Code",
+      value: registration.creditCode,
+    },
+    founder: {
+      "@type": "Person",
+      name: `${registration.legalRep.en} (${registration.legalRep.zh})`,
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: registration.address.en,
+      addressLocality: "Guangzhou",
+      addressRegion: "Guangdong",
+      addressCountry: "CN",
     },
     contactPoint: {
       "@type": "ContactPoint",

@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { CTA } from "@/components/sections/cta";
+import { pageAlternates } from "@/lib/i18n-meta";
 
 export async function generateMetadata({
   params,
@@ -17,6 +18,7 @@ export async function generateMetadata({
   return {
     title: { absolute: t("servicesTitle") },
     description: t("servicesDescription"),
+    alternates: pageAlternates("/services", locale),
   };
 }
 

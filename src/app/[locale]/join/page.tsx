@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { JoinForm } from "@/components/join-form";
+import { pageAlternates } from "@/lib/i18n-meta";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "join" });
-  return { title: "Join", description: t("subtitle") };
+  return {
+    title: "Join",
+    description: t("subtitle"),
+    alternates: pageAlternates("/join", locale),
+  };
 }
 
 export default async function JoinPage({

@@ -234,9 +234,11 @@
       "terms": "利用規約",
       "xicoclean": "Xico Clean"
     },
-    "rights": "All rights reserved.",
-    "icp": "粤ICP备XXXXXXXX号",
-    "comingSoon": "近日公開"
+    "rights": "全著作権所有。",
+    "comingSoon": "近日公開",
+    "license": "営業許可証",
+    "creditCodeLabel": "統一社会信用コード",
+    "creditCodeVerify": "国家企業信用情報公示システムで確認"
   },
   "about": {
     "eyebrow": "XICO について",
@@ -284,7 +286,13 @@
       "focusLabel": "領域",
       "focus": "AI アプリケーション開発 · 受託ソフトウェア開発 · 自社プロダクト · ゲーム（準備中）",
       "marketsLabel": "市場",
-      "markets": "中国 · 日本 · グローバル"
+      "markets": "中国 · 日本 · グローバル",
+      "creditCodeLabel": "統一社会信用コード",
+      "creditCodeVerify": "国家企業信用情報公示システムで確認",
+      "legalRepLabel": "法定代表者",
+      "establishedLabel": "設立日",
+      "addressLabel": "登記住所",
+      "viewLicense": "営業許可証を見る"
     }
   },
   "services": {
@@ -512,7 +520,7 @@
     ]
   },
   "legal": {
-    "updated": "最終更新：2026年6月",
+    "updated": "最終更新：2026年7月",
     "privacy": {
       "title": "プライバシーポリシー",
       "intro": "智希可科技（広州）有限公司（「XICO AI」「当社」）は、お客様のプライバシーを尊重し保護します。本ポリシーは、xicoai.com で収集する情報、その利用方法、およびお客様の権利について説明します。",

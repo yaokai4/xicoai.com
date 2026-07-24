@@ -235,8 +235,10 @@
       "xicoclean": "希可Mac清理"
     },
     "rights": "保留一切權利。",
-    "icp": "粤ICP备XXXXXXXX号",
-    "comingSoon": "敬請期待"
+    "comingSoon": "敬請期待",
+    "license": "營業執照",
+    "creditCodeLabel": "統一社會信用代碼",
+    "creditCodeVerify": "於國家企業信用資訊公示系統核驗"
   },
   "about": {
     "eyebrow": "關於智希可",
@@ -284,7 +286,13 @@
       "focusLabel": "專注",
       "focus": "AI 應用開發 · 軟體客製化開發 · 自研產品 · 遊戲（籌備中）",
       "marketsLabel": "市場",
-      "markets": "中國 · 日本 · 全球市場"
+      "markets": "中國 · 日本 · 全球市場",
+      "creditCodeLabel": "統一社會信用代碼",
+      "creditCodeVerify": "於國家企業信用資訊公示系統核驗",
+      "legalRepLabel": "法定代表人",
+      "establishedLabel": "成立日期",
+      "addressLabel": "註冊地址",
+      "viewLicense": "查看營業執照"
     }
   },
   "services": {
@@ -512,7 +520,7 @@
     ]
   },
   "legal": {
-    "updated": "最後更新：2026 年 6 月",
+    "updated": "最後更新：2026 年 7 月",
     "privacy": {
       "title": "隱私權政策",
       "intro": "智希可科技（廣州）有限公司（「XICO AI」「我們」）尊重並保護你的隱私。本政策說明我們在 xicoai.com 上會蒐集哪些資訊、如何使用，以及你擁有的權利。",

@@ -7,7 +7,9 @@ import { Container, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { ButtonLink, ArrowIcon } from "@/components/ui/button";
-import { site } from "@/lib/site";
+import { site, registration } from "@/lib/site";
+import { businessLicenseImage } from "@/lib/legal";
+import { pageAlternates } from "@/lib/i18n-meta";
 
 export async function generateMetadata({
   params,
@@ -16,7 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("about") };
+  return {
+    title: t("about"),
+    alternates: pageAlternates("/about", locale),
+  };
 }
 
 export default async function AboutPage({
@@ -38,6 +43,17 @@ function AboutContent() {
   const values = t.raw("values.items") as { title: string; desc: string }[];
   const founderBio = t.raw("founder.bio") as string[];
   const company = t.raw("company") as Record<string, string>;
+
+  // Official business-registration facts (from the company licence). CJK
+  // locales show the authoritative Chinese wording; others get an English gloss.
+  const cjk = locale === "zh" || locale === "zh-Hant" || locale === "ja";
+  const reg = {
+    legalRep: cjk ? registration.legalRep.zh : registration.legalRep.en,
+    address: cjk ? registration.address.zh : registration.address.en,
+  };
+  const established = new Intl.DateTimeFormat(locale, {
+    dateStyle: "long",
+  }).format(new Date(`${registration.established}T00:00:00`));
 
   return (
     <>
@@ -133,6 +149,62 @@ function AboutContent() {
                     </div>
                   ))}
                 </dl>
+
+                <div className="mt-8 border-t border-border/60 pt-8">
+                  <dl className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+                    <div>
+                      <dt className="text-xs uppercase tracking-wider text-faint">
+                        {company.creditCodeLabel}
+                      </dt>
+                      <dd className="mt-1.5">
+                        <a
+                          href={registration.verifyUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={company.creditCodeVerify}
+                          className="font-mono text-[13px] tracking-tight text-foreground transition-colors hover:text-accent"
+                        >
+                          {registration.creditCode}
+                        </a>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-wider text-faint">
+                        {company.legalRepLabel}
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                        {reg.legalRep}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-wider text-faint">
+                        {company.establishedLabel}
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                        {established}
+                      </dd>
+                    </div>
+                    <div className="sm:col-span-2 lg:col-span-3">
+                      <dt className="text-xs uppercase tracking-wider text-faint">
+                        {company.addressLabel}
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                        {reg.address}
+                      </dd>
+                    </div>
+                  </dl>
+                  {businessLicenseImage && (
+                    <a
+                      href={businessLicenseImage}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
+                    >
+                      {company.viewLicense}
+                      <ArrowIcon />
+                    </a>
+                  )}
+                </div>
               </div>
             </Reveal>
           </div>

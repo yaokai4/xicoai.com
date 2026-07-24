@@ -235,8 +235,10 @@
       "xicoclean": "Xico Clean"
     },
     "rights": "모든 권리 보유.",
-    "icp": "粤ICP备XXXXXXXX号",
-    "comingSoon": "출시 예정"
+    "comingSoon": "출시 예정",
+    "license": "사업자 등록증",
+    "creditCodeLabel": "통일 사회 신용 코드",
+    "creditCodeVerify": "국가기업신용정보공시시스템에서 확인"
   },
   "about": {
     "eyebrow": "XICO 소개",
@@ -284,7 +286,13 @@
       "focusLabel": "주력 분야",
       "focus": "AI 애플리케이션 개발 · 맞춤형 소프트웨어 개발 · 자체 제품 · 게임 개발(준비 중)",
       "marketsLabel": "시장",
-      "markets": "중국 · 일본 · 글로벌"
+      "markets": "중국 · 일본 · 글로벌",
+      "creditCodeLabel": "통일 사회 신용 코드",
+      "creditCodeVerify": "국가기업신용정보공시시스템에서 확인",
+      "legalRepLabel": "법정 대표자",
+      "establishedLabel": "설립일",
+      "addressLabel": "등록 주소",
+      "viewLicense": "사업자 등록증 보기"
     }
   },
   "services": {
@@ -512,7 +520,7 @@
     ]
   },
   "legal": {
-    "updated": "최종 업데이트: 2026년 6월",
+    "updated": "최종 업데이트: 2026년 7월",
     "privacy": {
       "title": "개인정보 처리방침",
       "intro": "Zhixike Technology (Guangzhou) Co., Ltd.(“XICO AI”, “당사”)는 이용자의 개인정보를 존중하고 보호합니다. 본 방침은 당사가 xicoai.com에서 어떤 정보를 수집하고 어떻게 사용하는지, 그리고 이용자가 가지는 권리를 설명합니다.",
